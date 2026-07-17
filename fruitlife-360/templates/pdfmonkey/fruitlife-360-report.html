@@ -108,6 +108,84 @@
       margin: 12px 0 14px;
     }
 
+    .tier-grid,
+    .lens-grid {
+      display: table;
+      width: 100%;
+      border-spacing: 8px 0;
+      margin: 10px -8px 14px;
+    }
+
+    .tier-card,
+    .lens-card {
+      display: table-cell;
+      width: 33.333%;
+      border: 1px solid var(--dydd-line);
+      background: var(--dydd-soft);
+      padding: 10px;
+      vertical-align: top;
+    }
+
+    .lens-card { width: 25%; }
+
+    .mini-label {
+      color: var(--dydd-green);
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .formation-card {
+      border: 1px solid var(--dydd-line);
+      margin: 0 0 11px;
+      page-break-inside: avoid;
+      break-inside: avoid;
+      background: #ffffff;
+    }
+
+    .formation-head {
+      display: table;
+      width: 100%;
+      padding: 9px 11px;
+      color: #ffffff;
+    }
+
+    .formation-name,
+    .formation-tier {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .formation-name {
+      width: 42%;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .formation-tier {
+      width: 58%;
+      text-align: right;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .formation-body { padding: 10px 11px 11px; }
+
+    .formation-cols {
+      display: table;
+      width: 100%;
+      border-spacing: 10px 0;
+      margin: 8px -10px 0;
+    }
+
+    .formation-col {
+      display: table-cell;
+      width: 50%;
+      vertical-align: top;
+    }
+
     .logo {
       width: 118px;
       height: auto;
@@ -626,7 +704,7 @@
     <div class="cover-bottom">
       <div>
         <strong>DesignID Lens</strong><br />
-        {{ designid_primary }}{% if designid_secondary != blank %} + {{ designid_secondary }}{% endif %}
+        {{ design_id_primary }}{% if design_id_secondary != blank %} + {{ design_id_secondary }}{% endif %}
       </div>
       <div>
         <strong>Responses</strong><br />
@@ -785,6 +863,163 @@
         </tr>
       </tbody>
     </table>
+  </section>
+
+  <!-- FORMATION CONTENT -->
+  <section class="section page-break">
+    <div class="section-head">
+      <div class="section-title">
+        <div class="eyebrow">Formation guide</div>
+        <h2>How to read the fruit tiers</h2>
+      </div>
+      <div class="section-note">Encouragement, formation, and invitation.</div>
+    </div>
+
+    <div class="tier-grid">
+      <div class="tier-card">
+        <div class="mini-label">Most visible</div>
+        <h3>{{ most_visible_fruit_list }}</h3>
+        <p>{{ most_visible_tier_description }}</p>
+      </div>
+      <div class="tier-card">
+        <div class="mini-label">Steady forming</div>
+        <h3>{{ steady_forming_fruit_list }}</h3>
+        <p>{{ steady_forming_tier_description }}</p>
+      </div>
+      <div class="tier-card">
+        <div class="mini-label">Growth invitation</div>
+        <h3>{{ growth_invitation_fruit_list }}</h3>
+        <p>{{ growth_invitation_tier_description }}</p>
+      </div>
+    </div>
+
+    <div class="formation-card">
+      <div class="formation-head fruit-love"><div class="formation-name">Love</div><div class="formation-tier">{{ love_tier_label }}</div></div>
+      <div class="formation-body">
+        <p><strong>Scripture:</strong> {{ love_scripture }}</p>
+        <p>{{ love_definition }}</p>
+        <div class="formation-cols">
+          <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ love_maturity }}</p><div class="mini-label">Practice</div><p>{{ love_practice }}</p></div>
+          <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ love_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ love_reflection_question }}</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="formation-card">
+      <div class="formation-head fruit-joy"><div class="formation-name">Joy</div><div class="formation-tier">{{ joy_tier_label }}</div></div>
+      <div class="formation-body">
+        <p><strong>Scripture:</strong> {{ joy_scripture }}</p>
+        <p>{{ joy_definition }}</p>
+        <div class="formation-cols">
+          <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ joy_maturity }}</p><div class="mini-label">Practice</div><p>{{ joy_practice }}</p></div>
+          <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ joy_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ joy_reflection_question }}</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="formation-card">
+      <div class="formation-head fruit-peace"><div class="formation-name">Peace</div><div class="formation-tier">{{ peace_tier_label }}</div></div>
+      <div class="formation-body">
+        <p><strong>Scripture:</strong> {{ peace_scripture }}</p>
+        <p>{{ peace_definition }}</p>
+        <div class="formation-cols">
+          <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ peace_maturity }}</p><div class="mini-label">Practice</div><p>{{ peace_practice }}</p></div>
+          <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ peace_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ peace_reflection_question }}</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section page-break">
+    <div class="section-head">
+      <div class="section-title">
+        <div class="eyebrow">Formation guide</div>
+        <h2>Fruit practices continued</h2>
+      </div>
+      <div class="section-note">Small repeated steps create space for growth.</div>
+    </div>
+
+    <div class="formation-card">
+      <div class="formation-head fruit-patience"><div class="formation-name">Patience</div><div class="formation-tier">{{ patience_tier_label }}</div></div>
+      <div class="formation-body">
+        <p><strong>Scripture:</strong> {{ patience_scripture }}</p>
+        <p>{{ patience_definition }}</p>
+        <div class="formation-cols">
+          <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ patience_maturity }}</p><div class="mini-label">Practice</div><p>{{ patience_practice }}</p></div>
+          <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ patience_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ patience_reflection_question }}</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="formation-card">
+      <div class="formation-head fruit-kindness"><div class="formation-name">Kindness</div><div class="formation-tier">{{ kindness_tier_label }}</div></div>
+      <div class="formation-body">
+        <p><strong>Scripture:</strong> {{ kindness_scripture }}</p>
+        <p>{{ kindness_definition }}</p>
+        <div class="formation-cols">
+          <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ kindness_maturity }}</p><div class="mini-label">Practice</div><p>{{ kindness_practice }}</p></div>
+          <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ kindness_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ kindness_reflection_question }}</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="formation-card">
+      <div class="formation-head fruit-goodness"><div class="formation-name">Goodness</div><div class="formation-tier">{{ goodness_tier_label }}</div></div>
+      <div class="formation-body">
+        <p><strong>Scripture:</strong> {{ goodness_scripture }}</p>
+        <p>{{ goodness_definition }}</p>
+        <div class="formation-cols">
+          <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ goodness_maturity }}</p><div class="mini-label">Practice</div><p>{{ goodness_practice }}</p></div>
+          <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ goodness_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ goodness_reflection_question }}</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section page-break">
+    <div class="section-head">
+      <div class="section-title">
+        <div class="eyebrow">Formation guide</div>
+        <h2>Fruit practices continued</h2>
+      </div>
+      <div class="section-note">Growth invitations are meant to be received with grace.</div>
+    </div>
+
+    <div class="formation-card">
+      <div class="formation-head fruit-faithfulness"><div class="formation-name">Faithfulness</div><div class="formation-tier">{{ faithfulness_tier_label }}</div></div>
+      <div class="formation-body">
+        <p><strong>Scripture:</strong> {{ faithfulness_scripture }}</p>
+        <p>{{ faithfulness_definition }}</p>
+        <div class="formation-cols">
+          <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ faithfulness_maturity }}</p><div class="mini-label">Practice</div><p>{{ faithfulness_practice }}</p></div>
+          <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ faithfulness_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ faithfulness_reflection_question }}</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="formation-card">
+      <div class="formation-head fruit-gentleness"><div class="formation-name">Gentleness</div><div class="formation-tier">{{ gentleness_tier_label }}</div></div>
+      <div class="formation-body">
+        <p><strong>Scripture:</strong> {{ gentleness_scripture }}</p>
+        <p>{{ gentleness_definition }}</p>
+        <div class="formation-cols">
+          <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ gentleness_maturity }}</p><div class="mini-label">Practice</div><p>{{ gentleness_practice }}</p></div>
+          <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ gentleness_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ gentleness_reflection_question }}</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="formation-card">
+      <div class="formation-head fruit-selfcontrol"><div class="formation-name">Self-control</div><div class="formation-tier">{{ self_control_tier_label }}</div></div>
+      <div class="formation-body">
+        <p><strong>Scripture:</strong> {{ self_control_scripture }}</p>
+        <p>{{ self_control_definition }}</p>
+        <div class="formation-cols">
+          <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ self_control_maturity }}</p><div class="mini-label">Practice</div><p>{{ self_control_practice }}</p></div>
+          <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ self_control_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ self_control_reflection_question }}</p></div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- FRUIT DETAILS -->
@@ -1002,13 +1237,36 @@
     </div>
 
     <div class="callout soft">
-      <h2>DesignID expression lens</h2>
+      <h2>{{ design_id_page_title }}</h2>
+      <p>{{ design_id_page_intro }}</p>
       <p>
-        Your current DesignID reference is <strong>{{ designid_primary }}</strong>{% if designid_secondary != blank %} with a secondary reference of <strong>{{ designid_secondary }}</strong>{% endif %}. FruitLife scores do not change because of DesignID. Instead, DesignID helps you ask how the fruit may naturally express through the way God designed you.
+        {% if design_id_primary != blank %}Your current DesignID reference is <strong>{{ design_id_primary }}</strong>{% if design_id_secondary != blank %} with a secondary reference of <strong>{{ design_id_secondary }}</strong>{% endif %}. {% endif %}FruitLife scores do not change because of DesignID. Instead, DesignID helps you ask how the fruit may naturally express through the way God designed you.
       </p>
-      <p class="small muted">
-        Placeholder language for the first template: this section can become more personalized once the FruitLife + DesignID interpretation library is built.
-      </p>
+    </div>
+
+    <div class="lens-grid">
+      <div class="lens-card">
+        <div class="mini-label">Architect</div>
+        <p>{{ architect_fruit_lens }}</p>
+      </div>
+      <div class="lens-card">
+        <div class="mini-label">Artisan</div>
+        <p>{{ artisan_fruit_lens }}</p>
+      </div>
+      <div class="lens-card">
+        <div class="mini-label">Shepherd</div>
+        <p>{{ shepherd_fruit_lens }}</p>
+      </div>
+      <div class="lens-card">
+        <div class="mini-label">Steward</div>
+        <p>{{ steward_fruit_lens }}</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h3>Continue the journey</h3>
+      <p>{{ design_id_cta }}</p>
+      <p>{{ spiritual_gifts_cta }}</p>
     </div>
 
     <div class="rule"></div>

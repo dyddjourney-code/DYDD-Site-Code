@@ -12,11 +12,13 @@ The current build direction is to produce the full 360 product first, using the 
 - `docs/dc3-360-backmap.md` maps the DC3 Leadership Design 360 pattern into FruitLife language and report structure.
 - `docs/workbook-360-build-map.md` lists the specific workbook tabs, fields, and formulas needed for the full FruitLife 360 build.
 - `docs/live-sheet-build-2026-07-17.md` records the first live Google Sheet 360 build and verification.
+- `docs/live-sheet-content-expansion-2026-07-17.md` records the Fruit content/library expansion.
 - `docs/pdfmonkey-template-field-map.md` maps the PDFMonkey template to the live payload fields.
 - `templates/pdfmonkey/fruitlife-360-report.html` is the first PDFMonkey HTML report template.
 - `automation/` contains the Jotform field maps, Make scenario blueprint, PDFMonkey request JSON, and sample payload.
 - `source/fruitlife360-google-sheet-export-2026-07-17.xlsx` is a read-only export snapshot of the current Google Sheet.
 - `source/fruitlife360-live-backup-20260717T180646Z.xlsx` is the live workbook backup taken before the 360 tab build.
+- `source/fruitlife360-content-expansion-backup-20260717T192800Z.xlsx` is the live workbook backup taken before the content library expansion.
 
 ## Core Guardrail
 
@@ -27,7 +29,7 @@ This assessment should not sound like it is grading holiness or telling someone 
 1. Add the 360-specific workbook tabs beside the current tabs.
 2. Build sample self + observer responses.
 3. Complete the Google Sheet calculation/report tabs.
-4. Lock the `PDFMonkey_Payload_360` field names.
-5. Build the PDFMonkey report template.
+4. Render one PDFMonkey sample from the expanded `FL360-SAMPLE` payload.
+5. Make final copy/layout adjustments after the sample PDF review.
 6. Wire Make only after the Sheet and payload contract are stable.
 7. Generate and review one complete sample report.
