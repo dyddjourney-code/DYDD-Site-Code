@@ -1,0 +1,49 @@
+{
+  "scenarios": [
+    {
+      "name": "FruitLife 360 - Self Intake",
+      "modules": [
+        "Jotform: Watch submissions",
+        "Tools: Generate Participant_ID",
+        "Tools: Generate Invite_Token",
+        "Google Sheets: Add row to Participant_Setup",
+        "Google Sheets: Add row to Response_Intake",
+        "Google Sheets: Add row to Reviewer_Roster_360",
+        "Email: Send participant observer-link instructions"
+      ]
+    },
+    {
+      "name": "FruitLife 360 - Observer Intake",
+      "modules": [
+        "Jotform: Watch submissions",
+        "Google Sheets: Search rows in Participant_Setup",
+        "Tools: Normalize Reviewer_Group",
+        "Google Sheets: Add row to Response_Intake",
+        "Google Sheets: Add/update row in Reviewer_Roster_360",
+        "Google Sheets: Count participant responses",
+        "Router: Ready vs waiting"
+      ]
+    },
+    {
+      "name": "FruitLife 360 - Generate PDF",
+      "modules": [
+        "Google Sheets: Read PDFMonkey_Payload_360",
+        "HTTP: POST PDFMonkey create document",
+        "HTTP: Get PDFMonkey document status",
+        "Google Sheets: Update Report_Queue",
+        "Email: Send report link"
+      ]
+    }
+  ],
+  "minimum_report_rule": {
+    "self_responses": 1,
+    "observer_responses": 3
+  },
+  "pdfmonkey": {
+    "method": "POST",
+    "endpoint": "https://api.pdfmonkey.io/api/v1/documents",
+    "auth": "Authorization: Bearer PDFMONKEY_API_KEY",
+    "template_id_placeholder": "REPLACE_WITH_FRUITLIFE_360_TEMPLATE_ID"
+  }
+}
+

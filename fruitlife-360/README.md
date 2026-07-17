@@ -14,6 +14,7 @@ The current build direction is to produce the full 360 product first, using the 
 - `docs/live-sheet-build-2026-07-17.md` records the first live Google Sheet 360 build and verification.
 - `docs/pdfmonkey-template-field-map.md` maps the PDFMonkey template to the live payload fields.
 - `templates/pdfmonkey/fruitlife-360-report.html` is the first PDFMonkey HTML report template.
+- `automation/` contains the Jotform field maps, Make scenario blueprint, PDFMonkey request JSON, and sample payload.
 - `source/fruitlife360-google-sheet-export-2026-07-17.xlsx` is a read-only export snapshot of the current Google Sheet.
 - `source/fruitlife360-live-backup-20260717T180646Z.xlsx` is the live workbook backup taken before the 360 tab build.
 

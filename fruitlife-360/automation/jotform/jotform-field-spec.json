@@ -1,0 +1,95 @@
+{
+  "self_form": {
+    "name": "FruitLife 360 Self Assessment",
+    "hidden_fields": [
+      "participant_id",
+      "assessment_mode",
+      "review_type",
+      "reviewer_group",
+      "invite_token"
+    ],
+    "identity_fields": [
+      "participant_name",
+      "participant_email",
+      "designid_status",
+      "designid_primary",
+      "designid_secondary"
+    ],
+    "rating_fields": [
+      "LOVE_01",
+      "LOVE_02",
+      "LOVE_03",
+      "JOY_01",
+      "JOY_02",
+      "JOY_03",
+      "PEACE_01",
+      "PEACE_02",
+      "PEACE_03",
+      "PATIENCE_01",
+      "PATIENCE_02",
+      "PATIENCE_03",
+      "KINDNESS_01",
+      "KINDNESS_02",
+      "KINDNESS_03",
+      "GOODNESS_01",
+      "GOODNESS_02",
+      "GOODNESS_03",
+      "FAITHFULNESS_01",
+      "FAITHFULNESS_02",
+      "FAITHFULNESS_03",
+      "GENTLENESS_01",
+      "GENTLENESS_02",
+      "GENTLENESS_03",
+      "SELFCONTROL_01",
+      "SELFCONTROL_02",
+      "SELFCONTROL_03"
+    ],
+    "pressure_fields": [
+      "Love_Pressure",
+      "Joy_Pressure",
+      "Peace_Pressure",
+      "Patience_Pressure",
+      "Kindness_Pressure",
+      "Goodness_Pressure",
+      "Faithfulness_Pressure",
+      "Gentleness_Pressure",
+      "SelfControl_Pressure"
+    ],
+    "ranking_fields": [
+      "Most_Visible_1",
+      "Most_Visible_2",
+      "Most_Visible_3",
+      "Growth_Focus_1",
+      "Growth_Focus_2",
+      "Growth_Focus_3"
+    ],
+    "open_response_fields": [
+      "Final_Reflection"
+    ]
+  },
+  "observer_form": {
+    "name": "FruitLife 360 Observer Reflection",
+    "hidden_fields": [
+      "participant_id",
+      "invite_token",
+      "review_type"
+    ],
+    "identity_fields": [
+      "reviewer_name",
+      "reviewer_email",
+      "relationship",
+      "reviewer_group"
+    ],
+    "rating_fields": "same_as_self_form",
+    "pressure_fields": "same_as_self_form",
+    "ranking_fields": "optional_same_as_self_form",
+    "open_response_fields": [
+      "Peer_Comment_Strength",
+      "Peer_Comment_Growth",
+      "Peer_Comment_Encouragement",
+      "Observer_Encouragement",
+      "Observer_Growth_Invitation"
+    ]
+  }
+}
+
