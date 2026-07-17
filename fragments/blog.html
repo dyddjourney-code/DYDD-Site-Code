@@ -1,0 +1,71 @@
+<div class="dydd-blog-filter">
+<a href="/blog?category=DESIGN">DESIGN</a>
+<span>|</span>
+<a href="/blog?category=Desire"><span class="acronym">D</span>esire</a>
+<span>|</span>
+<a href="/blog?category=Expertise"><span class="acronym">E</span>xpertise</a>
+<span>|</span>
+<a href="/blog?category=Story"><span class="acronym">S</span>tory</a>
+<span>|</span>
+<a href="/blog?category=Identity"><span class="acronym">I</span>dentity</a>
+<span>|</span>
+<a href="/blog?category=Gifts"><span class="acronym">G</span>ifts</a>
+<span>|</span>
+<a href="/blog?category=Niche"><span class="acronym">N</span>iche</a>
+</div>
+
+<style>
+
+.dydd-blog-filter{
+text-align:center;
+margin-bottom:30px;
+font-size:18px;
+}
+
+/* link styling */
+.dydd-blog-filter a{
+text-decoration:none;
+color:#555;
+font-weight:500;
+padding:0 8px;
+}
+
+/* separators */
+.dydd-blog-filter span{
+color:#bbb;
+padding:0 6px;
+}
+
+/* acronym letter */
+.dydd-blog-filter .acronym{
+font-weight:700;
+font-size:1.15em;
+color:#000;
+}
+
+/* hover */
+.dydd-blog-filter a:hover{
+color:#4A6239;
+}
+
+/* active category */
+.dydd-blog-filter a.active{
+color:#4A6239;
+border-bottom:2px solid #4A6239;
+padding-bottom:2px;
+}
+
+</style>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const category = params.get('category');
+
+if(category){
+document.querySelectorAll('.dydd-blog-filter a').forEach(link=>{
+if(link.href.includes("category="+category)){
+link.classList.add('active');
+}
+});
+}
+</script>
