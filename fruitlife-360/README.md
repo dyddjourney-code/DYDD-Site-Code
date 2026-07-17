@@ -12,6 +12,8 @@ The current build direction is to produce the full 360 product first, using the 
 - `docs/dc3-360-backmap.md` maps the DC3 Leadership Design 360 pattern into FruitLife language and report structure.
 - `docs/workbook-360-build-map.md` lists the specific workbook tabs, fields, and formulas needed for the full FruitLife 360 build.
 - `docs/live-sheet-build-2026-07-17.md` records the first live Google Sheet 360 build and verification.
+- `docs/pdfmonkey-template-field-map.md` maps the PDFMonkey template to the live payload fields.
+- `templates/pdfmonkey/fruitlife-360-report.html` is the first PDFMonkey HTML report template.
 - `source/fruitlife360-google-sheet-export-2026-07-17.xlsx` is a read-only export snapshot of the current Google Sheet.
 - `source/fruitlife360-live-backup-20260717T180646Z.xlsx` is the live workbook backup taken before the 360 tab build.
 

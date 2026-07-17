@@ -1,0 +1,1045 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>FruitLife 360 Report</title>
+
+  <style>
+    @page { size: Letter; margin: 0.62in 0.62in 0.95in 0.62in; }
+    @page:first { margin: 0.55in 0.62in 0.85in 0.62in; }
+
+    * { box-sizing: border-box; }
+
+    :root {
+      --dydd-green: #4A6239;
+      --dydd-sage: #759A5B;
+      --dydd-ink: #1f2933;
+      --dydd-muted: #647067;
+      --dydd-soft: #F6F8F3;
+      --dydd-line: #DDE4D5;
+      --love: #9E5A4F;
+      --joy: #D4A451;
+      --peace: #647C9B;
+      --patience: #8B7757;
+      --kindness: #739D5E;
+      --goodness: #4A6239;
+      --faithfulness: #5A496B;
+      --gentleness: #A9A36F;
+      --selfcontrol: #52737A;
+    }
+
+    body {
+      margin: 0;
+      color: var(--dydd-ink);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      line-height: 1.45;
+      background: #ffffff;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+
+    h1 {
+      font-size: 31px;
+      line-height: 1.05;
+      letter-spacing: -0.3px;
+      color: #263322;
+      margin: 10px 0 8px;
+    }
+
+    h2 {
+      font-size: 18px;
+      line-height: 1.18;
+      color: #263322;
+      margin: 0 0 10px;
+    }
+
+    h3 {
+      font-size: 13px;
+      line-height: 1.25;
+      color: #263322;
+      margin: 0 0 7px;
+    }
+
+    p { margin-bottom: 8px; }
+
+    .footer {
+      position: fixed;
+      left: 0.62in;
+      right: 0.62in;
+      bottom: 0.28in;
+      display: table;
+      width: calc(100% - 1.24in);
+      border-top: 1px solid var(--dydd-line);
+      padding-top: 6px;
+      color: #6b7280;
+      font-size: 8.5px;
+      background: #ffffff;
+    }
+
+    .footer-left,
+    .footer-right {
+      display: table-cell;
+      width: 50%;
+      vertical-align: top;
+    }
+
+    .footer-right { text-align: right; }
+
+    .page-break {
+      page-break-before: always;
+      break-before: page;
+    }
+
+    .avoid-break {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .muted { color: var(--dydd-muted); }
+    .green { color: var(--dydd-green); }
+    .small { font-size: 9.5px; }
+    .tiny { font-size: 8.5px; }
+    .strong { font-weight: 700; }
+
+    .rule {
+      height: 1px;
+      background: var(--dydd-line);
+      margin: 12px 0 14px;
+    }
+
+    .logo {
+      width: 118px;
+      height: auto;
+      display: block;
+    }
+
+    .cover {
+      min-height: 8.75in;
+      position: relative;
+      padding: 2px 0 0;
+    }
+
+    .cover-top {
+      display: table;
+      width: 100%;
+    }
+
+    .cover-brand,
+    .cover-meta {
+      display: table-cell;
+      vertical-align: top;
+    }
+
+    .cover-brand { width: 45%; }
+    .cover-meta {
+      width: 55%;
+      text-align: right;
+      color: var(--dydd-muted);
+      font-size: 10px;
+      padding-top: 4px;
+    }
+
+    .eyebrow {
+      color: var(--dydd-green);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .cover-grid {
+      display: table;
+      width: 100%;
+      margin-top: 42px;
+    }
+
+    .cover-copy,
+    .cover-panel {
+      display: table-cell;
+      vertical-align: top;
+    }
+
+    .cover-copy {
+      width: 58%;
+      padding-right: 34px;
+    }
+
+    .cover-panel {
+      width: 42%;
+    }
+
+    .lead {
+      font-size: 12.5px;
+      line-height: 1.58;
+      color: #344235;
+      margin: 12px 0 18px;
+    }
+
+    .scripture {
+      border-left: 4px solid var(--dydd-green);
+      padding: 10px 12px;
+      background: var(--dydd-soft);
+      color: #263322;
+      font-size: 11px;
+      line-height: 1.5;
+      margin-top: 16px;
+    }
+
+    .snapshot-panel {
+      border: 1px solid var(--dydd-line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .snapshot-head {
+      background: var(--dydd-green);
+      color: #ffffff;
+      padding: 13px 14px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .snapshot-body { padding: 14px; }
+
+    .metric {
+      border-bottom: 1px solid #E9EEE3;
+      padding: 9px 0;
+    }
+
+    .metric:last-child { border-bottom: none; }
+
+    .metric-label {
+      color: var(--dydd-muted);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 2px;
+    }
+
+    .metric-value {
+      color: #263322;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .cover-bottom {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0.2in;
+      border-top: 1px solid var(--dydd-line);
+      padding-top: 12px;
+      display: table;
+      width: 100%;
+    }
+
+    .cover-bottom div {
+      display: table-cell;
+      width: 50%;
+      vertical-align: top;
+      color: var(--dydd-muted);
+      font-size: 9.5px;
+    }
+
+    .cover-bottom div:last-child { text-align: right; }
+
+    .section {
+      padding-top: 2px;
+    }
+
+    .section-head {
+      display: table;
+      width: 100%;
+      margin-bottom: 12px;
+    }
+
+    .section-title,
+    .section-note {
+      display: table-cell;
+      vertical-align: bottom;
+    }
+
+    .section-title { width: 58%; }
+    .section-note {
+      width: 42%;
+      color: var(--dydd-muted);
+      font-size: 9.5px;
+      text-align: right;
+    }
+
+    .callout {
+      border: 1px solid var(--dydd-line);
+      border-left: 5px solid var(--dydd-green);
+      border-radius: 12px;
+      padding: 14px;
+      background: #ffffff;
+      margin: 12px 0;
+    }
+
+    .callout.soft {
+      background: var(--dydd-soft);
+    }
+
+    .three-col {
+      display: table;
+      width: 100%;
+      border-spacing: 10px 0;
+      margin: 12px -10px 0;
+    }
+
+    .three-col .mini-card {
+      display: table-cell;
+      width: 33.333%;
+      border: 1px solid var(--dydd-line);
+      border-radius: 12px;
+      padding: 12px;
+      background: #ffffff;
+      vertical-align: top;
+    }
+
+    .mini-label {
+      color: var(--dydd-muted);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 5px;
+    }
+
+    .mini-value {
+      color: #263322;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .score-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      font-size: 9.5px;
+      margin-top: 10px;
+    }
+
+    .score-table th,
+    .score-table td {
+      border: 1px solid #E1E8D9;
+      padding: 7px 6px;
+      vertical-align: middle;
+      word-wrap: break-word;
+    }
+
+    .score-table th {
+      background: var(--dydd-soft);
+      color: #2F3A2C;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    .score-table td.num,
+    .score-table th.num {
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .fruit-name {
+      font-weight: 700;
+      color: #263322;
+    }
+
+    .category-pill {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 3px 7px;
+      background: var(--dydd-soft);
+      color: var(--dydd-green);
+      font-size: 8.5px;
+      font-weight: 700;
+      border: 1px solid var(--dydd-line);
+    }
+
+    .fruit-block {
+      border: 1px solid var(--dydd-line);
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 10px 0;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .fruit-head {
+      display: table;
+      width: 100%;
+      color: #ffffff;
+      padding: 10px 12px;
+    }
+
+    .fruit-title,
+    .fruit-cat {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .fruit-title {
+      width: 45%;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .fruit-cat {
+      width: 55%;
+      text-align: right;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+
+    .fruit-body {
+      padding: 12px;
+      background: #ffffff;
+    }
+
+    .bars {
+      display: table;
+      width: 100%;
+      margin: 8px 0 10px;
+    }
+
+    .bar-col {
+      display: table-cell;
+      width: 50%;
+      vertical-align: top;
+      padding-right: 10px;
+    }
+
+    .bar-col:last-child {
+      padding-right: 0;
+      padding-left: 10px;
+    }
+
+    .bar-row {
+      margin: 0 0 8px;
+    }
+
+    .bar-label {
+      display: table;
+      width: 100%;
+      font-size: 9px;
+      color: var(--dydd-muted);
+      margin-bottom: 3px;
+    }
+
+    .bar-label span {
+      display: table-cell;
+      width: 50%;
+    }
+
+    .bar-label span:last-child {
+      text-align: right;
+      color: #263322;
+      font-weight: 700;
+    }
+
+    .bar-track {
+      height: 8px;
+      border-radius: 99px;
+      background: #EDF2E8;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 99px;
+      background: var(--dydd-green);
+    }
+
+    .bar-fill.observer { background: var(--dydd-sage); }
+    .bar-fill.pressure { background: #647C9B; }
+
+    .fruit-love { background: var(--love); }
+    .fruit-joy { background: var(--joy); }
+    .fruit-peace { background: var(--peace); }
+    .fruit-patience { background: var(--patience); }
+    .fruit-kindness { background: var(--kindness); }
+    .fruit-goodness { background: var(--goodness); }
+    .fruit-faithfulness { background: var(--faithfulness); }
+    .fruit-gentleness { background: var(--gentleness); }
+    .fruit-selfcontrol { background: var(--selfcontrol); }
+
+    .feedback-box {
+      border: 1px solid var(--dydd-line);
+      border-radius: 12px;
+      padding: 12px;
+      margin: 10px 0;
+      background: #ffffff;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .feedback-box h3 {
+      color: var(--dydd-green);
+      border-bottom: 1px solid var(--dydd-line);
+      padding-bottom: 6px;
+      margin-bottom: 8px;
+    }
+
+    .quote-text {
+      white-space: pre-line;
+      color: #344235;
+      font-size: 10.5px;
+      line-height: 1.55;
+    }
+
+    .next-step {
+      display: table;
+      width: 100%;
+      border: 1px solid var(--dydd-line);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 12px;
+    }
+
+    .next-step-num,
+    .next-step-copy {
+      display: table-cell;
+      vertical-align: top;
+    }
+
+    .next-step-num {
+      width: 42px;
+      background: var(--dydd-green);
+      color: #ffffff;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 700;
+      padding-top: 12px;
+    }
+
+    .next-step-copy {
+      padding: 11px 12px;
+      background: #ffffff;
+    }
+
+    .next-step-copy strong {
+      display: block;
+      color: #263322;
+      margin-bottom: 4px;
+    }
+
+    .scale {
+      display: table;
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 9px;
+    }
+
+    .scale div {
+      display: table-cell;
+      width: 20%;
+      border: 1px solid var(--dydd-line);
+      padding: 7px 6px;
+      text-align: center;
+      color: var(--dydd-muted);
+      background: #ffffff;
+    }
+
+    .scale strong {
+      display: block;
+      color: var(--dydd-green);
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="footer">
+    <div class="footer-left">Discover Your Divine Design - FruitLife 360</div>
+    <div class="footer-right">discoverdivine.design</div>
+  </div>
+
+  <!-- COVER -->
+  <section class="cover">
+    <div class="cover-top">
+      <div class="cover-brand">
+        <img class="logo"
+          src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/156f49e9-3121-4dd4-8aa6-ac23f67962b7/DYDD-logo.png?format=500w"
+          alt="Discover Your Divine Design" />
+      </div>
+      <div class="cover-meta">
+        <div>{{ report_date }}</div>
+        <div>{{ participant_email }}</div>
+        <div class="tiny">Report ID: {{ participant_id }}</div>
+      </div>
+    </div>
+
+    <div class="cover-grid">
+      <div class="cover-copy">
+        <div class="eyebrow">Fruit of the Spirit Reflection</div>
+        <h1>FruitLife 360 Report</h1>
+        <p class="lead">
+          Prepared for <strong>{{ participant_name }}</strong>. This report compares your self-reflection with the observations of trusted people who know you, helping you notice visible fruit, encouragement others see, and current growth invitations.
+        </p>
+        <p>
+          This report is not a holiness score. It is a formation mirror. In Christ, the fruit of the Spirit is being formed in you. The purpose is to notice what is most visible in this season and where the Holy Spirit may be inviting continued growth.
+        </p>
+        <div class="scripture">
+          <strong>Galatians 5:22-23</strong><br />
+          But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness and self-control.
+        </div>
+      </div>
+
+      <div class="cover-panel">
+        <div class="snapshot-panel avoid-break">
+          <div class="snapshot-head">Report Snapshot</div>
+          <div class="snapshot-body">
+            <div class="metric">
+              <div class="metric-label">Reviewer Mix</div>
+              <div class="metric-value">{{ reviewer_mix }}</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Self Overall</div>
+              <div class="metric-value">{{ self_overall | round: 1 }}</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Observer Overall</div>
+              <div class="metric-value">{{ observer_overall | round: 1 }}</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Overall Awareness Gap</div>
+              <div class="metric-value">{{ overall_gap | round: 1 }}</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Most Visible Fruit</div>
+              <div class="metric-value">{{ most_visible_fruit }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cover-bottom">
+      <div>
+        <strong>DesignID Lens</strong><br />
+        {{ designid_primary }}{% if designid_secondary != blank %} + {{ designid_secondary }}{% endif %}
+      </div>
+      <div>
+        <strong>Responses</strong><br />
+        {{ response_count }} total responses, including {{ observer_count }} observer responses
+      </div>
+    </div>
+  </section>
+
+  <!-- ORIENTATION -->
+  <section class="section page-break">
+    <div class="section-head">
+      <div class="section-title">
+        <div class="eyebrow">How to read this report</div>
+        <h2>A reflection tool, not a spiritual grade.</h2>
+      </div>
+      <div class="section-note">Scores use a 1-5 visibility scale.</div>
+    </div>
+
+    <div class="callout soft">
+      <p>{{ overview_note }}</p>
+      <p>
+        Self scores reflect how you experience the fruit in your own life. Observer scores reflect how others currently experience that fruit through you. A difference between the two is not failure. It is an invitation to awareness, encouragement, conversation, and formation.
+      </p>
+    </div>
+
+    <div class="scale avoid-break">
+      <div><strong>1</strong>Rarely visible</div>
+      <div><strong>2</strong>Occasionally visible</div>
+      <div><strong>3</strong>Somewhat steady</div>
+      <div><strong>4</strong>Usually steady</div>
+      <div><strong>5</strong>Deeply consistent</div>
+    </div>
+
+    <div class="three-col avoid-break">
+      <div class="mini-card">
+        <div class="mini-label">Most Visible</div>
+        <div class="mini-value">{{ most_visible_fruit }}</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-label">Encouragement Others See</div>
+        <div class="mini-value">
+          {% if encouragement_others_see != blank %}{{ encouragement_others_see }}{% else %}No major hidden encouragement gap in this sample.{% endif %}
+        </div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-label">Growth Invitations</div>
+        <div class="mini-value">
+          {% if growth_invitations != blank %}{{ growth_invitations }}{% else %}No major self-observer gap in this sample.{% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="callout avoid-break">
+      <h3>Pressure vulnerabilities</h3>
+      <p>
+        {% if pressure_vulnerabilities != blank %}{{ pressure_vulnerabilities }}{% else %}No major pressure vulnerability is flagged in this sample payload. Continue reviewing the fruit detail pages for smaller pressure patterns.{% endif %}
+      </p>
+    </div>
+
+    <div class="rule"></div>
+
+    <h2>Fruit Summary</h2>
+    <table class="score-table">
+      <thead>
+        <tr>
+          <th style="width: 18%;">Fruit</th>
+          <th class="num" style="width: 10%;">Self</th>
+          <th class="num" style="width: 12%;">Observer</th>
+          <th class="num" style="width: 12%;">Self Pressure</th>
+          <th class="num" style="width: 14%;">Observer Pressure</th>
+          <th style="width: 18%;">Category</th>
+          <th style="width: 16%;">Formation Note</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="fruit-name">Love</span></td>
+          <td class="num">{{ love_self | round: 1 }}</td>
+          <td class="num">{{ love_observer | round: 1 }}</td>
+          <td class="num">{{ love_self_pressure | round: 1 }}</td>
+          <td class="num">{{ love_observer_pressure | round: 1 }}</td>
+          <td><span class="category-pill">{{ love_category }}</span></td>
+          <td>{{ love_summary }}</td>
+        </tr>
+        <tr>
+          <td><span class="fruit-name">Joy</span></td>
+          <td class="num">{{ joy_self | round: 1 }}</td>
+          <td class="num">{{ joy_observer | round: 1 }}</td>
+          <td class="num">{{ joy_self_pressure | round: 1 }}</td>
+          <td class="num">{{ joy_observer_pressure | round: 1 }}</td>
+          <td><span class="category-pill">{{ joy_category }}</span></td>
+          <td>{{ joy_summary }}</td>
+        </tr>
+        <tr>
+          <td><span class="fruit-name">Peace</span></td>
+          <td class="num">{{ peace_self | round: 1 }}</td>
+          <td class="num">{{ peace_observer | round: 1 }}</td>
+          <td class="num">{{ peace_self_pressure | round: 1 }}</td>
+          <td class="num">{{ peace_observer_pressure | round: 1 }}</td>
+          <td><span class="category-pill">{{ peace_category }}</span></td>
+          <td>{{ peace_summary }}</td>
+        </tr>
+        <tr>
+          <td><span class="fruit-name">Patience</span></td>
+          <td class="num">{{ patience_self | round: 1 }}</td>
+          <td class="num">{{ patience_observer | round: 1 }}</td>
+          <td class="num">{{ patience_self_pressure | round: 1 }}</td>
+          <td class="num">{{ patience_observer_pressure | round: 1 }}</td>
+          <td><span class="category-pill">{{ patience_category }}</span></td>
+          <td>{{ patience_summary }}</td>
+        </tr>
+        <tr>
+          <td><span class="fruit-name">Kindness</span></td>
+          <td class="num">{{ kindness_self | round: 1 }}</td>
+          <td class="num">{{ kindness_observer | round: 1 }}</td>
+          <td class="num">{{ kindness_self_pressure | round: 1 }}</td>
+          <td class="num">{{ kindness_observer_pressure | round: 1 }}</td>
+          <td><span class="category-pill">{{ kindness_category }}</span></td>
+          <td>{{ kindness_summary }}</td>
+        </tr>
+        <tr>
+          <td><span class="fruit-name">Goodness</span></td>
+          <td class="num">{{ goodness_self | round: 1 }}</td>
+          <td class="num">{{ goodness_observer | round: 1 }}</td>
+          <td class="num">{{ goodness_self_pressure | round: 1 }}</td>
+          <td class="num">{{ goodness_observer_pressure | round: 1 }}</td>
+          <td><span class="category-pill">{{ goodness_category }}</span></td>
+          <td>{{ goodness_summary }}</td>
+        </tr>
+        <tr>
+          <td><span class="fruit-name">Faithfulness</span></td>
+          <td class="num">{{ faithfulness_self | round: 1 }}</td>
+          <td class="num">{{ faithfulness_observer | round: 1 }}</td>
+          <td class="num">{{ faithfulness_self_pressure | round: 1 }}</td>
+          <td class="num">{{ faithfulness_observer_pressure | round: 1 }}</td>
+          <td><span class="category-pill">{{ faithfulness_category }}</span></td>
+          <td>{{ faithfulness_summary }}</td>
+        </tr>
+        <tr>
+          <td><span class="fruit-name">Gentleness</span></td>
+          <td class="num">{{ gentleness_self | round: 1 }}</td>
+          <td class="num">{{ gentleness_observer | round: 1 }}</td>
+          <td class="num">{{ gentleness_self_pressure | round: 1 }}</td>
+          <td class="num">{{ gentleness_observer_pressure | round: 1 }}</td>
+          <td><span class="category-pill">{{ gentleness_category }}</span></td>
+          <td>{{ gentleness_summary }}</td>
+        </tr>
+        <tr>
+          <td><span class="fruit-name">Self-control</span></td>
+          <td class="num">{{ self_control_self | round: 1 }}</td>
+          <td class="num">{{ self_control_observer | round: 1 }}</td>
+          <td class="num">{{ self_control_self_pressure | round: 1 }}</td>
+          <td class="num">{{ self_control_observer_pressure | round: 1 }}</td>
+          <td><span class="category-pill">{{ self_control_category }}</span></td>
+          <td>{{ self_control_summary }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- FRUIT DETAILS -->
+  <section class="section page-break">
+    <div class="section-head">
+      <div class="section-title">
+        <div class="eyebrow">Fruit by fruit</div>
+        <h2>Detailed reflection patterns</h2>
+      </div>
+      <div class="section-note">Self, observers, and pressure.</div>
+    </div>
+
+    <div class="fruit-block">
+      <div class="fruit-head fruit-love"><div class="fruit-title">Love</div><div class="fruit-cat">{{ love_category }}</div></div>
+      <div class="fruit-body">
+        <p>{{ love_summary }}</p>
+        <div class="bars">
+          <div class="bar-col">
+            <div class="bar-row"><div class="bar-label"><span>Self consistency</span><span>{{ love_self | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill" style="width: {{ love_self | times: 20 }}%;"></div></div></div>
+            <div class="bar-row"><div class="bar-label"><span>Observer consistency</span><span>{{ love_observer | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill observer" style="width: {{ love_observer | times: 20 }}%;"></div></div></div>
+          </div>
+          <div class="bar-col">
+            <div class="bar-row"><div class="bar-label"><span>Self under pressure</span><span>{{ love_self_pressure | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill pressure" style="width: {{ love_self_pressure | times: 20 }}%;"></div></div></div>
+            <div class="bar-row"><div class="bar-label"><span>Observers under pressure</span><span>{{ love_observer_pressure | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill pressure" style="width: {{ love_observer_pressure | times: 20 }}%;"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fruit-block">
+      <div class="fruit-head fruit-joy"><div class="fruit-title">Joy</div><div class="fruit-cat">{{ joy_category }}</div></div>
+      <div class="fruit-body">
+        <p>{{ joy_summary }}</p>
+        <div class="bars">
+          <div class="bar-col">
+            <div class="bar-row"><div class="bar-label"><span>Self consistency</span><span>{{ joy_self | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill" style="width: {{ joy_self | times: 20 }}%;"></div></div></div>
+            <div class="bar-row"><div class="bar-label"><span>Observer consistency</span><span>{{ joy_observer | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill observer" style="width: {{ joy_observer | times: 20 }}%;"></div></div></div>
+          </div>
+          <div class="bar-col">
+            <div class="bar-row"><div class="bar-label"><span>Self under pressure</span><span>{{ joy_self_pressure | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill pressure" style="width: {{ joy_self_pressure | times: 20 }}%;"></div></div></div>
+            <div class="bar-row"><div class="bar-label"><span>Observers under pressure</span><span>{{ joy_observer_pressure | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill pressure" style="width: {{ joy_observer_pressure | times: 20 }}%;"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fruit-block">
+      <div class="fruit-head fruit-peace"><div class="fruit-title">Peace</div><div class="fruit-cat">{{ peace_category }}</div></div>
+      <div class="fruit-body">
+        <p>{{ peace_summary }}</p>
+        <div class="bars">
+          <div class="bar-col">
+            <div class="bar-row"><div class="bar-label"><span>Self consistency</span><span>{{ peace_self | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill" style="width: {{ peace_self | times: 20 }}%;"></div></div></div>
+            <div class="bar-row"><div class="bar-label"><span>Observer consistency</span><span>{{ peace_observer | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill observer" style="width: {{ peace_observer | times: 20 }}%;"></div></div></div>
+          </div>
+          <div class="bar-col">
+            <div class="bar-row"><div class="bar-label"><span>Self under pressure</span><span>{{ peace_self_pressure | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill pressure" style="width: {{ peace_self_pressure | times: 20 }}%;"></div></div></div>
+            <div class="bar-row"><div class="bar-label"><span>Observers under pressure</span><span>{{ peace_observer_pressure | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill pressure" style="width: {{ peace_observer_pressure | times: 20 }}%;"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section page-break">
+    <div class="section-head">
+      <div class="section-title">
+        <div class="eyebrow">Fruit by fruit</div>
+        <h2>Formation details continued</h2>
+      </div>
+      <div class="section-note">Patterns are seasonal, not labels.</div>
+    </div>
+
+    <div class="fruit-block">
+      <div class="fruit-head fruit-patience"><div class="fruit-title">Patience</div><div class="fruit-cat">{{ patience_category }}</div></div>
+      <div class="fruit-body">
+        <p>{{ patience_summary }}</p>
+        <div class="bars">
+          <div class="bar-col">
+            <div class="bar-row"><div class="bar-label"><span>Self consistency</span><span>{{ patience_self | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill" style="width: {{ patience_self | times: 20 }}%;"></div></div></div>
+            <div class="bar-row"><div class="bar-label"><span>Observer consistency</span><span>{{ patience_observer | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill observer" style="width: {{ patience_observer | times: 20 }}%;"></div></div></div>
+          </div>
+          <div class="bar-col">
+            <div class="bar-row"><div class="bar-label"><span>Self under pressure</span><span>{{ patience_self_pressure | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill pressure" style="width: {{ patience_self_pressure | times: 20 }}%;"></div></div></div>
+            <div class="bar-row"><div class="bar-label"><span>Observers under pressure</span><span>{{ patience_observer_pressure | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill pressure" style="width: {{ patience_observer_pressure | times: 20 }}%;"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fruit-block">
+      <div class="fruit-head fruit-kindness"><div class="fruit-title">Kindness</div><div class="fruit-cat">{{ kindness_category }}</div></div>
+      <div class="fruit-body">
+        <p>{{ kindness_summary }}</p>
+        <div class="bars">
+          <div class="bar-col">
+            <div class="bar-row"><div class="bar-label"><span>Self consistency</span><span>{{ kindness_self | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill" style="width: {{ kindness_self | times: 20 }}%;"></div></div></div>
+            <div class="bar-row"><div class="bar-label"><span>Observer consistency</span><span>{{ kindness_observer | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill observer" style="width: {{ kindness_observer | times: 20 }}%;"></div></div></div>
+          </div>
+          <div class="bar-col">
+            <div class="bar-row"><div class="bar-label"><span>Self under pressure</span><span>{{ kindness_self_pressure | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill pressure" style="width: {{ kindness_self_pressure | times: 20 }}%;"></div></div></div>
+            <div class="bar-row"><div class="bar-label"><span>Observers under pressure</span><span>{{ kindness_observer_pressure | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill pressure" style="width: {{ kindness_observer_pressure | times: 20 }}%;"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fruit-block">
+      <div class="fruit-head fruit-goodness"><div class="fruit-title">Goodness</div><div class="fruit-cat">{{ goodness_category }}</div></div>
+      <div class="fruit-body">
+        <p>{{ goodness_summary }}</p>
+        <div class="bars">
+          <div class="bar-col">
+            <div class="bar-row"><div class="bar-label"><span>Self consistency</span><span>{{ goodness_self | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill" style="width: {{ goodness_self | times: 20 }}%;"></div></div></div>
+            <div class="bar-row"><div class="bar-label"><span>Observer consistency</span><span>{{ goodness_observer | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill observer" style="width: {{ goodness_observer | times: 20 }}%;"></div></div></div>
+          </div>
+          <div class="bar-col">
+            <div class="bar-row"><div class="bar-label"><span>Self under pressure</span><span>{{ goodness_self_pressure | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill pressure" style="width: {{ goodness_self_pressure | times: 20 }}%;"></div></div></div>
+            <div class="bar-row"><div class="bar-label"><span>Observers under pressure</span><span>{{ goodness_observer_pressure | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill pressure" style="width: {{ goodness_observer_pressure | times: 20 }}%;"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section page-break">
+    <div class="section-head">
+      <div class="section-title">
+        <div class="eyebrow">Fruit by fruit</div>
+        <h2>Faithful formation under pressure</h2>
+      </div>
+      <div class="section-note">Look for encouragement and invitation.</div>
+    </div>
+
+    <div class="fruit-block">
+      <div class="fruit-head fruit-faithfulness"><div class="fruit-title">Faithfulness</div><div class="fruit-cat">{{ faithfulness_category }}</div></div>
+      <div class="fruit-body">
+        <p>{{ faithfulness_summary }}</p>
+        <div class="bars">
+          <div class="bar-col">
+            <div class="bar-row"><div class="bar-label"><span>Self consistency</span><span>{{ faithfulness_self | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill" style="width: {{ faithfulness_self | times: 20 }}%;"></div></div></div>
+            <div class="bar-row"><div class="bar-label"><span>Observer consistency</span><span>{{ faithfulness_observer | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill observer" style="width: {{ faithfulness_observer | times: 20 }}%;"></div></div></div>
+          </div>
+          <div class="bar-col">
+            <div class="bar-row"><div class="bar-label"><span>Self under pressure</span><span>{{ faithfulness_self_pressure | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill pressure" style="width: {{ faithfulness_self_pressure | times: 20 }}%;"></div></div></div>
+            <div class="bar-row"><div class="bar-label"><span>Observers under pressure</span><span>{{ faithfulness_observer_pressure | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill pressure" style="width: {{ faithfulness_observer_pressure | times: 20 }}%;"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fruit-block">
+      <div class="fruit-head fruit-gentleness"><div class="fruit-title">Gentleness</div><div class="fruit-cat">{{ gentleness_category }}</div></div>
+      <div class="fruit-body">
+        <p>{{ gentleness_summary }}</p>
+        <div class="bars">
+          <div class="bar-col">
+            <div class="bar-row"><div class="bar-label"><span>Self consistency</span><span>{{ gentleness_self | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill" style="width: {{ gentleness_self | times: 20 }}%;"></div></div></div>
+            <div class="bar-row"><div class="bar-label"><span>Observer consistency</span><span>{{ gentleness_observer | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill observer" style="width: {{ gentleness_observer | times: 20 }}%;"></div></div></div>
+          </div>
+          <div class="bar-col">
+            <div class="bar-row"><div class="bar-label"><span>Self under pressure</span><span>{{ gentleness_self_pressure | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill pressure" style="width: {{ gentleness_self_pressure | times: 20 }}%;"></div></div></div>
+            <div class="bar-row"><div class="bar-label"><span>Observers under pressure</span><span>{{ gentleness_observer_pressure | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill pressure" style="width: {{ gentleness_observer_pressure | times: 20 }}%;"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fruit-block">
+      <div class="fruit-head fruit-selfcontrol"><div class="fruit-title">Self-control</div><div class="fruit-cat">{{ self_control_category }}</div></div>
+      <div class="fruit-body">
+        <p>{{ self_control_summary }}</p>
+        <div class="bars">
+          <div class="bar-col">
+            <div class="bar-row"><div class="bar-label"><span>Self consistency</span><span>{{ self_control_self | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill" style="width: {{ self_control_self | times: 20 }}%;"></div></div></div>
+            <div class="bar-row"><div class="bar-label"><span>Observer consistency</span><span>{{ self_control_observer | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill observer" style="width: {{ self_control_observer | times: 20 }}%;"></div></div></div>
+          </div>
+          <div class="bar-col">
+            <div class="bar-row"><div class="bar-label"><span>Self under pressure</span><span>{{ self_control_self_pressure | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill pressure" style="width: {{ self_control_self_pressure | times: 20 }}%;"></div></div></div>
+            <div class="bar-row"><div class="bar-label"><span>Observers under pressure</span><span>{{ self_control_observer_pressure | round: 1 }}</span></div><div class="bar-track"><div class="bar-fill pressure" style="width: {{ self_control_observer_pressure | times: 20 }}%;"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEEDBACK AND NEXT STEPS -->
+  <section class="section page-break">
+    <div class="section-head">
+      <div class="section-title">
+        <div class="eyebrow">Observer feedback</div>
+        <h2>Encouragement and growth invitations</h2>
+      </div>
+      <div class="section-note">Written responses are grouped by theme.</div>
+    </div>
+
+    <div class="feedback-box">
+      <h3>Strengths observers named</h3>
+      <div class="quote-text">{{ observer_strength_comments }}</div>
+    </div>
+
+    <div class="feedback-box">
+      <h3>Growth invitations observers named</h3>
+      <div class="quote-text">{{ observer_growth_comments }}</div>
+    </div>
+
+    <div class="feedback-box">
+      <h3>Encouragement observers offered</h3>
+      <div class="quote-text">{{ observer_encouragement_comments }}</div>
+    </div>
+
+    <div class="feedback-box">
+      <h3>Your own reflection</h3>
+      <div class="quote-text">{{ self_final_reflection }}</div>
+    </div>
+
+    <div class="callout soft">
+      <h2>DesignID expression lens</h2>
+      <p>
+        Your current DesignID reference is <strong>{{ designid_primary }}</strong>{% if designid_secondary != blank %} with a secondary reference of <strong>{{ designid_secondary }}</strong>{% endif %}. FruitLife scores do not change because of DesignID. Instead, DesignID helps you ask how the fruit may naturally express through the way God designed you.
+      </p>
+      <p class="small muted">
+        Placeholder language for the first template: this section can become more personalized once the FruitLife + DesignID interpretation library is built.
+      </p>
+    </div>
+
+    <div class="rule"></div>
+
+    <h2>Suggested next steps</h2>
+    <div class="next-step avoid-break">
+      <div class="next-step-num">1</div>
+      <div class="next-step-copy">
+        <strong>Receive the encouragement first.</strong>
+        Notice where observers already see the Spirit's work through you. Begin with gratitude before moving to growth.
+      </div>
+    </div>
+    <div class="next-step avoid-break">
+      <div class="next-step-num">2</div>
+      <div class="next-step-copy">
+        <strong>Choose one growth invitation.</strong>
+        Pick one fruit to practice intentionally for the next 30 days. Keep the practice simple enough to repeat.
+      </div>
+    </div>
+    <div class="next-step avoid-break">
+      <div class="next-step-num">3</div>
+      <div class="next-step-copy">
+        <strong>Invite one conversation.</strong>
+        Ask a trusted person what they noticed, what encouraged them, and what one next step they would gently suggest.
+      </div>
+    </div>
+
+    <div class="scripture avoid-break">
+      <strong>Prayer prompt</strong><br />
+      Holy Spirit, help me receive what is true, release what is not mine to carry, and walk faithfully in the fruit You are forming in me.
+    </div>
+  </section>
+</body>
+</html>
