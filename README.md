@@ -33,6 +33,16 @@ Additional pages:
 - DesignPD Assessment
 - Reflections & Gifts Comparison
 
+## Assessment Report Code
+
+Assessment report assets are organized under `assessments/`:
+
+- `spiritual-gifts/` contains the Spiritual Gifts PDFMonkey template and Make-mapped HTML version.
+- `designid/` contains the DesignID PDFMonkey template and Make JSON payload.
+- `designpd/` contains the DesignPD PDFMonkey template and Make JSON payload.
+
+See `docs/assessment-code-map.md` for the full assessment code map.
+
 ## Notes
 
 The uploaded note is Squarespace section code, not a full standalone app. The files in `fragments/` are the safest source for copy/paste back into Squarespace. The files in `pages/` are lightweight previews so we can inspect and improve each section locally.

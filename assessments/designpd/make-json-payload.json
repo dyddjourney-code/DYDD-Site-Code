@@ -1,0 +1,134 @@
+{
+  "name": "{{10.Name}}",
+  "email": "{{10.Email}}",
+
+  "primary": "{{10.Primary}}",
+  "secondary": "{{10.Secondary}}",
+  "integrative_reflection": "{{10.Integrative_Reflection}}",
+  "reflection_shadow": "{{10.Reflection_Shadow}}",
+"shadow_reflection": "{{10.shadow_reflection}}",
+"plan_integrative_lens": "{{10.plan_integrative_lens}}",
+"plan_shadow_watch": "{{10.plan_shadow_watch}}",
+"decide_integrative_lens": "{{10.decide_integrative_lens}}",
+"decide_shadow_watch": "{{10.decide_shadow_watch}}",
+"do_integrative_lens": "{{10.do_integrative_lens}}",
+"do_shadow_watch": "{{10.do_shadow_watch}}",
+
+  "band_architect": "{{10.band_architect}}",
+  "band_artisan": "{{10.band_artisan}}",
+  "band_shepherd": "{{10.band_shepherd}}",
+  "band_steward": "{{10.band_steward}}",
+
+  "plan_overview": "{{10.plan_overview}}",
+  "decide_overview": "{{10.decide_overview}}",
+  "do_overview": "{{10.do_overview}}",
+
+  "plan_descriptor": "{{10.plan_descriptor}}",
+  "decide_descriptor": "{{10.decide_descriptor}}",
+  "do_descriptor": "{{10.do_descriptor}}",
+
+  "plan_core": "{{10.plan_core}}",
+  "decide_core": "{{10.decide_core}}",
+  "do_core": "{{10.do_core}}",
+
+  "plan_overlay": "{{10.plan_overlay}}",
+  "decide_overlay": "{{10.decide_overlay}}",
+  "do_overlay": "{{10.do_overlay}}",
+
+  "plan_modulator": "{{10.plan_modulator}}",
+  "decide_modulator": "{{10.decide_modulator}}",
+  "do_modulator": "{{10.do_modulator}}",
+
+  "plan_amplifier": "{{10.plan_amplifier}}",
+  "decide_amplifier": "{{10.decide_amplifier}}",
+  "do_amplifier": "{{10.do_amplifier}}",
+
+  "plan_architect_amplifier": "{{10.plan_architect_amplifier}}",
+  "plan_artisan_amplifier": "{{10.plan_artisan_amplifier}}",
+  "plan_shepherd_amplifier": "{{10.plan_shepherd_amplifier}}",
+  "plan_steward_amplifier": "{{10.plan_steward_amplifier}}",
+
+  "decide_architect_amplifier": "{{10.decide_architect_amplifier}}",
+  "decide_artisan_amplifier": "{{10.decide_artisan_amplifier}}",
+  "decide_shepherd_amplifier": "{{10.decide_shepherd_amplifier}}",
+  "decide_steward_amplifier": "{{10.decide_steward_amplifier}}",
+
+  "do_architect_amplifier": "{{10.do_architect_amplifier}}",
+  "do_artisan_amplifier": "{{10.do_artisan_amplifier}}",
+  "do_shepherd_amplifier": "{{10.do_shepherd_amplifier}}",
+  "do_steward_amplifier": "{{10.do_steward_amplifier}}",
+
+"plan_tendency": "{{10.plan_tendency}}",
+"decide_tendency": "{{10.decide_tendency}}",
+"do_tendency": "{{10.do_tendency}}",
+"move_dreamer_minus_doer": "{{10.move_dreamer_minus_doer}}",
+"move_feel_it_minus_think_it": "{{10.move_feel_it_minus_think_it}}",
+"move_solo_minus_together": "{{10.move_solo_minus_together}}",
+
+"plan_score": "{{10.plan_score}}",
+"decide_score": "{{10.decide_score}}",
+"do_score": "{{10.do_score}}",
+
+"conflict_plan_strength": "{{10.conflict_plan_strength}}",
+"conflict_plan_watch": "{{10.conflict_plan_watch}}",
+"conflict_plan_growth": "{{10.conflict_plan_growth}}",
+
+"conflict_decide_strength": "{{10.conflict_decide_strength}}",
+"conflict_decide_watch": "{{10.conflict_decide_watch}}",
+"conflict_decide_growth": "{{10.conflict_decide_growth}}",
+
+"conflict_do_strength": "{{10.conflict_do_strength}}",
+"conflict_do_watch": "{{10.conflict_do_watch}}",
+"conflict_do_growth": "{{10.conflict_do_growth}}",
+
+"collaboration_plan_strength": "{{10.collaboration_plan_strength}}",
+"collaboration_plan_watch": "{{10.collaboration_plan_watch}}",
+"collaboration_plan_growth": "{{10.collaboration_plan_growth}}",
+
+"collaboration_decide_strength": "{{10.collaboration_decide_strength}}",
+"collaboration_decide_watch": "{{10.collaboration_decide_watch}}",
+"collaboration_decide_growth": "{{10.collaboration_decide_growth}}",
+
+"collaboration_do_strength": "{{10.collaboration_do_strength}}",
+"collaboration_do_watch": "{{10.collaboration_do_watch}}",
+"collaboration_do_growth": "{{10.collaboration_do_growth}}",
+
+"leadership_plan_strength": "{{10.leadership_plan_strength}}",
+"leadership_plan_watch": "{{10.leadership_plan_watch}}",
+"leadership_plan_growth": "{{10.leadership_plan_growth}}",
+
+"leadership_decide_strength": "{{10.leadership_decide_strength}}",
+"leadership_decide_watch": "{{10.leadership_decide_watch}}",
+"leadership_decide_growth": "{{10.leadership_decide_growth}}",
+
+"leadership_do_strength": "{{10.leadership_do_strength}}",
+"leadership_do_watch": "{{10.leadership_do_watch}}",
+"leadership_do_growth": "{{10.leadership_do_growth}}",
+
+"pressure_plan_strength": "{{10.pressure_plan_strength}}",
+"pressure_plan_watch": "{{10.pressure_plan_watch}}",
+"pressure_plan_growth": "{{10.pressure_plan_growth}}",
+
+"pressure_decide_strength": "{{10.pressure_decide_strength}}",
+"pressure_decide_watch": "{{10.pressure_decide_watch}}",
+"pressure_decide_growth": "{{10.pressure_decide_growth}}",
+
+"pressure_do_strength": "{{10.pressure_do_strength}}",
+"pressure_do_watch": "{{10.pressure_do_watch}}",
+"pressure_do_growth": "{{10.pressure_do_growth}}",
+
+"sustainability_plan_strength": "{{10.sustainability_plan_strength}}",
+"sustainability_plan_watch": "{{10.sustainability_plan_watch}}",
+"sustainability_plan_growth": "{{10.sustainability_plan_growth}}",
+
+"sustainability_decide_strength": "{{10.sustainability_decide_strength}}",
+"sustainability_decide_watch": "{{10.sustainability_decide_watch}}",
+"sustainability_decide_growth": "{{10.sustainability_decide_growth}}",
+
+"sustainability_do_strength": "{{10.sustainability_do_strength}}",
+"sustainability_do_watch": "{{10.sustainability_do_watch}}",
+"sustainability_do_growth": "{{10.sustainability_do_growth}}",
+
+"report_date": "{{10.report_date}}"
+
+}

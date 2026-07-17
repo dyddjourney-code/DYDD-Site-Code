@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>@page { size: Letter; margin: 0.65in; }
+* { box-sizing: border-box; }
+body { font-family: Arial, Helvetica, sans-serif; color: #1f2937; margin: 0; }
+h1 { font-size: 22px; margin: 0 0 8px; }
+h2 { font-size: 16px; margin: 18px 0 8px; }
+h3 { font-size: 13px; margin: 14px 0 6px; }
+p { font-size: 11px; line-height: 1.45; margin: 0 0 8px; }
+.small { font-size: 10px; color: #4b5563; }
+.hr { height: 1px; background: #e5e7eb; margin: 12px 0; }
+.card { border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px; margin: 10px 0; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.badge { display: inline-block; padding: 3px 8px; border-radius: 999px; background: #f3f4f6; font-size: 10px; }
+.kv { display: grid; grid-template-columns: 120px 1fr; gap: 8px; font-size: 11px; }
+.k { color: #6b7280; }
+.page-break { page-break-before: always; break-before: page; }
+.avoid-break { break-inside: avoid; page-break-inside: avoid; }
+
+.barWrap { margin-top: 8px; }
+.barRow { display: grid; grid-template-columns: 120px 1fr 36px; gap: 10px; align-items: center; margin: 8px 0; }
+.barLabel { font-size: 11px; font-weight: 600; }
+.barTrack { width: 100%; height: 12px; border-radius: 999px; background: #eef2f7; overflow: hidden; }
+.barFill { height: 100%; border-radius: 999px; background: #111827; width: 0%; }
+.barVal { font-size: 11px; text-align: right; color: #111827; }
+
+.table { width: 100%; border-collapse: collapse; font-size: 10px; }
+.table th, .table td { border: 1px solid #e5e7eb; padding: 6px; vertical-align: top; }
+.table th { background: #f9fafb; text-align: left; }
+</style>
+</head>
+<body>
+
+  <!-- Cover -->
+  <div class="card avoid-break">
+    <h1>Spiritual Gifts Assessment Report</h1>
+    <div class="kv" style="margin-top:10px;">
+      <div class="k">Name</div><div>{{4.`2`}}</div>
+      <div class="k">Email</div><div>{{4.`1`}}</div>
+      <div class="k">Timestamp</div><div>{{4.`0`}}</div>
+    </div>
+    <div class="hr"></div>
+    <p class="small">
+      This report summarizes your top spiritual gifts, what they look like in practice, and growth guidance for your strongest two gifts.
+    </p>
+  </div>
+
+  <!-- Top 5 Summary + Chart -->
+  <div class="card avoid-break">
+    <h2>Your Top 5 Gifts</h2>
+
+    <div class="barWrap">
+      <div class="barRow">
+        <div class="barLabel">{{4.`27`}}</div>
+        <div class="barTrack"><div class="barFill" style="width: {{4.`77`}}%;"></div></div>
+        <div class="barVal">{{4.`28`}}</div>
+      </div>
+      <div class="barRow">
+        <div class="barLabel">{{4.`29`}}</div>
+        <div class="barTrack"><div class="barFill" style="width: {{4.`78`}}%;"></div></div>
+        <div class="barVal">{{4.`30`}}</div>
+      </div>
+      <div class="barRow">
+        <div class="barLabel">{{4.`31`}}</div>
+        <div class="barTrack"><div class="barFill" style="width: {{4.`79`}}%;"></div></div>
+        <div class="barVal">{{4.`32`}}</div>
+      </div>
+      <div class="barRow">
+        <div class="barLabel">{{4.`33`}}</div>
+        <div class="barTrack"><div class="barFill" style="width: {{4.`80`}}%;"></div></div>
+        <div class="barVal">{{4.`34`}}</div>
+      </div>
+      <div class="barRow">
+        <div class="barLabel">{{4.`35`}}</div>
+        <div class="barTrack"><div class="barFill" style="width: {{4.`81`}}%;"></div></div>
+        <div class="barVal">{{4.`36`}}</div>
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Gift</th>
+          <th>Definition</th>
+          <th>Scripture</th>
+          <th>How it shows up</th>
+          <th>Correlation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>{{4.`27`}}</b></td>
+          <td>{{4.`37`}}</td>
+          <td>{{4.`38`}}</td>
+          <td>{{4.`39`}}</td>
+          <td>{{4.`40`}}</td>
+        </tr>
+        <tr>
+          <td><b>{{4.`29`}}</b></td>
+          <td>{{4.`46`}}</td>
+          <td>{{4.`47`}}</td>
+          <td>{{4.`48`}}</td>
+          <td>{{4.`49`}}</td>
+        </tr>
+        <tr>
+          <td><b>{{4.`31`}}</b></td>
+          <td>{{4.`55`}}</td>
+          <td>{{4.`56`}}</td>
+          <td>{{4.`57`}}</td>
+          <td>{{4.`58`}}</td>
+        </tr>
+        <tr>
+          <td><b>{{4.`33`}}</b></td>
+          <td>{{4.`59`}}</td>
+          <td>{{4.`60`}}</td>
+          <td>{{4.`61`}}</td>
+          <td>{{4.`62`}}</td>
+        </tr>
+        <tr>
+          <td><b>{{4.`35`}}</b></td>
+          <td>{{4.`63`}}</td>
+          <td>{{4.`64`}}</td>
+          <td>{{4.`65`}}</td>
+          <td>{{4.`66`}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- Deep Dive: Top 1 -->
+  <div class="card">
+    <h2>Deep Dive: {{4.`27`}}</h2>
+    <p><span class="badge">Anchor Scripture</span> <b>{{4.`45`}}</b></p>
+    <div class="hr"></div>
+    <div class="grid2">
+      <div class="avoid-break">
+        <h3>Maturity Overview</h3>
+        <p>{{4.`41`}}</p>
+      </div>
+      <div class="avoid-break">
+        <h3>Growth Areas</h3>
+        <p>{{4.`42`}}</p>
+      </div>
+      <div class="avoid-break">
+        <h3>Signs of Immaturity</h3>
+        <p>{{4.`43`}}</p>
+      </div>
+      <div class="avoid-break">
+        <h3>Steps to Grow</h3>
+        <p>{{4.`44`}}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Deep Dive: Top 2 -->
+  <div class="card">
+    <h2>Deep Dive: {{4.`29`}}</h2>
+    <p><span class="badge">Anchor Scripture</span> <b>{{4.`54`}}</b></p>
+    <div class="hr"></div>
+    <div class="grid2">
+      <div class="avoid-break">
+        <h3>Maturity Overview</h3>
+        <p>{{4.`50`}}</p>
+      </div>
+      <div class="avoid-break">
+        <h3>Growth Areas</h3>
+        <p>{{4.`51`}}</p>
+      </div>
+      <div class="avoid-break">
+        <h3>Signs of Immaturity</h3>
+        <p>{{4.`52`}}</p>
+      </div>
+      <div class="avoid-break">
+        <h3>Steps to Grow</h3>
+        <p>{{4.`53`}}</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="small" style="margin-top:14px;">
+    Generated for {{4.`2`}} • {{4.`0`}}
+  </p>
+
+</body>
+</html>

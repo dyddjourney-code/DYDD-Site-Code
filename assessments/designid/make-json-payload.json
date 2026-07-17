@@ -1,0 +1,82 @@
+{
+  "Timestamp": "{{20.`0`}}",
+  "Email": "{{20.`1`}}",
+  "Name": "{{20.`2`}}",
+
+  "Architect_Pts": "{{20.`3`}}",
+  "Artisan_Pts": "{{20.`4`}}",
+  "Shepherd_Pts": "{{20.`5`}}",
+  "Steward_Pts": "{{20.`6`}}",
+  "Total_Pts": "{{20.`7`}}",
+
+  "Architect_Pct": "{{20.`3`}}",
+  "Artisan_Pct": "{{20.`4`}}",
+  "Shepherd_Pct": "{{20.`5`}}",
+  "Steward_Pct": "{{20.`6`}}",
+
+  "Band_Architect": "{{20.`12`}}",
+  "Band_Artisan": "{{20.`13`}}",
+  "Band_Shepherd": "{{20.`14`}}",
+  "Band_Steward": "{{20.`15`}}",
+
+  "Primary": "{{20.`25`}}",
+  "Secondary": "{{20.`26`}}",
+  "PairKey": "{{12.`27`}}",
+  "Integrative_Reflection": "{{20.`28`}}",
+"Primary_Text": "{{20.`29`}}",
+  "Secondary_Text": "{{20.`30`}}",
+
+ "Primary_Reflection": "{{trim(replace(replace(20.`31`; newline; space); tab; space))}}",
+"Primary_Core": "{{trim(replace(replace(20.`32`; newline; space); tab; space))}}",
+"Primary_Scripture": "{{trim(replace(replace(20.`33`; newline; space); tab; space))}}",
+"Primary_Summary": "{{trim(replace(replace(20.`34`; newline; space); tab; space))}}",
+ 
+
+"Secondary_Reflection": "{{trim(replace(replace(20.`35`; newline; space); tab; space))}}",
+"Secondary_Core": "{{trim(replace(replace(20.`36`; newline; space); tab; space))}}",
+"Secondary_Scripture": "{{trim(replace(replace(20.`37`; newline; space); tab; space))}}",
+"Secondary_Summary": "{{trim(replace(replace(20.`38`; newline; space); tab; space))}}",
+
+  "Integrative_Scripture": "{{trim(replace(replace(20.`39`; newline; space); tab; space))}}",
+"Reflection_Of_God": "{{trim(replace(replace(20.`40`; newline; space); tab; space))}}",
+"Integrative_Expression": "{{trim(replace(replace(20.`41`; newline; space); tab; space))}}",
+"Spiritual_Strength": "{{trim(replace(replace(20.`42`; newline; space); tab; space))}}",
+"Potential_Shadow": "{{trim(replace(replace(20.`43`; newline; space); tab; space))}}",
+"Integrative_Growth": "{{trim(replace(replace(20.`44`; newline; space); tab; space))}}",
+"Integrative_Summary": "{{trim(replace(replace(20.`45`; newline; space); tab; space))}}",
+
+"Approach_to_Learning": "{{trim(replace(replace(20.`46`; newline; space); tab; space))}}",
+"Learning_Strategies": "{{trim(replace(replace(20.`47`; newline; space); tab; space))}}",
+"Learning_Scripture": "{{trim(replace(replace(20.`48`; newline; space); tab; space))}}",
+
+"Contribution_To_Body": "{{trim(replace(replace(20.`49`; newline; space); tab; space))}}",
+"Contributions": "{{trim(replace(replace(20.`50`; newline; space); tab; space))}}",
+"Contribution_Scripture": "{{trim(replace(replace(20.`51`; newline; space); tab; space))}}",
+
+"Reflection_Shadow": "{{20.`52`}}",
+
+"Shadow_Overview": "{{trim(replace(replace(20.`53`; newline; space); tab; space))}}",
+
+"Shadow_Risks": "{{trim(replace(replace(20.`54`; newline; space); tab; space))}}",
+
+"Shadow_Root_Cause": "{{trim(replace(replace(20.`55`; newline; space); tab; space))}}",
+
+"Shadow_Redemption": "{{trim(replace(replace(20.`56`; newline; space); tab; space))}}",
+
+"Shadow_Risk_A": "{{20.`59`}}",
+"Shadow_Risk_B": "{{20.`60`}}",
+"Shadow_Risk_C": "{{20.`61`}}",
+"Shadow_Risk_D": "{{20.`62`}}",
+
+"Shadow_Root_A": "{{20.`63`}}",
+"Shadow_Root_B": "{{20.`64`}}",
+"Shadow_Root_C": "{{20.`65`}}",
+"Shadow_Root_D": "{{20.`66`}}",
+
+"Shadow_Red_A": "{{20.`67`}}",
+"Shadow_Red_B": "{{20.`68`}}",
+"Shadow_Red_C": "{{20.`69`}}",
+"Shadow_Red_D": "{{20.`70`}}",
+
+"Shadow_Scripture": "{{trim(replace(replace(20.`57`; newline; space); tab; space))}}"
+}

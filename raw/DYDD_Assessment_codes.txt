@@ -1,0 +1,4648 @@
+DYDD PDF Monkey and JSON codes
+
+Included:
+Spiritual Gifts
+DesignID
+DesignPD
+
+Spiritual Gifts PDF Monkey Code:
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Spiritual Gifts Assessment Report</title>
+
+  <style>
+    /* Give room for fixed footer */
+    @page { size: Letter; margin: 0.65in 0.65in 1.05in 0.65in; }
+    * { box-sizing: border-box; }
+    body { font-family: Arial, Helvetica, sans-serif; color: #1f2937; margin: 0; padding-bottom: 0.6in; }
+
+    h1 { font-size: 22px; margin: 0 0 8px; }
+    h2 { font-size: 16px; margin: 18px 0 8px; }
+    h3 {
+      font-size: 13px;
+      margin: 14px 0 6px;
+      border-bottom: 2px solid #4A6239;
+      padding-bottom: 2px;
+    }
+    p  { font-size: 11px; line-height: 1.45; margin: 0 0 8px; }
+
+    .small { font-size: 10px; color: #4b5563; }
+    .muted { color: #6b7280; }
+    .hr { height: 1px; background: #e5e7eb; margin: 12px 0; }
+
+    .card {
+      border: 1px solid #e5e7eb;
+      border-left: 4px solid #4A6239;
+      border-radius: 10px;
+      padding: 14px;
+      margin: 12px 0;
+    }
+
+    .avoid-break { break-inside: avoid; page-break-inside: avoid; }
+    .page-break { page-break-before: always; break-before: page; }
+
+    .headerRow { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .logo { height: 42px; width: auto; }
+
+    .kv { display: grid; grid-template-columns: 120px 1fr; gap: 8px; font-size: 11px; margin-top: 10px; }
+    .k  { color: #6b7280; }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #4A6239;
+      color: white;
+      font-size: 10px;
+    }
+
+    /* Top 5 gift blocks */
+    .giftWrap { margin-top: 14px; }
+
+    .giftRow {
+      background: #4A6239;
+      color: white;
+      padding: 10px 14px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* Table */
+    .table { width: 100%; border-collapse: collapse; font-size: 10px; table-layout: fixed; }
+    .table th, .table td { border: 1px solid #e5e7eb; padding: 7px; vertical-align: top; word-wrap: break-word; }
+    .table th { background: #f9fafb; text-align: left; }
+
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    /* Correlations bullets */
+    .corr { margin: 0; padding-left: 16px; }
+    .corr li { margin: 0 0 4px; }
+
+    /* Reflection highlight colors */
+    .arch { color: #D4A451; font-weight: 700; }   /* Architect */
+    .arti { color: #647C9B; font-weight: 700; }   /* Artisan */
+    .shep { color: #739D5E; font-weight: 700; }   /* Shepherd */
+    .stew { color: #5A496B; font-weight: 700; }   /* Steward */
+
+    /* Deep Dive styling */
+    .deepHeader {
+      background: #4A6239;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    /* Final page DYDD section */
+    .dydd-green { color: #4A6239; }
+
+    .dydd-highlight {
+      color: #4A6239;
+      font-weight: 700;
+    }
+
+    .dydd-flex {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 18px;
+      align-items: start;
+      margin-top: 10px;
+    }
+
+    .dydd-image {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .dydd-callout {
+      margin: 0 0 10px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #4A6239;
+    }
+
+    /* Footer */
+    .footer {
+      position: fixed;
+      bottom: 0.25in;
+      left: 0.65in;
+      right: 0.65in;
+      font-size: 9px;
+      color: #6b7280;
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 6px;
+      background: white;
+    }
+
+    /* Welcome scripture darker */
+    .welcome-verse { font-size: 11px; color: #111827; }
+  </style>
+</head>
+
+<body>
+
+  <!-- Fixed Footer -->
+  <div class="footer">
+    <div>Discover Your Divine Design • discoverdivine.design</div>
+    <div>© 2025 All Rights Reserved</div>
+  </div>
+
+  <!-- PAGE 1: COVER / WELCOME -->
+  <div class="card avoid-break">
+    <div class="headerRow">
+      <div>
+        <h1>Spiritual Gifts Assessment Report</h1>
+        <div class="small muted">Personalized results and next steps for growth and service.</div>
+      </div>
+      <img class="logo"
+           src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/70bddac9-e9c5-40ef-8bf8-48aaa5b498f9/dydd-gifts-logo.png?format=2500w"
+           alt="Discover Your Divine Design" />
+    </div>
+
+    <div class="kv">
+      <div class="k">Name</div><div>{{ Full_Name }}</div>
+      <div class="k">Email</div><div>{{ Email_Address }}</div>
+    </div>
+
+    <div class="hr"></div>
+
+    <p><b>Welcome to Your Spiritual Gifts Assessment Report</b></p>
+    <p>
+      Thank you for taking the time to explore how God has uniquely equipped you to serve His Kingdom.
+      At Discover Your Divine Design, we offer this assessment completely free because we believe every believer
+      should have access to tools that help them understand who God created them to be. Your design is not accidental,
+      and your gifts have purpose, meaning, and eternal significance.
+    </p>
+    <p>
+      Our prayer is that this report encourages you, helps clarify your calling, and helps you step confidently into
+      the good works God has prepared for you. May what you discover here deepen your love for Christ, strengthen your service
+      within the Body, and illuminate the path He has placed before you.
+    </p>
+
+    <p class="welcome-verse">
+      “Now to each one the manifestation of the Spirit is given for the common good.” (1 Corinthians 12:7)
+    </p>
+  </div>
+
+  <!-- PAGE 1: TOP 5 GIFT BLOCKS -->
+  <div class="card avoid-break">
+    <h2>Your Top 5 Spiritual Gifts</h2>
+
+    <p>
+      These five gifts emerged most consistently throughout your responses and represent the areas where your spiritual design may most naturally express itself.
+    </p>
+
+    <div class="giftWrap">
+      <div class="giftRow">1. {{ Top1_Name }}</div>
+      <div class="giftRow">2. {{ Top2_Name }}</div>
+      <div class="giftRow">3. {{ Top3_Name }}</div>
+      <div class="giftRow">4. {{ Top4_Name }}</div>
+      <div class="giftRow">5. {{ Top5_Name }}</div>
+    </div>
+  </div>
+
+  <!-- PAGE 2 starts here -->
+  <div class="page-break"></div>
+
+  <!-- PAGE 2: TOP 5 TABLE -->
+  <div class="card">
+    <h2>Top 5 Gift Summary</h2>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="width: 12%;">Gift</th>
+          <th style="width: 20%;">Definition</th>
+          <th style="width: 16%;">Scripture</th>
+          <th style="width: 18%;">How it shows up</th>
+          <th style="width: 34%;">DesignID reflection correlations</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        {% assign lines = Top1_Correlation | newline_to_br | split: '<br />' %}
+        <tr>
+          <td><b>{{ Top1_Name }}</b></td>
+          <td>{{ Top1_Definition }}</td>
+          <td>{{ Top1_Scripture }}</td>
+          <td>{{ Top1_Blurb }}</td>
+          <td>
+            <ul class="corr">
+              {% for line in lines %}
+                {% assign x = line
+                  | replace: 'Architect', '<span class="arch">Architect</span>'
+                  | replace: 'Artisan',  '<span class="arti">Artisan</span>'
+                  | replace: 'Shepherd', '<span class="shep">Shepherd</span>'
+                  | replace: 'Steward',  '<span class="stew">Steward</span>' %}
+                {% if x != '' %}<li>{{ x }}</li>{% endif %}
+              {% endfor %}
+            </ul>
+          </td>
+        </tr>
+
+        {% assign lines = Top2_Correlation | newline_to_br | split: '<br />' %}
+        <tr>
+          <td><b>{{ Top2_Name }}</b></td>
+          <td>{{ Top2_Definition }}</td>
+          <td>{{ Top2_Scripture }}</td>
+          <td>{{ Top2_Blurb }}</td>
+          <td>
+            <ul class="corr">
+              {% for line in lines %}
+                {% assign x = line
+                  | replace: 'Architect', '<span class="arch">Architect</span>'
+                  | replace: 'Artisan',  '<span class="arti">Artisan</span>'
+                  | replace: 'Shepherd', '<span class="shep">Shepherd</span>'
+                  | replace: 'Steward',  '<span class="stew">Steward</span>' %}
+                {% if x != '' %}<li>{{ x }}</li>{% endif %}
+              {% endfor %}
+            </ul>
+          </td>
+        </tr>
+
+        {% assign lines = Top3_Correlation | newline_to_br | split: '<br />' %}
+        <tr>
+          <td><b>{{ Top3_Name }}</b></td>
+          <td>{{ Top3_Definition }}</td>
+          <td>{{ Top3_Scripture }}</td>
+          <td>{{ Top3_Blurb }}</td>
+          <td>
+            <ul class="corr">
+              {% for line in lines %}
+                {% assign x = line
+                  | replace: 'Architect', '<span class="arch">Architect</span>'
+                  | replace: 'Artisan',  '<span class="arti">Artisan</span>'
+                  | replace: 'Shepherd', '<span class="shep">Shepherd</span>'
+                  | replace: 'Steward',  '<span class="stew">Steward</span>' %}
+                {% if x != '' %}<li>{{ x }}</li>{% endif %}
+              {% endfor %}
+            </ul>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <div class="page-break"></div>
+
+  <div class="card">
+    <h2>Top 5 Gift Summary (continued)</h2>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="width: 12%;">Gift</th>
+          <th style="width: 20%;">Definition</th>
+          <th style="width: 16%;">Scripture</th>
+          <th style="width: 18%;">How it shows up</th>
+          <th style="width: 34%;">DesignID reflection correlations</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        {% assign lines = Top4_Correlation | newline_to_br | split: '<br />' %}
+        <tr>
+          <td><b>{{ Top4_Name }}</b></td>
+          <td>{{ Top4_Definition }}</td>
+          <td>{{ Top4_Scripture }}</td>
+          <td>{{ Top4_Blurb }}</td>
+          <td>
+            <ul class="corr">
+              {% for line in lines %}
+                {% assign x = line
+                  | replace: 'Architect', '<span class="arch">Architect</span>'
+                  | replace: 'Artisan',  '<span class="arti">Artisan</span>'
+                  | replace: 'Shepherd', '<span class="shep">Shepherd</span>'
+                  | replace: 'Steward',  '<span class="stew">Steward</span>' %}
+                {% if x != '' %}<li>{{ x }}</li>{% endif %}
+              {% endfor %}
+            </ul>
+          </td>
+        </tr>
+
+        {% assign lines = Top5_Correlation | newline_to_br | split: '<br />' %}
+        <tr>
+          <td><b>{{ Top5_Name }}</b></td>
+          <td>{{ Top5_Definition }}</td>
+          <td>{{ Top5_Scripture }}</td>
+          <td>{{ Top5_Blurb }}</td>
+          <td>
+            <ul class="corr">
+              {% for line in lines %}
+                {% assign x = line
+                  | replace: 'Architect', '<span class="arch">Architect</span>'
+                  | replace: 'Artisan',  '<span class="arti">Artisan</span>'
+                  | replace: 'Shepherd', '<span class="shep">Shepherd</span>'
+                  | replace: 'Steward',  '<span class="stew">Steward</span>' %}
+                {% if x != '' %}<li>{{ x }}</li>{% endif %}
+              {% endfor %}
+            </ul>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PAGE 3: Deep dives start cleanly -->
+  <div class="page-break"></div>
+
+  <!-- DEEP DIVE TOP 1 -->
+  <div class="card">
+    <div class="deepHeader">Deep Dive: {{ Top1_Name }}</div>
+    <p><span class="badge">Anchor Scripture</span> <b>{{ Top1_AnchorScripture }}</b></p>
+    <div class="hr"></div>
+
+    <div class="grid2">
+      <div class="avoid-break">
+        <h3>Maturity Overview</h3>
+        <p>{{ Top1_MaturityDescription }}</p>
+      </div>
+      <div class="avoid-break">
+        <h3>Growth Areas</h3>
+        <p>{{ Top1_GrowthAreas }}</p>
+      </div>
+      <div class="avoid-break">
+        <h3>Signs of Immaturity</h3>
+        <p>{{ Top1_SignsOfImmaturity }}</p>
+      </div>
+      <div class="avoid-break">
+        <h3>Steps to Grow</h3>
+        <p>{{ Top1_StepsToGrow }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEEP DIVE TOP 2 -->
+  <div class="card">
+    <div class="deepHeader">Deep Dive: {{ Top2_Name }}</div>
+    <p><span class="badge">Anchor Scripture</span> <b>{{ Top2_AnchorScripture }}</b></p>
+    <div class="hr"></div>
+
+    <div class="grid2">
+      <div class="avoid-break">
+        <h3>Maturity Overview</h3>
+        <p>{{ Top2_MaturityDescription }}</p>
+      </div>
+      <div class="avoid-break">
+        <h3>Growth Areas</h3>
+        <p>{{ Top2_GrowthAreas }}</p>
+      </div>
+      <div class="avoid-break">
+        <h3>Signs of Immaturity</h3>
+        <p>{{ Top2_SignsOfImmaturity }}</p>
+      </div>
+      <div class="avoid-break">
+        <h3>Steps to Grow</h3>
+        <p>{{ Top2_StepsToGrow }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DYDD EXPLAINER PAGE -->
+  <div class="page-break"></div>
+
+  <div class="card">
+    <h2 class="dydd-green">What is Discover Your Divine Design</h2>
+
+    <p class="dydd-callout">On Purpose <span class="dydd-green">-</span> For Purpose</p>
+
+    <div class="dydd-flex">
+      <div>
+        <p>
+          DYDD is a journey that helps you recognize how God has uniquely shaped your life for His purpose. By exploring
+          your identity, expertise, story, desires, gifts, and niche, you begin to see the intentional way God has designed
+          you to love, serve, and make a difference in the Body of Christ and beyond.
+        </p>
+
+        <p>
+          At the heart of this journey is the belief that you were created <span class="dydd-highlight">On Purpose - For Purpose</span>.
+          Your life is not random, and your design is not accidental. God has formed you with intention, redeemed your story
+          through Christ, and prepared good works for you to walk in faithfully.
+        </p>
+
+        <p>
+          Discovering Your Divine Design is not about striving, performing, or trying to impress God. It is about responding
+          to His grace and living more fully as the person He created you to be. As you understand your DESIGN more clearly,
+          you can serve with greater confidence, humility, and joy.
+        </p>
+
+        <p class="small" style="color:#111827;">
+          “For we are God’s workmanship, created in Christ Jesus to do good works, which God prepared in advance for us to do.”
+          (Ephesians 2:10)
+        </p>
+      </div>
+
+      <div>
+        <img class="dydd-image"
+             src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/a3b5b69f-3667-406c-9ba8-e9ec7ccddae3/envato-labs-image-edit+%2861%29.png?format=2500w"
+             alt="Discover Your Divine Design acronym visual" />
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <h3>What were the DesignID reflection correlations</h3>
+    <p>
+      As part of the DYDD ecosystem, we have built an identity assessment designed to help you see how you reflect who God is
+      as part of His creation and how you can use your design to love and serve. In this report, you’ve been given clues for how
+      each gift can correlate with the four reflections. The DesignID assessment is a key aspect of the DYDD journey.
+    </p>
+
+    <h3>What else do we offer</h3>
+    <p>
+      We offer a variety of resources including this Spiritual Gifts Assessment, the DesignID Assessment, the Discover Your Divine Design
+      book and workbook, online classes, and more. Check out our resource gateway.
+    </p>
+
+    <p class="small">
+      Resources: <b>discoverdivine.design/resources</b>
+    </p>
+  </div>
+
+  <p class="small" style="margin-top:14px;">
+    Generated for {{ Full_Name }}
+  </p>
+
+</body>
+</html>
+
+Spiritual Gifts JSON Code:Has some Make direct mapping
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>@page { size: Letter; margin: 0.65in; }
+* { box-sizing: border-box; }
+body { font-family: Arial, Helvetica, sans-serif; color: #1f2937; margin: 0; }
+h1 { font-size: 22px; margin: 0 0 8px; }
+h2 { font-size: 16px; margin: 18px 0 8px; }
+h3 { font-size: 13px; margin: 14px 0 6px; }
+p { font-size: 11px; line-height: 1.45; margin: 0 0 8px; }
+.small { font-size: 10px; color: #4b5563; }
+.hr { height: 1px; background: #e5e7eb; margin: 12px 0; }
+.card { border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px; margin: 10px 0; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.badge { display: inline-block; padding: 3px 8px; border-radius: 999px; background: #f3f4f6; font-size: 10px; }
+.kv { display: grid; grid-template-columns: 120px 1fr; gap: 8px; font-size: 11px; }
+.k { color: #6b7280; }
+.page-break { page-break-before: always; break-before: page; }
+.avoid-break { break-inside: avoid; page-break-inside: avoid; }
+
+.barWrap { margin-top: 8px; }
+.barRow { display: grid; grid-template-columns: 120px 1fr 36px; gap: 10px; align-items: center; margin: 8px 0; }
+.barLabel { font-size: 11px; font-weight: 600; }
+.barTrack { width: 100%; height: 12px; border-radius: 999px; background: #eef2f7; overflow: hidden; }
+.barFill { height: 100%; border-radius: 999px; background: #111827; width: 0%; }
+.barVal { font-size: 11px; text-align: right; color: #111827; }
+
+.table { width: 100%; border-collapse: collapse; font-size: 10px; }
+.table th, .table td { border: 1px solid #e5e7eb; padding: 6px; vertical-align: top; }
+.table th { background: #f9fafb; text-align: left; }
+</style>
+</head>
+<body>
+
+  <!-- Cover -->
+  <div class="card avoid-break">
+    <h1>Spiritual Gifts Assessment Report</h1>
+    <div class="kv" style="margin-top:10px;">
+      <div class="k">Name</div><div>{{4.`2`}}</div>
+      <div class="k">Email</div><div>{{4.`1`}}</div>
+      <div class="k">Timestamp</div><div>{{4.`0`}}</div>
+    </div>
+    <div class="hr"></div>
+    <p class="small">
+      This report summarizes your top spiritual gifts, what they look like in practice, and growth guidance for your strongest two gifts.
+    </p>
+  </div>
+
+  <!-- Top 5 Summary + Chart -->
+  <div class="card avoid-break">
+    <h2>Your Top 5 Gifts</h2>
+
+    <div class="barWrap">
+      <div class="barRow">
+        <div class="barLabel">{{4.`27`}}</div>
+        <div class="barTrack"><div class="barFill" style="width: {{4.`77`}}%;"></div></div>
+        <div class="barVal">{{4.`28`}}</div>
+      </div>
+      <div class="barRow">
+        <div class="barLabel">{{4.`29`}}</div>
+        <div class="barTrack"><div class="barFill" style="width: {{4.`78`}}%;"></div></div>
+        <div class="barVal">{{4.`30`}}</div>
+      </div>
+      <div class="barRow">
+        <div class="barLabel">{{4.`31`}}</div>
+        <div class="barTrack"><div class="barFill" style="width: {{4.`79`}}%;"></div></div>
+        <div class="barVal">{{4.`32`}}</div>
+      </div>
+      <div class="barRow">
+        <div class="barLabel">{{4.`33`}}</div>
+        <div class="barTrack"><div class="barFill" style="width: {{4.`80`}}%;"></div></div>
+        <div class="barVal">{{4.`34`}}</div>
+      </div>
+      <div class="barRow">
+        <div class="barLabel">{{4.`35`}}</div>
+        <div class="barTrack"><div class="barFill" style="width: {{4.`81`}}%;"></div></div>
+        <div class="barVal">{{4.`36`}}</div>
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Gift</th>
+          <th>Definition</th>
+          <th>Scripture</th>
+          <th>How it shows up</th>
+          <th>Correlation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>{{4.`27`}}</b></td>
+          <td>{{4.`37`}}</td>
+          <td>{{4.`38`}}</td>
+          <td>{{4.`39`}}</td>
+          <td>{{4.`40`}}</td>
+        </tr>
+        <tr>
+          <td><b>{{4.`29`}}</b></td>
+          <td>{{4.`46`}}</td>
+          <td>{{4.`47`}}</td>
+          <td>{{4.`48`}}</td>
+          <td>{{4.`49`}}</td>
+        </tr>
+        <tr>
+          <td><b>{{4.`31`}}</b></td>
+          <td>{{4.`55`}}</td>
+          <td>{{4.`56`}}</td>
+          <td>{{4.`57`}}</td>
+          <td>{{4.`58`}}</td>
+        </tr>
+        <tr>
+          <td><b>{{4.`33`}}</b></td>
+          <td>{{4.`59`}}</td>
+          <td>{{4.`60`}}</td>
+          <td>{{4.`61`}}</td>
+          <td>{{4.`62`}}</td>
+        </tr>
+        <tr>
+          <td><b>{{4.`35`}}</b></td>
+          <td>{{4.`63`}}</td>
+          <td>{{4.`64`}}</td>
+          <td>{{4.`65`}}</td>
+          <td>{{4.`66`}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- Deep Dive: Top 1 -->
+  <div class="card">
+    <h2>Deep Dive: {{4.`27`}}</h2>
+    <p><span class="badge">Anchor Scripture</span> <b>{{4.`45`}}</b></p>
+    <div class="hr"></div>
+    <div class="grid2">
+      <div class="avoid-break">
+        <h3>Maturity Overview</h3>
+        <p>{{4.`41`}}</p>
+      </div>
+      <div class="avoid-break">
+        <h3>Growth Areas</h3>
+        <p>{{4.`42`}}</p>
+      </div>
+      <div class="avoid-break">
+        <h3>Signs of Immaturity</h3>
+        <p>{{4.`43`}}</p>
+      </div>
+      <div class="avoid-break">
+        <h3>Steps to Grow</h3>
+        <p>{{4.`44`}}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Deep Dive: Top 2 -->
+  <div class="card">
+    <h2>Deep Dive: {{4.`29`}}</h2>
+    <p><span class="badge">Anchor Scripture</span> <b>{{4.`54`}}</b></p>
+    <div class="hr"></div>
+    <div class="grid2">
+      <div class="avoid-break">
+        <h3>Maturity Overview</h3>
+        <p>{{4.`50`}}</p>
+      </div>
+      <div class="avoid-break">
+        <h3>Growth Areas</h3>
+        <p>{{4.`51`}}</p>
+      </div>
+      <div class="avoid-break">
+        <h3>Signs of Immaturity</h3>
+        <p>{{4.`52`}}</p>
+      </div>
+      <div class="avoid-break">
+        <h3>Steps to Grow</h3>
+        <p>{{4.`53`}}</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="small" style="margin-top:14px;">
+    Generated for {{4.`2`}} • {{4.`0`}}
+  </p>
+
+</body>
+</html>
+
+DesignID PDFMonkey Report Code:
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    * { box-sizing: border-box; }
+
+    :root{
+      --architect:#D4A451;
+      --artisan:#647C9B;
+      --shepherd:#739D5E;
+      --steward:#5A496B;
+
+      --line:#D9D9D9;
+      --muted:#666;
+    }
+
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      color:#111;
+      margin:0;
+      padding:0;
+      font-size:13.5px;
+      line-height:1.35;
+      background:#fff;
+      font-weight:400;
+    }
+
+    /* NOTE: removed global * { color:#111; } to prevent overriding white text */
+    p, li { color:#111; }
+    td, th { color:#111; }
+
+    .page{ padding:40px 44px; }
+    .page-break{ page-break-after: always; break-after: page; }
+
+    h1,h2,h3{ margin:0; }
+    h1{ font-size:30px; font-weight:700; }
+    h2{ font-size:18px; margin-top:16px; }
+    h3{ font-size:13px; margin-top:10px; }
+
+    .muted{ color:var(--muted); }
+    .center{ text-align:center; }
+
+    .rule{ height:2px; background:#000; opacity:.2; margin:12px 0 14px; }
+
+    .card{
+      border:1px solid var(--line);
+      border-radius:10px;
+      padding:14px;
+      background:#fff;
+      display:block;
+      width:100%;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    th,td{ border:1px solid #000; padding:10px; vertical-align:top; }
+    th{ background:#f5f5f5; font-weight:700; }
+
+    /* ===== Colored rows (force white text regardless of globals) ===== */
+    .r-architect{ background:var(--architect); }
+    .r-artisan{ background:var(--artisan); }
+    .r-shepherd{ background:var(--shepherd); }
+    .r-steward{ background:var(--steward); }
+
+    .r-architect, .r-artisan, .r-shepherd, .r-steward { color:#fff !important; }
+    .r-architect td, .r-architect th,
+    .r-artisan td, .r-artisan th,
+    .r-shepherd td, .r-shepherd th,
+    .r-steward td, .r-steward th { color:#fff !important; }
+
+    /* Keep links readable if any appear on colored areas */
+    .r-architect a, .r-artisan a, .r-shepherd a, .r-steward a { color:#fff !important; text-decoration:underline; }
+
+    .badge{
+      display:inline-block;
+      padding:3px 10px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:11px;
+      border:1px solid var(--line);
+      background:#fafafa;
+    }
+
+    .footer-note{
+      font-size:10px;
+      color:var(--muted);
+      margin-top:18px;
+    }
+
+    ul{ margin:8px 0 0 18px; padding:0; }
+    li{ margin:4px 0; }
+
+    /* Global spacing helpers */
+    .h1 { margin: 0 0 10px 0; }
+    .hero { margin-bottom: 10px; }
+
+    /* Page 1 layout (name + circle) */
+    .page1-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 24px;
+    }
+    .page1-left{ flex: 1 1 auto; padding-right: 10px; }
+    .page1-right{ flex: 0 0 auto; text-align:right; }
+
+    .circle-img{
+      display:block;
+      width: 180px;
+      height: auto;
+      margin-top: 6px;
+    }
+
+    /* ===== Bandwidth Guide – compact + premium ===== */
+    .bw-guide{
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .bw-guide th,
+    .bw-guide td{
+      border: 1px solid #000;
+      padding: 7px 8px;
+      vertical-align: top;
+      line-height: 1.25;
+      font-size: 11px;
+    }
+
+    .bw-guide th{
+      background: #fff;
+      color:#000 !important;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .bw-guide .col-ref{
+      width: 150px;
+      font-weight: 800;
+      text-align: left;
+      color:#fff !important; /* col label lives in colored row */
+    }
+
+    .bw-guide tbody td{ color:#fff !important; }
+
+    .bw-guide .bw-architect td{ background: var(--architect); }
+    .bw-guide .bw-artisan td{ background: var(--artisan); }
+    .bw-guide .bw-shepherd td{ background: var(--shepherd); }
+    .bw-guide .bw-steward td{ background: var(--steward); }
+
+    .bw-guide .ref-sub{ font-weight: 600; opacity: .95; }
+
+    /* Bandwidth highlight (robust + renderer-friendly) */
+    .bw-hit{
+      box-shadow: inset 0 0 0 2px #111;
+      font-weight: 700;
+    }
+
+    .bw-summary{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:10px;
+      font-size:13px;
+      line-height:1.35;
+    }
+    .bw-chip{
+      border:1px solid #ddd;
+      padding:6px 10px;
+      border-radius:10px;
+      background:#fff;
+      color:#111;
+    }
+
+    /* ===== Cover layout helpers ===== */
+    .cover-page{
+      height: 100vh;
+      padding: 32px 46px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+    }
+    .cover-name{
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      margin: 0;
+      color:#111;
+    }
+    .cover-date{
+      font-size: 13px;
+      font-weight: 400;
+      margin-top: 6px;
+      color:#111;
+    }
+    .cover-hero{
+      flex: 1 1 auto;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin: 10px 0 18px;
+    }
+    .cover-footer{
+      width: 100%;
+      display:flex;
+      align-items:flex-start;
+      gap: 14px;
+      padding-top: 14px;
+      border-top: 1px solid #ddd;
+    }
+    .cover-footer img{
+      width: 64px;
+      height: auto;
+      flex: 0 0 auto;
+    }
+    .footer-text{
+      font-size: 9.5px;
+      line-height: 1.3;
+      text-align: left;
+      color: #111;
+    }
+.footer {
+  position: fixed;
+  bottom: 18px;
+  left: 44px;
+  right: 44px;
+  font-size: 10px;
+  color: #666;
+}
+.footer .right { text-align: right; }
+
+    .kicker{ font-size:11px; color:#333; }
+    .section-intro{ margin:0; }
+    .tight p{ margin:0; }
+
+/* ===== Page Numbers ===== */
+@page {
+  margin-bottom: 42px;
+
+  @bottom-right {
+    content: "Page " counter(page);
+    font-size: 10px;
+    color: #666;
+
+    padding-bottom: 18px;
+    padding-right: 18px; /* 👈 THIS IS THE FIX */
+  }
+}
+
+@page:first {
+  @bottom-right {
+    content: "";
+  }
+}
+    /* ===== Compact final-page DesignPD callout ===== */
+    .designpd-callout{
+      margin-top:10px;
+      border:1px solid #D9D9D9;
+      border-radius:10px;
+      padding:9px 12px 10px;
+      background:#fff;
+      text-align:center;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .designpd-callout img.designpd-logo{
+  display:block;
+  width:330px; /* doubled */
+  height:auto;
+  margin:0 auto 6px;
+}
+    }
+    .designpd-callout h2{
+      margin:0 0 4px;
+      font-size:18px;
+      line-height:1.15;
+    }
+    .designpd-callout p{
+      margin:0;
+      font-size:14px;
+      line-height:1.25;
+    }
+    .designpd-callout .designpd-verse{
+      margin-top:5px;
+      font-size:14px;
+      line-height:1.2;
+      color:#333;
+      font-style:italic;
+    }
+    .designpd-callout .designpd-qr{
+      display:block;
+      width:90px;
+      height:90px;
+      margin:5px auto 0;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- ===================== COVER ===================== -->
+<div class="cover-page">
+
+  <!-- TOP LOGO -->
+  <img
+    src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/589a89e0-d009-4efd-b64b-ade9da37ecce/ID-logo-hrz-color.png?format=2500w"
+    alt="DesignID"
+    style="max-width:520px; width:100%; margin-top:6px;"
+  />
+
+  <!-- NAME + DATE -->
+  <div style="margin-top:18px;">
+    <div class="cover-name">{{ Name | default: '' }}</div>
+    <div class="cover-date">
+      {% assign safe_date = Date | default: '' | strip %}
+      {% if safe_date != '' %}{{ safe_date }}{% else %}&nbsp;{% endif %}
+    </div>
+  </div>
+
+  <!-- CENTER IMAGE -->
+<div class="cover-hero">
+  <img
+    src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/9bbcd734-e5c7-43a0-8563-ec5d79749b91/DYDD_piegraph+final.png?format=2500w"
+    alt="DesignID Visual"
+    style="width:460px; max-width:100%; height:auto;"
+  />
+</div>
+
+  <!-- FOOTER -->
+  <div class="cover-footer">
+    <img
+      src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/156f49e9-3121-4dd4-8aa6-ac23f67962b7/DYDD-logo.png?format=500w"
+      alt="DYDD"
+    />
+    <div class="footer-text">
+      Discover Your Divine Design® Report Copyright 2025. All rights reserved.
+      Discover Your Divine Design® and DesignID® are trademarks or registered trademarks
+      of 4D Education Inc.® in the United States and other countries.
+    </div>
+  </div>
+
+</div>
+
+<div class="page-break"></div>
+
+
+
+<!-- ===================== INTRO / FOUNDATION ===================== -->
+<div class="page">
+  <h2>DesignID Overview</h2>
+  <div class="rule"></div>
+
+  <div class="card">
+    <div style="display:flex; gap:22px; align-items:flex-start;">
+
+      <!-- LEFT COLUMN -->
+      <div style="flex:1 1 60%;">
+        <p style="margin:0;">
+          <strong>DesignID™</strong> is a faith-integrated assessment that measures how individuals perceive how they reflect who God is.
+          The four reflections used in this assessment are titled <strong>Architect</strong>, <strong>Artisan</strong>, <strong>Shepherd</strong>, and <strong>Steward</strong>.
+          Each represents a reflection of how God works through human beings. Together, they help us better understand the following aspects of God:
+          The <strong>Creator</strong>, <strong>Designer</strong>, <strong>Comforter</strong>, and <strong>Sustainer</strong>.
+          The DesignID Assessment quantifies an individual’s preferences across these four aspects.
+        </p>
+
+        <p style="margin:12px 0 0;">
+          <strong>Vision:</strong> To help every believer discover, develop, and deploy their God-given design, equipping the Church to flourish
+          through unity, diversity, and purpose.
+        </p>
+
+        <p style="margin:12px 0 0;">
+          DYDD + DesignID gives individuals a tangible way to live out the DYDD anchor verse:<br>
+          “For we are God’s handiwork, created in Christ Jesus to do good works, which God prepared in advance for us to do.”
+          (<strong>Ephesians 2:10</strong>)
+        </p>
+
+        <p style="margin:12px 0 6px;"><strong>Biblical Foundation</strong></p>
+        <ul style="margin:0 0 0 18px;">
+          <li>Genesis 1:27 — We were created to reflect who God is.</li>
+          <li>1 Peter 2:9 — Identity flows from whose we are, not who we are.</li>
+          <li>1 Corinthians 15:10 — Grace does not just forgive; it fuels, sustains, and directs.</li>
+          <li>Galatians 5:16–17 — We are to operate in grace, not selfishness.</li>
+        </ul>
+
+        <p style="margin:12px 0 0;">
+          DesignID operationalizes these biblical truths into a practical assessment that quantifies how individuals reflect God’s image
+          through creating (Architect), designing (Artisan), comforting (Shepherd), and sustaining (Steward).
+        </p>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div style="flex:1 1 40%; border-left:1px solid #ddd; padding-left:18px;">
+        <h3 style="margin:0 0 8px;">Your Results at a Glance</h3>
+
+        <div style="font-size:13px; line-height:1.4;">
+          <div><strong>Primary Reflection:</strong> {{ Primary | default: '' }}</div>
+          <div><strong>Secondary Reflection:</strong> {{ Secondary | default: '' }}</div>
+          <div><strong>Integrative Reflection:</strong> {{ Integrative_Reflection | default: '' }}</div>
+
+          <div style="margin-top:12px;"><strong>Reflection Bandwidth</strong></div>
+          <div>Architect — {{ Band_Architect | default: '' }}</div>
+          <div>Artisan — {{ Band_Artisan | default: '' }}</div>
+          <div>Shepherd — {{ Band_Shepherd | default: '' }}</div>
+          <div>Steward — {{ Band_Steward | default: '' }}</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+
+<div class="page-break"></div>
+
+<!-- ===================== PERSONAL PROFILE ===================== -->
+<div class="page">
+
+  <h2 style="margin-top:6px;">Personal Profile</h2>
+  <div class="rule"></div>
+
+  <div class="card">
+    <div><strong>Primary Reflection:</strong> {{ Primary | default: '' }}</div>
+    <div><strong>Secondary Reflection:</strong> {{ Secondary | default: '' }}</div>
+    <div><strong>Integrative Reflection:</strong> {{ Integrative_Reflection | default: '' }}</div>
+  </div>
+
+  <h3>Reflection Summary</h3>
+  <table style="margin-top:10px;">
+    <thead>
+      <tr>
+        <th>Reflection</th>
+        <th style="width:120px;">Reflection %</th>
+        <th>Application</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="r-architect">
+        <td><strong>Architect</strong> (Creator)</td>
+        <td class="center"><strong>{{ Architect_Pct | default: '' }}</strong></td>
+        <td>Building, leading, and initiating</td>
+      </tr>
+      <tr class="r-artisan">
+        <td><strong>Artisan</strong> (Designer)</td>
+        <td class="center"><strong>{{ Artisan_Pct | default: '' }}</strong></td>
+        <td>Refining and communicating truth through beauty</td>
+      </tr>
+      <tr class="r-shepherd">
+        <td><strong>Shepherd</strong> (Comforter)</td>
+        <td class="center"><strong>{{ Shepherd_Pct | default: '' }}</strong></td>
+        <td>Nurturing, healing, and restoring through presence</td>
+      </tr>
+      <tr class="r-steward">
+        <td><strong>Steward</strong> (Sustainer)</td>
+        <td class="center"><strong>{{ Steward_Pct | default: '' }}</strong></td>
+        <td>Maintaining and securing what has been entrusted</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- QUICK VIEW (donut) -->
+  <h3 style="margin-top:14px;">Quick View (donut)</h3>
+  <div class="card center" style="padding:18px;">
+
+    {% capture qc_donut %}
+{
+  "type":"doughnut",
+  "data":{
+    "labels":["Architect","Artisan","Shepherd","Steward"],
+    "datasets":[{
+      "data":[
+        {{ Architect_Pct | default: '0%' | replace: '%','' }},
+        {{ Artisan_Pct | default: '0%' | replace: '%','' }},
+        {{ Shepherd_Pct | default: '0%' | replace: '%','' }},
+        {{ Steward_Pct | default: '0%' | replace: '%','' }}
+      ],
+      "backgroundColor":["#D4A451","#647C9B","#739D5E","#5A496B"],
+      "borderColor":"#FFFFFF",
+      "borderWidth":2
+    }]
+  },
+  "options":{
+    "cutout":"58%",
+    "plugins":{
+      "legend":{
+        "position":"bottom",
+        "labels":{
+          "boxWidth":14,
+          "color":"#111"
+        }
+      },
+      "datalabels":{
+        "color":"#ffffff",
+        "font":{
+          "weight":"bold",
+          "size":14
+        },
+        "formatter": function(value) {
+          return value + '%';
+        }
+      }
+    }
+  }
+}
+{% endcapture %}
+
+
+    <img
+      alt="Divine Reflection Distribution"
+      style="width:380px; max-width:100%; display:block; margin:0 auto;"
+      src="https://quickchart.io/chart?c={{ qc_donut | strip_newlines | url_encode }}"
+    />
+
+    <div class="footer-note" style="margin-top:10px;">
+      Points: Architect={{ Architect_Pts | default: '' }}, Artisan={{ Artisan_Pts | default: '' }}, Shepherd={{ Shepherd_Pts | default: '' }}, Steward={{ Steward_Pts | default: '' }} (Total {{ Total_Pts | default: '' }})
+    </div>
+  </div>
+
+</div>
+
+<div class="page-break"></div>
+
+<!-- ===================== PRIMARY / SECONDARY ===================== -->
+<div class="page">
+  <h2>Primary & Secondary Reflections</h2>
+  <div class="rule"></div>
+
+  <div class="card" style="margin-bottom:14px;">
+    <p class="section-intro">
+      Your reflections reveal the unique ways God’s design comes alive through you. Your primary reflection (<strong>{{ Primary | default: '' }}</strong>)
+      expresses your most natural way of reflecting God, the place where your efforts feel the most comfortable. Your secondary reflection
+      (<strong>{{ Secondary | default: '' }}</strong>) complements and refines your primary, adding depth, balance, and perspective to how you live out your calling.
+      Together, these reflections form an awareness of God’s grace at work in your life. When these two work together, they produce your integrative
+      reflection (<strong>{{ Integrative_Reflection | default: '' }}</strong>), where a deeper purpose behind your design is revealed.
+    </p>
+  </div>
+
+  <div class="card">
+    <div><strong>Primary Reflection:</strong> {{ Primary | default: '' }}</div>
+    <div style="margin-top:8px;">{{ Primary_Text | default: '' }}</div>
+
+    <div class="muted" style="margin-top:10px;"><strong>Divine Reflection:</strong> {{ Primary_Reflection | default: '' }}</div>
+    <div class="muted" style="margin-top:8px;"><strong>Core Drive:</strong> {{ Primary_Core | default: '' }}</div>
+    <div class="muted" style="margin-top:4px;"><strong>Scripture:</strong> {{ Primary_Scripture | default: '' }}</div>
+
+    <div style="margin-top:10px;"><strong>Summary:</strong> {{ Primary_Summary | default: '' }}</div>
+  </div>
+
+  <div style="height:14px;"></div>
+
+  <div class="card">
+    <div><strong>Secondary Reflection:</strong> {{ Secondary | default: '' }}</div>
+    <div style="margin-top:8px;">{{ Secondary_Text | default: '' }}</div>
+
+    <div class="muted" style="margin-top:10px;"><strong>Divine Reflection:</strong> {{ Secondary_Reflection | default: '' }}</div>
+    <div class="muted" style="margin-top:8px;"><strong>Core:</strong> {{ Secondary_Core | default: '' }}</div>
+    <div class="muted" style="margin-top:4px;"><strong>Scripture:</strong> {{ Secondary_Scripture | default: '' }}</div>
+
+    <div style="margin-top:10px;"><strong>Summary:</strong> {{ Secondary_Summary | default: '' }}</div>
+  </div>
+
+</div>
+
+<div class="page-break"></div>
+
+<!-- ===================== INTEGRATIVE REFLECTION (INTRO + TABLE) ===================== -->
+<div class="page">
+  <h2>Integrative Reflection</h2>
+  <div class="rule"></div>
+
+  <div class="card" style="margin-bottom:14px;">
+    <p class="section-intro">
+      Every person reflects four divine reflections (Architect, Artisan, Shepherd, and Steward) but few operate purely within one.
+      Real life, leadership, and discipleship happen in the intersections between them. Integrative reflections reveal the six blended
+      expressions of how we reflect God, the spaces where two reflections meet, creating unique character, insight, and calling.
+    </p>
+  </div>
+
+  <div style="text-align:center; font-weight:700; font-size:16px; margin:18px 0 22px;">
+    <div>Your Integrative Reflection is:</div>
+    <div style="margin-top:6px;">
+      {{ Primary | default: '' }} + {{ Secondary | default: '' }} = {{ Integrative_Reflection | default: '' }}
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width:140px;">Reflection</th>
+        <th style="width:170px;">Blend</th>
+        <th>Integrative Expression</th>
+        <th style="width:150px;">Scripture</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Visionary</strong></td>
+        <td>Architect + Artisan</td>
+        <td>Innovation joined with wisdom: builds what is both new and true</td>
+        <td>Proverbs 3:19</td>
+      </tr>
+      <tr>
+        <td><strong>Interpreter</strong></td>
+        <td>Artisan + Shepherd</td>
+        <td>Compassionate communication: healing through understanding</td>
+        <td>Colossians 4:6</td>
+      </tr>
+      <tr>
+        <td><strong>Guardian</strong></td>
+        <td>Shepherd + Steward</td>
+        <td>Relational stability and protection</td>
+        <td>1 Corinthians 14:40</td>
+      </tr>
+      <tr>
+        <td><strong>Overseer</strong></td>
+        <td>Steward + Architect</td>
+        <td>Responsible creation: guarding purpose with diligence</td>
+        <td>1 Corinthians 4:2</td>
+      </tr>
+      <tr>
+        <td><strong>Innovator</strong></td>
+        <td>Architect + Shepherd</td>
+        <td>Empathetic initiative: faith with compassion</td>
+        <td>Isaiah 40:11</td>
+      </tr>
+      <tr>
+        <td><strong>Craftsman</strong></td>
+        <td>Artisan + Steward</td>
+        <td>Excellence with endurance: refining what lasts</td>
+        <td>Colossians 3:23</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<div class="page-break"></div>
+
+<!-- ===================== INTEGRATIVE REFLECTION (DETAILS) ===================== -->
+<div class="page">
+  <h2>Integrative Reflection Details</h2>
+  <div class="rule"></div>
+
+  <div class="card">
+    <div style="margin-top:6px;"><strong>Integrative Reflection:</strong> {{ Integrative_Reflection | default: '' }}</div>
+    <div class="muted" style="margin-top:6px;"><strong>Scripture:</strong> {{ Integrative_Scripture | default: '' }}</div>
+
+    <h3 style="margin-top:12px;">Reflection of God</h3>
+    <div>{{ Reflection_Of_God | default: '' }}</div>
+
+    <h3 style="margin-top:12px;">Integrative Expression</h3>
+    <div>{{ Integrative_Expression | default: '' }}</div>
+
+    <h3 style="margin-top:12px;">Spiritual Strength</h3>
+    <div>{{ Spiritual_Strength | default: '' }}</div>
+
+    <h3 style="margin-top:12px;">Potential Shadow</h3>
+    <div>{{ Potential_Shadow | default: '' }}</div>
+
+    <h3 style="margin-top:12px;">Integrative Growth</h3>
+    <div>{{ Integrative_Growth | default: '' }}</div>
+
+    <h3 style="margin-top:12px;">Summary</h3>
+<div>{{ Integrative_Summary | default: '' }}</div>
+</div>
+
+</div>
+
+<div class="page-break"></div>
+
+<!-- ===================== BANDWIDTH ===================== -->
+
+<!-- BANDWIDTH INTRO PAGE -->
+<div class="page">
+  <h2>Reflection Capacity</h2>
+  <div class="rule"></div>
+
+  <div class="card">
+    <p style="margin:0;">
+      Every person carries the image of God, expressed through four reflections: Architect,
+      Artisan, Shepherd, and Steward. But not every reflection carries the same range. Your
+      design capacity describes how strongly God’s grace is currently flowing through each
+      part of your divine design. It does not measure effort or ability but reveals where grace
+      feels natural, steady, stretched, or strained.
+    </p>
+
+    <p style="margin:10px 0 0;">
+      In other words, capacity shows how God’s power moves through you; what gives life,
+      what requires faith, and what invites rest. When your capacity is Abundant, you feel
+      joy and ease; when it is Steady, you serve faithfully; when it is Limited, you depend
+      intentionally on God; and when it is Drained, you learn surrender and partnership.
+      Design capacity reminds us that His grace is always sufficient.
+    </p>
+
+    <p style="margin:10px 0 0; font-weight:700;">
+      Each one should use whatever gift you have received to serve others, as faithful
+      stewards of God’s grace in its various forms. (1 Peter 4:10)
+    </p>
+
+    <h3 style="margin-top:14px;">The Purpose of Capacity</h3>
+    <ul>
+      <li><strong>Reveal natural grace flow:</strong> What comes easily, joyfully, and fruitfully.</li>
+      <li><strong>Expose overused or undernourished energies:</strong> Where strain or fatigue may occur.</li>
+      <li><strong>Support development and discipleship:</strong> Guiding self-awareness, leadership growth, and spiritual balance.</li>
+      <li><strong>Honor divine diversity:</strong> Reminding us that no design is superior; each simply reflects a different grace intensity.</li>
+    </ul>
+
+    <h3 style="margin-top:14px;">Capacity mirrors God’s relational approach with His people:</h3>
+    <ul>
+      <li>He gives <strong>Abundant</strong> grace to empower calling.</li>
+      <li>He sustains with <strong>Steady</strong> grace for endurance.</li>
+      <li>He teaches through <strong>Limited</strong> grace to cultivate dependence.</li>
+      <li>He redeems <strong>Drained</strong> grace by inviting rest and partnership.</li>
+    </ul>
+  </div>
+
+  <div class="card" style="margin-top:14px;">
+    <h3 style="margin:0 0 10px;">Your Capacity Results</h3>
+
+    <table style="width:520px; max-width:100%; margin:0 auto; border-collapse:collapse;">
+      <thead>
+        <tr>
+          <th style="background:#fff; color:#000; width:55%;">Reflection</th>
+          <th style="background:#fff; color:#000; width:15%;" class="center">Score</th>
+          <th style="background:#fff; color:#000; width:30%;" class="center">Capacity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="r-architect">
+          <td><strong>Architect</strong></td>
+          <td class="center"><strong>{{ Architect_Pts | default: '' }}</strong></td>
+          <td class="center"><strong>{{ Band_Architect | default: '' }}</strong></td>
+        </tr>
+        <tr class="r-artisan">
+          <td><strong>Artisan</strong></td>
+          <td class="center"><strong>{{ Artisan_Pts | default: '' }}</strong></td>
+          <td class="center"><strong>{{ Band_Artisan | default: '' }}</strong></td>
+        </tr>
+        <tr class="r-shepherd">
+          <td><strong>Shepherd</strong></td>
+          <td class="center"><strong>{{ Shepherd_Pts | default: '' }}</strong></td>
+          <td class="center"><strong>{{ Band_Shepherd | default: '' }}</strong></td>
+        </tr>
+        <tr class="r-steward">
+          <td><strong>Steward</strong></td>
+          <td class="center"><strong>{{ Steward_Pts | default: '' }}</strong></td>
+          <td class="center"><strong>{{ Band_Steward | default: '' }}</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="page-break"></div>
+
+<!-- BANDWIDTH GUIDE PAGE -->
+<div class="page">
+  <h2>Reflection Capacity Guide</h2>
+  <div class="rule"></div>
+
+  <div class="card">
+    <h3 style="margin:0 0 8px 0;">Your Capacity Summary</h3>
+    <div class="bw-summary">
+      <div class="bw-chip"><strong>Architect:</strong> {{ Band_Architect | default: '' }}</div>
+      <div class="bw-chip"><strong>Artisan:</strong> {{ Band_Artisan | default: '' }}</div>
+      <div class="bw-chip"><strong>Shepherd:</strong> {{ Band_Shepherd | default: '' }}</div>
+      <div class="bw-chip"><strong>Steward:</strong> {{ Band_Steward | default: '' }}</div>
+    </div>
+  </div>
+
+  {% assign ba = Band_Architect | default: '' | downcase | strip %}
+  {% assign br = Band_Artisan   | default: '' | downcase | strip %}
+  {% assign bs = Band_Shepherd  | default: '' | downcase | strip %}
+  {% assign bt = Band_Steward   | default: '' | downcase | strip %}
+
+  <div class="card" style="margin-top:12px;">
+    <table class="bw-guide" style="margin-top:10px;">
+      <thead>
+        <tr>
+          <th class="col-ref">Reflection</th>
+          <th>Abundant<br>(40–60)</th>
+          <th>Steady<br>(25–39)</th>
+          <th>Limited<br>(10–24)</th>
+          <th>Drained<br>(0–9)</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <!-- Architect row -->
+        <tr class="bw-architect">
+          <td class="col-ref">
+            Architect<br><span class="ref-sub">(Creator)</span>
+          </td>
+
+          <td class="{% if ba contains 'abundant' %}bw-hit{% endif %}">
+            Visionary and faith-filled. You thrive when building, leading, or starting something new.
+            Creation itself energizes you, where your faith comes alive.
+          </td>
+
+          <td class="{% if ba contains 'steady' %}bw-hit{% endif %}">
+            Reliable and strategic. You bring order and foresight to meaningful projects and lead confidently when goals are clear.
+          </td>
+
+          <td class="{% if ba contains 'limited' %}bw-hit{% endif %}">
+            Practical and structured but slower to initiate. You can plan effectively when prompted but may hesitate to start alone.
+          </td>
+
+          <td class="{% if ba contains 'drained' %}bw-hit{% endif %}">
+            Orderly but fatigued by decision-making. Too much pressure to lead or build drains clarity and joy.
+          </td>
+        </tr>
+
+        <!-- Artisan row -->
+        <tr class="bw-artisan">
+          <td class="col-ref">
+            Artisan<br><span class="ref-sub">(Designer)</span>
+          </td>
+
+          <td class="{% if br contains 'abundant' %}bw-hit{% endif %}">
+            Creative, insightful, and expressive. You bring beauty to truth and meaning to motion, revealing God’s wisdom through imagination.
+          </td>
+
+          <td class="{% if br contains 'steady' %}bw-hit{% endif %}">
+            Consistent and thoughtful. You shape and refine ideas with care, balancing creativity and structure.
+          </td>
+
+          <td class="{% if br contains 'limited' %}bw-hit{% endif %}">
+            Capable but cautious. You prefer clear frameworks and inspiration from others to stay engaged.
+          </td>
+
+          <td class="{% if br contains 'drained' %}bw-hit{% endif %}">
+            Drained by repetition or rigid systems. When beauty feels buried by duty, your creativity dims.
+          </td>
+        </tr>
+
+        <!-- Shepherd row -->
+        <tr class="bw-shepherd">
+          <td class="col-ref">
+            Shepherd<br><span class="ref-sub">(Comforter)</span>
+          </td>
+
+          <td class="{% if bs contains 'abundant' %}bw-hit{% endif %}">
+            Relational, empathetic, and encouraging. You nurture others toward growth and unity through patience and grace.
+          </td>
+
+          <td class="{% if bs contains 'steady' %}bw-hit{% endif %}">
+            Supportive and understanding. You provide steady care and dependable presence in relationships and teams.
+          </td>
+
+          <td class="{% if bs contains 'limited' %}bw-hit{% endif %}">
+            Caring but easily stretched. You show kindness yet need boundaries and rest to maintain empathy.
+          </td>
+
+          <td class="{% if bs contains 'drained' %}bw-hit{% endif %}">
+            Overextended by others’ needs. When compassion becomes striving, emotional fatigue follows.
+          </td>
+        </tr>
+
+        <!-- Steward row -->
+        <tr class="bw-steward">
+          <td class="col-ref">
+            Steward<br><span class="ref-sub">(Sustainer)</span>
+          </td>
+
+          <td class="{% if bt contains 'abundant' %}bw-hit{% endif %}">
+            Faithful, organized, and dependable. You bring peace through order, ensuring excellence and integrity in all you oversee.
+          </td>
+
+          <td class="{% if bt contains 'steady' %}bw-hit{% endif %}">
+            Consistent and disciplined. You maintain stability and follow-through, supporting teams with quiet strength.
+          </td>
+
+          <td class="{% if bt contains 'limited' %}bw-hit{% endif %}">
+            Responsible but reluctant. You value order yet tire of long routines or endless details.
+          </td>
+
+          <td class="{% if bt contains 'drained' %}bw-hit{% endif %}">
+            Weary under constant obligation. When duty outweighs grace, your diligence turns to burden.
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="page-break"></div>
+
+<!-- ===================== LEARNING ===================== -->
+<div class="page">
+  <h2>Approach to Learning</h2>
+  <div class="rule"></div>
+
+  <div class="card">
+    <p style="margin:0;">
+      Learning is a key part of spiritual growth and discipleship. God shapes us through truth, experience, and practice,
+      forming Christlike maturity as we respond to His leading.
+    </p>
+
+    <h3 style="margin-top:14px;">The {{ Primary | default: '' }} Approach to Learning</h3>
+    <div>{{ Approach_to_Learning | default: '' }}</div>
+
+    <h3 style="margin-top:14px;">{{ Primary | default: '' }} Learning Strategies</h3>
+    {% assign ls = Learning_Strategies | default: '' | split: "\n" %}
+    <ul>
+      {% for item in ls %}
+        {% assign t = item | strip %}
+        {% if t != "" %}
+          <li>{{ t }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+
+    <div class="muted" style="margin-top:10px;">
+      <strong>Scripture:</strong> {{ Learning_Scripture | default: '' }}
+    </div>
+  </div>
+</div>
+
+<!-- ===================== CONTRIBUTION ===================== -->
+<div class="page">
+  <h2>Contribution to the Body</h2>
+  <div class="rule"></div>
+
+  <div class="card">
+    <p style="margin:0;">
+      Your design is a gift meant to bless others. God places unique strengths, desires, and energies within you so the Body
+      of Christ can be built up in love.
+    </p>
+
+    <h3 style="margin-top:14px;">How the {{ Primary | default: '' }} Contributes to the Body of Christ</h3>
+    <div>{{ Contribution_To_Body | default: '' }}</div>
+
+    <h3 style="margin-top:14px;">{{ Primary | default: '' }} Contribution</h3>
+    {% assign c = Contributions | default: '' | split: "\n" %}
+    <ul>
+      {% for item in c %}
+        {% assign t = item | strip %}
+        {% if t != "" %}
+          <li>{{ t }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+
+    <div class="muted" style="margin-top:10px;">
+      <strong>Scripture:</strong> {{ Contribution_Scripture | default: '' }}
+    </div>
+  </div>
+
+</div>
+
+<div class="page-break"></div>
+
+<!-- ===================== SHADOW ===================== -->
+<div class="page">
+  <h2>Shadow Reflection</h2>
+  <div class="rule"></div>
+
+  <div class="card">
+    <p style="margin:0;">
+      Shadow reflections describe what happens when our divine design moves out of alignment with grace. They are not sin themselves, but rather the distractions, distortions, or divided attention that pull our reflection of God away from its intended purpose. When grace flows freely, we reflect His image clearly, but when pride, fear, or self-reliance interrupt that flow, our reflection bends toward self instead of service.
+    </p>
+
+    <p style="margin:10px 0 0;">
+      Shadows appear when the gift meant to bless becomes a burden we try to carry alone. Without awareness, these unguarded tendencies can mature into sin; control instead of courage, perfectionism instead of pursuit of excellence, people-pleasing instead of love.
+    </p>
+
+    <p style="margin:10px 0 0;">
+      Scripture reminds us, “If we claim to have fellowship with him and yet walk in the darkness, we lie and do not live out the truth” (1 John 1:6). The purpose of identifying shadow reflections is therefore not condemnation but restoration, to recognize where light has dimmed. As Psalm 139:23–24 prays, “Search me, God, and know my heart…See if there is any offensive way in me, and lead me in the way everlasting.”
+    </p>
+
+    <div style="margin-top:12px; font-weight:700;">
+      The Shadow Reflection for the {{ Primary | default: '' }} is: <span style="font-weight:800;">{{ Reflection_Shadow | default: '' }}</span>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:14px;">
+    <h3 style="margin:0;">{{ Reflection_Shadow | default: '' }} Overview</h3>
+    <div style="margin-top:8px;">{{ Shadow_Overview | default: '' }}</div>
+  </div>
+
+  <div class="card" style="margin-top:14px;">
+    <h3 style="margin:0;">Consider the matrix below:</h3>
+
+    <table style="margin-top:10px; width:100%; border-collapse:collapse;">
+      <thead>
+        <tr>
+          <th style="width:40px;"> </th>
+          <th>Risks</th>
+          <th>Root Cause</th>
+          <th>Redemption</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="center" style="font-weight:800;">A</td>
+          <td>{{ Shadow_Risk_A | default: '' }}</td>
+          <td>{{ Shadow_Root_A | default: '' }}</td>
+          <td>{{ Shadow_Red_A | default: '' }}</td>
+        </tr>
+        <tr>
+          <td class="center" style="font-weight:800;">B</td>
+          <td>{{ Shadow_Risk_B | default: '' }}</td>
+          <td>{{ Shadow_Root_B | default: '' }}</td>
+          <td>{{ Shadow_Red_B | default: '' }}</td>
+        </tr>
+        <tr>
+          <td class="center" style="font-weight:800;">C</td>
+          <td>{{ Shadow_Risk_C | default: '' }}</td>
+          <td>{{ Shadow_Root_C | default: '' }}</td>
+          <td>{{ Shadow_Red_C | default: '' }}</td>
+        </tr>
+        <tr>
+          <td class="center" style="font-weight:800;">D</td>
+          <td>{{ Shadow_Risk_D | default: '' }}</td>
+          <td>{{ Shadow_Root_D | default: '' }}</td>
+          <td>{{ Shadow_Red_D | default: '' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="muted" style="margin-top:10px;">
+    <strong>Scripture:</strong> {{ Shadow_Scripture | default: '' }}
+  </div>
+
+</div>
+
+<div class="page-break"></div>
+
+<div class="page">
+  <h2 style="margin-top:0;">{{ Name | default: '' }} DesignID Reflection Summary</h2>
+  <div class="rule"></div>
+
+  <div class="card" style="padding:12px;">
+    <div style="font-size:12px; font-weight:700; text-align:center;">
+      Primary reflection: {{ Primary | default: '' }} &nbsp;|&nbsp; Secondary reflection: {{ Secondary | default: '' }}<br>
+      Integrative reflection: {{ Integrative_Reflection | default: '' }} &nbsp;|&nbsp; Shadow reflection: {{ Reflection_Shadow | default: '' }}
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:12px; padding:12px;">
+    <table style="width:100%; border-collapse:collapse;">
+      <thead>
+        <tr>
+          <th style="background:#fff; color:#000;">Reflection</th>
+          <th style="background:#fff; color:#000; width:90px;" class="center">Score</th>
+          <th style="background:#fff; color:#000; width:120px;" class="center">Capacity</th>
+          <th style="background:#fff; color:#000;">Application</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="r-architect">
+          <td><strong>Architect</strong> (Creator)</td>
+          <td class="center"><strong>{{ Architect_Pct | default: '' }}</strong></td>
+          <td class="center"><strong>{{ Band_Architect | default: '' }}</strong></td>
+          <td>Building, leading and initiating</td>
+        </tr>
+        <tr class="r-artisan">
+          <td><strong>Artisan</strong> (Designer)</td>
+          <td class="center"><strong>{{ Artisan_Pct | default: '' }}</strong></td>
+          <td class="center"><strong>{{ Band_Artisan | default: '' }}</strong></td>
+          <td>Refining and communicating truth through beauty</td>
+        </tr>
+        <tr class="r-shepherd">
+          <td><strong>Shepherd</strong> (Comforter)</td>
+          <td class="center"><strong>{{ Shepherd_Pct | default: '' }}</strong></td>
+          <td class="center"><strong>{{ Band_Shepherd | default: '' }}</strong></td>
+          <td>Nurturing, healing, and restoring through presence</td>
+        </tr>
+        <tr class="r-steward">
+          <td><strong>Steward</strong> (Sustainer)</td>
+          <td class="center"><strong>{{ Steward_Pct | default: '' }}</strong></td>
+          <td class="center"><strong>{{ Band_Steward | default: '' }}</strong></td>
+          <td>Maintaining and securing what has been entrusted</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card center" style="margin-top:12px; padding:14px;">
+    <h3 style="margin:0 0 10px;">Divine Reflection Distribution</h3>
+
+    {% capture qc_donut_summary %}
+{
+  "type":"doughnut",
+  "data":{
+    "labels":["Architect","Artisan","Shepherd","Steward"],
+    "datasets":[{
+      "data":[
+        {{ Architect_Pct | default: '0%' | replace: '%','' }},
+        {{ Artisan_Pct | default: '0%' | replace: '%','' }},
+        {{ Shepherd_Pct | default: '0%' | replace: '%','' }},
+        {{ Steward_Pct | default: '0%' | replace: '%','' }}
+      ],
+      "backgroundColor":["#D4A451","#647C9B","#739D5E","#5A496B"],
+      "borderColor":"#FFFFFF",
+      "borderWidth":2
+    }]
+  },
+  "options":{
+    "cutout":"58%",
+    "plugins":{
+      "legend":{
+        "position":"bottom",
+        "labels":{
+          "boxWidth":14,
+          "color":"#111"
+        }
+      },
+      "datalabels":{
+        "color":"#ffffff",
+        "font":{
+          "weight":"bold",
+          "size":14
+        },
+        "formatter": function(value) {
+          return value + '%';
+        }
+      }
+    }
+  }
+}
+{% endcapture %}
+
+
+    <img
+      alt="Divine Reflection Distribution"
+      style="width:320px; max-width:100%; display:block; margin:0 auto;"
+      src="https://quickchart.io/chart?c={{ qc_donut_summary | strip_newlines | url_encode }}"
+    />
+  </div>
+
+  <div style="
+    margin-top:16px;
+    padding-top:12px;
+    border-top:1px solid #ddd;
+    text-align:center;
+    font-style:italic;
+    font-size:12px;
+    color:#333;
+  ">
+    “For we are God’s handiwork, created in Christ Jesus to do good works, which
+    God prepared in advance for us to do.”<br>
+    <strong>(Ephesians 2:10)</strong>
+  </div>
+
+
+</div>
+
+<div class="page-break"></div>
+
+<!-- ===================== DYDD CLOSING PAGE ===================== -->
+<div class="page">
+
+  <div class="center">
+    <img
+      src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/156f49e9-3121-4dd4-8aa6-ac23f67962b7/DYDD-logo.png?format=500w"
+      alt="Discover Your Divine Design"
+      style="max-width:180px; width:100%; margin-bottom:12px;"
+    />
+  </div>
+
+  <h2 class="center" style="margin-top:0;">
+    On Purpose - For Purpose
+  </h2>
+
+  <div class="center muted" style="font-style:italic; margin-bottom:18px;">
+    “For we are God’s handiwork, created in Christ Jesus to do good works, which God prepared in advance for us to do.”
+    <br><strong>(Ephesians 2:10)</strong>
+  </div>
+
+  <div class="rule"></div>
+
+  <div class="card" style="padding:16px;">
+
+    <img
+      src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/a3b5b69f-3667-406c-9ba8-e9ec7ccddae3/envato-labs-image-edit+%2861%29.png?format=2500w"
+      alt="Discover Your Divine Design journey"
+      style="
+        float:right;
+        width:220px;
+        max-width:45%;
+        margin:4px 0 10px 14px;
+        border-radius:8px;
+      "
+    />
+
+    <p style="margin-top:0;">
+      Some people chase their calling like it’s a riddle to solve. Others wait for the perfect moment,
+      hoping something big or dramatic will finally make life click. But what if the truth has been present
+      the whole time? What if your divine design is already part of you, just waiting to be recognized?
+    </p>
+
+    <p>
+      <strong>Discover Your Divine Design</strong> is not another self-help formula. It is an invitation to uncover
+      the truth of who you are and how you are made. This journey does not begin with what you do.
+      It begins with who you are.
+    </p>
+
+    <p>
+      Discover Your Divine Design is a faith-based development program designed to help individuals and groups
+      explore how God has uniquely created them to live with purpose. Grounded in Scripture and practical application,
+      this journey walks through five key areas—your <strong>Identity</strong>, <strong>Expertise</strong>,
+      <strong>Story</strong>, <strong>Desires</strong>, and <strong>Spiritual Gifts</strong>—to help you clearly
+      understand your place in the Body of Christ (your <strong>Niche</strong>) and how you can serve with joy and confidence.
+    </p>
+
+    <p style="margin-bottom:0;">
+      DYDD offers a growing collection of resources including books, courses, a spiritual gifts assessment,
+      and more, all designed to support clarity, growth, and faithful action.
+    </p>
+
+    <div style="clear:both;"></div>
+  </div>
+
+  <div class="designpd-callout">
+    <img
+      class="designpd-logo"
+      src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/b5ffa838-8788-4058-b0e6-b304e09ec193/designpd.png?format=2500w"
+      alt="DesignPD"
+    />
+    <h2>Introducing DesignPD</h2>
+    <p>
+      DesignPD helps you understand how you naturally Plan, Decide, and Do. Built on the foundation of DesignID,
+      it brings your design into everyday life so you can see how your tendencies influence leadership, teamwork,
+      decision making, and sustainable contribution.
+    </p>
+    <div class="designpd-verse">
+      “Commit to the Lord whatever you do, and he will establish your plans.”<br>
+      <strong>Proverbs 16:3</strong>
+    </div>
+    <img
+      class="designpd-qr"
+      src="https://quickchart.io/qr?text=https%3A%2F%2Fwww.discoverdivine.design%2Fdesignpd&size=90&margin=1&dark=4A6239&light=FFFFFF"
+      alt="QR code for DesignPD"
+    />
+  </div>
+
+  <div class="center" style="margin-top:10px; font-size:12px;">
+    Continue your journey at<br>
+    <a href="https://www.discoverdivine.design/" target="_blank" style="font-weight:700; text-decoration:none;">
+      Discover Your Divine Design
+    </a>
+  </div>
+
+</div>
+
+</body>
+</html>
+
+DesignID JSON Code: Has some MAke mapping in it
+{
+  "Timestamp": "{{20.`0`}}",
+  "Email": "{{20.`1`}}",
+  "Name": "{{20.`2`}}",
+
+  "Architect_Pts": "{{20.`3`}}",
+  "Artisan_Pts": "{{20.`4`}}",
+  "Shepherd_Pts": "{{20.`5`}}",
+  "Steward_Pts": "{{20.`6`}}",
+  "Total_Pts": "{{20.`7`}}",
+
+  "Architect_Pct": "{{20.`3`}}",
+  "Artisan_Pct": "{{20.`4`}}",
+  "Shepherd_Pct": "{{20.`5`}}",
+  "Steward_Pct": "{{20.`6`}}",
+
+  "Band_Architect": "{{20.`12`}}",
+  "Band_Artisan": "{{20.`13`}}",
+  "Band_Shepherd": "{{20.`14`}}",
+  "Band_Steward": "{{20.`15`}}",
+
+  "Primary": "{{20.`25`}}",
+  "Secondary": "{{20.`26`}}",
+  "PairKey": "{{12.`27`}}",
+  "Integrative_Reflection": "{{20.`28`}}",
+"Primary_Text": "{{20.`29`}}",
+  "Secondary_Text": "{{20.`30`}}",
+
+ "Primary_Reflection": "{{trim(replace(replace(20.`31`; newline; space); tab; space))}}",
+"Primary_Core": "{{trim(replace(replace(20.`32`; newline; space); tab; space))}}",
+"Primary_Scripture": "{{trim(replace(replace(20.`33`; newline; space); tab; space))}}",
+"Primary_Summary": "{{trim(replace(replace(20.`34`; newline; space); tab; space))}}",
+ 
+
+"Secondary_Reflection": "{{trim(replace(replace(20.`35`; newline; space); tab; space))}}",
+"Secondary_Core": "{{trim(replace(replace(20.`36`; newline; space); tab; space))}}",
+"Secondary_Scripture": "{{trim(replace(replace(20.`37`; newline; space); tab; space))}}",
+"Secondary_Summary": "{{trim(replace(replace(20.`38`; newline; space); tab; space))}}",
+
+  "Integrative_Scripture": "{{trim(replace(replace(20.`39`; newline; space); tab; space))}}",
+"Reflection_Of_God": "{{trim(replace(replace(20.`40`; newline; space); tab; space))}}",
+"Integrative_Expression": "{{trim(replace(replace(20.`41`; newline; space); tab; space))}}",
+"Spiritual_Strength": "{{trim(replace(replace(20.`42`; newline; space); tab; space))}}",
+"Potential_Shadow": "{{trim(replace(replace(20.`43`; newline; space); tab; space))}}",
+"Integrative_Growth": "{{trim(replace(replace(20.`44`; newline; space); tab; space))}}",
+"Integrative_Summary": "{{trim(replace(replace(20.`45`; newline; space); tab; space))}}",
+
+"Approach_to_Learning": "{{trim(replace(replace(20.`46`; newline; space); tab; space))}}",
+"Learning_Strategies": "{{trim(replace(replace(20.`47`; newline; space); tab; space))}}",
+"Learning_Scripture": "{{trim(replace(replace(20.`48`; newline; space); tab; space))}}",
+
+"Contribution_To_Body": "{{trim(replace(replace(20.`49`; newline; space); tab; space))}}",
+"Contributions": "{{trim(replace(replace(20.`50`; newline; space); tab; space))}}",
+"Contribution_Scripture": "{{trim(replace(replace(20.`51`; newline; space); tab; space))}}",
+
+"Reflection_Shadow": "{{20.`52`}}",
+
+"Shadow_Overview": "{{trim(replace(replace(20.`53`; newline; space); tab; space))}}",
+
+"Shadow_Risks": "{{trim(replace(replace(20.`54`; newline; space); tab; space))}}",
+
+"Shadow_Root_Cause": "{{trim(replace(replace(20.`55`; newline; space); tab; space))}}",
+
+"Shadow_Redemption": "{{trim(replace(replace(20.`56`; newline; space); tab; space))}}",
+
+"Shadow_Risk_A": "{{20.`59`}}",
+"Shadow_Risk_B": "{{20.`60`}}",
+"Shadow_Risk_C": "{{20.`61`}}",
+"Shadow_Risk_D": "{{20.`62`}}",
+
+"Shadow_Root_A": "{{20.`63`}}",
+"Shadow_Root_B": "{{20.`64`}}",
+"Shadow_Root_C": "{{20.`65`}}",
+"Shadow_Root_D": "{{20.`66`}}",
+
+"Shadow_Red_A": "{{20.`67`}}",
+"Shadow_Red_B": "{{20.`68`}}",
+"Shadow_Red_C": "{{20.`69`}}",
+"Shadow_Red_D": "{{20.`70`}}",
+
+"Shadow_Scripture": "{{trim(replace(replace(20.`57`; newline; space); tab; space))}}"
+}
+
+
+DesignPD PDFMonkey Report code
+<style>
+  .page { box-sizing:border-box; }
+  .center { text-align:center; }
+  .muted { color:#666666; }
+  .rule { border-top:1px solid #d8d8d8; margin:18px 0; }
+  .card {
+    border:1px solid #e3e3e3;
+    border-radius:10px;
+    background:#ffffff;
+    box-shadow:0 1px 4px rgba(0,0,0,0.04);
+  }
+  .app-page{
+  position:relative;
+  height:930px;
+  padding:20px 28px 54px 28px;
+  box-sizing:border-box;
+  overflow:hidden;
+}
+
+.app-page h2{
+  font-size:25px !important;
+  margin-bottom:4px !important;
+}
+
+.app-page > p{
+  font-size:13.2px !important;
+  line-height:1.54 !important;
+  margin-bottom:12px !important;
+}
+
+.app-panel{
+  border-radius:10px;
+  padding:13px 15px 11px 15px !important;
+  margin-bottom:11px !important;
+}
+
+.app-panel-title{
+  font-size:16.5px !important;
+  line-height:1.2 !important;
+}
+
+.app-panel-label{
+  font-size:10.5px !important;
+  margin-bottom:2px !important;
+}
+
+.app-panel p{
+  font-size:12.4px !important;
+  line-height:1.46 !important;
+  margin-bottom:6px !important;
+}
+
+.app-page-number{
+  position:absolute;
+  right:28px;
+  bottom:14px;
+  font-size:11px;
+  color:#777;
+}
+</style>
+
+
+<div style="position:relative; height:930px; padding:46px 40px 34px 40px; box-sizing:border-box; page-break-after:always; overflow:hidden;">
+
+  <!-- HEADER -->
+  <div style="text-align:center; margin-top:0; margin-bottom:24px;">
+    <img
+      src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/c88c85b3-b616-4654-87d6-c74df6ca033c/designpd.jpg?format=2500w"
+      alt="DesignPD"
+      style="width:320px; max-width:88%; height:auto; margin:0 auto 12px auto; display:block;"
+    />
+
+   
+   <div style="font-size:17px; color:#555;">
+  Personal Application Report
+</div>
+
+  </div>
+
+  <!-- NAME / DATE -->
+  <div style="text-align:center; margin-bottom:26px;">
+    
+    <div style="font-size:12px; letter-spacing:1px; color:#777; margin-bottom:5px;">
+      PREPARED FOR
+    </div>
+
+    <div style="font-size:24px; font-weight:600; color:#111; margin-bottom:5px;">
+      {{name}}
+    </div>
+
+    <div style="font-size:13px; color:#666;">
+  Developed from your DesignID completed on {{report_date}}
+</div>
+
+  </div>
+
+  <!-- DESIGNID WHEEL -->
+  <div style="text-align:center; margin:12px 0 24px 0;">
+    <img 
+      src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/9bbcd734-e5c7-43a0-8563-ec5d79749b91/DYDD_piegraph+final.png?format=2500w"
+      style="width:430px; max-width:100%; height:auto;"
+    />
+  </div>
+
+  <!-- SUBTEXT -->
+  <div style="width:78%; margin:0 auto; text-align:center; font-size:14px; color:#333; line-height:1.65;">
+    Understanding how you plan, decide, and act reveals how your design moves in real life.
+    This report helps you recognize your natural tendencies and steward them with clarity and intention.
+  </div>
+
+ <!-- FOOTER -->
+<div style="position:absolute; left:40px; right:40px; bottom:10px; display:flex; align-items:flex-end; justify-content:space-between; gap:18px; border-top:1px solid #d8d8d8; padding-top:10px;">
+  
+  <div style="font-size:10px; color:#666; text-align:left; line-height:1.45; max-width:78%;">
+    Discover Your Divine Design® Report Copyright 2025. All rights reserved.
+    Discover Your Divine Design® and DesignID® are trademarks or registered trademarks of
+    4D Education Inc.® in the United States and other countries.
+  </div>
+
+  <div style="flex:0 0 auto;">
+    <img 
+      src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/5088a0b2-04bb-4d5c-8542-884bc761ed58/DYDD-logo.png?format=2500w"
+      style="width:92px; height:auto;"
+    />
+  </div>
+</div>
+
+</div>
+
+<!-- SCORING OVERVIEW PAGE -->
+<div style="page-break-after:always; position:relative; min-height:930px; padding:0 28px 42px 28px; box-sizing:border-box;">
+
+  <div style="text-align:center; margin-top:30px; margin-bottom:24px;">
+    <h1 style="font-size:30px; margin:0; color:#000000; letter-spacing:0.6px; font-weight:700;">
+      DesignPD
+    </h1>
+    <div style="font-size:16px; margin-top:6px; color:#666;">
+      Your Plan • Decide • Do Scoring Overview
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-bottom:18px; font-size:14px; line-height:1.5;">
+    <div><strong>{{name}}</strong></div>
+    <div>{{email}}</div>
+  </div>
+<!-- SCORING CARD -->
+<div style="
+  width:78%;
+  margin:0 auto 18px auto;
+  background:#fcfcfb;
+  border:1px solid #e4e4e4;
+  border-radius:16px;
+  padding:20px 22px 14px 22px;
+  box-sizing:border-box;
+  box-shadow:0 2px 10px rgba(0,0,0,0.03);
+">
+  <!-- PLAN -->
+  <div style="width:56%; margin:0 auto 28px auto; text-align:center;">
+
+    <div style="font-size:15px; font-weight:800; letter-spacing:0.8px; color:#4A6239; margin-bottom:8px;">
+      PLAN
+    </div>
+
+    <div style="display:flex; justify-content:space-between; font-size:13px; font-weight:600; color:#4A6239; margin-bottom:6px;">
+      <span>Dreamer</span>
+      <span>Doer</span>
+    </div>
+
+    <div style="position:relative; height:28px; margin-bottom:10px;">
+
+      <div style="
+        position:absolute;
+        left:0;
+        top:8px;
+        width:18px;
+        height:12px;
+        background:#4A6239;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border-radius:2px;
+      ">
+        <div style="
+          width:0;
+          height:0;
+          border-top:4px solid transparent;
+          border-bottom:4px solid transparent;
+          border-right:7px solid #ffffff;
+        "></div>
+      </div>
+
+      <div style="
+        position:absolute;
+        right:0;
+        top:8px;
+        width:18px;
+        height:12px;
+        background:#4A6239;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border-radius:2px;
+      ">
+        <div style="
+          width:0;
+          height:0;
+          border-top:4px solid transparent;
+          border-bottom:4px solid transparent;
+          border-left:7px solid #ffffff;
+        "></div>
+      </div>
+
+      <div style="
+        position:absolute;
+        top:12px;
+        left:18px;
+        right:18px;
+        height:3px;
+        background:#4A6239;
+      "></div>
+
+      <div style="
+        position:absolute;
+        top:4px;
+        left:50%;
+        width:3px;
+        height:18px;
+        background:#4A6239;
+        transform:translateX(-50%);
+      "></div>
+
+      <div style="
+        position:absolute;
+        top:6px;
+        left:calc(50% - {{move_dreamer_minus_doer}});
+        width:16px;
+        height:16px;
+        background:#4A6239;
+        border-radius:50%;
+        transform:translateX(-50%);
+      "></div>
+
+    </div>
+
+    <div style="font-size:17px; font-weight:700; margin-bottom:4px;">
+      {{ plan_tendency | replace: "_", " " }}
+    </div>
+    <div style="font-size:13px; color:#555;">
+      Score: +{{plan_score}}
+    </div>
+  </div>
+
+  <!-- DECIDE -->
+  <div style="width:56%; margin:0 auto 28px auto; text-align:center;">
+
+    <div style="font-size:15px; font-weight:800; letter-spacing:0.8px; color:#AEC391; margin-bottom:8px;">
+      DECIDE
+    </div>
+
+    <div style="display:flex; justify-content:space-between; font-size:13px; font-weight:600; color:#AEC391; margin-bottom:6px;">
+      <span>Feel It</span>
+      <span>Think It</span>
+    </div>
+
+    <div style="position:relative; height:28px; margin-bottom:10px;">
+
+      <div style="
+        position:absolute;
+        left:0;
+        top:8px;
+        width:18px;
+        height:12px;
+        background:#AEC391;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border-radius:2px;
+      ">
+        <div style="
+          width:0;
+          height:0;
+          border-top:4px solid transparent;
+          border-bottom:4px solid transparent;
+          border-right:7px solid #ffffff;
+        "></div>
+      </div>
+
+      <div style="
+        position:absolute;
+        right:0;
+        top:8px;
+        width:18px;
+        height:12px;
+        background:#AEC391;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border-radius:2px;
+      ">
+        <div style="
+          width:0;
+          height:0;
+          border-top:4px solid transparent;
+          border-bottom:4px solid transparent;
+          border-left:7px solid #ffffff;
+        "></div>
+      </div>
+
+      <div style="
+        position:absolute;
+        top:12px;
+        left:18px;
+        right:18px;
+        height:3px;
+        background:#AEC391;
+      "></div>
+
+      <div style="
+        position:absolute;
+        top:4px;
+        left:50%;
+        width:3px;
+        height:18px;
+        background:#AEC391;
+        transform:translateX(-50%);
+      "></div>
+
+      <div style="
+        position:absolute;
+        top:6px;
+        left:calc(50% - {{move_feel_it_minus_think_it}});
+        width:16px;
+        height:16px;
+        background:#AEC391;
+        border-radius:50%;
+        transform:translateX(-50%);
+      "></div>
+
+    </div>
+
+    <div style="font-size:17px; font-weight:700; margin-bottom:4px;">
+      {{ decide_tendency | replace: "_", " " }}
+    </div>
+    <div style="font-size:13px; color:#555;">
+      Score: +{{decide_score}}
+    </div>
+  </div>
+
+  <!-- DO -->
+  <div style="width:56%; margin:0 auto 6px auto; text-align:center;">
+
+    <div style="font-size:15px; font-weight:800; letter-spacing:0.8px; color:#769B5B; margin-bottom:8px;">
+      DO
+    </div>
+
+    <div style="display:flex; justify-content:space-between; font-size:13px; font-weight:600; color:#769B5B; margin-bottom:6px;">
+      <span>Solo</span>
+      <span>Together</span>
+    </div>
+
+    <div style="position:relative; height:28px; margin-bottom:10px;">
+
+      <div style="
+        position:absolute;
+        left:0;
+        top:8px;
+        width:18px;
+        height:12px;
+        background:#769B5B;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border-radius:2px;
+      ">
+        <div style="
+          width:0;
+          height:0;
+          border-top:4px solid transparent;
+          border-bottom:4px solid transparent;
+          border-right:7px solid #ffffff;
+        "></div>
+      </div>
+
+      <div style="
+        position:absolute;
+        right:0;
+        top:8px;
+        width:18px;
+        height:12px;
+        background:#769B5B;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border-radius:2px;
+      ">
+        <div style="
+          width:0;
+          height:0;
+          border-top:4px solid transparent;
+          border-bottom:4px solid transparent;
+          border-left:7px solid #ffffff;
+        "></div>
+      </div>
+
+      <div style="
+        position:absolute;
+        top:12px;
+        left:18px;
+        right:18px;
+        height:3px;
+        background:#769B5B;
+      "></div>
+
+      <div style="
+        position:absolute;
+        top:4px;
+        left:50%;
+        width:3px;
+        height:18px;
+        background:#769B5B;
+        transform:translateX(-50%);
+      "></div>
+
+      <div style="
+        position:absolute;
+        top:6px;
+        left:calc(50% - {{move_solo_minus_together}});
+        width:16px;
+        height:16px;
+        background:#769B5B;
+        border-radius:50%;
+        transform:translateX(-50%);
+      "></div>
+
+    </div>
+
+    <div style="font-size:17px; font-weight:700; margin-bottom:4px;">
+      {{ do_tendency | replace: "_", " " }}
+    </div>
+    <div style="font-size:13px; color:#555;">
+      Score: +{{do_score}}
+    </div>
+  </div>
+</div>
+<!-- END SCORING CARD -->
+  <div style="width:78%; margin:10px auto 0 auto; text-align:left; line-height:1.6; font-size:13.5px; color:#333;">
+    <p style="margin-bottom:8px;">
+      Your DesignPD scores reveal how your design tends to move through three behavioral patterns: planning, decision making, and action. These tendencies do not measure ability or potential. Instead, they highlight the natural ways your design most often prepares, processes information, and moves forward.
+    </p>
+
+    <p style="margin-bottom:8px;">
+      While DesignID helps you understand identity through the reflections of Architect, Artisan, Shepherd, and Steward, DesignPD explores how that design translates into preparation, judgment, and execution within everyday situations such as leadership, collaboration, conflict, pressure, and sustainability.
+    </p>
+
+  </div>
+
+  <div style="text-align:center; margin-top:22px; font-size:18px; font-weight:700; color:#000000;">
+    On Purpose — For Purpose
+  </div>
+
+  <div style="text-align:center; margin-top:10px; font-size:13px; line-height:1.6; color:#555;">
+    “For we are God’s handiwork, created in Christ Jesus to do good works,<br>
+    which God prepared in advance for us to do.” — Ephesians 2:10
+  </div>
+
+  <div style="position:absolute; right:28px; bottom:14px; font-size:11px; color:#777;">Page 2</div>
+
+</div>
+
+<!-- PLAN SECTION -->
+<div style="position:relative; min-height:930px; margin-top:30px; padding:0 28px 42px 28px; box-sizing:border-box;">
+
+  <h2 style="color:#4A6239; font-size:24px; margin-bottom:18px; letter-spacing:0.5px;">
+  PLAN
+</h2>
+
+<div style="width:52%; margin:0 auto 18px auto; text-align:center;">
+
+  <div style="display:flex; justify-content:space-between; font-size:13px; font-weight:600; color:#4A6239; margin-bottom:6px;">
+    <span>Dreamer</span>
+    <span>Doer</span>
+  </div>
+
+  <div style="position:relative; height:28px; margin-bottom:8px;">
+
+    <!-- left end cap -->
+    <div style="
+      position:absolute;
+      left:0;
+      top:8px;
+      width:18px;
+      height:12px;
+      background:#4A6239;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:2px;
+    ">
+      <div style="
+        width:0;
+        height:0;
+        border-top:4px solid transparent;
+        border-bottom:4px solid transparent;
+        border-right:7px solid #ffffff;
+      "></div>
+    </div>
+
+    <!-- right end cap -->
+    <div style="
+      position:absolute;
+      right:0;
+      top:8px;
+      width:18px;
+      height:12px;
+      background:#4A6239;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:2px;
+    ">
+      <div style="
+        width:0;
+        height:0;
+        border-top:4px solid transparent;
+        border-bottom:4px solid transparent;
+        border-left:7px solid #ffffff;
+      "></div>
+    </div>
+
+    <!-- main line -->
+    <div style="
+      position:absolute;
+      top:12px;
+      left:18px;
+      right:18px;
+      height:3px;
+      background:#4A6239;
+    "></div>
+
+    <!-- center divider -->
+    <div style="
+      position:absolute;
+      top:4px;
+      left:50%;
+      width:3px;
+      height:18px;
+      background:#4A6239;
+      transform:translateX(-50%);
+    "></div>
+
+    <!-- score dot -->
+    <div style="
+      position:absolute;
+      top:6px;
+      left:calc(50% - {{move_dreamer_minus_doer}});
+      width:16px;
+      height:16px;
+      background:#4A6239;
+      border-radius:50%;
+      transform:translateX(-50%);
+    "></div>
+
+  </div>
+
+  <div style="font-size:18px; font-weight:700; margin-bottom:4px;">
+    {{ plan_tendency | replace: "_", " " }}
+  </div>
+
+</div>
+
+  <p style="margin-bottom:18px; line-height:1.6;">
+    Planning reveals how you naturally approach direction and change. Some people instinctively expand toward possibility, while others narrow toward execution. Neither is better, but each shapes how you set priorities, cast vision, and respond when clarity is needed. Understanding your planning tendency helps you lead with intention rather than reaction.
+  </p>
+
+  <h3 style="font-size:17px; margin-top:24px; margin-bottom:8px; color:#4A6239;">
+    Your Natural Planning Tendency
+  </h3>
+
+  <p style="margin-bottom:14px; line-height:1.6;">
+    {{plan_descriptor}}
+  </p>
+
+  <p style="margin-bottom:18px; line-height:1.6;">
+    {{plan_core}}
+  </p>
+
+  <h3 style="font-size:17px; margin-top:24px; margin-bottom:8px; color:#4A6239;">
+    How Your DesignID Shows Up in Planning
+  </h3>
+
+  <p style="margin-bottom:14px; line-height:1.6;">
+    {{plan_overlay}}
+  </p>
+
+  <p style="margin-bottom:18px; line-height:1.6;">
+    {{plan_modulator}}
+  </p>
+
+  <div style="position:absolute; right:28px; bottom:14px; font-size:11px; color:#777;">Page 3</div>
+
+</div>
+
+<!-- FORCE NEXT PAGE -->
+<div style="page-break-before:always; break-before:page;"></div>
+
+<!-- CAPACITY TO PLAN -->
+<div style="position:relative; min-height:930px; padding:28px 28px 42px 28px; box-sizing:border-box;">
+
+  <h3 style="font-size:17px; margin-top:0; margin-bottom:8px; color:#4A6239;">
+    Capacity to Plan
+  </h3>
+
+  <p style="margin-bottom:16px; line-height:1.6;">
+    Planning capacity reflects how much vision, structure, and future responsibility you have energy to carry as you shape direction. When capacity is strong, clarity and momentum flow naturally. When it is strained, planning can either stall or become forced.
+  </p>
+
+  <table style="width:100%; border-collapse:collapse; margin-top:10px; font-size:13px;">
+    <tr>
+      <th style="text-align:left; padding:10px 8px; border:1px solid #4A6239; color:#4A6239;">Reflection</th>
+      <th style="text-align:left; padding:10px 8px; border:1px solid #4A6239; color:#4A6239;">Capacity</th>
+      <th style="text-align:left; padding:10px 8px; border:1px solid #4A6239; color:#4A6239;">What This Means</th>
+    </tr>
+    <tr>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #4A6239;"><strong>Architect</strong></td>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #4A6239;">{{band_architect}}</td>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #4A6239;">{{plan_architect_amplifier}}</td>
+    </tr>
+    <tr>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #4A6239;"><strong>Artisan</strong></td>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #4A6239;">{{band_artisan}}</td>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #4A6239;">{{plan_artisan_amplifier}}</td>
+    </tr>
+    <tr>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #4A6239;"><strong>Shepherd</strong></td>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #4A6239;">{{band_shepherd}}</td>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #4A6239;">{{plan_shepherd_amplifier}}</td>
+    </tr>
+    <tr>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #4A6239;"><strong>Steward</strong></td>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #4A6239;">{{band_steward}}</td>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #4A6239;">{{plan_steward_amplifier}}</td>
+    </tr>
+  </table>
+
+  <p style="margin-top:16px; margin-bottom:18px; line-height:1.6;">
+    Your planning capacity is not static. It often changes depending on how much vision, structure, and future responsibility you are carrying in a given season.
+  </p>
+<h3 style="font-size:17px; margin-top:24px; margin-bottom:8px; color:#4A6239;">
+  Your Integrative Lens
+</h3>
+
+<p style="margin-bottom:14px; line-height:1.6;">
+  {{plan_integrative_lens}}
+</p>
+
+<h3 style="font-size:17px; margin-top:18px; margin-bottom:8px; color:#4A6239;">
+  Shadow to Watch For
+</h3>
+
+<p style="margin-bottom:18px; line-height:1.6;">
+  {{plan_shadow_watch}}
+</p>
+  <div style="position:absolute; right:28px; bottom:14px; font-size:11px; color:#777;">Page 4</div>
+
+</div>
+
+<!-- FORCE DECIDE TO NEW PAGE -->
+<div style="page-break-before:always; break-before:page;"></div>
+
+<!-- DECIDE SECTION -->
+<div style="position:relative; min-height:930px; padding:0 28px 42px 28px; box-sizing:border-box;">
+
+  <h2 style="color:#AEC391; font-size:24px; margin-bottom:18px; letter-spacing:0.5px;">
+    DECIDE
+  </h2>
+
+  <div style="width:52%; margin:0 auto 18px auto; text-align:center;">
+
+    <div style="display:flex; justify-content:space-between; font-size:13px; font-weight:600; color:#AEC391; margin-bottom:6px;">
+      <span>Feel It</span>
+      <span>Think It</span>
+    </div>
+
+    <div style="position:relative; height:28px; margin-bottom:8px;">
+
+      <!-- left end cap -->
+      <div style="
+        position:absolute;
+        left:0;
+        top:8px;
+        width:18px;
+        height:12px;
+        background:#AEC391;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border-radius:2px;
+      ">
+        <div style="
+          width:0;
+          height:0;
+          border-top:4px solid transparent;
+          border-bottom:4px solid transparent;
+          border-right:7px solid #ffffff;
+        "></div>
+      </div>
+
+      <!-- right end cap -->
+      <div style="
+        position:absolute;
+        right:0;
+        top:8px;
+        width:18px;
+        height:12px;
+        background:#AEC391;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border-radius:2px;
+      ">
+        <div style="
+          width:0;
+          height:0;
+          border-top:4px solid transparent;
+          border-bottom:4px solid transparent;
+          border-left:7px solid #ffffff;
+        "></div>
+      </div>
+
+      <!-- main line -->
+      <div style="
+        position:absolute;
+        top:12px;
+        left:18px;
+        right:18px;
+        height:3px;
+        background:#AEC391;
+      "></div>
+
+      <!-- center divider -->
+      <div style="
+        position:absolute;
+        top:4px;
+        left:50%;
+        width:3px;
+        height:18px;
+        background:#AEC391;
+        transform:translateX(-50%);
+      "></div>
+
+      <!-- score dot -->
+      <div style="
+        position:absolute;
+        top:6px;
+        left:calc(50% - {{move_feel_it_minus_think_it}});
+        width:16px;
+        height:16px;
+        background:#AEC391;
+        border-radius:50%;
+        transform:translateX(-50%);
+      "></div>
+
+    </div>
+
+    <div style="font-size:18px; font-weight:700; margin-bottom:4px;">
+      {{ decide_tendency | replace: "_", " " }}
+    </div>
+
+  </div>
+
+  <p style="margin-bottom:18px; line-height:1.6;">
+    Decision making reveals how you process complexity and move toward clarity. Some people rely first on internal conviction and relational awareness, while others prioritize structured reasoning and logical evaluation. Both approaches bring value, but awareness strengthens maturity. Understanding your decision tendency helps you resolve tension with steadiness and integrity.
+  </p>
+
+  <h3 style="font-size:17px; margin-top:24px; margin-bottom:8px; color:#AEC391;">
+    Your Natural Decision Tendency
+  </h3>
+
+  <p style="margin-bottom:14px; line-height:1.6;">
+    {{decide_descriptor}}
+  </p>
+
+  <p style="margin-bottom:18px; line-height:1.6;">
+    {{decide_core}}
+  </p>
+
+  <h3 style="font-size:17px; margin-top:24px; margin-bottom:8px; color:#AEC391;">
+    How Your DesignID Shows Up in Decision Making
+  </h3>
+
+  <p style="margin-bottom:14px; line-height:1.6;">
+    {{decide_overlay}}
+  </p>
+
+  <p style="margin-bottom:18px; line-height:1.6;">
+    {{decide_modulator}}
+  </p>
+
+  <div style="position:absolute; right:28px; bottom:14px; font-size:11px; color:#777;">Page 5</div>
+
+</div>
+
+<!-- FORCE CAPACITY TO DECIDE TO NEXT PAGE -->
+<div style="page-break-before:always; break-before:page;"></div>
+
+<!-- CAPACITY TO DECIDE -->
+<div style="position:relative; min-height:930px; padding:28px 28px 42px 28px; box-sizing:border-box;">
+
+  <h3 style="font-size:17px; margin-top:0; margin-bottom:8px; color:#AEC391;">
+    Capacity to Decide
+  </h3>
+
+  <p style="margin-bottom:16px; line-height:1.6;">
+    Decision capacity reflects how much complexity, tension, and responsibility you can hold while determining direction and weighing what matters most. When capacity is strong, clarity feels steady and grounded. When it is strained, decisions can feel either rushed or overwhelming.
+  </p>
+
+  <table style="width:100%; border-collapse:collapse; margin-top:10px; font-size:13px;">
+    <tr>
+      <th style="text-align:left; padding:10px 8px; border:1px solid #AEC391; color:#AEC391;">Reflection</th>
+      <th style="text-align:left; padding:10px 8px; border:1px solid #AEC391; color:#AEC391;">Capacity</th>
+      <th style="text-align:left; padding:10px 8px; border:1px solid #AEC391; color:#AEC391;">What This Means</th>
+    </tr>
+    <tr>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #AEC391;"><strong>Architect</strong></td>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #AEC391;">{{band_architect}}</td>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #AEC391;">{{decide_architect_amplifier}}</td>
+    </tr>
+    <tr>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #AEC391;"><strong>Artisan</strong></td>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #AEC391;">{{band_artisan}}</td>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #AEC391;">{{decide_artisan_amplifier}}</td>
+    </tr>
+    <tr>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #AEC391;"><strong>Shepherd</strong></td>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #AEC391;">{{band_shepherd}}</td>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #AEC391;">{{decide_shepherd_amplifier}}</td>
+    </tr>
+    <tr>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #AEC391;"><strong>Steward</strong></td>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #AEC391;">{{band_steward}}</td>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #AEC391;">{{decide_steward_amplifier}}</td>
+    </tr>
+  </table>
+
+  <p style="margin-top:16px; margin-bottom:18px; line-height:1.6;">
+    Your decision capacity can expand or narrow depending on the level of complexity, tension, and emotional weight you are navigating in the moment.
+  </p>
+<h3 style="font-size:17px; margin-top:24px; margin-bottom:8px; color:#AEC391;">
+  Your Integrative Lens
+</h3>
+
+<p style="margin-bottom:14px; line-height:1.6;">
+  {{decide_integrative_lens}}
+</p>
+
+<h3 style="font-size:17px; margin-top:18px; margin-bottom:8px; color:#AEC391;">
+  Shadow to Watch For
+</h3>
+
+<p style="margin-bottom:18px; line-height:1.6;">
+  {{decide_shadow_watch}}
+</p>
+  <div style="position:absolute; right:28px; bottom:14px; font-size:11px; color:#777;">Page 6</div>
+
+</div>
+
+<!-- FORCE DO TO NEW PAGE -->
+<div style="page-break-before:always; break-before:page;"></div>
+
+<!-- DO SECTION -->
+<div style="position:relative; min-height:930px; padding:0 28px 42px 28px; box-sizing:border-box;">
+
+  <h2 style="color:#769B5B; font-size:24px; margin-bottom:18px; letter-spacing:0.5px;">
+    DO
+  </h2>
+
+  <div style="width:52%; margin:0 auto 18px auto; text-align:center;">
+
+    <div style="display:flex; justify-content:space-between; font-size:13px; font-weight:600; color:#769B5B; margin-bottom:6px;">
+      <span>Solo</span>
+      <span>Together</span>
+    </div>
+
+    <div style="position:relative; height:28px; margin-bottom:8px;">
+
+      <!-- left end cap -->
+      <div style="
+        position:absolute;
+        left:0;
+        top:8px;
+        width:18px;
+        height:12px;
+        background:#769B5B;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border-radius:2px;
+      ">
+        <div style="
+          width:0;
+          height:0;
+          border-top:4px solid transparent;
+          border-bottom:4px solid transparent;
+          border-right:7px solid #ffffff;
+        "></div>
+      </div>
+
+      <!-- right end cap -->
+      <div style="
+        position:absolute;
+        right:0;
+        top:8px;
+        width:18px;
+        height:12px;
+        background:#769B5B;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border-radius:2px;
+      ">
+        <div style="
+          width:0;
+          height:0;
+          border-top:4px solid transparent;
+          border-bottom:4px solid transparent;
+          border-left:7px solid #ffffff;
+        "></div>
+      </div>
+
+      <!-- main line -->
+      <div style="
+        position:absolute;
+        top:12px;
+        left:18px;
+        right:18px;
+        height:3px;
+        background:#769B5B;
+      "></div>
+
+      <!-- center divider -->
+      <div style="
+        position:absolute;
+        top:4px;
+        left:50%;
+        width:3px;
+        height:18px;
+        background:#769B5B;
+        transform:translateX(-50%);
+      "></div>
+
+      <!-- score dot -->
+      <div style="
+        position:absolute;
+        top:6px;
+        left:calc(50% - {{move_solo_minus_together}});
+        width:16px;
+        height:16px;
+        background:#769B5B;
+        border-radius:50%;
+        transform:translateX(-50%);
+      "></div>
+
+    </div>
+
+    <div style="font-size:18px; font-weight:700; margin-bottom:4px;">
+      {{ do_tendency | replace: "_", " " }}
+    </div>
+
+  </div>
+
+  <p style="margin-bottom:18px; line-height:1.6;">
+    Action reveals how you carry responsibility and move work forward. Some people naturally take independent ownership, while others thrive through shared effort and collaboration. Both contribute meaningfully, but each influences pace, sustainability, and leadership presence. Understanding your action tendency helps you steward energy rather than operate on instinct alone.
+  </p>
+
+  <h3 style="font-size:17px; margin-top:24px; margin-bottom:8px; color:#769B5B;">
+    Your Natural Action Tendency
+  </h3>
+
+  <p style="margin-bottom:14px; line-height:1.6;">
+    {{do_descriptor}}
+  </p>
+
+  <p style="margin-bottom:18px; line-height:1.6;">
+    {{do_core}}
+  </p>
+
+  <h3 style="font-size:17px; margin-top:24px; margin-bottom:8px; color:#769B5B;">
+    How Your DesignID Shows Up in Action
+  </h3>
+
+  <p style="margin-bottom:14px; line-height:1.6;">
+    {{do_overlay}}
+  </p>
+
+  <p style="margin-bottom:18px; line-height:1.6;">
+    {{do_modulator}}
+  </p>
+
+  <div style="position:absolute; right:28px; bottom:14px; font-size:11px; color:#777;">Page 7</div>
+
+</div>
+
+<!-- FORCE CAPACITY TO DO TO NEXT PAGE -->
+<div style="page-break-before:always; break-before:page;"></div>
+
+<!-- CAPACITY TO DO -->
+<div style="position:relative; min-height:930px; padding:28px 28px 42px 28px; box-sizing:border-box;">
+
+  <h3 style="font-size:17px; margin-top:0; margin-bottom:8px; color:#769B5B;">
+    Capacity to Do
+  </h3>
+
+  <p style="margin-bottom:16px; line-height:1.6;">
+    Action capacity reflects how much pace, responsibility, and ownership you can sustain as you move work forward and carry things toward completion. When capacity is strong, action feels consistent and purposeful. When it is strained, effort can become either scattered or exhausting.
+  </p>
+
+  <table style="width:100%; border-collapse:collapse; margin-top:10px; font-size:13px;">
+    <tr>
+      <th style="text-align:left; padding:10px 8px; border:1px solid #769B5B; color:#769B5B;">Reflection</th>
+      <th style="text-align:left; padding:10px 8px; border:1px solid #769B5B; color:#769B5B;">Capacity</th>
+      <th style="text-align:left; padding:10px 8px; border:1px solid #769B5B; color:#769B5B;">What This Means</th>
+    </tr>
+    <tr>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #769B5B;"><strong>Architect</strong></td>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #769B5B;">{{band_architect}}</td>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #769B5B;">{{do_architect_amplifier}}</td>
+    </tr>
+    <tr>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #769B5B;"><strong>Artisan</strong></td>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #769B5B;">{{band_artisan}}</td>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #769B5B;">{{do_artisan_amplifier}}</td>
+    </tr>
+    <tr>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #769B5B;"><strong>Shepherd</strong></td>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #769B5B;">{{band_shepherd}}</td>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #769B5B;">{{do_shepherd_amplifier}}</td>
+    </tr>
+    <tr>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #769B5B;"><strong>Steward</strong></td>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #769B5B;">{{band_steward}}</td>
+      <td style="padding:10px 8px; vertical-align:top; border:1px solid #769B5B;">{{do_steward_amplifier}}</td>
+    </tr>
+  </table>
+
+  <p style="margin-top:16px; margin-bottom:18px; line-height:1.6;">
+    Your action capacity shifts over time based on the pace, responsibility, and sustained effort required to keep things moving forward.
+  </p>
+<h3 style="font-size:17px; margin-top:24px; margin-bottom:8px; color:#769B5B;">
+  Your Integrative Lens
+</h3>
+
+<p style="margin-bottom:14px; line-height:1.6;">
+  {{do_integrative_lens}}
+</p>
+
+<h3 style="font-size:17px; margin-top:18px; margin-bottom:8px; color:#769B5B;">
+  Shadow to Watch For
+</h3>
+
+<p style="margin-bottom:18px; line-height:1.6;">
+  {{do_shadow_watch}}
+</p>
+  <div style="position:absolute; right:28px; bottom:14px; font-size:11px; color:#777;">Page 8</div>
+
+</div>
+
+<!-- FROM INSIGHT TO APPLICATION -->
+<div style="page-break-before:always; break-before:page; position:relative; min-height:930px; padding:30px 28px 42px 28px; box-sizing:border-box;">
+
+  <!-- COLOR MAPPING -->
+  {% assign primary_color = "#000000" %}
+  {% if primary == "Architect" %}
+    {% assign primary_color = "#D4A451" %}
+  {% elsif primary == "Artisan" %}
+    {% assign primary_color = "#647C9B" %}
+  {% elsif primary == "Shepherd" %}
+    {% assign primary_color = "#739D5E" %}
+  {% elsif primary == "Steward" %}
+    {% assign primary_color = "#5A496B" %}
+  {% endif %}
+
+  {% assign secondary_color = "#000000" %}
+  {% if secondary == "Architect" %}
+    {% assign secondary_color = "#D4A451" %}
+  {% elsif secondary == "Artisan" %}
+    {% assign secondary_color = "#647C9B" %}
+  {% elsif secondary == "Shepherd" %}
+    {% assign secondary_color = "#739D5E" %}
+  {% elsif secondary == "Steward" %}
+    {% assign secondary_color = "#5A496B" %}
+  {% endif %}
+
+  {% assign integrative_color = "#000000" %}
+  {% if integrative_reflection == "Visionary" %}
+    {% assign integrative_color = "#9C9076" %}
+  {% elsif integrative_reflection == "Interpreter" %}
+    {% assign integrative_color = "#6B8D7D" %}
+  {% elsif integrative_reflection == "Guardian" %}
+    {% assign integrative_color = "#677365" %}
+  {% elsif integrative_reflection == "Overseer" %}
+    {% assign integrative_color = "#97765E" %}
+  {% elsif integrative_reflection == "Innovator" %}
+    {% assign integrative_color = "#A3A158" %}
+  {% elsif integrative_reflection == "Craftsman" %}
+    {% assign integrative_color = "#5F6283" %}
+  {% endif %}
+
+  <h2 style="font-size:30px; color:#000000; font-weight:700; margin-bottom:22px; letter-spacing:0.2px;">
+    From Insight to Application
+  </h2>
+
+  <div style="display:flex; align-items:flex-start; gap:30px;">
+
+    <!-- LEFT COLUMN -->
+    <div style="width:60%; font-size:14px; line-height:1.78; color:#333;">
+
+      <p style="margin-top:0; margin-bottom:14px;">
+        Your DesignID results help reveal who you are by showing how your life most naturally reflects the image of God through the four core reflections: Architect, Artisan, Shepherd, and Steward. These reflections shape the way you see, serve, relate, and contribute.
+      </p>
+
+      <p style="margin-bottom:14px;">
+        DesignPD builds on that foundation by exploring how your design operates in real life. Through the lenses of Plan, Decide, and Do, this report highlights how your reflection patterns move into preparation, discernment, and action.
+      </p>
+
+      <p style="margin-bottom:14px;">
+        The following pages apply your design to five areas of impact where your tendencies become especially visible. These environments move from strength and contribution into strain and long term stewardship, helping you see how your design responds across the realities of leadership and life.
+      </p>
+
+  
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div style="width:40%;">
+      <div style="border:1px solid #d8d8d8; border-radius:10px; padding:20px 18px 16px 18px; background:#fbfbfb; box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+
+        <div style="font-size:17px; font-weight:700; color:#000000; margin-bottom:14px;">
+          Design at a Glance
+        </div>
+
+        <div style="width:42px; height:2px; background:#4A6239; margin-bottom:14px;"></div>
+
+        <div style="font-size:13px; line-height:1.9;">
+
+          <div>
+            <strong style="color:#000000;">Primary Reflection:</strong>
+            <span style="color:{{primary_color}}; font-weight:700;">{{primary}}</span>
+          </div>
+
+          <div>
+            <strong style="color:#000000;">Secondary Reflection:</strong>
+            <span style="color:{{secondary_color}}; font-weight:700;">{{secondary}}</span>
+          </div>
+
+          <div style="margin-bottom:10px;">
+            <strong style="color:#000000;">Integrative Reflection:</strong>
+            <span style="color:{{integrative_color}}; font-weight:700;">{{integrative_reflection}}</span>
+          </div>
+
+          <div>
+            <strong style="color:#000000;">Plan:</strong>
+            <span style="color:#4A6239; font-weight:700;">{{ plan_tendency | replace: "_", " " }}</span>
+          </div>
+
+          <div>
+            <strong style="color:#000000;">Decide:</strong>
+            <span style="color:#AEC391; font-weight:700;">{{ decide_tendency | replace: "_", " " }}</span>
+          </div>
+
+          <div>
+            <strong style="color:#000000;">Do:</strong>
+            <span style="color:#769B5B; font-weight:700;">{{ do_tendency | replace: "_", " " }}</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="margin-top:14px; border:1px solid #e3e3e3; border-radius:10px; padding:14px 16px; background:#ffffff;">
+        <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:#666; text-transform:uppercase; margin-bottom:8px;">
+          DesignPD Operating Flow
+        </div>
+        <div style="font-size:13px; line-height:1.8; color:#333;">
+          Conflict → Collaboration → Leadership → Pressure → Sustainability
+        </div>
+      </div>
+    </div>
+
+  </div>
+<!-- FIVE ENVIRONMENTS BOX -->
+<div style="
+  margin-top:24px;
+  border:1px solid #d8d8d8;
+  border-radius:12px;
+  padding:18px 20px 16px 20px;
+  background:#fbfbfb;
+  box-shadow:0 1px 4px rgba(0,0,0,0.04);
+">
+
+  <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:#666; text-transform:uppercase; margin-bottom:12px;">
+    The Five Areas of Impact
+  </div>
+
+  <div style="display:flex; gap:14px; align-items:stretch;">
+
+    <div style="flex:1; border-left:4px solid #A65E5E; padding-left:10px;">
+      <div style="font-size:14px; font-weight:700; color:#A65E5E; margin-bottom:4px;">Conflict</div>
+      <div style="font-size:12.5px; line-height:1.45; color:#333;">
+        How your design reacts when tension, disagreement, or relational friction appears.
+      </div>
+    </div>
+
+    <div style="flex:1; border-left:4px solid #5F8F9A; padding-left:10px;">
+      <div style="font-size:14px; font-weight:700; color:#5F8F9A; margin-bottom:4px;">Collaboration</div>
+      <div style="font-size:12.5px; line-height:1.45; color:#333;">
+        How your design works with others in shared effort and communication.
+      </div>
+    </div>
+
+    <div style="flex:1; border-left:4px solid #8C6AA6; padding-left:10px;">
+      <div style="font-size:14px; font-weight:700; color:#8C6AA6; margin-bottom:4px;">Leadership</div>
+      <div style="font-size:12.5px; line-height:1.45; color:#333;">
+        How your design influences direction, responsibility, and initiative.
+      </div>
+    </div>
+
+    <div style="flex:1; border-left:4px solid #C07B45; padding-left:10px;">
+      <div style="font-size:14px; font-weight:700; color:#C07B45; margin-bottom:4px;">Pressure</div>
+      <div style="font-size:12.5px; line-height:1.45; color:#333;">
+        How your design responds when urgency, strain, or high stakes increase.
+      </div>
+    </div>
+
+    <div style="flex:1; border-left:4px solid #4A6239; padding-left:10px;">
+      <div style="font-size:14px; font-weight:700; color:#4A6239; margin-bottom:4px;">Sustainability</div>
+      <div style="font-size:12.5px; line-height:1.45; color:#333;">
+        How your design maintains strength, balance, and endurance over time.
+      </div>
+    </div>
+
+  </div>
+
+</div>
+  <!-- CENTERED SUBHEADING -->
+  <div style="margin-top:34px; text-align:center; font-size:18px; font-weight:700; color:#000000; line-height:1.5;">
+    On Purpose — For Purpose
+  </div>
+
+  <!-- VERSE -->
+  <div style="margin-top:10px; text-align:center; font-size:14px; font-weight:700; color:#000000; line-height:1.7;">
+    “For we are God’s handiwork, created in Christ Jesus to do good works,<br>
+    which God prepared in advance for us to do.” — Ephesians 2:10
+  </div>
+
+  <!-- CLOSING LINE -->
+  <div style="margin-top:16px; text-align:center; font-size:13px; line-height:1.75; color:#555; width:78%; margin-left:auto; margin-right:auto;">
+    Your design is not accidental. God has uniquely shaped your reflections, capacities, and tendencies so that your life can contribute meaningfully across the environments He has prepared you to walk through.
+  </div>
+
+  <div style="position:absolute; right:28px; bottom:14px; font-size:11px; color:#777;">Page 9</div>
+
+</div>
+
+<!-- PRACTICAL APPLICATIONS SECTION -->
+
+<!-- CONFLICT -->
+<div style="page-break-before:always; break-before:page;"></div>
+
+<div class="app-page">
+
+  <h2 style="font-size:28px; color:#A65E5E; margin-bottom:6px; letter-spacing:0.2px;">
+    Conflict
+  </h2>
+
+
+  <p style="margin-bottom:16px; line-height:1.65; color:#333;">
+    Conflict reveals how your design responds when tension, disagreement, or disruption enters the room. Your tendencies in Plan, Decide, and Do influence how you frame the issue, how you interpret what is happening, and how you move toward resolution. Understanding these patterns can help you respond with greater awareness, steadiness, and wisdom.
+  </p>
+
+  <!-- PLAN PANEL -->
+  <div class="app-panel" style="border:1px solid #e4d6d6; background:#fcfbfb;">
+    <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:#A65E5E; text-transform:uppercase; margin-bottom:4px;">
+      Plan
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:baseline; gap:16px; margin-bottom:10px;">
+      <div class="app-panel-title" style="font-weight:700; color:#000000;">
+        How You Frame the Conflict
+      </div>
+      <div style="font-size:15px; font-weight:700; color:#4A6239; text-align:right; white-space:nowrap;">
+        {{ plan_tendency | replace: "_", " " }}
+      </div>
+    </div>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Strength Expression
+    </div>
+    <p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+      {{conflict_plan_strength}}
+    </p>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Watch For
+    </div>
+    <p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+      {{conflict_plan_watch}}
+    </p>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Growth Practice
+    </div>
+    <p style="margin-top:0; margin-bottom:0; line-height:1.65; color:#333;">
+      {{conflict_plan_growth}}
+    </p>
+  </div>
+
+  <!-- DECIDE PANEL -->
+  <div class="app-panel" style="border:1px solid #e4d6d6; background:#fcfbfb;">
+    <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:#A65E5E; text-transform:uppercase; margin-bottom:4px;">
+      Decide
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:baseline; gap:16px; margin-bottom:10px;">
+      <div class="app-panel-title" style="font-weight:700; color:#000000;">
+        How You Interpret the Conflict
+      </div>
+      <div style="font-size:15px; font-weight:700; color:#AEC391; text-align:right; white-space:nowrap;">
+        {{ decide_tendency | replace: "_", " " }}
+      </div>
+    </div>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Strength Expression
+    </div>
+    <p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+      {{conflict_decide_strength}}
+    </p>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Watch For
+    </div>
+    <p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+      {{conflict_decide_watch}}
+    </p>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Growth Practice
+    </div>
+    <p style="margin-top:0; margin-bottom:0; line-height:1.65; color:#333;">
+      {{conflict_decide_growth}}
+    </p>
+  </div>
+
+  <!-- DO PANEL -->
+  <div class="app-panel" style="border:1px solid #e4d6d6; background:#fcfbfb;">
+    <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:#A65E5E; text-transform:uppercase; margin-bottom:4px;">
+      Do
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:baseline; gap:16px; margin-bottom:10px;">
+      <div class="app-panel-title" style="font-weight:700; color:#000000;">
+        How You Respond in the Conflict
+      </div>
+      <div style="font-size:15px; font-weight:700; color:#769B5B; text-align:right; white-space:nowrap;">
+        {{ do_tendency | replace: "_", " " }}
+      </div>
+    </div>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Strength Expression
+    </div>
+    <p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+      {{conflict_do_strength}}
+    </p>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Watch For
+    </div>
+    <p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+      {{conflict_do_watch}}
+    </p>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Growth Practice
+    </div>
+    <p style="margin-top:0; margin-bottom:0; line-height:1.65; color:#333;">
+      {{conflict_do_growth}}
+    </p>
+  </div>
+
+  <div class="app-page-number">Page 10</div>
+
+</div>
+
+<!-- FORCE NEXT PAGE FOR REFLECTION SECTION -->
+<div style="page-break-before:always; break-before:page;"></div>
+
+
+<div style="position:relative; min-height:930px; padding:28px 28px 42px 28px; box-sizing:border-box;">
+
+  <!-- REFLECTION LENS -->
+  <h3 style="font-size:18px; color:#A65E5E; margin-top:0; margin-bottom:12px;">
+    How the Core Reflections Often Respond to Conflict
+  </h3>
+
+  <div style="border:1px solid #eadede; border-radius:10px; padding:16px 18px; background:#ffffff; margin-bottom:18px;">
+
+    <p style="margin-top:0; margin-bottom:12px; line-height:1.65; color:#333;">
+      <strong style="color:#000000;">Architect</strong><br>
+      Architects often respond to conflict by identifying the core issue and pushing for clarity or resolution. Their instinct is to address the problem directly and move toward a solution.
+    </p>
+
+    <p style="margin-top:0; margin-bottom:12px; line-height:1.65; color:#333;">
+      <strong style="color:#000000;">Artisan</strong><br>
+      Artisans often respond to conflict through interpretation, nuance, and expression. Their instinct is to understand what is being communicated beneath the surface and bring clarity to what feels misunderstood.
+    </p>
+
+    <p style="margin-top:0; margin-bottom:12px; line-height:1.65; color:#333;">
+      <strong style="color:#000000;">Shepherd</strong><br>
+      Shepherds often experience conflict through its relational impact. Their instinct is to protect connection, reduce harm, and help people feel heard and restored.
+    </p>
+
+    <p style="margin-top:0; margin-bottom:0; line-height:1.65; color:#333;">
+      <strong style="color:#000000;">Steward</strong><br>
+      Stewards often respond to conflict by seeking order, responsibility, and appropriate structure. Their instinct is to stabilize the situation and reestablish what is fair, clear, and dependable.
+    </p>
+
+  </div>
+
+  <!-- CAPACITY NOTE -->
+  <p style="margin-top:0; margin-bottom:12px; line-height:1.65; font-size:14px; color:#333;">
+    Your conflict response may be strengthened or strained depending on specific capacity. When capacity is steady or abundant, clarity and maturity tend to increase. When capacity is limited or drained, reactivity, fatigue, or avoidance may become more likely.
+  </p>
+
+  <!-- CLOSING LINE -->
+  <p style="margin-top:0; margin-bottom:18px; line-height:1.65; font-size:14px; color:#333;">
+    Conflict does not only reveal tension. It also reveals where growth, maturity, and wise leadership can emerge when your design is stewarded well.
+  </p>
+
+  <!-- SCRIPTURE / PEACE SECTION -->
+  <div style="border-top:1px solid #e6dede; padding-top:14px;">
+    <div style="font-size:16px; font-weight:700; color:#A65E5E; margin-bottom:8px;">
+      Toward Peace
+    </div>
+
+    <p style="margin-top:0; margin-bottom:10px; line-height:1.65; font-size:14px; color:#333;">
+      Conflict handled wisely is not merely about ending tension. It is about moving toward truth, peace, and restored relationship where possible. Conflict can become a place where clarity deepens, humility grows, and peace is pursued with greater intention.
+    </p>
+
+    <p style="margin-top:0; margin-bottom:0; line-height:1.65; font-size:14px; color:#555;">
+      “Blessed are the peacemakers, for they will be called children of God.” — Matthew 5:9
+    </p>
+  </div>
+
+  <div style="position:absolute; right:28px; bottom:14px; font-size:11px; color:#777;">Page 11</div>
+
+</div>
+
+<!-- COLLABORATION -->
+<div style="page-break-before:always; break-before:page;"></div>
+
+<div class="app-page">
+
+  <h2 style="font-size:28px; color:#5F8F9A; margin-bottom:6px; letter-spacing:0.2px;">
+    Collaboration
+  </h2>
+
+
+  <p style="margin-bottom:16px; line-height:1.65; color:#333;">
+    Collaboration reveals how your design engages shared work, communication, and responsibility. Your tendencies in Plan, Decide, and Do influence how you contribute ideas, how you interpret group dynamics, and how you move with others toward a common goal. Understanding these patterns can help you work with greater clarity, trust, and effectiveness.
+  </p>
+
+  <!-- PLAN PANEL -->
+  <div class="app-panel" style="border:1px solid #e4d6d6; background:#fcfbfb;">
+    <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:#5F8F9A; text-transform:uppercase; margin-bottom:4px;">
+      Plan
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:baseline; gap:16px; margin-bottom:10px;">
+      <div class="app-panel-title" style="font-weight:700; color:#000000;">
+        How You Frame Collaboration
+      </div>
+      <div style="font-size:15px; font-weight:700; color:#4A6239; text-align:right; white-space:nowrap;">
+        {{ plan_tendency | replace: "_", " " }}
+      </div>
+    </div>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Strength Expression
+    </div>
+    <p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+      {{collaboration_plan_strength}}
+    </p>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Watch For
+    </div>
+    <p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+      {{collaboration_plan_watch}}
+    </p>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Growth Practice
+    </div>
+    <p style="margin-top:0; margin-bottom:0; line-height:1.65; color:#333;">
+      {{collaboration_plan_growth}}
+    </p>
+  </div>
+
+  <!-- DECIDE PANEL -->
+  <div class="app-panel" style="border:1px solid #e4d6d6; background:#fcfbfb;">
+    <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:#5F8F9A; text-transform:uppercase; margin-bottom:4px;">
+      Decide
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:baseline; gap:16px; margin-bottom:10px;">
+      <div class="app-panel-title" style="font-weight:700; color:#000000;">
+        How You Interpret Collaboration
+      </div>
+      <div style="font-size:15px; font-weight:700; color:#AEC391; text-align:right; white-space:nowrap;">
+        {{ decide_tendency | replace: "_", " " }}
+      </div>
+    </div>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Strength Expression
+    </div>
+    <p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+      {{collaboration_decide_strength}}
+    </p>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Watch For
+    </div>
+    <p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+      {{collaboration_decide_watch}}
+    </p>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Growth Practice
+    </div>
+    <p style="margin-top:0; margin-bottom:0; line-height:1.65; color:#333;">
+      {{collaboration_decide_growth}}
+    </p>
+  </div>
+
+  <!-- DO PANEL -->
+  <div class="app-panel" style="border:1px solid #e4d6d6; background:#fcfbfb;">
+    <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:#5F8F9A; text-transform:uppercase; margin-bottom:4px;">
+      Do
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:baseline; gap:16px; margin-bottom:10px;">
+      <div class="app-panel-title" style="font-weight:700; color:#000000;">
+        How You Respond in Collaboration
+      </div>
+      <div style="font-size:15px; font-weight:700; color:#769B5B; text-align:right; white-space:nowrap;">
+        {{ do_tendency | replace: "_", " " }}
+      </div>
+    </div>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Strength Expression
+    </div>
+    <p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+      {{collaboration_do_strength}}
+    </p>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Watch For
+    </div>
+    <p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+      {{collaboration_do_watch}}
+    </p>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Growth Practice
+    </div>
+    <p style="margin-top:0; margin-bottom:0; line-height:1.65; color:#333;">
+      {{collaboration_do_growth}}
+    </p>
+  </div>
+
+  <div class="app-page-number">Page 12</div>
+
+</div>
+
+<!-- FORCE NEXT PAGE FOR REFLECTION SECTION -->
+<div style="page-break-before:always; break-before:page;"></div>
+
+<div style="position:relative; min-height:930px; padding:28px 28px 42px 28px; box-sizing:border-box;">
+
+  <!-- REFLECTION LENS -->
+  <h3 style="font-size:18px; color:#5F8F9A; margin-top:0; margin-bottom:12px;">
+    How the Core Reflections Often Approach Collaboration
+  </h3>
+
+  <div style="border:1px solid #dfe8eb; border-radius:10px; padding:16px 18px; background:#ffffff; margin-bottom:18px;">
+
+    <p style="margin-top:0; margin-bottom:12px; line-height:1.65; color:#333;">
+      <strong style="color:#000000;">Architect</strong><br>
+      Architects often approach collaboration by helping establish direction, clarify goals, and move the group toward purposeful progress. Their instinct is to bring initiative and forward momentum to shared work.
+    </p>
+
+    <p style="margin-top:0; margin-bottom:12px; line-height:1.65; color:#333;">
+      <strong style="color:#000000;">Artisan</strong><br>
+      Artisans often approach collaboration through insight, interpretation, and communication. Their instinct is to bring clarity, nuance, and thoughtful expression that helps the group better understand ideas and possibilities.
+    </p>
+
+    <p style="margin-top:0; margin-bottom:12px; line-height:1.65; color:#333;">
+      <strong style="color:#000000;">Shepherd</strong><br>
+      Shepherds often approach collaboration by fostering trust, inclusion, and relational awareness. Their instinct is to create an environment where people feel valued, heard, and able to contribute.
+    </p>
+
+    <p style="margin-top:0; margin-bottom:0; line-height:1.65; color:#333;">
+      <strong style="color:#000000;">Steward</strong><br>
+      Stewards often approach collaboration by bringing consistency, responsibility, and dependable follow through. Their instinct is to support shared work through order, stability, and practical care for what has been entrusted.
+    </p>
+
+  </div>
+
+  <!-- CAPACITY NOTE -->
+  <p style="margin-top:0; margin-bottom:12px; line-height:1.65; font-size:14px; color:#333;">
+    Your collaborative patterns may be strengthened or strained depending on specific capacity. When capacity is steady or abundant, collaboration often becomes clearer, more generous, and more productive. When capacity is limited or drained, withdrawal, overextension, or misalignment may become more likely.
+  </p>
+
+  <!-- CLOSING LINE -->
+  <p style="margin-top:0; margin-bottom:18px; line-height:1.65; font-size:14px; color:#333;">
+    Collaboration does not only reveal how you work with others. It also reveals how your design contributes to shared purpose, mutual support, and stronger outcomes when stewarded well.
+  </p>
+
+  <!-- SCRIPTURE / UNITY SECTION -->
+  <div style="border-top:1px solid #dfe8eb; padding-top:14px;">
+    <div style="font-size:16px; font-weight:700; color:#5F8F9A; margin-bottom:8px;">
+      Toward Unity
+    </div>
+
+    <p style="margin-top:0; margin-bottom:10px; line-height:1.65; font-size:14px; color:#333;">
+      Healthy collaboration is not merely about working beside one another. It is about moving in shared purpose with humility, clarity, and mutual care. Collaboration can become a place where unity deepens, trust grows, and collective strength is expressed more fully.
+    </p>
+
+    <p style="margin-top:0; margin-bottom:0; line-height:1.65; font-size:14px; color:#555;">
+      “Make every effort to keep the unity of the Spirit through the bond of peace.” — Ephesians 4:3
+    </p>
+  </div>
+
+  <div style="position:absolute; right:28px; bottom:14px; font-size:11px; color:#777;">Page 13</div>
+
+</div>
+
+<!-- LEADERSHIP -->
+<div style="page-break-before:always; break-before:page;"></div>
+
+<div class="app-page">
+
+  <h2 style="font-size:28px; color:#8C6AA6; margin-bottom:6px; letter-spacing:0.2px;">
+    Leadership
+  </h2>
+
+
+  <p style="margin-bottom:16px; line-height:1.65; color:#333;">
+    Leadership reveals how your design carries responsibility, creates direction, and influences others toward meaningful progress. Your tendencies in Plan, Decide, and Do shape how you frame vision, how you interpret situations and people, and how you move initiatives into action. Understanding these patterns can help you lead with greater clarity, steadiness, and wisdom.
+  </p>
+
+  <!-- PLAN PANEL -->
+  <div class="app-panel" style="border:1px solid #e4d6d6; background:#fcfbfb;">
+    <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:#8C6AA6; text-transform:uppercase; margin-bottom:4px;">
+      Plan
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:baseline; gap:16px; margin-bottom:10px;">
+      <div class="app-panel-title" style="font-weight:700; color:#000000;">
+        How You Frame Leadership
+      </div>
+      <div style="font-size:15px; font-weight:700; color:#4A6239; text-align:right; white-space:nowrap;">
+        {{ plan_tendency | replace: "_", " " }}
+      </div>
+    </div>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Strength Expression
+    </div>
+    <p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+      {{leadership_plan_strength}}
+    </p>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Watch For
+    </div>
+    <p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+      {{leadership_plan_watch}}
+    </p>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Growth Practice
+    </div>
+    <p style="margin-top:0; margin-bottom:0; line-height:1.65; color:#333;">
+      {{leadership_plan_growth}}
+    </p>
+  </div>
+
+  <!-- DECIDE PANEL -->
+  <div class="app-panel" style="border:1px solid #e4d6d6; background:#fcfbfb;">
+    <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:#8C6AA6; text-transform:uppercase; margin-bottom:4px;">
+      Decide
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:baseline; gap:16px; margin-bottom:10px;">
+      <div class="app-panel-title" style="font-weight:700; color:#000000;">
+        How You Interpret Leadership
+      </div>
+      <div style="font-size:15px; font-weight:700; color:#AEC391; text-align:right; white-space:nowrap;">
+        {{ decide_tendency | replace: "_", " " }}
+      </div>
+    </div>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Strength Expression
+    </div>
+    <p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+      {{leadership_decide_strength}}
+    </p>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Watch For
+    </div>
+    <p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+      {{leadership_decide_watch}}
+    </p>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Growth Practice
+    </div>
+    <p style="margin-top:0; margin-bottom:0; line-height:1.65; color:#333;">
+      {{leadership_decide_growth}}
+    </p>
+  </div>
+
+  <!-- DO PANEL -->
+  <div class="app-panel" style="border:1px solid #e4d6d6; background:#fcfbfb;">
+    <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:#8C6AA6; text-transform:uppercase; margin-bottom:4px;">
+      Do
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:baseline; gap:16px; margin-bottom:10px;">
+      <div class="app-panel-title" style="font-weight:700; color:#000000;">
+        How You Respond in Leadership
+      </div>
+      <div style="font-size:15px; font-weight:700; color:#769B5B; text-align:right; white-space:nowrap;">
+        {{ do_tendency | replace: "_", " " }}
+      </div>
+    </div>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Strength Expression
+    </div>
+    <p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+      {{leadership_do_strength}}
+    </p>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Watch For
+    </div>
+    <p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+      {{leadership_do_watch}}
+    </p>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Growth Practice
+    </div>
+    <p style="margin-top:0; margin-bottom:0; line-height:1.65; color:#333;">
+      {{leadership_do_growth}}
+    </p>
+  </div>
+
+  <div class="app-page-number">Page 14</div>
+
+</div>
+
+<!-- FORCE NEXT PAGE FOR REFLECTION SECTION -->
+<div style="page-break-before:always; break-before:page;"></div>
+
+<div style="position:relative; min-height:930px; padding:28px 28px 42px 28px; box-sizing:border-box;">
+
+  <!-- REFLECTION LENS -->
+  <h3 style="font-size:18px; color:#8C6AA6; margin-top:0; margin-bottom:12px;">
+    How the Core Reflections Often Approach Leadership
+  </h3>
+
+  <div style="border:1px solid #e7dfec; border-radius:10px; padding:16px 18px; background:#ffffff; margin-bottom:18px;">
+
+    <p style="margin-top:0; margin-bottom:12px; line-height:1.65; color:#333;">
+      <strong style="color:#000000;">Architect</strong><br>
+      Architects often approach leadership by creating direction, initiating movement, and helping others see what could be built or pursued. Their instinct is to lead with vision, courage, and forward momentum.
+    </p>
+
+    <p style="margin-top:0; margin-bottom:12px; line-height:1.65; color:#333;">
+      <strong style="color:#000000;">Artisan</strong><br>
+      Artisans often approach leadership through insight, discernment, and thoughtful expression. Their instinct is to help others see with greater clarity, understand meaning more deeply, and move with wiser perspective.
+    </p>
+
+    <p style="margin-top:0; margin-bottom:12px; line-height:1.65; color:#333;">
+      <strong style="color:#000000;">Shepherd</strong><br>
+      Shepherds often approach leadership by caring for people, building trust, and creating environments where others can grow. Their instinct is to lead with relational awareness, encouragement, and compassion.
+    </p>
+
+    <p style="margin-top:0; margin-bottom:0; line-height:1.65; color:#333;">
+      <strong style="color:#000000;">Steward</strong><br>
+      Stewards often approach leadership by bringing consistency, responsibility, and dependable structure. Their instinct is to support people and mission through faithful oversight, clear expectations, and steady follow through.
+    </p>
+
+  </div>
+
+  <!-- CAPACITY NOTE -->
+  <p style="margin-top:0; margin-bottom:12px; line-height:1.65; font-size:14px; color:#333;">
+    Your leadership patterns may be strengthened or strained depending on which specific capacity. When capacity is steady or abundant, leadership often becomes clearer, more grounded, and more life giving. When capacity is limited or drained, overextension, hesitation, or imbalance may become more likely.
+  </p>
+
+  <!-- CLOSING LINE -->
+  <p style="margin-top:0; margin-bottom:18px; line-height:1.65; font-size:14px; color:#333;">
+    Leadership does not only reveal how you guide others. It also reveals how your design carries responsibility, shapes direction, and contributes to the flourishing of people and purpose when stewarded well.
+  </p>
+
+  <!-- SCRIPTURE / STEWARDSHIP SECTION -->
+  <div style="border-top:1px solid #e7dfec; padding-top:14px;">
+    <div style="font-size:16px; font-weight:700; color:#8C6AA6; margin-bottom:8px;">
+      Toward Faithful Leadership
+    </div>
+
+    <p style="margin-top:0; margin-bottom:10px; line-height:1.65; font-size:14px; color:#333;">
+      Healthy leadership is not merely about influence or authority. It is about carrying responsibility with humility, wisdom, and faithfulness. Leadership can become a place where service deepens, trust grows, and others are strengthened through the way you lead.
+    </p>
+
+    <p style="margin-top:0; margin-bottom:0; line-height:1.65; font-size:14px; color:#555;">
+      “Whoever wants to become great among you must be your servant.” — Matthew 20:26
+    </p>
+  </div>
+
+  <div style="position:absolute; right:28px; bottom:14px; font-size:11px; color:#777;">Page 15</div>
+
+</div>
+
+<!-- PRESSURE -->
+<div style="page-break-before:always; break-before:page;"></div>
+
+<div class="app-page">
+
+  <h2 style="font-size:28px; color:#C07B45; margin-bottom:6px; letter-spacing:0.2px;">
+    Pressure
+  </h2>
+
+
+  <p style="margin-bottom:16px; line-height:1.65; color:#333;">
+    Pressure reveals how your design responds when urgency rises, complexity increases, or the cost of clarity feels higher than usual. Your tendencies in Plan, Decide, and Do influence how you prepare under strain, how you interpret what matters most, and how you move when action feels costly or constrained. Understanding these patterns can help you remain grounded, aware, and resilient when the weight increases.
+  </p>
+
+  <!-- PLAN PANEL -->
+  <div class="app-panel" style="border:1px solid #e4d6d6; background:#fcfbfb;">
+    <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:#C07B45; text-transform:uppercase; margin-bottom:4px;">
+      Plan
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:baseline; gap:16px; margin-bottom:10px;">
+      <div class="app-panel-title" style="font-weight:700; color:#000000;">
+        How You Frame Pressure
+      </div>
+      <div style="font-size:15px; font-weight:700; color:#4A6239; text-align:right; white-space:nowrap;">
+        {{ plan_tendency | replace: "_", " " }}
+      </div>
+    </div>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Strength Expression
+    </div>
+    <p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+      {{pressure_plan_strength}}
+    </p>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Watch For
+    </div>
+    <p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+      {{pressure_plan_watch}}
+    </p>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Growth Practice
+    </div>
+    <p style="margin-top:0; margin-bottom:0; line-height:1.65; color:#333;">
+      {{pressure_plan_growth}}
+    </p>
+  </div>
+
+  <!-- DECIDE PANEL -->
+  <div class="app-panel" style="border:1px solid #e4d6d6; background:#fcfbfb;">
+    <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:#C07B45; text-transform:uppercase; margin-bottom:4px;">
+      Decide
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:baseline; gap:16px; margin-bottom:10px;">
+      <div class="app-panel-title" style="font-weight:700; color:#000000;">
+        How You Interpret Pressure
+      </div>
+      <div style="font-size:15px; font-weight:700; color:#AEC391; text-align:right; white-space:nowrap;">
+        {{ decide_tendency | replace: "_", " " }}
+      </div>
+    </div>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Strength Expression
+    </div>
+    <p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+      {{pressure_decide_strength}}
+    </p>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Watch For
+    </div>
+    <p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+      {{pressure_decide_watch}}
+    </p>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Growth Practice
+    </div>
+    <p style="margin-top:0; margin-bottom:0; line-height:1.65; color:#333;">
+      {{pressure_decide_growth}}
+    </p>
+  </div>
+
+  <!-- DO PANEL -->
+  <div class="app-panel" style="border:1px solid #e4d6d6; background:#fcfbfb;">
+    <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:#C07B45; text-transform:uppercase; margin-bottom:4px;">
+      Do
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:baseline; gap:16px; margin-bottom:10px;">
+      <div class="app-panel-title" style="font-weight:700; color:#000000;">
+        How You Respond Under Pressure
+      </div>
+      <div style="font-size:15px; font-weight:700; color:#769B5B; text-align:right; white-space:nowrap;">
+        {{ do_tendency | replace: "_", " " }}
+      </div>
+    </div>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Strength Expression
+    </div>
+    <p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+      {{pressure_do_strength}}
+    </p>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Watch For
+    </div>
+    <p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+      {{pressure_do_watch}}
+    </p>
+
+    <div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+      Growth Practice
+    </div>
+    <p style="margin-top:0; margin-bottom:0; line-height:1.65; color:#333;">
+      {{pressure_do_growth}}
+    </p>
+  </div>
+
+  <div class="app-page-number">Page 16</div>
+
+</div>
+
+<!-- FORCE NEXT PAGE FOR REFLECTION SECTION -->
+<div style="page-break-before:always; break-before:page;"></div>
+
+<div style="position:relative; min-height:930px; padding:28px 28px 42px 28px; box-sizing:border-box;">
+
+  <!-- REFLECTION LENS -->
+  <h3 style="font-size:18px; color:#C07B45; margin-top:0; margin-bottom:12px;">
+    How the Core Reflections Often Respond to Pressure
+  </h3>
+
+  <div style="border:1px solid #ebe1d9; border-radius:10px; padding:16px 18px; background:#ffffff; margin-bottom:18px;">
+
+    <p style="margin-top:0; margin-bottom:12px; line-height:1.65; color:#333;">
+      <strong style="color:#000000;">Architect</strong><br>
+      Architects often respond to pressure by moving quickly toward action, clarity, or control of the situation. Their instinct is to create traction and direction when circumstances feel uncertain or constrained.
+    </p>
+
+    <p style="margin-top:0; margin-bottom:12px; line-height:1.65; color:#333;">
+      <strong style="color:#000000;">Artisan</strong><br>
+      Artisans often respond to pressure by interpreting what is happening beneath the surface and seeking a clearer understanding of the situation. Their instinct is to make sense of complexity before moving too quickly.
+    </p>
+
+    <p style="margin-top:0; margin-bottom:12px; line-height:1.65; color:#333;">
+      <strong style="color:#000000;">Shepherd</strong><br>
+      Shepherds often respond to pressure through heightened awareness of people, relational impact, and emotional strain. Their instinct is to protect connection, reduce harm, and care for those affected by the weight of the moment.
+    </p>
+
+    <p style="margin-top:0; margin-bottom:0; line-height:1.65; color:#333;">
+      <strong style="color:#000000;">Steward</strong><br>
+      Stewards often respond to pressure by looking for order, dependability, and what must be maintained. Their instinct is to preserve stability, carry responsibility, and keep what matters from falling apart.
+    </p>
+
+  </div>
+
+  <!-- CAPACITY NOTE -->
+  <p style="margin-top:0; margin-bottom:12px; line-height:1.65; font-size:14px; color:#333;">
+    Your response to pressure may be strengthened or strained depending on specific capacity. When capacity is steady or abundant, pressure can sharpen focus and maturity. When capacity is limited or drained, urgency may amplify reactivity, fatigue, or imbalance.
+  </p>
+
+  <!-- CLOSING LINE -->
+  <p style="margin-top:0; margin-bottom:18px; line-height:1.65; font-size:14px; color:#333;">
+    Pressure does not only test your design. It also reveals where endurance, trust, and wise self leadership can grow when your design is stewarded well.
+  </p>
+
+  <!-- SCRIPTURE / STEADINESS SECTION -->
+  <div style="border-top:1px solid #ebe1d9; padding-top:14px;">
+    <div style="font-size:16px; font-weight:700; color:#C07B45; margin-bottom:8px;">
+      Toward Steadiness
+    </div>
+
+    <p style="margin-top:0; margin-bottom:10px; line-height:1.65; font-size:14px; color:#333;">
+      Pressure is not only something to survive. It can also become a place where trust deepens, character strengthens, and steadiness is formed. Pressure can become an opportunity to respond with greater clarity, resilience, and dependence on God.
+    </p>
+
+    <p style="margin-top:0; margin-bottom:0; line-height:1.65; font-size:14px; color:#555;">
+      “Be joyful in hope, patient in affliction, faithful in prayer.” — Romans 12:12
+    </p>
+  </div>
+
+  <div style="position:absolute; right:28px; bottom:14px; font-size:11px; color:#777;">Page 17</div>
+
+</div>
+
+<!-- SUSTAINABILITY -->
+<div style="page-break-before:always; break-before:page;"></div>
+
+<div class="app-page">
+
+<h2 style="font-size:28px; color:#4A6239; margin-bottom:6px; letter-spacing:0.2px;">
+Sustainability
+</h2>
+
+
+<p style="margin-bottom:16px; line-height:1.65; color:#333;">
+Sustainability reveals how your design carries responsibility, maintains energy, and continues moving forward across the long journey of work, relationships, and calling. Your tendencies in Plan, Decide, and Do influence how you pace your efforts, how you interpret the demands placed upon you, and how you sustain action without losing clarity or purpose.
+</p>
+
+
+<!-- PLAN PANEL -->
+<div class="app-panel" style="border:1px solid #e4d6d6; background:#fcfbfb;">
+
+<div style="font-size:11px; font-weight:700; letter-spacing:1px; color:#4A6239; text-transform:uppercase; margin-bottom:4px;">
+Plan
+</div>
+
+<div style="display:flex; justify-content:space-between; align-items:baseline; gap:16px; margin-bottom:10px;">
+
+<div class="app-panel-title" style="font-weight:700; color:#000000;">
+How You Frame Sustainability
+</div>
+
+<div style="font-size:15px; font-weight:700; color:#000000; text-align:right; white-space:nowrap;">
+{{ plan_tendency | replace: "_", " " }}
+</div>
+
+</div>
+
+<div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+Strength Expression
+</div>
+
+<p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+{{sustainability_plan_strength}}
+</p>
+
+<div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+Watch For
+</div>
+
+<p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+{{sustainability_plan_watch}}
+</p>
+
+<div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+Growth Practice
+</div>
+
+<p style="margin-top:0; margin-bottom:0; line-height:1.65; color:#333;">
+{{sustainability_plan_growth}}
+</p>
+
+</div>
+
+
+<!-- DECIDE PANEL -->
+<div class="app-panel" style="border:1px solid #e4d6d6; background:#fcfbfb;">
+
+<div style="font-size:11px; font-weight:700; letter-spacing:1px; color:#4A6239; text-transform:uppercase; margin-bottom:4px;">
+Decide
+</div>
+
+<div style="display:flex; justify-content:space-between; align-items:baseline; gap:16px; margin-bottom:10px;">
+
+<div class="app-panel-title" style="font-weight:700; color:#000000;">
+How You Interpret Sustainability
+</div>
+
+<div style="font-size:15px; font-weight:700; color:#000000; text-align:right; white-space:nowrap;">
+{{ decide_tendency | replace: "_", " " }}
+</div>
+
+</div>
+
+<div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+Strength Expression
+</div>
+
+<p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+{{sustainability_decide_strength}}
+</p>
+
+<div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+Watch For
+</div>
+
+<p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+{{sustainability_decide_watch}}
+</p>
+
+<div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+Growth Practice
+</div>
+
+<p style="margin-top:0; margin-bottom:0; line-height:1.65; color:#333;">
+{{sustainability_decide_growth}}
+</p>
+
+</div>
+
+
+<!-- DO PANEL -->
+<div class="app-panel" style="border:1px solid #e4d6d6; background:#fcfbfb;">
+
+<div style="font-size:11px; font-weight:700; letter-spacing:1px; color:#4A6239; text-transform:uppercase; margin-bottom:4px;">
+Do
+</div>
+
+<div style="display:flex; justify-content:space-between; align-items:baseline; gap:16px; margin-bottom:10px;">
+
+<div class="app-panel-title" style="font-weight:700; color:#000000;">
+How You Sustain Action
+</div>
+
+<div style="font-size:15px; font-weight:700; color:#000000; text-align:right; white-space:nowrap;">
+{{ do_tendency | replace: "_", " " }}
+</div>
+
+</div>
+
+<div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+Strength Expression
+</div>
+
+<p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+{{sustainability_do_strength}}
+</p>
+
+<div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+Watch For
+</div>
+
+<p style="margin-top:0; margin-bottom:9px; line-height:1.65; color:#333;">
+{{sustainability_do_watch}}
+</p>
+
+<div class="app-panel-label" style="font-weight:700; letter-spacing:0.6px; color:#666; text-transform:uppercase;">
+Growth Practice
+</div>
+
+<p style="margin-top:0; margin-bottom:0; line-height:1.65; color:#333;">
+{{sustainability_do_growth}}
+</p>
+
+</div>
+
+  <div class="app-page-number">Page 18</div>
+
+</div>
+
+<!-- SECOND PAGE -->
+
+<div style="page-break-before:always; break-before:page;"></div>
+
+<div style="position:relative; min-height:930px; padding:28px 28px 42px 28px; box-sizing:border-box;">
+
+<h3 style="font-size:18px; color:#4A6239; margin-top:0; margin-bottom:12px;">
+How the Core Reflections Often Approach Sustainability
+</h3>
+
+<div style="border:1px solid #e4ecec; border-radius:10px; padding:16px 18px; background:#ffffff; margin-bottom:18px;">
+
+<p style="margin-top:0; margin-bottom:12px; line-height:1.65; color:#333;">
+<strong style="color:#000000;">Architect</strong><br>
+Architects often sustain momentum by continuing to build, initiate, and pursue meaningful progress. Their instinct is to stay engaged through forward movement, vision, and the pursuit of meaningful outcomes.
+</p>
+
+<p style="margin-top:0; margin-bottom:12px; line-height:1.65; color:#333;">
+<strong style="color:#000000;">Artisan</strong><br>
+Artisans often sustain their design through clarity, reflection, and thoughtful interpretation of what truly matters. Their instinct is to maintain meaning, perspective, and understanding so their work remains purposeful.
+</p>
+
+<p style="margin-top:0; margin-bottom:12px; line-height:1.65; color:#333;">
+<strong style="color:#000000;">Shepherd</strong><br>
+Shepherds often sustain their design through relationships, encouragement, and shared care. Their instinct is to remain connected with people and community so that the journey is not carried alone.
+</p>
+
+<p style="margin-top:0; margin-bottom:0; line-height:1.65; color:#333;">
+<strong style="color:#000000;">Steward</strong><br>
+Stewards often sustain their design through consistency, responsibility, and steady follow through. Their instinct is to maintain order, reliability, and faithful attention to what has been entrusted to them.
+</p>
+
+</div>
+
+<p style="margin-top:0; margin-bottom:12px; line-height:1.65; font-size:14px; color:#333;">
+Sustainability grows as your reflections remain balanced and your capacities remain healthy. When your design is carried wisely, your influence becomes more stable, your relationships deepen, and your contribution continues to mature over time.
+</p>
+
+<p style="margin-top:0; margin-bottom:18px; line-height:1.65; font-size:14px; color:#333;">
+Sustaining your design well is not about constant activity. It is about pacing your strengths, recognizing limits, and stewarding the gifts God has given you so that your life continues to bear fruit.
+</p>
+
+<div style="border-top:1px solid #e4ecec; padding-top:14px;">
+
+  <div style="font-size:16px; font-weight:700; color:#4A6239; margin-bottom:8px;">
+    Toward Faithful Endurance
+  </div>
+
+  <p style="margin-top:0; margin-bottom:10px; line-height:1.65; font-size:14px; color:#333;">
+    True sustainability grows when your design remains rooted in trust, humility, and faithful stewardship of the life God has given you. Over time, steady faithfulness often produces deeper fruit than constant striving.
+  </p>
+
+  <p style="margin-top:0; margin-bottom:0; line-height:1.65; font-size:14px; color:#555;">
+    “Let us not become weary in doing good, for at the proper time we will reap a harvest if we do not give up.” — Galatians 6:9
+  </p>
+
+</div>
+
+<div style="position:absolute; right:28px; bottom:14px; font-size:11px; color:#777;">Page 19</div>
+
+</div>
+
+<!-- ALIGNMENT PAGE -->
+<div style="page-break-before:always; position:relative; min-height:930px; padding:20px 28px 42px 28px; box-sizing:border-box;">
+
+  <h2 style="font-size:30px; color:#000; font-weight:700; margin-bottom:6px;">
+    Design Alignment
+  </h2>
+
+   <p style="font-size:13.3px; line-height:1.52; color:#333; margin-bottom:12px;">
+    Understanding your design helps clarify how you naturally plan, decide, and act. Design Alignment looks at how those tendencies interact with the people, responsibilities, and environments around you. When design and environment support one another, clarity increases, collaboration improves, and progress becomes more sustainable.
+  </p>
+
+  <!-- MAPS MODEL -->
+  <h3 style="font-size:18px; margin-bottom:8px;">The MAPS Alignment Model</h3>
+
+  <div style="border:1px solid #dcdcdc; border-radius:10px; overflow:hidden; margin-bottom:10px;">
+
+    <div style="display:flex;">
+
+      <!-- MISSION -->
+      <div style="flex:1; background:#739D5E; color:#fff; padding:10px; text-align:center;">
+        <div style="font-weight:700; font-size:18px;">Mission</div>
+        <div style="font-size:12.5px; margin-top:5px; line-height:1.55;">
+          Purpose<br>
+          Culture<br>
+          Motivation
+        </div>
+      </div>
+
+      <!-- APPROACH -->
+      <div style="flex:1; background:#647C9B; color:#fff; padding:10px; text-align:center;">
+        <div style="font-weight:700; font-size:18px;">Approach</div>
+        <div style="font-size:12.5px; margin-top:5px; line-height:1.55;">
+          Assessment<br>
+          Insight<br>
+          Direction
+        </div>
+      </div>
+
+      <!-- PROCESS -->
+      <div style="flex:1; background:#5A496B; color:#fff; padding:10px; text-align:center;">
+        <div style="font-weight:700; font-size:18px;">Process</div>
+        <div style="font-size:12.5px; margin-top:5px; line-height:1.55;">
+          Proof<br>
+          Organization<br>
+          Reliability
+        </div>
+      </div>
+
+      <!-- SEND -->
+      <div style="flex:1; background:#D4A451; color:#fff; padding:10px; text-align:center;">
+        <div style="font-weight:700; font-size:18px;">Send</div>
+        <div style="font-size:12.5px; margin-top:5px; line-height:1.55;">
+          Energy<br>
+          Momentum<br>
+          Outcomes
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <p style="font-size:13.3px; line-height:1.5; color:#333; margin-bottom:12px;">
+    Healthy alignment follows a clear progression. Mission clarifies what matters and where direction begins. Approach shapes how situations are understood and responded to. Process builds the systems and structure needed for consistency and reliability. Send moves insight into real-world action, creating momentum and measurable outcomes.
+  </p>
+
+  <!-- PERSONAL CONNECTION -->
+  <h3 style="font-size:18px; margin-bottom:8px;">Your Design and Alignment</h3>
+
+  <div style="border:1px solid #e5e5e5; border-radius:8px; padding:12px 14px; margin-bottom:14px; background:#fafafa;">
+
+    <p style="font-size:13.5px; line-height:1.58; margin-bottom:8px;">
+      <strong style="color:#4A6239;">Plan</strong> → <strong>Mission</strong> + <strong>Approach</strong><br>
+      Your planning tendency (<strong style="color:#4A6239;">{{ plan_tendency | replace: "_", " " }}</strong>) often influences how you recognize direction, define what matters, and shape how you approach what is ahead.
+    </p>
+
+    <p style="font-size:13.5px; line-height:1.58; margin-bottom:8px;">
+      <strong style="color:#AEC391;">Decide</strong> → <strong>Approach</strong> + <strong>Process</strong><br>
+      Your decision tendency (<strong style="color:#AEC391;">{{ decide_tendency | replace: "_", " " }}</strong>) often influences how situations are interpreted, options are clarified, and structure is established for what comes next.
+    </p>
+
+    <p style="font-size:13.5px; line-height:1.58; margin-bottom:0;">
+  <strong style="color:#769B5B;">Do</strong> → <strong>Send</strong><br>
+  Your action tendency (<strong style="color:#769B5B;">{{ do_tendency | replace: "_", " " }}</strong>) often influences how plans move into real-world execution, creating momentum and tangible results.
+</p>
+
+  </div>
+
+  <p style="font-size:13.5px; line-height:1.62; color:#333; margin-bottom:14px;">
+    Your primary and secondary reflections (<strong>{{primary}} / {{secondary}}</strong>), and your integrative reflection (<strong>{{integrative_reflection}}</strong>), influence how your design moves through Mission, Approach, Process, and Send in real environments.
+  </p>
+
+  <!-- TEAM DYNAMICS -->
+  <h3 style="font-size:18px; margin-bottom:8px;">Alignment and Teams</h3>
+
+  <p style="font-size:13.5px; line-height:1.54; color:#333; margin-bottom:14px;">
+    Alignment is rarely created by one person alone. Teams often experience friction when one part of the MAPS model is overrepresented while another is missing. Some teams carry strong Mission but struggle to Send. Others build strong Process but lack clarity in their Approach. When individuals understand their design and teams learn how those designs work together, alignment becomes easier to recognize, strengthen, and sustain.
+  </p>
+
+ <div style="padding-top:6px;">
+  <p style="font-size:13.5px; line-height:1.58; color:#444; margin:0;">
+    “Make every effort to keep the unity of the Spirit through the bond of peace.” — Ephesians 4:3
+  </p>
+</div>
+
+  <div style="position:absolute; right:28px; bottom:14px; font-size:11px; color:#777;">Page 20</div>
+
+</div>
+<!-- ===================== DESIGNPD CLOSING PAGE ===================== -->
+<div class="page" style="page-break-before:always; position:relative; min-height:930px; padding:34px 28px 150px 28px; box-sizing:border-box;">
+
+  <div class="center">
+    <img
+      src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/156f49e9-3121-4dd4-8aa6-ac23f67962b7/DYDD-logo.png?format=500w"
+      alt="Discover Your Divine Design"
+      style="max-width:160px; width:100%; margin-bottom:10px;"
+    />
+  </div>
+
+  <h2 class="center" style="margin-top:0; margin-bottom:6px;">
+    Continue the Work of Alignment
+  </h2>
+
+  <div class="center muted" style="margin-bottom:16px; line-height:1.6;">
+    Insight is powerful. Alignment makes it actionable.
+  </div>
+
+  <div class="rule"></div>
+
+  <div class="card" style="padding:14px 14px 12px 14px;">
+
+    <img
+      src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/270e3da4-5264-44d1-9304-8585f9f58ae2/business-people-meeting-brainstorming-ideas-about-2024-09-22-19-37-54-utc.jpg?format=2500w"
+      alt="Leadership alignment and strategy discussion"
+      style="
+        float:right;
+        width:188px;
+        max-width:38%;
+        margin:4px 0 8px 14px;
+        border-radius:8px;
+      "
+    />
+
+    <p style="margin-top:0; margin-bottom:10px; line-height:1.55; font-size:13px;">
+      This report has introduced language for how your design tends to plan, decide, and act.
+      It has also explored how these tendencies influence conflict, collaboration, leadership,
+      pressure, and long term sustainability. Awareness is an important beginning, but alignment
+      grows most deeply when insight is applied in real environments.
+    </p>
+
+    <p style="margin-bottom:12px; line-height:1.55; font-size:13px;">
+      Many individuals and teams discover that the next step is not simply more information,
+but guided reflection and practical application. Coaching and alignment work help
+individuals lead with greater clarity while helping teams understand how different
+designs contribute to mission, approach, process, and send.
+    </p>
+
+    <div style="
+      border:2px solid #e5e5e5;
+      border-radius:10px;
+      padding:14px;
+      margin-top:12px;
+      background:#fafafa;
+      font-size:13px;
+      line-height:1.5;
+    ">
+
+      <div style="font-size:17px; font-weight:700; margin-bottom:8px;">
+        Opportunities to Go Further
+      </div>
+
+      <div style="margin-bottom:8px;">
+        <strong>Personal Coaching</strong><br>
+        Explore how your design shapes mission, leadership, and next steps through guided reflection and practical coaching.
+      </div>
+
+      <div style="margin-bottom:8px;">
+        <strong>Leadership Development</strong><br>
+        Help teams understand how different designs contribute to calling, articulation, reinforcement, and execution.
+      </div>
+
+      <div style="margin-bottom:8px;">
+        <strong>Design Alignment Workshops</strong><br>
+        Help teams understand how different designs contribute to MAPS (Mission, Approach, Process, and Send).
+      </div>
+
+      <div style="margin-bottom:0;">
+        <strong>Team Dynamics and Right Team Fit</strong><br>
+        Identify strengths, tensions, and opportunities so the right people are contributing in the right ways.
+      </div>
+
+    </div>
+
+    <div style="clear:both;"></div>
+
+  </div>
+
+  <div class="center" style="margin-top:16px; margin-bottom:80px; font-size:13px; line-height:1.6;">
+    Explore coaching and consulting opportunities at<br>
+    <a href="https://www.discoverdivine.design/" target="_blank" style="font-weight:700; text-decoration:none; color:#4A6239;">
+      Discover Your Divine Design
+    </a>
+  </div>
+
+  <!-- FOOTER CTA WITH QR + DESIGNPD ICON -->
+  <div style="
+    position:absolute;
+    left:28px;
+    right:28px;
+    bottom:20px;
+    padding-top:12px;
+    border-top:2px solid #4A6239;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:46px;
+    background:#ffffff;
+  ">
+
+    <div style="text-align:center;">
+      <img
+        src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&color=4A6239&data=https://www.discoverdivine.design/"
+        alt="Visit Discover Your Divine Design"
+        style="width:90px; height:auto;"
+      />
+      <div style="font-size:11px; color:#666; margin-top:4px;">
+        Scan to Learn More
+      </div>
+    </div>
+
+    <div style="text-align:center;">
+      <img
+        src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/b7a300e4-fe78-407a-abb5-290e0ff5c149/designpd-icon.png?format=2500w"
+        alt="DesignPD Icon"
+        style="width:90px; height:auto;"
+      />
+      <div style="font-size:11px; color:#666; margin-top:4px;">
+        DesignPD
+      </div>
+    </div>
+
+  </div>
+
+  <div style="position:absolute; right:28px; bottom:10px; font-size:11px; color:#777;">
+    Page 21
+  </div>
+
+</div>
+
+DesignPD Json Code: Has some Make mapping in it
+{
+  "name": "{{10.Name}}",
+  "email": "{{10.Email}}",
+
+  "primary": "{{10.Primary}}",
+  "secondary": "{{10.Secondary}}",
+  "integrative_reflection": "{{10.Integrative_Reflection}}",
+  "reflection_shadow": "{{10.Reflection_Shadow}}",
+"shadow_reflection": "{{10.shadow_reflection}}",
+"plan_integrative_lens": "{{10.plan_integrative_lens}}",
+"plan_shadow_watch": "{{10.plan_shadow_watch}}",
+"decide_integrative_lens": "{{10.decide_integrative_lens}}",
+"decide_shadow_watch": "{{10.decide_shadow_watch}}",
+"do_integrative_lens": "{{10.do_integrative_lens}}",
+"do_shadow_watch": "{{10.do_shadow_watch}}",
+
+  "band_architect": "{{10.band_architect}}",
+  "band_artisan": "{{10.band_artisan}}",
+  "band_shepherd": "{{10.band_shepherd}}",
+  "band_steward": "{{10.band_steward}}",
+
+  "plan_overview": "{{10.plan_overview}}",
+  "decide_overview": "{{10.decide_overview}}",
+  "do_overview": "{{10.do_overview}}",
+
+  "plan_descriptor": "{{10.plan_descriptor}}",
+  "decide_descriptor": "{{10.decide_descriptor}}",
+  "do_descriptor": "{{10.do_descriptor}}",
+
+  "plan_core": "{{10.plan_core}}",
+  "decide_core": "{{10.decide_core}}",
+  "do_core": "{{10.do_core}}",
+
+  "plan_overlay": "{{10.plan_overlay}}",
+  "decide_overlay": "{{10.decide_overlay}}",
+  "do_overlay": "{{10.do_overlay}}",
+
+  "plan_modulator": "{{10.plan_modulator}}",
+  "decide_modulator": "{{10.decide_modulator}}",
+  "do_modulator": "{{10.do_modulator}}",
+
+  "plan_amplifier": "{{10.plan_amplifier}}",
+  "decide_amplifier": "{{10.decide_amplifier}}",
+  "do_amplifier": "{{10.do_amplifier}}",
+
+  "plan_architect_amplifier": "{{10.plan_architect_amplifier}}",
+  "plan_artisan_amplifier": "{{10.plan_artisan_amplifier}}",
+  "plan_shepherd_amplifier": "{{10.plan_shepherd_amplifier}}",
+  "plan_steward_amplifier": "{{10.plan_steward_amplifier}}",
+
+  "decide_architect_amplifier": "{{10.decide_architect_amplifier}}",
+  "decide_artisan_amplifier": "{{10.decide_artisan_amplifier}}",
+  "decide_shepherd_amplifier": "{{10.decide_shepherd_amplifier}}",
+  "decide_steward_amplifier": "{{10.decide_steward_amplifier}}",
+
+  "do_architect_amplifier": "{{10.do_architect_amplifier}}",
+  "do_artisan_amplifier": "{{10.do_artisan_amplifier}}",
+  "do_shepherd_amplifier": "{{10.do_shepherd_amplifier}}",
+  "do_steward_amplifier": "{{10.do_steward_amplifier}}",
+
+"plan_tendency": "{{10.plan_tendency}}",
+"decide_tendency": "{{10.decide_tendency}}",
+"do_tendency": "{{10.do_tendency}}",
+"move_dreamer_minus_doer": "{{10.move_dreamer_minus_doer}}",
+"move_feel_it_minus_think_it": "{{10.move_feel_it_minus_think_it}}",
+"move_solo_minus_together": "{{10.move_solo_minus_together}}",
+
+"plan_score": "{{10.plan_score}}",
+"decide_score": "{{10.decide_score}}",
+"do_score": "{{10.do_score}}",
+
+"conflict_plan_strength": "{{10.conflict_plan_strength}}",
+"conflict_plan_watch": "{{10.conflict_plan_watch}}",
+"conflict_plan_growth": "{{10.conflict_plan_growth}}",
+
+"conflict_decide_strength": "{{10.conflict_decide_strength}}",
+"conflict_decide_watch": "{{10.conflict_decide_watch}}",
+"conflict_decide_growth": "{{10.conflict_decide_growth}}",
+
+"conflict_do_strength": "{{10.conflict_do_strength}}",
+"conflict_do_watch": "{{10.conflict_do_watch}}",
+"conflict_do_growth": "{{10.conflict_do_growth}}",
+
+"collaboration_plan_strength": "{{10.collaboration_plan_strength}}",
+"collaboration_plan_watch": "{{10.collaboration_plan_watch}}",
+"collaboration_plan_growth": "{{10.collaboration_plan_growth}}",
+
+"collaboration_decide_strength": "{{10.collaboration_decide_strength}}",
+"collaboration_decide_watch": "{{10.collaboration_decide_watch}}",
+"collaboration_decide_growth": "{{10.collaboration_decide_growth}}",
+
+"collaboration_do_strength": "{{10.collaboration_do_strength}}",
+"collaboration_do_watch": "{{10.collaboration_do_watch}}",
+"collaboration_do_growth": "{{10.collaboration_do_growth}}",
+
+"leadership_plan_strength": "{{10.leadership_plan_strength}}",
+"leadership_plan_watch": "{{10.leadership_plan_watch}}",
+"leadership_plan_growth": "{{10.leadership_plan_growth}}",
+
+"leadership_decide_strength": "{{10.leadership_decide_strength}}",
+"leadership_decide_watch": "{{10.leadership_decide_watch}}",
+"leadership_decide_growth": "{{10.leadership_decide_growth}}",
+
+"leadership_do_strength": "{{10.leadership_do_strength}}",
+"leadership_do_watch": "{{10.leadership_do_watch}}",
+"leadership_do_growth": "{{10.leadership_do_growth}}",
+
+"pressure_plan_strength": "{{10.pressure_plan_strength}}",
+"pressure_plan_watch": "{{10.pressure_plan_watch}}",
+"pressure_plan_growth": "{{10.pressure_plan_growth}}",
+
+"pressure_decide_strength": "{{10.pressure_decide_strength}}",
+"pressure_decide_watch": "{{10.pressure_decide_watch}}",
+"pressure_decide_growth": "{{10.pressure_decide_growth}}",
+
+"pressure_do_strength": "{{10.pressure_do_strength}}",
+"pressure_do_watch": "{{10.pressure_do_watch}}",
+"pressure_do_growth": "{{10.pressure_do_growth}}",
+
+"sustainability_plan_strength": "{{10.sustainability_plan_strength}}",
+"sustainability_plan_watch": "{{10.sustainability_plan_watch}}",
+"sustainability_plan_growth": "{{10.sustainability_plan_growth}}",
+
+"sustainability_decide_strength": "{{10.sustainability_decide_strength}}",
+"sustainability_decide_watch": "{{10.sustainability_decide_watch}}",
+"sustainability_decide_growth": "{{10.sustainability_decide_growth}}",
+
+"sustainability_do_strength": "{{10.sustainability_do_strength}}",
+"sustainability_do_watch": "{{10.sustainability_do_watch}}",
+"sustainability_do_growth": "{{10.sustainability_do_growth}}",
+
+"report_date": "{{10.report_date}}"
+
+}
+
+
+

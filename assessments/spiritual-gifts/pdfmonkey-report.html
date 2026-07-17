@@ -1,0 +1,471 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Spiritual Gifts Assessment Report</title>
+
+  <style>
+    /* Give room for fixed footer */
+    @page { size: Letter; margin: 0.65in 0.65in 1.05in 0.65in; }
+    * { box-sizing: border-box; }
+    body { font-family: Arial, Helvetica, sans-serif; color: #1f2937; margin: 0; padding-bottom: 0.6in; }
+
+    h1 { font-size: 22px; margin: 0 0 8px; }
+    h2 { font-size: 16px; margin: 18px 0 8px; }
+    h3 {
+      font-size: 13px;
+      margin: 14px 0 6px;
+      border-bottom: 2px solid #4A6239;
+      padding-bottom: 2px;
+    }
+    p  { font-size: 11px; line-height: 1.45; margin: 0 0 8px; }
+
+    .small { font-size: 10px; color: #4b5563; }
+    .muted { color: #6b7280; }
+    .hr { height: 1px; background: #e5e7eb; margin: 12px 0; }
+
+    .card {
+      border: 1px solid #e5e7eb;
+      border-left: 4px solid #4A6239;
+      border-radius: 10px;
+      padding: 14px;
+      margin: 12px 0;
+    }
+
+    .avoid-break { break-inside: avoid; page-break-inside: avoid; }
+    .page-break { page-break-before: always; break-before: page; }
+
+    .headerRow { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .logo { height: 42px; width: auto; }
+
+    .kv { display: grid; grid-template-columns: 120px 1fr; gap: 8px; font-size: 11px; margin-top: 10px; }
+    .k  { color: #6b7280; }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #4A6239;
+      color: white;
+      font-size: 10px;
+    }
+
+    /* Top 5 gift blocks */
+    .giftWrap { margin-top: 14px; }
+
+    .giftRow {
+      background: #4A6239;
+      color: white;
+      padding: 10px 14px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* Table */
+    .table { width: 100%; border-collapse: collapse; font-size: 10px; table-layout: fixed; }
+    .table th, .table td { border: 1px solid #e5e7eb; padding: 7px; vertical-align: top; word-wrap: break-word; }
+    .table th { background: #f9fafb; text-align: left; }
+
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    /* Correlations bullets */
+    .corr { margin: 0; padding-left: 16px; }
+    .corr li { margin: 0 0 4px; }
+
+    /* Reflection highlight colors */
+    .arch { color: #D4A451; font-weight: 700; }   /* Architect */
+    .arti { color: #647C9B; font-weight: 700; }   /* Artisan */
+    .shep { color: #739D5E; font-weight: 700; }   /* Shepherd */
+    .stew { color: #5A496B; font-weight: 700; }   /* Steward */
+
+    /* Deep Dive styling */
+    .deepHeader {
+      background: #4A6239;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    /* Final page DYDD section */
+    .dydd-green { color: #4A6239; }
+
+    .dydd-highlight {
+      color: #4A6239;
+      font-weight: 700;
+    }
+
+    .dydd-flex {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 18px;
+      align-items: start;
+      margin-top: 10px;
+    }
+
+    .dydd-image {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .dydd-callout {
+      margin: 0 0 10px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #4A6239;
+    }
+
+    /* Footer */
+    .footer {
+      position: fixed;
+      bottom: 0.25in;
+      left: 0.65in;
+      right: 0.65in;
+      font-size: 9px;
+      color: #6b7280;
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 6px;
+      background: white;
+    }
+
+    /* Welcome scripture darker */
+    .welcome-verse { font-size: 11px; color: #111827; }
+  </style>
+</head>
+
+<body>
+
+  <!-- Fixed Footer -->
+  <div class="footer">
+    <div>Discover Your Divine Design • discoverdivine.design</div>
+    <div>© 2025 All Rights Reserved</div>
+  </div>
+
+  <!-- PAGE 1: COVER / WELCOME -->
+  <div class="card avoid-break">
+    <div class="headerRow">
+      <div>
+        <h1>Spiritual Gifts Assessment Report</h1>
+        <div class="small muted">Personalized results and next steps for growth and service.</div>
+      </div>
+      <img class="logo"
+           src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/70bddac9-e9c5-40ef-8bf8-48aaa5b498f9/dydd-gifts-logo.png?format=2500w"
+           alt="Discover Your Divine Design" />
+    </div>
+
+    <div class="kv">
+      <div class="k">Name</div><div>{{ Full_Name }}</div>
+      <div class="k">Email</div><div>{{ Email_Address }}</div>
+    </div>
+
+    <div class="hr"></div>
+
+    <p><b>Welcome to Your Spiritual Gifts Assessment Report</b></p>
+    <p>
+      Thank you for taking the time to explore how God has uniquely equipped you to serve His Kingdom.
+      At Discover Your Divine Design, we offer this assessment completely free because we believe every believer
+      should have access to tools that help them understand who God created them to be. Your design is not accidental,
+      and your gifts have purpose, meaning, and eternal significance.
+    </p>
+    <p>
+      Our prayer is that this report encourages you, helps clarify your calling, and helps you step confidently into
+      the good works God has prepared for you. May what you discover here deepen your love for Christ, strengthen your service
+      within the Body, and illuminate the path He has placed before you.
+    </p>
+
+    <p class="welcome-verse">
+      “Now to each one the manifestation of the Spirit is given for the common good.” (1 Corinthians 12:7)
+    </p>
+  </div>
+
+  <!-- PAGE 1: TOP 5 GIFT BLOCKS -->
+  <div class="card avoid-break">
+    <h2>Your Top 5 Spiritual Gifts</h2>
+
+    <p>
+      These five gifts emerged most consistently throughout your responses and represent the areas where your spiritual design may most naturally express itself.
+    </p>
+
+    <div class="giftWrap">
+      <div class="giftRow">1. {{ Top1_Name }}</div>
+      <div class="giftRow">2. {{ Top2_Name }}</div>
+      <div class="giftRow">3. {{ Top3_Name }}</div>
+      <div class="giftRow">4. {{ Top4_Name }}</div>
+      <div class="giftRow">5. {{ Top5_Name }}</div>
+    </div>
+  </div>
+
+  <!-- PAGE 2 starts here -->
+  <div class="page-break"></div>
+
+  <!-- PAGE 2: TOP 5 TABLE -->
+  <div class="card">
+    <h2>Top 5 Gift Summary</h2>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="width: 12%;">Gift</th>
+          <th style="width: 20%;">Definition</th>
+          <th style="width: 16%;">Scripture</th>
+          <th style="width: 18%;">How it shows up</th>
+          <th style="width: 34%;">DesignID reflection correlations</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        {% assign lines = Top1_Correlation | newline_to_br | split: '<br />' %}
+        <tr>
+          <td><b>{{ Top1_Name }}</b></td>
+          <td>{{ Top1_Definition }}</td>
+          <td>{{ Top1_Scripture }}</td>
+          <td>{{ Top1_Blurb }}</td>
+          <td>
+            <ul class="corr">
+              {% for line in lines %}
+                {% assign x = line
+                  | replace: 'Architect', '<span class="arch">Architect</span>'
+                  | replace: 'Artisan',  '<span class="arti">Artisan</span>'
+                  | replace: 'Shepherd', '<span class="shep">Shepherd</span>'
+                  | replace: 'Steward',  '<span class="stew">Steward</span>' %}
+                {% if x != '' %}<li>{{ x }}</li>{% endif %}
+              {% endfor %}
+            </ul>
+          </td>
+        </tr>
+
+        {% assign lines = Top2_Correlation | newline_to_br | split: '<br />' %}
+        <tr>
+          <td><b>{{ Top2_Name }}</b></td>
+          <td>{{ Top2_Definition }}</td>
+          <td>{{ Top2_Scripture }}</td>
+          <td>{{ Top2_Blurb }}</td>
+          <td>
+            <ul class="corr">
+              {% for line in lines %}
+                {% assign x = line
+                  | replace: 'Architect', '<span class="arch">Architect</span>'
+                  | replace: 'Artisan',  '<span class="arti">Artisan</span>'
+                  | replace: 'Shepherd', '<span class="shep">Shepherd</span>'
+                  | replace: 'Steward',  '<span class="stew">Steward</span>' %}
+                {% if x != '' %}<li>{{ x }}</li>{% endif %}
+              {% endfor %}
+            </ul>
+          </td>
+        </tr>
+
+        {% assign lines = Top3_Correlation | newline_to_br | split: '<br />' %}
+        <tr>
+          <td><b>{{ Top3_Name }}</b></td>
+          <td>{{ Top3_Definition }}</td>
+          <td>{{ Top3_Scripture }}</td>
+          <td>{{ Top3_Blurb }}</td>
+          <td>
+            <ul class="corr">
+              {% for line in lines %}
+                {% assign x = line
+                  | replace: 'Architect', '<span class="arch">Architect</span>'
+                  | replace: 'Artisan',  '<span class="arti">Artisan</span>'
+                  | replace: 'Shepherd', '<span class="shep">Shepherd</span>'
+                  | replace: 'Steward',  '<span class="stew">Steward</span>' %}
+                {% if x != '' %}<li>{{ x }}</li>{% endif %}
+              {% endfor %}
+            </ul>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <div class="page-break"></div>
+
+  <div class="card">
+    <h2>Top 5 Gift Summary (continued)</h2>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="width: 12%;">Gift</th>
+          <th style="width: 20%;">Definition</th>
+          <th style="width: 16%;">Scripture</th>
+          <th style="width: 18%;">How it shows up</th>
+          <th style="width: 34%;">DesignID reflection correlations</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        {% assign lines = Top4_Correlation | newline_to_br | split: '<br />' %}
+        <tr>
+          <td><b>{{ Top4_Name }}</b></td>
+          <td>{{ Top4_Definition }}</td>
+          <td>{{ Top4_Scripture }}</td>
+          <td>{{ Top4_Blurb }}</td>
+          <td>
+            <ul class="corr">
+              {% for line in lines %}
+                {% assign x = line
+                  | replace: 'Architect', '<span class="arch">Architect</span>'
+                  | replace: 'Artisan',  '<span class="arti">Artisan</span>'
+                  | replace: 'Shepherd', '<span class="shep">Shepherd</span>'
+                  | replace: 'Steward',  '<span class="stew">Steward</span>' %}
+                {% if x != '' %}<li>{{ x }}</li>{% endif %}
+              {% endfor %}
+            </ul>
+          </td>
+        </tr>
+
+        {% assign lines = Top5_Correlation | newline_to_br | split: '<br />' %}
+        <tr>
+          <td><b>{{ Top5_Name }}</b></td>
+          <td>{{ Top5_Definition }}</td>
+          <td>{{ Top5_Scripture }}</td>
+          <td>{{ Top5_Blurb }}</td>
+          <td>
+            <ul class="corr">
+              {% for line in lines %}
+                {% assign x = line
+                  | replace: 'Architect', '<span class="arch">Architect</span>'
+                  | replace: 'Artisan',  '<span class="arti">Artisan</span>'
+                  | replace: 'Shepherd', '<span class="shep">Shepherd</span>'
+                  | replace: 'Steward',  '<span class="stew">Steward</span>' %}
+                {% if x != '' %}<li>{{ x }}</li>{% endif %}
+              {% endfor %}
+            </ul>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PAGE 3: Deep dives start cleanly -->
+  <div class="page-break"></div>
+
+  <!-- DEEP DIVE TOP 1 -->
+  <div class="card">
+    <div class="deepHeader">Deep Dive: {{ Top1_Name }}</div>
+    <p><span class="badge">Anchor Scripture</span> <b>{{ Top1_AnchorScripture }}</b></p>
+    <div class="hr"></div>
+
+    <div class="grid2">
+      <div class="avoid-break">
+        <h3>Maturity Overview</h3>
+        <p>{{ Top1_MaturityDescription }}</p>
+      </div>
+      <div class="avoid-break">
+        <h3>Growth Areas</h3>
+        <p>{{ Top1_GrowthAreas }}</p>
+      </div>
+      <div class="avoid-break">
+        <h3>Signs of Immaturity</h3>
+        <p>{{ Top1_SignsOfImmaturity }}</p>
+      </div>
+      <div class="avoid-break">
+        <h3>Steps to Grow</h3>
+        <p>{{ Top1_StepsToGrow }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEEP DIVE TOP 2 -->
+  <div class="card">
+    <div class="deepHeader">Deep Dive: {{ Top2_Name }}</div>
+    <p><span class="badge">Anchor Scripture</span> <b>{{ Top2_AnchorScripture }}</b></p>
+    <div class="hr"></div>
+
+    <div class="grid2">
+      <div class="avoid-break">
+        <h3>Maturity Overview</h3>
+        <p>{{ Top2_MaturityDescription }}</p>
+      </div>
+      <div class="avoid-break">
+        <h3>Growth Areas</h3>
+        <p>{{ Top2_GrowthAreas }}</p>
+      </div>
+      <div class="avoid-break">
+        <h3>Signs of Immaturity</h3>
+        <p>{{ Top2_SignsOfImmaturity }}</p>
+      </div>
+      <div class="avoid-break">
+        <h3>Steps to Grow</h3>
+        <p>{{ Top2_StepsToGrow }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DYDD EXPLAINER PAGE -->
+  <div class="page-break"></div>
+
+  <div class="card">
+    <h2 class="dydd-green">What is Discover Your Divine Design</h2>
+
+    <p class="dydd-callout">On Purpose <span class="dydd-green">-</span> For Purpose</p>
+
+    <div class="dydd-flex">
+      <div>
+        <p>
+          DYDD is a journey that helps you recognize how God has uniquely shaped your life for His purpose. By exploring
+          your identity, expertise, story, desires, gifts, and niche, you begin to see the intentional way God has designed
+          you to love, serve, and make a difference in the Body of Christ and beyond.
+        </p>
+
+        <p>
+          At the heart of this journey is the belief that you were created <span class="dydd-highlight">On Purpose - For Purpose</span>.
+          Your life is not random, and your design is not accidental. God has formed you with intention, redeemed your story
+          through Christ, and prepared good works for you to walk in faithfully.
+        </p>
+
+        <p>
+          Discovering Your Divine Design is not about striving, performing, or trying to impress God. It is about responding
+          to His grace and living more fully as the person He created you to be. As you understand your DESIGN more clearly,
+          you can serve with greater confidence, humility, and joy.
+        </p>
+
+        <p class="small" style="color:#111827;">
+          “For we are God’s workmanship, created in Christ Jesus to do good works, which God prepared in advance for us to do.”
+          (Ephesians 2:10)
+        </p>
+      </div>
+
+      <div>
+        <img class="dydd-image"
+             src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/a3b5b69f-3667-406c-9ba8-e9ec7ccddae3/envato-labs-image-edit+%2861%29.png?format=2500w"
+             alt="Discover Your Divine Design acronym visual" />
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <h3>What were the DesignID reflection correlations</h3>
+    <p>
+      As part of the DYDD ecosystem, we have built an identity assessment designed to help you see how you reflect who God is
+      as part of His creation and how you can use your design to love and serve. In this report, you’ve been given clues for how
+      each gift can correlate with the four reflections. The DesignID assessment is a key aspect of the DYDD journey.
+    </p>
+
+    <h3>What else do we offer</h3>
+    <p>
+      We offer a variety of resources including this Spiritual Gifts Assessment, the DesignID Assessment, the Discover Your Divine Design
+      book and workbook, online classes, and more. Check out our resource gateway.
+    </p>
+
+    <p class="small">
+      Resources: <b>discoverdivine.design/resources</b>
+    </p>
+  </div>
+
+  <p class="small" style="margin-top:14px;">
+    Generated for {{ Full_Name }}
+  </p>
+
+</body>
+</html>

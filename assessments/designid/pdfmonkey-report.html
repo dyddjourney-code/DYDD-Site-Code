@@ -1,0 +1,1263 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    * { box-sizing: border-box; }
+
+    :root{
+      --architect:#D4A451;
+      --artisan:#647C9B;
+      --shepherd:#739D5E;
+      --steward:#5A496B;
+
+      --line:#D9D9D9;
+      --muted:#666;
+    }
+
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      color:#111;
+      margin:0;
+      padding:0;
+      font-size:13.5px;
+      line-height:1.35;
+      background:#fff;
+      font-weight:400;
+    }
+
+    /* NOTE: removed global * { color:#111; } to prevent overriding white text */
+    p, li { color:#111; }
+    td, th { color:#111; }
+
+    .page{ padding:40px 44px; }
+    .page-break{ page-break-after: always; break-after: page; }
+
+    h1,h2,h3{ margin:0; }
+    h1{ font-size:30px; font-weight:700; }
+    h2{ font-size:18px; margin-top:16px; }
+    h3{ font-size:13px; margin-top:10px; }
+
+    .muted{ color:var(--muted); }
+    .center{ text-align:center; }
+
+    .rule{ height:2px; background:#000; opacity:.2; margin:12px 0 14px; }
+
+    .card{
+      border:1px solid var(--line);
+      border-radius:10px;
+      padding:14px;
+      background:#fff;
+      display:block;
+      width:100%;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    th,td{ border:1px solid #000; padding:10px; vertical-align:top; }
+    th{ background:#f5f5f5; font-weight:700; }
+
+    /* ===== Colored rows (force white text regardless of globals) ===== */
+    .r-architect{ background:var(--architect); }
+    .r-artisan{ background:var(--artisan); }
+    .r-shepherd{ background:var(--shepherd); }
+    .r-steward{ background:var(--steward); }
+
+    .r-architect, .r-artisan, .r-shepherd, .r-steward { color:#fff !important; }
+    .r-architect td, .r-architect th,
+    .r-artisan td, .r-artisan th,
+    .r-shepherd td, .r-shepherd th,
+    .r-steward td, .r-steward th { color:#fff !important; }
+
+    /* Keep links readable if any appear on colored areas */
+    .r-architect a, .r-artisan a, .r-shepherd a, .r-steward a { color:#fff !important; text-decoration:underline; }
+
+    .badge{
+      display:inline-block;
+      padding:3px 10px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:11px;
+      border:1px solid var(--line);
+      background:#fafafa;
+    }
+
+    .footer-note{
+      font-size:10px;
+      color:var(--muted);
+      margin-top:18px;
+    }
+
+    ul{ margin:8px 0 0 18px; padding:0; }
+    li{ margin:4px 0; }
+
+    /* Global spacing helpers */
+    .h1 { margin: 0 0 10px 0; }
+    .hero { margin-bottom: 10px; }
+
+    /* Page 1 layout (name + circle) */
+    .page1-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 24px;
+    }
+    .page1-left{ flex: 1 1 auto; padding-right: 10px; }
+    .page1-right{ flex: 0 0 auto; text-align:right; }
+
+    .circle-img{
+      display:block;
+      width: 180px;
+      height: auto;
+      margin-top: 6px;
+    }
+
+    /* ===== Bandwidth Guide – compact + premium ===== */
+    .bw-guide{
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .bw-guide th,
+    .bw-guide td{
+      border: 1px solid #000;
+      padding: 7px 8px;
+      vertical-align: top;
+      line-height: 1.25;
+      font-size: 11px;
+    }
+
+    .bw-guide th{
+      background: #fff;
+      color:#000 !important;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .bw-guide .col-ref{
+      width: 150px;
+      font-weight: 800;
+      text-align: left;
+      color:#fff !important; /* col label lives in colored row */
+    }
+
+    .bw-guide tbody td{ color:#fff !important; }
+
+    .bw-guide .bw-architect td{ background: var(--architect); }
+    .bw-guide .bw-artisan td{ background: var(--artisan); }
+    .bw-guide .bw-shepherd td{ background: var(--shepherd); }
+    .bw-guide .bw-steward td{ background: var(--steward); }
+
+    .bw-guide .ref-sub{ font-weight: 600; opacity: .95; }
+
+    /* Bandwidth highlight (robust + renderer-friendly) */
+    .bw-hit{
+      box-shadow: inset 0 0 0 2px #111;
+      font-weight: 700;
+    }
+
+    .bw-summary{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:10px;
+      font-size:13px;
+      line-height:1.35;
+    }
+    .bw-chip{
+      border:1px solid #ddd;
+      padding:6px 10px;
+      border-radius:10px;
+      background:#fff;
+      color:#111;
+    }
+
+    /* ===== Cover layout helpers ===== */
+    .cover-page{
+      height: 100vh;
+      padding: 32px 46px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+    }
+    .cover-name{
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      margin: 0;
+      color:#111;
+    }
+    .cover-date{
+      font-size: 13px;
+      font-weight: 400;
+      margin-top: 6px;
+      color:#111;
+    }
+    .cover-hero{
+      flex: 1 1 auto;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin: 10px 0 18px;
+    }
+    .cover-footer{
+      width: 100%;
+      display:flex;
+      align-items:flex-start;
+      gap: 14px;
+      padding-top: 14px;
+      border-top: 1px solid #ddd;
+    }
+    .cover-footer img{
+      width: 64px;
+      height: auto;
+      flex: 0 0 auto;
+    }
+    .footer-text{
+      font-size: 9.5px;
+      line-height: 1.3;
+      text-align: left;
+      color: #111;
+    }
+.footer {
+  position: fixed;
+  bottom: 18px;
+  left: 44px;
+  right: 44px;
+  font-size: 10px;
+  color: #666;
+}
+.footer .right { text-align: right; }
+
+    .kicker{ font-size:11px; color:#333; }
+    .section-intro{ margin:0; }
+    .tight p{ margin:0; }
+
+/* ===== Page Numbers ===== */
+@page {
+  margin-bottom: 42px;
+
+  @bottom-right {
+    content: "Page " counter(page);
+    font-size: 10px;
+    color: #666;
+
+    padding-bottom: 18px;
+    padding-right: 18px; /* 👈 THIS IS THE FIX */
+  }
+}
+
+@page:first {
+  @bottom-right {
+    content: "";
+  }
+}
+    /* ===== Compact final-page DesignPD callout ===== */
+    .designpd-callout{
+      margin-top:10px;
+      border:1px solid #D9D9D9;
+      border-radius:10px;
+      padding:9px 12px 10px;
+      background:#fff;
+      text-align:center;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .designpd-callout img.designpd-logo{
+  display:block;
+  width:330px; /* doubled */
+  height:auto;
+  margin:0 auto 6px;
+}
+    }
+    .designpd-callout h2{
+      margin:0 0 4px;
+      font-size:18px;
+      line-height:1.15;
+    }
+    .designpd-callout p{
+      margin:0;
+      font-size:14px;
+      line-height:1.25;
+    }
+    .designpd-callout .designpd-verse{
+      margin-top:5px;
+      font-size:14px;
+      line-height:1.2;
+      color:#333;
+      font-style:italic;
+    }
+    .designpd-callout .designpd-qr{
+      display:block;
+      width:90px;
+      height:90px;
+      margin:5px auto 0;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- ===================== COVER ===================== -->
+<div class="cover-page">
+
+  <!-- TOP LOGO -->
+  <img
+    src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/589a89e0-d009-4efd-b64b-ade9da37ecce/ID-logo-hrz-color.png?format=2500w"
+    alt="DesignID"
+    style="max-width:520px; width:100%; margin-top:6px;"
+  />
+
+  <!-- NAME + DATE -->
+  <div style="margin-top:18px;">
+    <div class="cover-name">{{ Name | default: '' }}</div>
+    <div class="cover-date">
+      {% assign safe_date = Date | default: '' | strip %}
+      {% if safe_date != '' %}{{ safe_date }}{% else %}&nbsp;{% endif %}
+    </div>
+  </div>
+
+  <!-- CENTER IMAGE -->
+<div class="cover-hero">
+  <img
+    src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/9bbcd734-e5c7-43a0-8563-ec5d79749b91/DYDD_piegraph+final.png?format=2500w"
+    alt="DesignID Visual"
+    style="width:460px; max-width:100%; height:auto;"
+  />
+</div>
+
+  <!-- FOOTER -->
+  <div class="cover-footer">
+    <img
+      src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/156f49e9-3121-4dd4-8aa6-ac23f67962b7/DYDD-logo.png?format=500w"
+      alt="DYDD"
+    />
+    <div class="footer-text">
+      Discover Your Divine Design® Report Copyright 2025. All rights reserved.
+      Discover Your Divine Design® and DesignID® are trademarks or registered trademarks
+      of 4D Education Inc.® in the United States and other countries.
+    </div>
+  </div>
+
+</div>
+
+<div class="page-break"></div>
+
+
+
+<!-- ===================== INTRO / FOUNDATION ===================== -->
+<div class="page">
+  <h2>DesignID Overview</h2>
+  <div class="rule"></div>
+
+  <div class="card">
+    <div style="display:flex; gap:22px; align-items:flex-start;">
+
+      <!-- LEFT COLUMN -->
+      <div style="flex:1 1 60%;">
+        <p style="margin:0;">
+          <strong>DesignID™</strong> is a faith-integrated assessment that measures how individuals perceive how they reflect who God is.
+          The four reflections used in this assessment are titled <strong>Architect</strong>, <strong>Artisan</strong>, <strong>Shepherd</strong>, and <strong>Steward</strong>.
+          Each represents a reflection of how God works through human beings. Together, they help us better understand the following aspects of God:
+          The <strong>Creator</strong>, <strong>Designer</strong>, <strong>Comforter</strong>, and <strong>Sustainer</strong>.
+          The DesignID Assessment quantifies an individual’s preferences across these four aspects.
+        </p>
+
+        <p style="margin:12px 0 0;">
+          <strong>Vision:</strong> To help every believer discover, develop, and deploy their God-given design, equipping the Church to flourish
+          through unity, diversity, and purpose.
+        </p>
+
+        <p style="margin:12px 0 0;">
+          DYDD + DesignID gives individuals a tangible way to live out the DYDD anchor verse:<br>
+          “For we are God’s handiwork, created in Christ Jesus to do good works, which God prepared in advance for us to do.”
+          (<strong>Ephesians 2:10</strong>)
+        </p>
+
+        <p style="margin:12px 0 6px;"><strong>Biblical Foundation</strong></p>
+        <ul style="margin:0 0 0 18px;">
+          <li>Genesis 1:27 — We were created to reflect who God is.</li>
+          <li>1 Peter 2:9 — Identity flows from whose we are, not who we are.</li>
+          <li>1 Corinthians 15:10 — Grace does not just forgive; it fuels, sustains, and directs.</li>
+          <li>Galatians 5:16–17 — We are to operate in grace, not selfishness.</li>
+        </ul>
+
+        <p style="margin:12px 0 0;">
+          DesignID operationalizes these biblical truths into a practical assessment that quantifies how individuals reflect God’s image
+          through creating (Architect), designing (Artisan), comforting (Shepherd), and sustaining (Steward).
+        </p>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div style="flex:1 1 40%; border-left:1px solid #ddd; padding-left:18px;">
+        <h3 style="margin:0 0 8px;">Your Results at a Glance</h3>
+
+        <div style="font-size:13px; line-height:1.4;">
+          <div><strong>Primary Reflection:</strong> {{ Primary | default: '' }}</div>
+          <div><strong>Secondary Reflection:</strong> {{ Secondary | default: '' }}</div>
+          <div><strong>Integrative Reflection:</strong> {{ Integrative_Reflection | default: '' }}</div>
+
+          <div style="margin-top:12px;"><strong>Reflection Bandwidth</strong></div>
+          <div>Architect — {{ Band_Architect | default: '' }}</div>
+          <div>Artisan — {{ Band_Artisan | default: '' }}</div>
+          <div>Shepherd — {{ Band_Shepherd | default: '' }}</div>
+          <div>Steward — {{ Band_Steward | default: '' }}</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+
+<div class="page-break"></div>
+
+<!-- ===================== PERSONAL PROFILE ===================== -->
+<div class="page">
+
+  <h2 style="margin-top:6px;">Personal Profile</h2>
+  <div class="rule"></div>
+
+  <div class="card">
+    <div><strong>Primary Reflection:</strong> {{ Primary | default: '' }}</div>
+    <div><strong>Secondary Reflection:</strong> {{ Secondary | default: '' }}</div>
+    <div><strong>Integrative Reflection:</strong> {{ Integrative_Reflection | default: '' }}</div>
+  </div>
+
+  <h3>Reflection Summary</h3>
+  <table style="margin-top:10px;">
+    <thead>
+      <tr>
+        <th>Reflection</th>
+        <th style="width:120px;">Reflection %</th>
+        <th>Application</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="r-architect">
+        <td><strong>Architect</strong> (Creator)</td>
+        <td class="center"><strong>{{ Architect_Pct | default: '' }}</strong></td>
+        <td>Building, leading, and initiating</td>
+      </tr>
+      <tr class="r-artisan">
+        <td><strong>Artisan</strong> (Designer)</td>
+        <td class="center"><strong>{{ Artisan_Pct | default: '' }}</strong></td>
+        <td>Refining and communicating truth through beauty</td>
+      </tr>
+      <tr class="r-shepherd">
+        <td><strong>Shepherd</strong> (Comforter)</td>
+        <td class="center"><strong>{{ Shepherd_Pct | default: '' }}</strong></td>
+        <td>Nurturing, healing, and restoring through presence</td>
+      </tr>
+      <tr class="r-steward">
+        <td><strong>Steward</strong> (Sustainer)</td>
+        <td class="center"><strong>{{ Steward_Pct | default: '' }}</strong></td>
+        <td>Maintaining and securing what has been entrusted</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- QUICK VIEW (donut) -->
+  <h3 style="margin-top:14px;">Quick View (donut)</h3>
+  <div class="card center" style="padding:18px;">
+
+    {% capture qc_donut %}
+{
+  "type":"doughnut",
+  "data":{
+    "labels":["Architect","Artisan","Shepherd","Steward"],
+    "datasets":[{
+      "data":[
+        {{ Architect_Pct | default: '0%' | replace: '%','' }},
+        {{ Artisan_Pct | default: '0%' | replace: '%','' }},
+        {{ Shepherd_Pct | default: '0%' | replace: '%','' }},
+        {{ Steward_Pct | default: '0%' | replace: '%','' }}
+      ],
+      "backgroundColor":["#D4A451","#647C9B","#739D5E","#5A496B"],
+      "borderColor":"#FFFFFF",
+      "borderWidth":2
+    }]
+  },
+  "options":{
+    "cutout":"58%",
+    "plugins":{
+      "legend":{
+        "position":"bottom",
+        "labels":{
+          "boxWidth":14,
+          "color":"#111"
+        }
+      },
+      "datalabels":{
+        "color":"#ffffff",
+        "font":{
+          "weight":"bold",
+          "size":14
+        },
+        "formatter": function(value) {
+          return value + '%';
+        }
+      }
+    }
+  }
+}
+{% endcapture %}
+
+
+    <img
+      alt="Divine Reflection Distribution"
+      style="width:380px; max-width:100%; display:block; margin:0 auto;"
+      src="https://quickchart.io/chart?c={{ qc_donut | strip_newlines | url_encode }}"
+    />
+
+    <div class="footer-note" style="margin-top:10px;">
+      Points: Architect={{ Architect_Pts | default: '' }}, Artisan={{ Artisan_Pts | default: '' }}, Shepherd={{ Shepherd_Pts | default: '' }}, Steward={{ Steward_Pts | default: '' }} (Total {{ Total_Pts | default: '' }})
+    </div>
+  </div>
+
+</div>
+
+<div class="page-break"></div>
+
+<!-- ===================== PRIMARY / SECONDARY ===================== -->
+<div class="page">
+  <h2>Primary & Secondary Reflections</h2>
+  <div class="rule"></div>
+
+  <div class="card" style="margin-bottom:14px;">
+    <p class="section-intro">
+      Your reflections reveal the unique ways God’s design comes alive through you. Your primary reflection (<strong>{{ Primary | default: '' }}</strong>)
+      expresses your most natural way of reflecting God, the place where your efforts feel the most comfortable. Your secondary reflection
+      (<strong>{{ Secondary | default: '' }}</strong>) complements and refines your primary, adding depth, balance, and perspective to how you live out your calling.
+      Together, these reflections form an awareness of God’s grace at work in your life. When these two work together, they produce your integrative
+      reflection (<strong>{{ Integrative_Reflection | default: '' }}</strong>), where a deeper purpose behind your design is revealed.
+    </p>
+  </div>
+
+  <div class="card">
+    <div><strong>Primary Reflection:</strong> {{ Primary | default: '' }}</div>
+    <div style="margin-top:8px;">{{ Primary_Text | default: '' }}</div>
+
+    <div class="muted" style="margin-top:10px;"><strong>Divine Reflection:</strong> {{ Primary_Reflection | default: '' }}</div>
+    <div class="muted" style="margin-top:8px;"><strong>Core Drive:</strong> {{ Primary_Core | default: '' }}</div>
+    <div class="muted" style="margin-top:4px;"><strong>Scripture:</strong> {{ Primary_Scripture | default: '' }}</div>
+
+    <div style="margin-top:10px;"><strong>Summary:</strong> {{ Primary_Summary | default: '' }}</div>
+  </div>
+
+  <div style="height:14px;"></div>
+
+  <div class="card">
+    <div><strong>Secondary Reflection:</strong> {{ Secondary | default: '' }}</div>
+    <div style="margin-top:8px;">{{ Secondary_Text | default: '' }}</div>
+
+    <div class="muted" style="margin-top:10px;"><strong>Divine Reflection:</strong> {{ Secondary_Reflection | default: '' }}</div>
+    <div class="muted" style="margin-top:8px;"><strong>Core:</strong> {{ Secondary_Core | default: '' }}</div>
+    <div class="muted" style="margin-top:4px;"><strong>Scripture:</strong> {{ Secondary_Scripture | default: '' }}</div>
+
+    <div style="margin-top:10px;"><strong>Summary:</strong> {{ Secondary_Summary | default: '' }}</div>
+  </div>
+
+</div>
+
+<div class="page-break"></div>
+
+<!-- ===================== INTEGRATIVE REFLECTION (INTRO + TABLE) ===================== -->
+<div class="page">
+  <h2>Integrative Reflection</h2>
+  <div class="rule"></div>
+
+  <div class="card" style="margin-bottom:14px;">
+    <p class="section-intro">
+      Every person reflects four divine reflections (Architect, Artisan, Shepherd, and Steward) but few operate purely within one.
+      Real life, leadership, and discipleship happen in the intersections between them. Integrative reflections reveal the six blended
+      expressions of how we reflect God, the spaces where two reflections meet, creating unique character, insight, and calling.
+    </p>
+  </div>
+
+  <div style="text-align:center; font-weight:700; font-size:16px; margin:18px 0 22px;">
+    <div>Your Integrative Reflection is:</div>
+    <div style="margin-top:6px;">
+      {{ Primary | default: '' }} + {{ Secondary | default: '' }} = {{ Integrative_Reflection | default: '' }}
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width:140px;">Reflection</th>
+        <th style="width:170px;">Blend</th>
+        <th>Integrative Expression</th>
+        <th style="width:150px;">Scripture</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Visionary</strong></td>
+        <td>Architect + Artisan</td>
+        <td>Innovation joined with wisdom: builds what is both new and true</td>
+        <td>Proverbs 3:19</td>
+      </tr>
+      <tr>
+        <td><strong>Interpreter</strong></td>
+        <td>Artisan + Shepherd</td>
+        <td>Compassionate communication: healing through understanding</td>
+        <td>Colossians 4:6</td>
+      </tr>
+      <tr>
+        <td><strong>Guardian</strong></td>
+        <td>Shepherd + Steward</td>
+        <td>Relational stability and protection</td>
+        <td>1 Corinthians 14:40</td>
+      </tr>
+      <tr>
+        <td><strong>Overseer</strong></td>
+        <td>Steward + Architect</td>
+        <td>Responsible creation: guarding purpose with diligence</td>
+        <td>1 Corinthians 4:2</td>
+      </tr>
+      <tr>
+        <td><strong>Innovator</strong></td>
+        <td>Architect + Shepherd</td>
+        <td>Empathetic initiative: faith with compassion</td>
+        <td>Isaiah 40:11</td>
+      </tr>
+      <tr>
+        <td><strong>Craftsman</strong></td>
+        <td>Artisan + Steward</td>
+        <td>Excellence with endurance: refining what lasts</td>
+        <td>Colossians 3:23</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<div class="page-break"></div>
+
+<!-- ===================== INTEGRATIVE REFLECTION (DETAILS) ===================== -->
+<div class="page">
+  <h2>Integrative Reflection Details</h2>
+  <div class="rule"></div>
+
+  <div class="card">
+    <div style="margin-top:6px;"><strong>Integrative Reflection:</strong> {{ Integrative_Reflection | default: '' }}</div>
+    <div class="muted" style="margin-top:6px;"><strong>Scripture:</strong> {{ Integrative_Scripture | default: '' }}</div>
+
+    <h3 style="margin-top:12px;">Reflection of God</h3>
+    <div>{{ Reflection_Of_God | default: '' }}</div>
+
+    <h3 style="margin-top:12px;">Integrative Expression</h3>
+    <div>{{ Integrative_Expression | default: '' }}</div>
+
+    <h3 style="margin-top:12px;">Spiritual Strength</h3>
+    <div>{{ Spiritual_Strength | default: '' }}</div>
+
+    <h3 style="margin-top:12px;">Potential Shadow</h3>
+    <div>{{ Potential_Shadow | default: '' }}</div>
+
+    <h3 style="margin-top:12px;">Integrative Growth</h3>
+    <div>{{ Integrative_Growth | default: '' }}</div>
+
+    <h3 style="margin-top:12px;">Summary</h3>
+<div>{{ Integrative_Summary | default: '' }}</div>
+</div>
+
+</div>
+
+<div class="page-break"></div>
+
+<!-- ===================== BANDWIDTH ===================== -->
+
+<!-- BANDWIDTH INTRO PAGE -->
+<div class="page">
+  <h2>Reflection Capacity</h2>
+  <div class="rule"></div>
+
+  <div class="card">
+    <p style="margin:0;">
+      Every person carries the image of God, expressed through four reflections: Architect,
+      Artisan, Shepherd, and Steward. But not every reflection carries the same range. Your
+      design capacity describes how strongly God’s grace is currently flowing through each
+      part of your divine design. It does not measure effort or ability but reveals where grace
+      feels natural, steady, stretched, or strained.
+    </p>
+
+    <p style="margin:10px 0 0;">
+      In other words, capacity shows how God’s power moves through you; what gives life,
+      what requires faith, and what invites rest. When your capacity is Abundant, you feel
+      joy and ease; when it is Steady, you serve faithfully; when it is Limited, you depend
+      intentionally on God; and when it is Drained, you learn surrender and partnership.
+      Design capacity reminds us that His grace is always sufficient.
+    </p>
+
+    <p style="margin:10px 0 0; font-weight:700;">
+      Each one should use whatever gift you have received to serve others, as faithful
+      stewards of God’s grace in its various forms. (1 Peter 4:10)
+    </p>
+
+    <h3 style="margin-top:14px;">The Purpose of Capacity</h3>
+    <ul>
+      <li><strong>Reveal natural grace flow:</strong> What comes easily, joyfully, and fruitfully.</li>
+      <li><strong>Expose overused or undernourished energies:</strong> Where strain or fatigue may occur.</li>
+      <li><strong>Support development and discipleship:</strong> Guiding self-awareness, leadership growth, and spiritual balance.</li>
+      <li><strong>Honor divine diversity:</strong> Reminding us that no design is superior; each simply reflects a different grace intensity.</li>
+    </ul>
+
+    <h3 style="margin-top:14px;">Capacity mirrors God’s relational approach with His people:</h3>
+    <ul>
+      <li>He gives <strong>Abundant</strong> grace to empower calling.</li>
+      <li>He sustains with <strong>Steady</strong> grace for endurance.</li>
+      <li>He teaches through <strong>Limited</strong> grace to cultivate dependence.</li>
+      <li>He redeems <strong>Drained</strong> grace by inviting rest and partnership.</li>
+    </ul>
+  </div>
+
+  <div class="card" style="margin-top:14px;">
+    <h3 style="margin:0 0 10px;">Your Capacity Results</h3>
+
+    <table style="width:520px; max-width:100%; margin:0 auto; border-collapse:collapse;">
+      <thead>
+        <tr>
+          <th style="background:#fff; color:#000; width:55%;">Reflection</th>
+          <th style="background:#fff; color:#000; width:15%;" class="center">Score</th>
+          <th style="background:#fff; color:#000; width:30%;" class="center">Capacity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="r-architect">
+          <td><strong>Architect</strong></td>
+          <td class="center"><strong>{{ Architect_Pts | default: '' }}</strong></td>
+          <td class="center"><strong>{{ Band_Architect | default: '' }}</strong></td>
+        </tr>
+        <tr class="r-artisan">
+          <td><strong>Artisan</strong></td>
+          <td class="center"><strong>{{ Artisan_Pts | default: '' }}</strong></td>
+          <td class="center"><strong>{{ Band_Artisan | default: '' }}</strong></td>
+        </tr>
+        <tr class="r-shepherd">
+          <td><strong>Shepherd</strong></td>
+          <td class="center"><strong>{{ Shepherd_Pts | default: '' }}</strong></td>
+          <td class="center"><strong>{{ Band_Shepherd | default: '' }}</strong></td>
+        </tr>
+        <tr class="r-steward">
+          <td><strong>Steward</strong></td>
+          <td class="center"><strong>{{ Steward_Pts | default: '' }}</strong></td>
+          <td class="center"><strong>{{ Band_Steward | default: '' }}</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="page-break"></div>
+
+<!-- BANDWIDTH GUIDE PAGE -->
+<div class="page">
+  <h2>Reflection Capacity Guide</h2>
+  <div class="rule"></div>
+
+  <div class="card">
+    <h3 style="margin:0 0 8px 0;">Your Capacity Summary</h3>
+    <div class="bw-summary">
+      <div class="bw-chip"><strong>Architect:</strong> {{ Band_Architect | default: '' }}</div>
+      <div class="bw-chip"><strong>Artisan:</strong> {{ Band_Artisan | default: '' }}</div>
+      <div class="bw-chip"><strong>Shepherd:</strong> {{ Band_Shepherd | default: '' }}</div>
+      <div class="bw-chip"><strong>Steward:</strong> {{ Band_Steward | default: '' }}</div>
+    </div>
+  </div>
+
+  {% assign ba = Band_Architect | default: '' | downcase | strip %}
+  {% assign br = Band_Artisan   | default: '' | downcase | strip %}
+  {% assign bs = Band_Shepherd  | default: '' | downcase | strip %}
+  {% assign bt = Band_Steward   | default: '' | downcase | strip %}
+
+  <div class="card" style="margin-top:12px;">
+    <table class="bw-guide" style="margin-top:10px;">
+      <thead>
+        <tr>
+          <th class="col-ref">Reflection</th>
+          <th>Abundant<br>(40–60)</th>
+          <th>Steady<br>(25–39)</th>
+          <th>Limited<br>(10–24)</th>
+          <th>Drained<br>(0–9)</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <!-- Architect row -->
+        <tr class="bw-architect">
+          <td class="col-ref">
+            Architect<br><span class="ref-sub">(Creator)</span>
+          </td>
+
+          <td class="{% if ba contains 'abundant' %}bw-hit{% endif %}">
+            Visionary and faith-filled. You thrive when building, leading, or starting something new.
+            Creation itself energizes you, where your faith comes alive.
+          </td>
+
+          <td class="{% if ba contains 'steady' %}bw-hit{% endif %}">
+            Reliable and strategic. You bring order and foresight to meaningful projects and lead confidently when goals are clear.
+          </td>
+
+          <td class="{% if ba contains 'limited' %}bw-hit{% endif %}">
+            Practical and structured but slower to initiate. You can plan effectively when prompted but may hesitate to start alone.
+          </td>
+
+          <td class="{% if ba contains 'drained' %}bw-hit{% endif %}">
+            Orderly but fatigued by decision-making. Too much pressure to lead or build drains clarity and joy.
+          </td>
+        </tr>
+
+        <!-- Artisan row -->
+        <tr class="bw-artisan">
+          <td class="col-ref">
+            Artisan<br><span class="ref-sub">(Designer)</span>
+          </td>
+
+          <td class="{% if br contains 'abundant' %}bw-hit{% endif %}">
+            Creative, insightful, and expressive. You bring beauty to truth and meaning to motion, revealing God’s wisdom through imagination.
+          </td>
+
+          <td class="{% if br contains 'steady' %}bw-hit{% endif %}">
+            Consistent and thoughtful. You shape and refine ideas with care, balancing creativity and structure.
+          </td>
+
+          <td class="{% if br contains 'limited' %}bw-hit{% endif %}">
+            Capable but cautious. You prefer clear frameworks and inspiration from others to stay engaged.
+          </td>
+
+          <td class="{% if br contains 'drained' %}bw-hit{% endif %}">
+            Drained by repetition or rigid systems. When beauty feels buried by duty, your creativity dims.
+          </td>
+        </tr>
+
+        <!-- Shepherd row -->
+        <tr class="bw-shepherd">
+          <td class="col-ref">
+            Shepherd<br><span class="ref-sub">(Comforter)</span>
+          </td>
+
+          <td class="{% if bs contains 'abundant' %}bw-hit{% endif %}">
+            Relational, empathetic, and encouraging. You nurture others toward growth and unity through patience and grace.
+          </td>
+
+          <td class="{% if bs contains 'steady' %}bw-hit{% endif %}">
+            Supportive and understanding. You provide steady care and dependable presence in relationships and teams.
+          </td>
+
+          <td class="{% if bs contains 'limited' %}bw-hit{% endif %}">
+            Caring but easily stretched. You show kindness yet need boundaries and rest to maintain empathy.
+          </td>
+
+          <td class="{% if bs contains 'drained' %}bw-hit{% endif %}">
+            Overextended by others’ needs. When compassion becomes striving, emotional fatigue follows.
+          </td>
+        </tr>
+
+        <!-- Steward row -->
+        <tr class="bw-steward">
+          <td class="col-ref">
+            Steward<br><span class="ref-sub">(Sustainer)</span>
+          </td>
+
+          <td class="{% if bt contains 'abundant' %}bw-hit{% endif %}">
+            Faithful, organized, and dependable. You bring peace through order, ensuring excellence and integrity in all you oversee.
+          </td>
+
+          <td class="{% if bt contains 'steady' %}bw-hit{% endif %}">
+            Consistent and disciplined. You maintain stability and follow-through, supporting teams with quiet strength.
+          </td>
+
+          <td class="{% if bt contains 'limited' %}bw-hit{% endif %}">
+            Responsible but reluctant. You value order yet tire of long routines or endless details.
+          </td>
+
+          <td class="{% if bt contains 'drained' %}bw-hit{% endif %}">
+            Weary under constant obligation. When duty outweighs grace, your diligence turns to burden.
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="page-break"></div>
+
+<!-- ===================== LEARNING ===================== -->
+<div class="page">
+  <h2>Approach to Learning</h2>
+  <div class="rule"></div>
+
+  <div class="card">
+    <p style="margin:0;">
+      Learning is a key part of spiritual growth and discipleship. God shapes us through truth, experience, and practice,
+      forming Christlike maturity as we respond to His leading.
+    </p>
+
+    <h3 style="margin-top:14px;">The {{ Primary | default: '' }} Approach to Learning</h3>
+    <div>{{ Approach_to_Learning | default: '' }}</div>
+
+    <h3 style="margin-top:14px;">{{ Primary | default: '' }} Learning Strategies</h3>
+    {% assign ls = Learning_Strategies | default: '' | split: "\n" %}
+    <ul>
+      {% for item in ls %}
+        {% assign t = item | strip %}
+        {% if t != "" %}
+          <li>{{ t }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+
+    <div class="muted" style="margin-top:10px;">
+      <strong>Scripture:</strong> {{ Learning_Scripture | default: '' }}
+    </div>
+  </div>
+</div>
+
+<!-- ===================== CONTRIBUTION ===================== -->
+<div class="page">
+  <h2>Contribution to the Body</h2>
+  <div class="rule"></div>
+
+  <div class="card">
+    <p style="margin:0;">
+      Your design is a gift meant to bless others. God places unique strengths, desires, and energies within you so the Body
+      of Christ can be built up in love.
+    </p>
+
+    <h3 style="margin-top:14px;">How the {{ Primary | default: '' }} Contributes to the Body of Christ</h3>
+    <div>{{ Contribution_To_Body | default: '' }}</div>
+
+    <h3 style="margin-top:14px;">{{ Primary | default: '' }} Contribution</h3>
+    {% assign c = Contributions | default: '' | split: "\n" %}
+    <ul>
+      {% for item in c %}
+        {% assign t = item | strip %}
+        {% if t != "" %}
+          <li>{{ t }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+
+    <div class="muted" style="margin-top:10px;">
+      <strong>Scripture:</strong> {{ Contribution_Scripture | default: '' }}
+    </div>
+  </div>
+
+</div>
+
+<div class="page-break"></div>
+
+<!-- ===================== SHADOW ===================== -->
+<div class="page">
+  <h2>Shadow Reflection</h2>
+  <div class="rule"></div>
+
+  <div class="card">
+    <p style="margin:0;">
+      Shadow reflections describe what happens when our divine design moves out of alignment with grace. They are not sin themselves, but rather the distractions, distortions, or divided attention that pull our reflection of God away from its intended purpose. When grace flows freely, we reflect His image clearly, but when pride, fear, or self-reliance interrupt that flow, our reflection bends toward self instead of service.
+    </p>
+
+    <p style="margin:10px 0 0;">
+      Shadows appear when the gift meant to bless becomes a burden we try to carry alone. Without awareness, these unguarded tendencies can mature into sin; control instead of courage, perfectionism instead of pursuit of excellence, people-pleasing instead of love.
+    </p>
+
+    <p style="margin:10px 0 0;">
+      Scripture reminds us, “If we claim to have fellowship with him and yet walk in the darkness, we lie and do not live out the truth” (1 John 1:6). The purpose of identifying shadow reflections is therefore not condemnation but restoration, to recognize where light has dimmed. As Psalm 139:23–24 prays, “Search me, God, and know my heart…See if there is any offensive way in me, and lead me in the way everlasting.”
+    </p>
+
+    <div style="margin-top:12px; font-weight:700;">
+      The Shadow Reflection for the {{ Primary | default: '' }} is: <span style="font-weight:800;">{{ Reflection_Shadow | default: '' }}</span>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:14px;">
+    <h3 style="margin:0;">{{ Reflection_Shadow | default: '' }} Overview</h3>
+    <div style="margin-top:8px;">{{ Shadow_Overview | default: '' }}</div>
+  </div>
+
+  <div class="card" style="margin-top:14px;">
+    <h3 style="margin:0;">Consider the matrix below:</h3>
+
+    <table style="margin-top:10px; width:100%; border-collapse:collapse;">
+      <thead>
+        <tr>
+          <th style="width:40px;"> </th>
+          <th>Risks</th>
+          <th>Root Cause</th>
+          <th>Redemption</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="center" style="font-weight:800;">A</td>
+          <td>{{ Shadow_Risk_A | default: '' }}</td>
+          <td>{{ Shadow_Root_A | default: '' }}</td>
+          <td>{{ Shadow_Red_A | default: '' }}</td>
+        </tr>
+        <tr>
+          <td class="center" style="font-weight:800;">B</td>
+          <td>{{ Shadow_Risk_B | default: '' }}</td>
+          <td>{{ Shadow_Root_B | default: '' }}</td>
+          <td>{{ Shadow_Red_B | default: '' }}</td>
+        </tr>
+        <tr>
+          <td class="center" style="font-weight:800;">C</td>
+          <td>{{ Shadow_Risk_C | default: '' }}</td>
+          <td>{{ Shadow_Root_C | default: '' }}</td>
+          <td>{{ Shadow_Red_C | default: '' }}</td>
+        </tr>
+        <tr>
+          <td class="center" style="font-weight:800;">D</td>
+          <td>{{ Shadow_Risk_D | default: '' }}</td>
+          <td>{{ Shadow_Root_D | default: '' }}</td>
+          <td>{{ Shadow_Red_D | default: '' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="muted" style="margin-top:10px;">
+    <strong>Scripture:</strong> {{ Shadow_Scripture | default: '' }}
+  </div>
+
+</div>
+
+<div class="page-break"></div>
+
+<div class="page">
+  <h2 style="margin-top:0;">{{ Name | default: '' }} DesignID Reflection Summary</h2>
+  <div class="rule"></div>
+
+  <div class="card" style="padding:12px;">
+    <div style="font-size:12px; font-weight:700; text-align:center;">
+      Primary reflection: {{ Primary | default: '' }} &nbsp;|&nbsp; Secondary reflection: {{ Secondary | default: '' }}<br>
+      Integrative reflection: {{ Integrative_Reflection | default: '' }} &nbsp;|&nbsp; Shadow reflection: {{ Reflection_Shadow | default: '' }}
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:12px; padding:12px;">
+    <table style="width:100%; border-collapse:collapse;">
+      <thead>
+        <tr>
+          <th style="background:#fff; color:#000;">Reflection</th>
+          <th style="background:#fff; color:#000; width:90px;" class="center">Score</th>
+          <th style="background:#fff; color:#000; width:120px;" class="center">Capacity</th>
+          <th style="background:#fff; color:#000;">Application</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="r-architect">
+          <td><strong>Architect</strong> (Creator)</td>
+          <td class="center"><strong>{{ Architect_Pct | default: '' }}</strong></td>
+          <td class="center"><strong>{{ Band_Architect | default: '' }}</strong></td>
+          <td>Building, leading and initiating</td>
+        </tr>
+        <tr class="r-artisan">
+          <td><strong>Artisan</strong> (Designer)</td>
+          <td class="center"><strong>{{ Artisan_Pct | default: '' }}</strong></td>
+          <td class="center"><strong>{{ Band_Artisan | default: '' }}</strong></td>
+          <td>Refining and communicating truth through beauty</td>
+        </tr>
+        <tr class="r-shepherd">
+          <td><strong>Shepherd</strong> (Comforter)</td>
+          <td class="center"><strong>{{ Shepherd_Pct | default: '' }}</strong></td>
+          <td class="center"><strong>{{ Band_Shepherd | default: '' }}</strong></td>
+          <td>Nurturing, healing, and restoring through presence</td>
+        </tr>
+        <tr class="r-steward">
+          <td><strong>Steward</strong> (Sustainer)</td>
+          <td class="center"><strong>{{ Steward_Pct | default: '' }}</strong></td>
+          <td class="center"><strong>{{ Band_Steward | default: '' }}</strong></td>
+          <td>Maintaining and securing what has been entrusted</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card center" style="margin-top:12px; padding:14px;">
+    <h3 style="margin:0 0 10px;">Divine Reflection Distribution</h3>
+
+    {% capture qc_donut_summary %}
+{
+  "type":"doughnut",
+  "data":{
+    "labels":["Architect","Artisan","Shepherd","Steward"],
+    "datasets":[{
+      "data":[
+        {{ Architect_Pct | default: '0%' | replace: '%','' }},
+        {{ Artisan_Pct | default: '0%' | replace: '%','' }},
+        {{ Shepherd_Pct | default: '0%' | replace: '%','' }},
+        {{ Steward_Pct | default: '0%' | replace: '%','' }}
+      ],
+      "backgroundColor":["#D4A451","#647C9B","#739D5E","#5A496B"],
+      "borderColor":"#FFFFFF",
+      "borderWidth":2
+    }]
+  },
+  "options":{
+    "cutout":"58%",
+    "plugins":{
+      "legend":{
+        "position":"bottom",
+        "labels":{
+          "boxWidth":14,
+          "color":"#111"
+        }
+      },
+      "datalabels":{
+        "color":"#ffffff",
+        "font":{
+          "weight":"bold",
+          "size":14
+        },
+        "formatter": function(value) {
+          return value + '%';
+        }
+      }
+    }
+  }
+}
+{% endcapture %}
+
+
+    <img
+      alt="Divine Reflection Distribution"
+      style="width:320px; max-width:100%; display:block; margin:0 auto;"
+      src="https://quickchart.io/chart?c={{ qc_donut_summary | strip_newlines | url_encode }}"
+    />
+  </div>
+
+  <div style="
+    margin-top:16px;
+    padding-top:12px;
+    border-top:1px solid #ddd;
+    text-align:center;
+    font-style:italic;
+    font-size:12px;
+    color:#333;
+  ">
+    “For we are God’s handiwork, created in Christ Jesus to do good works, which
+    God prepared in advance for us to do.”<br>
+    <strong>(Ephesians 2:10)</strong>
+  </div>
+
+
+</div>
+
+<div class="page-break"></div>
+
+<!-- ===================== DYDD CLOSING PAGE ===================== -->
+<div class="page">
+
+  <div class="center">
+    <img
+      src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/156f49e9-3121-4dd4-8aa6-ac23f67962b7/DYDD-logo.png?format=500w"
+      alt="Discover Your Divine Design"
+      style="max-width:180px; width:100%; margin-bottom:12px;"
+    />
+  </div>
+
+  <h2 class="center" style="margin-top:0;">
+    On Purpose - For Purpose
+  </h2>
+
+  <div class="center muted" style="font-style:italic; margin-bottom:18px;">
+    “For we are God’s handiwork, created in Christ Jesus to do good works, which God prepared in advance for us to do.”
+    <br><strong>(Ephesians 2:10)</strong>
+  </div>
+
+  <div class="rule"></div>
+
+  <div class="card" style="padding:16px;">
+
+    <img
+      src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/a3b5b69f-3667-406c-9ba8-e9ec7ccddae3/envato-labs-image-edit+%2861%29.png?format=2500w"
+      alt="Discover Your Divine Design journey"
+      style="
+        float:right;
+        width:220px;
+        max-width:45%;
+        margin:4px 0 10px 14px;
+        border-radius:8px;
+      "
+    />
+
+    <p style="margin-top:0;">
+      Some people chase their calling like it’s a riddle to solve. Others wait for the perfect moment,
+      hoping something big or dramatic will finally make life click. But what if the truth has been present
+      the whole time? What if your divine design is already part of you, just waiting to be recognized?
+    </p>
+
+    <p>
+      <strong>Discover Your Divine Design</strong> is not another self-help formula. It is an invitation to uncover
+      the truth of who you are and how you are made. This journey does not begin with what you do.
+      It begins with who you are.
+    </p>
+
+    <p>
+      Discover Your Divine Design is a faith-based development program designed to help individuals and groups
+      explore how God has uniquely created them to live with purpose. Grounded in Scripture and practical application,
+      this journey walks through five key areas—your <strong>Identity</strong>, <strong>Expertise</strong>,
+      <strong>Story</strong>, <strong>Desires</strong>, and <strong>Spiritual Gifts</strong>—to help you clearly
+      understand your place in the Body of Christ (your <strong>Niche</strong>) and how you can serve with joy and confidence.
+    </p>
+
+    <p style="margin-bottom:0;">
+      DYDD offers a growing collection of resources including books, courses, a spiritual gifts assessment,
+      and more, all designed to support clarity, growth, and faithful action.
+    </p>
+
+    <div style="clear:both;"></div>
+  </div>
+
+  <div class="designpd-callout">
+    <img
+      class="designpd-logo"
+      src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/b5ffa838-8788-4058-b0e6-b304e09ec193/designpd.png?format=2500w"
+      alt="DesignPD"
+    />
+    <h2>Introducing DesignPD</h2>
+    <p>
+      DesignPD helps you understand how you naturally Plan, Decide, and Do. Built on the foundation of DesignID,
+      it brings your design into everyday life so you can see how your tendencies influence leadership, teamwork,
+      decision making, and sustainable contribution.
+    </p>
+    <div class="designpd-verse">
+      “Commit to the Lord whatever you do, and he will establish your plans.”<br>
+      <strong>Proverbs 16:3</strong>
+    </div>
+    <img
+      class="designpd-qr"
+      src="https://quickchart.io/qr?text=https%3A%2F%2Fwww.discoverdivine.design%2Fdesignpd&size=90&margin=1&dark=4A6239&light=FFFFFF"
+      alt="QR code for DesignPD"
+    />
+  </div>
+
+  <div class="center" style="margin-top:10px; font-size:12px;">
+    Continue your journey at<br>
+    <a href="https://www.discoverdivine.design/" target="_blank" style="font-weight:700; text-decoration:none;">
+      Discover Your Divine Design
+    </a>
+  </div>
+
+</div>
+
+</body>
+</html>
