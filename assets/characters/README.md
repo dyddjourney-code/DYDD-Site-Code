@@ -9,6 +9,7 @@ This folder stores working character concept art for the Discover Your Divine De
 ## Reflection Characters
 
 - `male-shepherd-concept-01.png` - first quick male Shepherd rendition using the mature cartoon style and Shepherd green palette.
+- `male-shepherd-concept-02.png` - revised male Shepherd with a generic name tag, simplified Shepherd-specific badge, and retained Spiritual Gifts badge.
 
 ## Reference Assets
 
