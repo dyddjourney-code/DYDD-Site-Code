@@ -11,6 +11,7 @@ This folder stores working character concept art for the Discover Your Divine De
 - `male-shepherd-concept-01.png` - first quick male Shepherd rendition using the mature cartoon style and Shepherd green palette.
 - `male-shepherd-concept-02.png` - revised male Shepherd with a generic name tag, simplified Shepherd-specific badge, and retained Spiritual Gifts badge.
 - `female-shepherd-concept-01.png` - first female Shepherd rendition with a distinct age, race, build, clothing silhouette, generic name tag, and Shepherd green palette.
+- `female-shepherd-concept-02-mara.png` - revised Mara concept with a more distinct clothing silhouette from the male Shepherd/Daniel direction.
 
 ## Reference Assets
 
