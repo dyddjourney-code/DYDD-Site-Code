@@ -8,6 +8,14 @@ This folder stores working character concept art for the Discover Your Divine De
 
 ## Reflection Characters
 
+### Current Usable Drafts
+
+- Shepherd male: `male-shepherd-concept-03-daniel-clean.png`
+- Shepherd female: `female-shepherd-concept-04-mara-clean.png`
+
+### Working History
+
+- `female-architect-concept-01.png` - first female Architect rendition using the mature cartoon style, Architect gold palette, sharper expression, single Architect badge, and hands-at-sides posture.
 - `male-shepherd-concept-01.png` - first quick male Shepherd rendition using the mature cartoon style and Shepherd green palette.
 - `male-shepherd-concept-02.png` - revised male Shepherd with a generic name tag, simplified Shepherd-specific badge, and retained Spiritual Gifts badge.
 - `male-shepherd-concept-03-daniel-clean.png` - revised Daniel concept with the compass necklace and Spiritual Gifts patch removed.
