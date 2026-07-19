@@ -10,8 +10,8 @@ This folder stores working character concept art for the Discover Your Divine De
 
 ### Current Usable Drafts
 
-- Shepherd male: `male-shepherd-concept-04-daniel-heart-badge.png`
-- Shepherd female: `female-shepherd-concept-05-mara-heart-badge.png`
+- Shepherd male: `male-shepherd-concept-05-daniel-stitched-heart-badge.png`
+- Shepherd female: `female-shepherd-concept-06-mara-stitched-heart-badge.png`
 - Architect female: `female-architect-concept-01.png`
 - Architect male: `male-architect-concept-02-marcus-badge-name-tag.png`
 - Artisan male: `male-artisan-concept-02-leo-name-tag.png`
@@ -27,11 +27,13 @@ This folder stores working character concept art for the Discover Your Divine De
 - `male-shepherd-concept-02.png` - revised male Shepherd with a generic name tag, simplified Shepherd-specific badge, and retained Spiritual Gifts badge.
 - `male-shepherd-concept-03-daniel-clean.png` - revised Daniel concept with the compass necklace and Spiritual Gifts patch removed.
 - `male-shepherd-concept-04-daniel-heart-badge.png` - revised Daniel concept with the Shepherd badge changed to the shared heart mark.
+- `male-shepherd-concept-05-daniel-stitched-heart-badge.png` - revised Daniel concept with the Shepherd badge changed to a stitched patch style and outline heart.
 - `female-shepherd-concept-01.png` - first female Shepherd rendition with a distinct age, race, build, clothing silhouette, generic name tag, and Shepherd green palette.
 - `female-shepherd-concept-02-mara.png` - revised Mara concept with a more distinct clothing silhouette from the male Shepherd/Daniel direction.
 - `female-shepherd-concept-03-mara-posture.png` - revised Mara concept with a more distinct posture and silhouette from Daniel and the other standing guide poses.
 - `female-shepherd-concept-04-mara-clean.png` - revised Mara concept with the compass necklace and Spiritual Gifts patch removed, retaining the name tag and Shepherd badge.
 - `female-shepherd-concept-05-mara-heart-badge.png` - revised Mara concept with the Shepherd badge changed to the shared heart mark.
+- `female-shepherd-concept-06-mara-stitched-heart-badge.png` - revised Mara concept with the Shepherd badge changed to a stitched patch style and outline heart.
 
 ## Reference Assets
 
