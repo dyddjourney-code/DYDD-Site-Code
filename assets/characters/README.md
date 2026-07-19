@@ -16,6 +16,7 @@ This folder stores working character concept art for the Discover Your Divine De
 - Architect male: `male-architect-concept-04-marcus-approved-gold-shirt.png`
 - Artisan male locked: `male-artisan-concept-05-leo-approved-clean-design-patch.png`
 - Artisan female locked: `female-artisan-concept-01-naomi-bible.png`
+- Steward male locked: `male-steward-concept-01-miles-gray.png`
 
 ### Working History
 
@@ -36,6 +37,7 @@ This folder stores working character concept art for the Discover Your Divine De
 - `male-shepherd-concept-04-daniel-heart-badge.png` - revised Daniel concept with the Shepherd badge changed to the shared heart mark.
 - `male-shepherd-concept-05-daniel-stitched-heart-badge.png` - revised Daniel concept with the Shepherd badge changed to a stitched patch style and outline heart.
 - `male-shepherd-concept-06-daniel-bible-waist-jacket-ring.png` - approved Daniel concept with Bible, waist-length green jacket, and wedding ring.
+- `male-steward-concept-01-miles-gray.png` - approved Miles male Steward concept with Steward purple jacket, balance-scale patch, wire glasses, and grayer hair/beard.
 - `female-shepherd-concept-01.png` - first female Shepherd rendition with a distinct age, race, build, clothing silhouette, generic name tag, and Shepherd green palette.
 - `female-shepherd-concept-02-mara.png` - revised Mara concept with a more distinct clothing silhouette from the male Shepherd/Daniel direction.
 - `female-shepherd-concept-03-mara-posture.png` - revised Mara concept with a more distinct posture and silhouette from Daniel and the other standing guide poses.
