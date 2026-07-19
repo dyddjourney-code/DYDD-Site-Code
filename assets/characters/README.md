@@ -10,16 +10,17 @@ This folder stores working character concept art for the Discover Your Divine De
 
 ### Current Usable Drafts
 
-- Shepherd male: `male-shepherd-concept-05-daniel-stitched-heart-badge.png`
-- Shepherd female: `female-shepherd-concept-06-mara-stitched-heart-badge.png`
+- Shepherd male locked: `male-shepherd-concept-05-daniel-stitched-heart-badge.png`
+- Shepherd female locked: `female-shepherd-concept-06-mara-stitched-heart-badge.png`
 - Architect female: `female-architect-concept-01.png`
 - Architect male: `male-architect-concept-02-marcus-badge-name-tag.png`
-- Artisan male: `male-artisan-concept-02-leo-name-tag.png`
+- Artisan male: `male-artisan-concept-03-leo-stitched-design-badge.png`
 
 ### Working History
 
 - `male-artisan-concept-01-leo.png` - first male Artisan rendition using the mature cartoon style, Artisan blue palette, Leo name tag, single Artisan badge, and looser creative maker posture.
 - `male-artisan-concept-02-leo-name-tag.png` - revised Leo concept with corrected four-color DesignID-style name tag icon.
+- `male-artisan-concept-03-leo-stitched-design-badge.png` - revised Leo concept with a stitched Artisan patch and a simple design mark.
 - `female-architect-concept-01.png` - first female Architect rendition using the mature cartoon style, Architect gold palette, sharper expression, single Architect badge, and hands-at-sides posture.
 - `male-architect-concept-01.png` - first male Architect rendition using the mature cartoon style, Architect gold palette, Marcus name tag, single Architect badge, and distinct no-hand-in-pocket posture.
 - `male-architect-concept-02-marcus-badge-name-tag.png` - revised Marcus concept with matching DesignID-style name tag and Elena-style round gold Architect badge.
