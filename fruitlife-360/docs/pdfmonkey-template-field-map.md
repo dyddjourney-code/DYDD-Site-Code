@@ -94,6 +94,14 @@ The live workbook now supplies these fields from `Fruit_Gap_Language_360` and `F
 
 Live wiring check on 2026-07-31 confirmed that every variable used by the current PDFMonkey template exists in `PDFMonkey_Payload_360`. The live payload is now 248 columns wide. A row-specific audit found that `Report_Export_360` row 3 had not inherited the formation-library and DesignID copy formulas from row 2; those formulas were filled down through row 500, and the `Pressure_Vulnerabilities` formula was updated so a participant with no pressure gap receives an explicit "no major pressure vulnerability" summary instead of a blank.
 
+Tiered formation wiring added on 2026-07-31:
+
+- New live Sheet tab: `Fruit_Tier_Formation_360`
+- Shape: 9 fruit x 3 tier rows, with tier-specific `Maturity_Looks_Like`, `Growth_Invitation`, `Practice`, and `Prayer`
+- Stable fields preserved: scriptures and definitions still come from `Fruit_Content_Library`
+- Formula range updated: `Report_Export_360` rows 2-500 now pull formation copy by each fruit's assigned tier label
+- PDFMonkey variable names stayed stable; the template label now says `Prayer` instead of `Reflection`
+
 Tier summary fields:
 
 - `most_visible_tier_description`
@@ -136,5 +144,5 @@ The live workbook verification confirmed that `PDFMonkey_Payload_360` now resolv
 Latest live render check:
 
 - Participant row: `FL360-6612531259974069585`
-- PDFMonkey document: `e2a07c7d-c2b0-4fca-9a38-5c77022e1eb5`
-- Result: successful 8-page PDF from the live Sheet payload after the formula fill-down.
+- PDFMonkey document: `f3e7f5b9-e6e2-4427-95df-94e545941a5f`
+- Result: successful PDF from the live Sheet payload after tiered formation wiring.
