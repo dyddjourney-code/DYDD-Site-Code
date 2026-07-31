@@ -132,25 +132,45 @@
       width: 100%;
       border-collapse: collapse;
       table-layout: fixed;
-      margin-top: 12px;
-      font-size: 7.5px;
-      line-height: 1.18;
+      margin-top: 10px;
+      font-size: 9.5px;
+      line-height: 1.22;
     }
 
     .design-expression-table th,
     .design-expression-table td {
       border: 1px solid var(--dydd-line);
-      padding: 4px;
+      padding: 5px 4px;
       vertical-align: top;
     }
 
     .design-expression-table th {
       background: var(--dydd-soft);
       color: #263322;
-      font-size: 7.5px;
+      font-size: 8.7px;
       font-weight: 700;
       text-align: left;
       text-transform: uppercase;
+    }
+
+    .design-expression-table th.design-architect {
+      background: #D4A451;
+      color: #ffffff;
+    }
+
+    .design-expression-table th.design-artisan {
+      background: #647C9B;
+      color: #ffffff;
+    }
+
+    .design-expression-table th.design-shepherd {
+      background: #739D5E;
+      color: #ffffff;
+    }
+
+    .design-expression-table th.design-steward {
+      background: #5A496B;
+      color: #ffffff;
     }
 
     .design-expression-table .fruit-cell {
@@ -1074,8 +1094,8 @@
 
     .pattern-note {
       margin: 4px 7px 0;
-      font-size: 8.35px;
-      line-height: 1.25;
+      font-size: 9.35px;
+      line-height: 1.28;
       color: #344235;
     }
 
@@ -1100,8 +1120,8 @@
       padding: 8px 10px;
       vertical-align: top;
       border-left: 1px solid var(--dydd-line);
-      font-size: 9px;
-      line-height: 1.38;
+      font-size: 10px;
+      line-height: 1.36;
       color: #344235;
     }
 
@@ -1111,7 +1131,7 @@
 
     .pattern-scale-title {
       color: var(--dydd-green);
-      font-size: 8px;
+      font-size: 9px;
       font-weight: 700;
       letter-spacing: 0.05em;
       text-transform: uppercase;
@@ -1972,7 +1992,10 @@
 
     <div class="callout soft avoid-break">
       <p>
-        FruitLife measures spiritual fruit. DesignID can offer language for how that fruit may become visible through a person's natural design pattern. This page is a general reflection lens and does not change, explain away, or score any individual result.
+        FruitLife measures spiritual fruit. DesignID is a separate reflection tool that helps describe the design patterns through which a person may naturally create, act, care, and sustain responsibility. It uses four reflections: Architect, Artisan, Shepherd, and Steward.
+      </p>
+      <p>
+        The table below is not a score interpretation and does not change any FruitLife result. It simply gives language for how each fruit may become visible through those four design reflections, so the reader can notice both formation and expression.
       </p>
     </div>
 
@@ -1980,10 +2003,10 @@
       <thead>
         <tr>
           <th style="width: 12%;">Fruit</th>
-          <th style="width: 22%;">Architect</th>
-          <th style="width: 22%;">Artisan</th>
-          <th style="width: 22%;">Shepherd</th>
-          <th style="width: 22%;">Steward</th>
+          <th class="design-architect" style="width: 22%;">Architect</th>
+          <th class="design-artisan" style="width: 22%;">Artisan</th>
+          <th class="design-shepherd" style="width: 22%;">Shepherd</th>
+          <th class="design-steward" style="width: 22%;">Steward</th>
         </tr>
       </thead>
       <tbody>
