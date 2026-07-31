@@ -128,6 +128,37 @@
 
     .lens-card { width: 25%; }
 
+    .design-expression-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      margin-top: 12px;
+      font-size: 7.5px;
+      line-height: 1.18;
+    }
+
+    .design-expression-table th,
+    .design-expression-table td {
+      border: 1px solid var(--dydd-line);
+      padding: 4px;
+      vertical-align: top;
+    }
+
+    .design-expression-table th {
+      background: var(--dydd-soft);
+      color: #263322;
+      font-size: 7.5px;
+      font-weight: 700;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    .design-expression-table .fruit-cell {
+      width: 12%;
+      color: #ffffff;
+      font-weight: 700;
+    }
+
     .mini-label {
       color: var(--dydd-green);
       font-size: 8.5px;
@@ -576,13 +607,13 @@
     }
 
     .score-table.compact-summary {
-      font-size: 8.8px;
-      margin-top: 8px;
+      font-size: 10px;
+      margin-top: 12px;
     }
 
     .score-table.compact-summary th,
     .score-table.compact-summary td {
-      padding: 5px 5px;
+      padding: 9px 7px;
     }
 
     .score-table th,
@@ -614,10 +645,20 @@
     .score-table td.fruit-cell {
       color: #ffffff;
       font-weight: 700;
+      font-size: 11px;
     }
 
     .score-table td.fruit-cell .fruit-name {
       color: #ffffff;
+    }
+
+    .score-table.compact-summary .category-pill {
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      padding: 0;
+      color: var(--dydd-green);
+      font-size: 9.5px;
     }
 
     .category-pill {
@@ -750,11 +791,18 @@
       break-inside: avoid;
     }
 
+    .feedback-page .feedback-box {
+      page-break-inside: auto;
+      break-inside: auto;
+    }
+
     .feedback-box h3 {
       color: var(--dydd-green);
       border-bottom: 1px solid var(--dydd-line);
       padding-bottom: 6px;
       margin-bottom: 8px;
+      page-break-after: avoid;
+      break-after: avoid;
     }
 
     .quote-text {
@@ -996,17 +1044,27 @@
 
     .pattern-stat {
       display: table;
-      width: auto;
+      width: calc(100% - 14px);
+      table-layout: fixed;
       border-top: 1px solid #E9EEE3;
       padding-top: 5px;
       margin: 4px 7px 0;
-      font-size: 8.7px;
+      font-size: 9px;
       color: var(--dydd-muted);
     }
 
     .pattern-stat span {
       display: table-cell;
       width: 50%;
+    }
+
+    .pattern-stat span:first-child {
+      padding-right: 8px;
+    }
+
+    .pattern-stat span:last-child {
+      border-left: 1px solid #E9EEE3;
+      padding-left: 8px;
     }
 
     .pattern-stat strong {
@@ -1016,13 +1074,13 @@
 
     .pattern-note {
       margin: 4px 7px 0;
-      font-size: 8.2px;
+      font-size: 8.35px;
       line-height: 1.25;
       color: #344235;
     }
 
     .pattern-section-label {
-      margin: 9px 0 3px;
+      margin: 7px 0 3px;
       color: #263322;
       font-size: 10.5px;
       font-weight: 700;
@@ -1252,7 +1310,7 @@
     </div>
   </section>
 
-  <section class="section page-break">
+  <section class="section page-break feedback-page">
     <div class="section-head">
       <div class="section-title">
         <div class="eyebrow">Fruit summary</div>
@@ -1901,34 +1959,102 @@
       <h3>Your own reflection</h3>
       <div class="quote-text">{{ self_final_reflection }}</div>
     </div>
+  </section>
 
-    <div class="callout soft">
-      <h2>{{ design_id_page_title }}</h2>
-      <p>{{ design_id_page_intro }}</p>
+  <section class="section page-break">
+    <div class="section-head">
+      <div class="section-title">
+        <div class="eyebrow">Design connection</div>
+        <h2>How fruit may express through design</h2>
+      </div>
+      <div class="section-note">A standard lens for reflection, not a score interpretation.</div>
+    </div>
+
+    <div class="callout soft avoid-break">
       <p>
-        {% if design_id_primary != blank %}Your current DesignID reference is <strong>{{ design_id_primary }}</strong>{% if design_id_secondary != blank %} with a secondary reference of <strong>{{ design_id_secondary }}</strong>{% endif %}. {% endif %}FruitLife scores do not change because of DesignID. Instead, DesignID helps you ask how the fruit may naturally express through the way God designed you.
+        FruitLife measures spiritual fruit. DesignID can offer language for how that fruit may become visible through a person's natural design pattern. This page is a general reflection lens and does not change, explain away, or score any individual result.
       </p>
     </div>
 
-    <div class="lens-grid">
-      <div class="lens-card">
-        <div class="mini-label">Architect</div>
-        <p>{{ architect_fruit_lens }}</p>
-      </div>
-      <div class="lens-card">
-        <div class="mini-label">Artisan</div>
-        <p>{{ artisan_fruit_lens }}</p>
-      </div>
-      <div class="lens-card">
-        <div class="mini-label">Shepherd</div>
-        <p>{{ shepherd_fruit_lens }}</p>
-      </div>
-      <div class="lens-card">
-        <div class="mini-label">Steward</div>
-        <p>{{ steward_fruit_lens }}</p>
-      </div>
-    </div>
+    <table class="design-expression-table">
+      <thead>
+        <tr>
+          <th style="width: 12%;">Fruit</th>
+          <th style="width: 22%;">Architect</th>
+          <th style="width: 22%;">Artisan</th>
+          <th style="width: 22%;">Shepherd</th>
+          <th style="width: 22%;">Steward</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fruit-cell fruit-love">Love</td>
+          <td>Clarifies truth and builds wise paths for others.</td>
+          <td>Acts with timely courage, care, and presence.</td>
+          <td>Offers empathy, protection, encouragement, and nearness.</td>
+          <td>Shows dependable service, follow-through, and support.</td>
+        </tr>
+        <tr>
+          <td class="fruit-cell fruit-joy">Joy</td>
+          <td>Finds joy in meaning, insight, and possibility.</td>
+          <td>Brings energy, beauty, playfulness, and hope.</td>
+          <td>Shares warmth, celebration, gratitude, and encouragement.</td>
+          <td>Creates stable rhythms where people can breathe.</td>
+        </tr>
+        <tr>
+          <td class="fruit-cell fruit-peace">Peace</td>
+          <td>Names what is true and lowers uncertainty.</td>
+          <td>Adapts quickly and lightens tension toward action.</td>
+          <td>Offers calm presence, listening, and repair.</td>
+          <td>Creates order, preparation, and practical reliability.</td>
+        </tr>
+        <tr>
+          <td class="fruit-cell fruit-patience">Patience</td>
+          <td>Lets understanding mature before forcing solutions.</td>
+          <td>Stays present when process or action is slow.</td>
+          <td>Makes room for people's pace and growth.</td>
+          <td>Repeats faithful steps with steady endurance.</td>
+        </tr>
+        <tr>
+          <td class="fruit-cell fruit-kindness">Kindness</td>
+          <td>Gives thoughtful counsel and useful perspective.</td>
+          <td>Responds with help, generosity, and action.</td>
+          <td>Offers tenderness, mercy, affirmation, and care.</td>
+          <td>Serves practically and remembers helpful details.</td>
+        </tr>
+        <tr>
+          <td class="fruit-cell fruit-goodness">Goodness</td>
+          <td>Discerns what is right and aligns action.</td>
+          <td>Acts with courage, beauty, and integrity.</td>
+          <td>Advocates, heals harm, and honors dignity.</td>
+          <td>Does right faithfully, even when unseen.</td>
+        </tr>
+        <tr>
+          <td class="fruit-cell fruit-faithfulness">Faithfulness</td>
+          <td>Keeps principled clarity and sustained conviction.</td>
+          <td>Keeps energy aimed at what matters.</td>
+          <td>Gives loyal care, presence, and trust.</td>
+          <td>Keeps promises with dependable stewardship.</td>
+        </tr>
+        <tr>
+          <td class="fruit-cell fruit-gentleness">Gentleness</td>
+          <td>Makes truth clear without diminishing people.</td>
+          <td>Uses strength with restraint and timing.</td>
+          <td>Offers compassion, safety, and restorative words.</td>
+          <td>Serves without control; corrects without harshness.</td>
+        </tr>
+        <tr>
+          <td class="fruit-cell fruit-selfcontrol">Self-control</td>
+          <td>Disciplines thoughts, words, assumptions, and decisions.</td>
+          <td>Channels impulse and creativity toward life.</td>
+          <td>Holds boundaries while staying relationally present.</td>
+          <td>Builds ordered habits, limits, and follow-through.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
+  <section class="section page-break">
     <div class="callout">
       <h3>Continue the journey</h3>
       <p>{{ design_id_cta }}</p>
