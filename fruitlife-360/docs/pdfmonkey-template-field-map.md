@@ -92,6 +92,8 @@ If these fields are blank, the template falls back to `{fruit}_summary` and `{fr
 
 The live workbook now supplies these fields from `Fruit_Gap_Language_360` and `Fruit_Aggregates_360` for all nine fruit. The PDFMonkey template physically orders each visible card by `{fruit}_rank`, while keeping the color ribbon tied to the fruit-specific CSS class.
 
+Live wiring check on 2026-07-31 confirmed that every variable used by the current PDFMonkey template exists in `PDFMonkey_Payload_360`. The live payload is now 248 columns wide. A row-specific audit found that `Report_Export_360` row 3 had not inherited the formation-library and DesignID copy formulas from row 2; those formulas were filled down through row 500, and the `Pressure_Vulnerabilities` formula was updated so a participant with no pressure gap receives an explicit "no major pressure vulnerability" summary instead of a blank.
+
 Tier summary fields:
 
 - `most_visible_tier_description`
@@ -130,3 +132,9 @@ The live workbook verification confirmed that `PDFMonkey_Payload_360` now resolv
 - 9 rank fields
 - 9 consistency note fields
 - 9 pressure note fields
+
+Latest live render check:
+
+- Participant row: `FL360-6612531259974069585`
+- PDFMonkey document: `e2a07c7d-c2b0-4fca-9a38-5c77022e1eb5`
+- Result: successful 8-page PDF from the live Sheet payload after the formula fill-down.
