@@ -13,6 +13,15 @@
       --line: #dde6d4;
       --paper: #fffdf8;
       --bg: #f4f0e6;
+      --love: #9e5a4f;
+      --joy: #d4a451;
+      --peace: #647c9b;
+      --patience: #8b7757;
+      --kindness: #739d5e;
+      --goodness: #4a6239;
+      --faithfulness: #5a496b;
+      --gentleness: #a9a36f;
+      --selfcontrol: #52737a;
     }
 
     * {
@@ -105,8 +114,9 @@
     .pattern-card {
       border: 1px solid var(--line);
       background: #fff;
-      padding: 7px;
+      padding: 0 7px 7px;
       min-height: 126px;
+      overflow: hidden;
     }
 
     .pattern-title {
@@ -114,19 +124,67 @@
       align-items: flex-start;
       justify-content: space-between;
       gap: 8px;
-      margin-bottom: 4px;
+      margin: 0 -7px 4px;
+      padding: 5px 7px;
+      color: #fff;
     }
 
     .pattern-name {
       font: 700 11px Arial, sans-serif;
-      color: var(--ink);
+      color: #fff;
+    }
+
+    .pattern-rank {
+      display: inline-block;
+      min-width: 20px;
+      margin-right: 4px;
+      padding: 1px 4px;
+      border-radius: 99px;
+      background: rgba(255, 255, 255, 0.22);
+      color: #fff;
+      font-size: 8px;
+      text-align: center;
     }
 
     .pattern-tier {
       max-width: 98px;
       text-align: right;
-      color: var(--green);
+      color: #fff;
       font: 700 7.5px/1.1 Arial, sans-serif;
+      text-transform: uppercase;
+    }
+
+    .fruit-love .pattern-title { background: var(--love); }
+    .fruit-joy .pattern-title { background: var(--joy); }
+    .fruit-peace .pattern-title { background: var(--peace); }
+    .fruit-patience .pattern-title { background: var(--patience); }
+    .fruit-kindness .pattern-title { background: var(--kindness); }
+    .fruit-goodness .pattern-title { background: var(--goodness); }
+    .fruit-faithfulness .pattern-title { background: var(--faithfulness); }
+    .fruit-gentleness .pattern-title { background: var(--gentleness); }
+    .fruit-selfcontrol .pattern-title { background: var(--selfcontrol); }
+
+    .pattern-scale {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border: 1px solid var(--line);
+      background: #fff;
+      margin: 7px 0 8px;
+    }
+
+    .pattern-scale-col {
+      padding: 6px 8px;
+      border-left: 1px solid var(--line);
+      font: 8.5px/1.32 Arial, sans-serif;
+      color: #344235;
+    }
+
+    .pattern-scale-col:first-child { border-left: 0; }
+
+    .pattern-scale-title {
+      color: var(--green);
+      font: 700 8px Arial, sans-serif;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
     }
 
@@ -174,8 +232,18 @@
         margin-top: 8px;
       }
 
-      .pattern-grid {
+      .pattern-grid,
+      .pattern-scale {
         grid-template-columns: 1fr;
+      }
+
+      .pattern-scale-col {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .pattern-scale-col:first-child {
+        border-top: 0;
       }
 
       .pattern-card {
@@ -199,25 +267,30 @@
     </div>
 
     <div class="callout">
-      These patterns explain why each fruit lands in its current report tier. The tier shows current visibility. The consistency note compares self and observer perception. The pressure note shows whether that fruit appears to stay steady when life is strained.
+      These patterns are shown in rank order from left to right, 1 through 9. The tier shows current visibility. The consistency note compares self and observer perception. The pressure note shows whether that fruit appears to stay steady when life is strained.
+    </div>
+
+    <div class="pattern-scale">
+      <div class="pattern-scale-col"><div class="pattern-scale-title">Consistency Gap Scale</div>0.0-0.4 aligned. 0.5-0.9 light difference worth noticing. 1.0-1.4 meaningful perception gap. 1.5+ significant conversation area.</div>
+      <div class="pattern-scale-col"><div class="pattern-scale-title">Pressure Gap Scale</div>0.0-0.4 generally steady. 0.5-0.9 mild pressure sensitivity. 1.0-1.4 noticeable pressure drop. 1.5+ major pressure vulnerability.</div>
     </div>
 
     <div class="pattern-section-label">Most Visible Fruit - gratitude and stewardship</div>
     <div class="pattern-grid">
-      <article class="pattern-card">
-        <div class="pattern-title"><div class="pattern-name">Love</div><div class="pattern-tier">Most Visible Fruit</div></div>
+      <article class="pattern-card fruit-love">
+        <div class="pattern-title"><div class="pattern-name"><span class="pattern-rank">#1</span> Love</div><div class="pattern-tier">Most Visible Fruit</div></div>
         <div class="pattern-stat"><span>Consistency <strong>4.3</strong> / <strong>4.6</strong></span><span>Pressure <strong>4.0</strong> / <strong>4.3</strong></span></div>
         <div class="pattern-note"><strong>Consistency:</strong> Love is generally aligned between self-reflection and observer reflection.</div>
         <div class="pattern-note"><strong>Pressure:</strong> Love appears generally steady under pressure in this feedback set.</div>
       </article>
-      <article class="pattern-card">
-        <div class="pattern-title"><div class="pattern-name">Kindness</div><div class="pattern-tier">Most Visible Fruit</div></div>
+      <article class="pattern-card fruit-kindness">
+        <div class="pattern-title"><div class="pattern-name"><span class="pattern-rank">#2</span> Kindness</div><div class="pattern-tier">Most Visible Fruit</div></div>
         <div class="pattern-stat"><span>Consistency <strong>4.7</strong> / <strong>4.7</strong></span><span>Pressure <strong>4.0</strong> / <strong>4.3</strong></span></div>
         <div class="pattern-note"><strong>Consistency:</strong> Kindness is generally aligned between self-reflection and observer reflection.</div>
         <div class="pattern-note"><strong>Pressure:</strong> Kindness appears generally steady under pressure in this feedback set.</div>
       </article>
-      <article class="pattern-card">
-        <div class="pattern-title"><div class="pattern-name">Faithfulness</div><div class="pattern-tier">Most Visible Fruit</div></div>
+      <article class="pattern-card fruit-faithfulness">
+        <div class="pattern-title"><div class="pattern-name"><span class="pattern-rank">#3</span> Faithfulness</div><div class="pattern-tier">Most Visible Fruit</div></div>
         <div class="pattern-stat"><span>Consistency <strong>4.3</strong> / <strong>4.8</strong></span><span>Pressure <strong>4.0</strong> / <strong>4.7</strong></span></div>
         <div class="pattern-note"><strong>Consistency:</strong> Faithfulness is generally aligned between self-reflection and observer reflection.</div>
         <div class="pattern-note"><strong>Pressure:</strong> Faithfulness appears generally steady under pressure in this feedback set.</div>
@@ -226,20 +299,20 @@
 
     <div class="pattern-section-label">Steady Forming Fruit - present and still developing</div>
     <div class="pattern-grid">
-      <article class="pattern-card">
-        <div class="pattern-title"><div class="pattern-name">Peace</div><div class="pattern-tier">Steady Forming Fruit</div></div>
+      <article class="pattern-card fruit-peace">
+        <div class="pattern-title"><div class="pattern-name"><span class="pattern-rank">#4</span> Peace</div><div class="pattern-tier">Steady Forming Fruit</div></div>
         <div class="pattern-stat"><span>Consistency <strong>4.3</strong> / <strong>4.4</strong></span><span>Pressure <strong>4.0</strong> / <strong>4.3</strong></span></div>
         <div class="pattern-note"><strong>Consistency:</strong> Peace is generally aligned between self-reflection and observer reflection.</div>
         <div class="pattern-note"><strong>Pressure:</strong> Peace appears generally steady under pressure in this feedback set.</div>
       </article>
-      <article class="pattern-card">
-        <div class="pattern-title"><div class="pattern-name">Goodness</div><div class="pattern-tier">Steady Forming Fruit</div></div>
+      <article class="pattern-card fruit-goodness">
+        <div class="pattern-title"><div class="pattern-name"><span class="pattern-rank">#5</span> Goodness</div><div class="pattern-tier">Steady Forming Fruit</div></div>
         <div class="pattern-stat"><span>Consistency <strong>4.0</strong> / <strong>4.2</strong></span><span>Pressure <strong>4.0</strong> / <strong>4.3</strong></span></div>
         <div class="pattern-note"><strong>Consistency:</strong> Goodness is generally aligned between self-reflection and observer reflection.</div>
         <div class="pattern-note"><strong>Pressure:</strong> Goodness appears generally steady under pressure in this feedback set.</div>
       </article>
-      <article class="pattern-card">
-        <div class="pattern-title"><div class="pattern-name">Gentleness</div><div class="pattern-tier">Steady Forming Fruit</div></div>
+      <article class="pattern-card fruit-gentleness">
+        <div class="pattern-title"><div class="pattern-name"><span class="pattern-rank">#6</span> Gentleness</div><div class="pattern-tier">Steady Forming Fruit</div></div>
         <div class="pattern-stat"><span>Consistency <strong>3.3</strong> / <strong>4.1</strong></span><span>Pressure <strong>3.0</strong> / <strong>3.3</strong></span></div>
         <div class="pattern-note"><strong>Consistency:</strong> Gentleness shows a light self-observer difference worth noticing, not overreacting to.</div>
         <div class="pattern-note"><strong>Pressure:</strong> Gentleness shows mild pressure sensitivity; notice when strain changes your expression.</div>
@@ -248,20 +321,20 @@
 
     <div class="pattern-section-label">Growth Invitation Fruit - focused formation and conversation</div>
     <div class="pattern-grid">
-      <article class="pattern-card">
-        <div class="pattern-title"><div class="pattern-name">Joy</div><div class="pattern-tier">Growth Invitation Fruit</div></div>
+      <article class="pattern-card fruit-joy">
+        <div class="pattern-title"><div class="pattern-name"><span class="pattern-rank">#7</span> Joy</div><div class="pattern-tier">Growth Invitation Fruit</div></div>
         <div class="pattern-stat"><span>Consistency <strong>3.7</strong> / <strong>3.8</strong></span><span>Pressure <strong>3.0</strong> / <strong>3.7</strong></span></div>
         <div class="pattern-note"><strong>Consistency:</strong> Joy is generally aligned between self-reflection and observer reflection.</div>
         <div class="pattern-note"><strong>Pressure:</strong> Joy appears generally steady under pressure in this feedback set.</div>
       </article>
-      <article class="pattern-card">
-        <div class="pattern-title"><div class="pattern-name">Patience</div><div class="pattern-tier">Growth Invitation Fruit</div></div>
+      <article class="pattern-card fruit-patience">
+        <div class="pattern-title"><div class="pattern-name"><span class="pattern-rank">#8</span> Patience</div><div class="pattern-tier">Growth Invitation Fruit</div></div>
         <div class="pattern-stat"><span>Consistency <strong>3.3</strong> / <strong>3.3</strong></span><span>Pressure <strong>3.0</strong> / <strong>3.0</strong></span></div>
         <div class="pattern-note"><strong>Consistency:</strong> Patience is generally aligned between self-reflection and observer reflection.</div>
         <div class="pattern-note"><strong>Pressure:</strong> Patience appears generally steady under pressure in this feedback set.</div>
       </article>
-      <article class="pattern-card">
-        <div class="pattern-title"><div class="pattern-name">Self-control</div><div class="pattern-tier">Growth Invitation Fruit</div></div>
+      <article class="pattern-card fruit-selfcontrol">
+        <div class="pattern-title"><div class="pattern-name"><span class="pattern-rank">#9</span> Self-control</div><div class="pattern-tier">Growth Invitation Fruit</div></div>
         <div class="pattern-stat"><span>Consistency <strong>3.3</strong> / <strong>3.6</strong></span><span>Pressure <strong>3.0</strong> / <strong>3.0</strong></span></div>
         <div class="pattern-note"><strong>Consistency:</strong> Self-control is generally aligned between self-reflection and observer reflection.</div>
         <div class="pattern-note"><strong>Pressure:</strong> Self-control shows mild pressure sensitivity; notice when strain changes your expression.</div>

@@ -74,15 +74,16 @@ Each fruit also uses the expanded formation pattern:
 
 The one-page detailed reflection section uses the fruit scores above plus two interpretive note fields for each fruit:
 
+- `{fruit}_rank`
 - `{fruit}_consistency_note`
 - `{fruit}_pressure_note`
 
 These should be generated from the Sheet using the standard score bands:
 
-- `0.0-0.4`: generally aligned / steady
-- `0.5-0.9`: light difference / mild pressure sensitivity
-- `1.0-1.4`: meaningful difference / clear pressure vulnerability
-- `1.5+`: major difference / significant pressure vulnerability
+- `0.0-0.4`: aligned / generally steady
+- `0.5-0.9`: light difference worth noticing / mild pressure sensitivity
+- `1.0-1.4`: meaningful perception gap / noticeable pressure drop
+- `1.5+`: significant conversation area / major pressure vulnerability
 
 If these fields are blank, the template falls back to `{fruit}_summary` and `{fruit}_pressure_pattern`, but the preferred production payload should supply score-specific notes.
 
