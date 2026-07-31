@@ -2,6 +2,12 @@
 
 Purpose: collects observer feedback and attaches it to an existing participant.
 
+Live Jotform:
+
+- Form title: `FruitLife 360 Observer Reflection`
+- Form ID: `262096700619156`
+- Base URL: `https://form.jotform.com/262096700619156`
+
 ## Required Link Parameters
 
 The observer form should receive these from the invite link:
@@ -42,6 +48,8 @@ Recommended reviewer group values:
 
 ## Consistency Rating Fields
 
+Source of truth: `Question_Bank_360`, column `Observer_Wording`.
+
 Use the same 27 keys as the self form.
 
 The wording should refer to the participant:
@@ -68,26 +76,29 @@ Observer prompt frame:
 
 How visible is this fruit when this person is under pressure?
 
-## Optional Ranking Fields
+## Ranking Fields
 
-Observers can also choose:
+The observer form now uses Jotform's Sortable List widget for the full fruit order.
+As of 2026-07-31, the live widget field name is `typeA` and the widget question ID is `91`.
+Parse the submitted ordered list into `Fruit_Rank_1` through `Fruit_Rank_9` in the Sheet/Make normalization layer.
 
-- `Most_Visible_1`
-- `Most_Visible_2`
-- `Most_Visible_3`
-- `Growth_Focus_1`
-- `Growth_Focus_2`
-- `Growth_Focus_3`
+Allowed fruit values:
 
-These are useful for report language, but the scored report can still work if these are omitted.
+- Love
+- Joy
+- Peace
+- Patience
+- Kindness
+- Goodness
+- Faithfulness
+- Gentleness
+- Self-control
 
 ## Written Responses
 
 - `Peer_Comment_Strength`
 - `Peer_Comment_Growth`
 - `Peer_Comment_Encouragement`
-- `Observer_Encouragement`
-- `Observer_Growth_Invitation`
 
 Recommended prompts:
 
@@ -105,5 +116,13 @@ Recommended prompts:
 - `Reviewer_Email` from form
 - `Relationship` from form
 - `Reviewer_Group` normalized from relationship
-- consistency, pressure, and comment fields map by exact key
+- consistency, pressure, full ranking, and comment fields map by exact key
 
+## Live Verification
+
+2026-07-31 wording sync:
+
+- Backed up the live form before edits.
+- Verified all 27 visibility fields and 9 pressure fields exist by exact scoring key.
+- Verified all scored question text matches `Question_Bank_360!Observer_Wording`.
+- Fixed the Peace card order so `PEACE_01`, `PEACE_02`, `PEACE_03`, and `Peace_Pressure` appear together before the Peace page break.

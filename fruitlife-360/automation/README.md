@@ -9,6 +9,15 @@ This folder defines the first wiring plan for moving FruitLife 360 from website/
 - Google Sheet brain is live and has the 360 tabs.
 - PDFMonkey HTML template exists in `fruitlife-360/templates/pdfmonkey/fruitlife-360-report.html`.
 - This automation pack provides the Jotform field maps, Make scenario blueprint, PDFMonkey request body, and sample payload.
+- Live check on 2026-07-29: the PDFMonkey template `FruitLife 360` exists and renders successfully from `FL360-SAMPLE`.
+- Live check on 2026-07-29: no Make scenario currently references FruitLife / FL360 / the live FruitLife Sheet ID, so Make is still at blueprint stage.
+- Live build on 2026-07-29: `Participant_Setup` and `Report_Queue` now include a controlled `FL360-SAMPLE` row for report-generation testing.
+- Live build on 2026-07-29: created FruitLife Jotform forms:
+  - Self assessment: `FruitLife 360 Self Assessment`, ID `262096536690162`, URL `https://form.jotform.com/262096536690162`
+  - Observer reflection: `FruitLife 360 Observer Reflection`, ID `262096700619156`, URL `https://form.jotform.com/262096700619156`
+- Live build on 2026-07-29: patched the live Sheet top-level 360 summary formulas and the `Report_Export_360` handoff so `Encouragement_Others_See`, `Growth_Invitations`, and `Pressure_Vulnerabilities` generate report-ready summary language instead of blanks.
+- Live PDFMonkey sample on 2026-07-29: document `18f5aa92-3143-43d7-89e1-e483da48c836` generated successfully from the corrected live Sheet export.
+- Live update on 2026-07-31: added `Fruit_Rank_1` through `Fruit_Rank_9` as far-right columns on `Response_Intake` so the full Sortable List order can be preserved without disturbing existing report formulas. Make should parse Jotform `typeA` into those columns and derive the legacy top/growth fields from the same ordered list.
 
 ## Files
 
@@ -24,21 +33,19 @@ This folder defines the first wiring plan for moving FruitLife 360 from website/
 
 1. Create the Jotform self-assessment form.
 2. Create the Jotform observer form.
-3. Paste the PDFMonkey HTML into a new `FruitLife 360 Report` template.
-4. Create the Make scenario from the blueprint.
-5. Run the `FL360-SAMPLE` PDFMonkey test.
+3. Confirm or refresh the live PDFMonkey `FruitLife 360` template against the repo HTML.
+4. Build the Make scenarios from the blueprint.
+5. Run another `FL360-SAMPLE` PDFMonkey test after any template changes.
 6. Submit one real self response and three observer responses.
 7. Confirm the Sheet says the report is ready.
 8. Trigger the PDFMonkey document generation.
 
 ## Important IDs To Collect
 
-Add these later when accounts are created:
-
-- Jotform self form ID
-- Jotform observer form ID
-- Google Sheet ID
-- PDFMonkey template ID
+- Jotform self form ID: `262096536690162`
+- Jotform observer form ID: `262096700619156`
+- Google Sheet ID: `1V39OQTm-yzdYogq-qv8me5f_LCOVKUur26mURfQSMc8`
+- PDFMonkey template ID: `84de6c4d-e279-42e5-a5cc-28248d1149dd`
 - Make scenario ID
 
 ## Safety
@@ -48,4 +55,3 @@ Do not connect the public website until:
 - the sample PDF renders cleanly
 - one real test dataset works end-to-end
 - the observer invite/link behavior is confirmed
-

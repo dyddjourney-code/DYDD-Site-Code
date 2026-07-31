@@ -186,6 +186,101 @@
       vertical-align: top;
     }
 
+    .formation-intro {
+      display: table;
+      width: 100%;
+      border-spacing: 7px 0;
+      margin: 8px -7px 11px;
+    }
+
+    .formation-tier-box {
+      display: table-cell;
+      width: 33.333%;
+      border: 1px solid var(--dydd-line);
+      background: var(--dydd-soft);
+      padding: 8px 9px;
+      vertical-align: top;
+    }
+
+    .formation-tier-box h3 {
+      margin-bottom: 4px;
+      font-size: 11px;
+    }
+
+    .formation-tier-box p {
+      margin-bottom: 0;
+      color: #344235;
+      font-size: 8.7px;
+      line-height: 1.28;
+    }
+
+    .formation-mini-grid {
+      display: table;
+      width: 100%;
+      border-spacing: 6px 6px;
+      margin: 0 -6px;
+    }
+
+    .formation-mini-row {
+      display: table-row;
+    }
+
+    .formation-mini-card {
+      display: table-cell;
+      width: 33.333%;
+      border: 1px solid var(--dydd-line);
+      background: #ffffff;
+      vertical-align: top;
+    }
+
+    .formation-mini-head {
+      padding: 6px 8px;
+      color: #ffffff;
+    }
+
+    .formation-mini-name {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .formation-mini-tier {
+      float: right;
+      max-width: 92px;
+      text-align: right;
+      color: #ffffff;
+      font-size: 7.2px;
+      line-height: 1.1;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .formation-mini-body {
+      padding: 7px 8px 8px;
+    }
+
+    .formation-line {
+      margin-bottom: 4px;
+      color: #344235;
+      font-size: 8.2px;
+      line-height: 1.24;
+    }
+
+    .formation-line strong {
+      color: #263322;
+    }
+
+    .formation-guide-note {
+      border-top: 2px solid var(--dydd-line);
+      margin-top: 8px;
+      padding-top: 8px;
+      color: #344235;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 10.5px;
+      line-height: 1.35;
+      text-align: center;
+    }
+
     .logo {
       width: 118px;
       height: auto;
@@ -955,7 +1050,7 @@
       </div>
       <div>
         <strong>Responses</strong><br />
-        {{ response_count }} total responses, including {{ observer_count }} observer responses
+        {% if report_mode == "SELF_ONLY" or observer_count == "0" %}Self-only reflection mode{% else %}{{ response_count }} total responses, including {{ observer_count }} observer responses{% endif %}
       </div>
     </div>
   </section>
@@ -1343,14 +1438,18 @@
 
     <div class="callout soft avoid-break">
       <p>
+        {% if report_mode == "SELF_ONLY" or observer_count == "0" %}
+        These patterns are shown in rank order from 1 through 9. The tier shows current self-reflection visibility. Consistency language is held lightly because no observer comparison is present yet. Pressure language still helps identify where fruit feels steady or more vulnerable when life is strained.
+        {% else %}
         These patterns are shown in rank order from left to right, 1 through 9. The tier shows current visibility. The consistency note compares self and observer perception. The pressure note shows whether that fruit appears to stay steady when life is strained.
+        {% endif %}
       </p>
     </div>
 
     <div class="pattern-scale avoid-break">
       <div class="pattern-scale-col">
         <div class="pattern-scale-title">Consistency Gap Scale</div>
-        0.0-0.4 aligned. 0.5-0.9 light difference worth noticing. 1.0-1.4 meaningful perception gap. 1.5+ significant conversation area.
+        {% if report_mode == "SELF_ONLY" or observer_count == "0" %}Self-only: observer gap language is reserved until peer feedback is added.{% else %}0.0-0.4 aligned. 0.5-0.9 light difference worth noticing. 1.0-1.4 meaningful perception gap. 1.5+ significant conversation area.{% endif %}
       </div>
       <div class="pattern-scale-col">
         <div class="pattern-scale-title">Pressure Gap Scale</div>
@@ -1404,7 +1503,7 @@
     </div>
 
     <div class="pattern-closing avoid-break">
-      <strong>Reflection thought:</strong> A lower rank does not mean a fruit is absent, and a gap does not mean failure. These patterns are an invitation to notice where the Spirit's fruit is already visible, where others may be seeing you differently than you see yourself, and where grace can guide the next step of formation.
+      <strong>Reflection thought:</strong> A lower rank does not mean a fruit is absent, and a gap does not mean failure. These patterns are an invitation to notice where the Spirit's fruit is already visible, {% if report_mode == "SELF_ONLY" or observer_count == "0" %}where your own reflection may be naming a faithful next step,{% else %}where others may be seeing you differently than you see yourself,{% endif %} and where grace can guide the next step of formation.
     </div>
   </section>
 

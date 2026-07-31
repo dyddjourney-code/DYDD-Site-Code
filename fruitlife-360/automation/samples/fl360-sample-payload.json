@@ -4,6 +4,7 @@
   "participant_email": "sample@example.com",
   "report_date": "July 17, 2026",
   "reviewer_mix": "Sample Person has 4 total responses: 1 self and 3 observer responses.",
+  "report_mode": "360",
   "response_count": "4",
   "observer_count": "3",
   "self_overall": "3.925925926",

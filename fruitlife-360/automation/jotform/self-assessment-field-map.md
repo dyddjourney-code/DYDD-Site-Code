@@ -2,6 +2,12 @@
 
 Purpose: starts a FruitLife 360 assessment, creates the participant record, and captures the self response.
 
+Live Jotform:
+
+- Form title: `FruitLife 360 Self Reflection`
+- Form ID: `262096536690162`
+- URL: `https://form.jotform.com/262096536690162`
+
 ## Core Fields
 
 - `participant_name` - Full name
@@ -13,11 +19,37 @@ Purpose: starts a FruitLife 360 assessment, creates the participant record, and 
 - `reviewer_name` - Hidden or copied from participant name
 - `reviewer_email` - Hidden or copied from participant email
 - `relationship` - Hidden, value `Self`
-- `designid_status` - Dropdown: Known, Not sure, Not taken
-- `designid_primary` - Dropdown: Architect, Artisan, Shepherd, Steward, Not sure
-- `designid_secondary` - Dropdown: Architect, Artisan, Shepherd, Steward, None, Not sure
+- DesignID intake fields were removed from this form on 2026-07-30. The free FruitLife 360 should stand alone and use the PDF report for a light DesignID preview/CTA.
+
+## Ranking Fields
+
+The form now captures a full 1-9 fruit order before the rating cards:
+
+- `Fruit_Rank_1`
+- `Fruit_Rank_2`
+- `Fruit_Rank_3`
+- `Fruit_Rank_4`
+- `Fruit_Rank_5`
+- `Fruit_Rank_6`
+- `Fruit_Rank_7`
+- `Fruit_Rank_8`
+- `Fruit_Rank_9`
+
+Allowed fruit values:
+
+- Love
+- Joy
+- Peace
+- Patience
+- Kindness
+- Goodness
+- Faithfulness
+- Gentleness
+- Self-control
 
 ## Consistency Rating Fields
+
+Source of truth: `Question_Bank_360`, column `Self_Wording`.
 
 Use a 1-5 scale.
 
@@ -75,27 +107,6 @@ Field keys:
 - `Gentleness_Pressure`
 - `SelfControl_Pressure`
 
-## Ranking / Focus Fields
-
-- `Most_Visible_1`
-- `Most_Visible_2`
-- `Most_Visible_3`
-- `Growth_Focus_1`
-- `Growth_Focus_2`
-- `Growth_Focus_3`
-
-Allowed fruit values:
-
-- Love
-- Joy
-- Peace
-- Patience
-- Kindness
-- Goodness
-- Faithfulness
-- Gentleness
-- Self-control
-
 ## Written Response
 
 - `Final_Reflection`
@@ -115,5 +126,13 @@ Which fruit do you most desire the Holy Spirit to grow in you during this season
 - `Relationship` = `Self`
 - `Reviewer_Group` = `Self`
 - response ID and invite token generated in Make
-- consistency, pressure, ranking, and reflection fields map by exact key
+- consistency, pressure, full ranking, and reflection fields map by exact key
 
+## Live Verification
+
+2026-07-31 wording sync:
+
+- Backed up the live form before edits.
+- Verified all 27 visibility fields and 9 pressure fields exist by exact scoring key.
+- Verified all scored question text matches `Question_Bank_360!Self_Wording`.
+- The live Sortable List widget field name is `typeA` and the widget question ID is `84`; parse that submitted ordered list into `Fruit_Rank_1` through `Fruit_Rank_9` in the Sheet/Make normalization layer.

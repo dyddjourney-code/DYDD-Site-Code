@@ -17,6 +17,7 @@ Source tab:
 - `participant_email`
 - `report_date`
 - `reviewer_mix`
+- `report_mode`
 - `response_count`
 - `observer_count`
 - `self_overall`
@@ -29,6 +30,8 @@ Source tab:
 - `design_id_primary`
 - `design_id_secondary`
 - `overview_note`
+
+`report_mode` should be `360` when `observer_count` is greater than 0 and `SELF_ONLY` when `observer_count` is 0. The same PDFMonkey template is used for both; self-only mode changes explanatory copy so the report does not imply peer feedback exists.
 
 ## Fruit Score Fields
 
