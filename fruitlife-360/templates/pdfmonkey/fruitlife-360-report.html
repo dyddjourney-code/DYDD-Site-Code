@@ -133,21 +133,21 @@
       border-collapse: collapse;
       table-layout: fixed;
       margin-top: 10px;
-      font-size: 9.5px;
-      line-height: 1.22;
+      font-size: 11.5px;
+      line-height: 1.18;
     }
 
     .design-expression-table th,
     .design-expression-table td {
       border: 1px solid var(--dydd-line);
-      padding: 5px 4px;
+      padding: 4px;
       vertical-align: top;
     }
 
     .design-expression-table th {
       background: var(--dydd-soft);
       color: #263322;
-      font-size: 8.7px;
+      font-size: 9.8px;
       font-weight: 700;
       text-align: left;
       text-transform: uppercase;
@@ -454,6 +454,23 @@
       font-size: 11px;
       line-height: 1.5;
       margin-top: 16px;
+    }
+
+    .cover-welcome {
+      border-top: 1px solid var(--dydd-line);
+      border-bottom: 1px solid var(--dydd-line);
+      padding: 11px 0 10px;
+      margin: 12px 0 4px;
+      color: #344235;
+      font-size: 11.2px;
+      line-height: 1.48;
+    }
+
+    .cover-welcome strong {
+      display: block;
+      color: var(--dydd-green);
+      font-size: 12.5px;
+      margin-bottom: 4px;
     }
 
     .snapshot-panel {
@@ -1155,6 +1172,154 @@
     .fruit-details-legacy {
       display: none;
     }
+
+    .ecosystem-page {
+      position: relative;
+      min-height: 8.85in;
+      padding-bottom: 1.15in;
+    }
+
+    .ecosystem-logo {
+      display: block;
+      width: 158px;
+      height: auto;
+      margin: 0 auto 8px;
+    }
+
+    .ecosystem-title {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .ecosystem-subtitle {
+      text-align: center;
+      color: var(--dydd-muted);
+      font-size: 11.5px;
+      line-height: 1.45;
+      margin-bottom: 14px;
+    }
+
+    .ecosystem-callout {
+      border: 1px solid var(--dydd-line);
+      border-left: 5px solid var(--dydd-green);
+      background: var(--dydd-soft);
+      padding: 13px 15px;
+      margin: 10px 0 12px;
+      color: #344235;
+      font-size: 12px;
+      line-height: 1.52;
+    }
+
+    .ecosystem-grid {
+      display: table;
+      width: 100%;
+      border-spacing: 10px;
+      margin: 0 -10px 8px;
+    }
+
+    .ecosystem-row {
+      display: table-row;
+    }
+
+    .ecosystem-card {
+      display: table-cell;
+      width: 50%;
+      border: 1px solid var(--dydd-line);
+      background: #ffffff;
+      padding: 11px;
+      vertical-align: top;
+    }
+
+    .ecosystem-card img {
+      display: block;
+      max-width: 132px;
+      max-height: 44px;
+      width: auto;
+      height: auto;
+      margin-bottom: 7px;
+    }
+
+    .ecosystem-card h3 {
+      margin-bottom: 5px;
+      color: #263322;
+      font-size: 12.5px;
+    }
+
+    .ecosystem-card p {
+      margin: 0;
+      color: #344235;
+      font-size: 10.7px;
+      line-height: 1.42;
+    }
+
+    .ecosystem-offers {
+      display: table;
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 9px;
+      font-size: 10.5px;
+      line-height: 1.42;
+    }
+
+    .ecosystem-offers div {
+      display: table-cell;
+      width: 50%;
+      border-top: 1px solid var(--dydd-line);
+      padding: 9px 10px 0;
+      color: #344235;
+    }
+
+    .ecosystem-offers div:first-child {
+      padding-left: 0;
+    }
+
+    .ecosystem-offers strong {
+      display: block;
+      color: var(--dydd-green);
+      font-size: 11.5px;
+      margin-bottom: 3px;
+    }
+
+    .ecosystem-footer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0.05in;
+      border-top: 2px solid var(--dydd-green);
+      padding-top: 12px;
+      display: table;
+      width: 100%;
+      background: #ffffff;
+    }
+
+    .ecosystem-qr,
+    .ecosystem-link {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .ecosystem-qr {
+      width: 118px;
+      text-align: center;
+    }
+
+    .ecosystem-qr img {
+      width: 82px;
+      height: auto;
+    }
+
+    .ecosystem-link {
+      padding-left: 18px;
+      color: #344235;
+      font-size: 12px;
+      line-height: 1.48;
+    }
+
+    .ecosystem-link a {
+      color: var(--dydd-green);
+      font-weight: 700;
+      text-decoration: none;
+    }
   </style>
 </head>
 
@@ -1189,6 +1354,10 @@
         <p>
           This report is not a holiness score. It is a formation mirror. In Christ, the fruit of the Spirit is being formed in you. The purpose is to notice what is most visible in this season and where the Holy Spirit may be inviting continued growth.
         </p>
+        <div class="cover-welcome">
+          <strong>Welcome to your FruitLife 360 report</strong>
+          FruitLife 360 exists to help believers grow in faith, recognize the fruit God is already forming, and practice the kind of Spirit-led life that brings blessing into homes, churches, teams, and communities. Receive this report as an invitation to gratitude, growth, and faithful next steps.
+        </div>
         <div class="scripture">
           <strong>Galatians 5:22-23</strong><br />
           But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness and self-control.
@@ -2077,41 +2246,84 @@
     </table>
   </section>
 
-  <section class="section page-break">
-    <div class="callout">
-      <h3>Continue the journey</h3>
-      <p>{{ design_id_cta }}</p>
-      <p>{{ spiritual_gifts_cta }}</p>
+  <section class="section page-break ecosystem-page">
+    <img
+      class="ecosystem-logo"
+      src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/156f49e9-3121-4dd4-8aa6-ac23f67962b7/DYDD-logo.png?format=500w"
+      alt="Discover Your Divine Design"
+    />
+
+    <h2 class="ecosystem-title">Explore the Discover Your Divine Design ecosystem</h2>
+    <div class="ecosystem-subtitle">
+      A faith-based pathway for identity, gifts, growth, purpose, and faithful action.
     </div>
 
-    <div class="rule"></div>
-
-    <h2>Suggested next steps</h2>
-    <div class="next-step avoid-break">
-      <div class="next-step-num">1</div>
-      <div class="next-step-copy">
-        <strong>Receive the encouragement first.</strong>
-        Notice where observers already see the Spirit's work through you. Begin with gratitude before moving to growth.
-      </div>
-    </div>
-    <div class="next-step avoid-break">
-      <div class="next-step-num">2</div>
-      <div class="next-step-copy">
-        <strong>Choose one growth invitation.</strong>
-        Pick one fruit to practice intentionally for the next 30 days. Keep the practice simple enough to repeat.
-      </div>
-    </div>
-    <div class="next-step avoid-break">
-      <div class="next-step-num">3</div>
-      <div class="next-step-copy">
-        <strong>Invite one conversation.</strong>
-        Ask a trusted person what they noticed, what encouraged them, and what one next step they would gently suggest.
-      </div>
+    <div class="ecosystem-callout avoid-break">
+      FruitLife 360 is one part of a larger discipleship and discovery journey. Our prayer is that this report helps you receive encouragement, name one next step of formation, and keep walking with Jesus in a way that bears fruit others can experience. When you are ready, the DYDD ecosystem offers additional tools, books, and workshops to help you grow with clarity, humility, and purpose.
     </div>
 
-    <div class="scripture avoid-break">
-      <strong>Prayer prompt</strong><br />
-      Holy Spirit, help me receive what is true, release what is not mine to carry, and walk faithfully in the fruit You are forming in me.
+    <div class="ecosystem-grid avoid-break">
+      <div class="ecosystem-row">
+        <div class="ecosystem-card">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/589a89e0-d009-4efd-b64b-ade9da37ecce/ID-logo-hrz-color.png?format=2500w"
+            alt="DesignID"
+          />
+          <h3>DesignID Assessment</h3>
+          <p>Understand the identity reflections through which you most naturally create, act, care, and steward responsibility.</p>
+        </div>
+        <div class="ecosystem-card">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/70bddac9-e9c5-40ef-8bf8-48aaa5b498f9/dydd-gifts-logo.png?format=2500w"
+            alt="Spiritual Gifts"
+          />
+          <h3>Spiritual Gifts Assessment</h3>
+          <p>Notice how the Spirit may be equipping you to strengthen others and serve the Body of Christ with love.</p>
+        </div>
+      </div>
+      <div class="ecosystem-row">
+        <div class="ecosystem-card">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/b5ffa838-8788-4058-b0e6-b304e09ec193/designpd.png?format=2500w"
+            alt="DesignPD"
+          />
+          <h3>DesignPD Assessment</h3>
+          <p>See how your design tends to plan, decide, and do when calling moves into daily responsibility and action.</p>
+        </div>
+        <div class="ecosystem-card">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/418710fa-3116-4f5f-a68a-8b1c9f415678/FL360-logo.jpg?format=2500w"
+            alt="FruitLife 360"
+          />
+          <h3>FruitLife 360</h3>
+          <p>Continue returning to the fruit of the Spirit as a formation mirror for growth, encouragement, and faithful practice.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ecosystem-offers avoid-break">
+      <div>
+        <strong>Books and guided resources</strong>
+        Continue learning through Discover Your Divine Design books, workbooks, and practical resources for personal growth.
+      </div>
+      <div>
+        <strong>Workshops and group experiences</strong>
+        Bring the DYDD journey into churches, teams, leadership groups, and communities through facilitated workshops.
+      </div>
+    </div>
+
+    <div class="ecosystem-footer">
+      <div class="ecosystem-qr">
+        <img
+          src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&color=4A6239&data=https://www.discoverdivine.design/"
+          alt="Visit Discover Your Divine Design"
+        />
+        <div class="tiny muted">Scan to learn more</div>
+      </div>
+      <div class="ecosystem-link">
+        Keep walking the journey of identity, gifts, fruit, and purpose at<br />
+        <a href="https://www.discoverdivine.design/" target="_blank">discoverdivine.design</a>
+      </div>
     </div>
   </section>
 </body>
