@@ -710,8 +710,8 @@
     .pattern-grid {
       display: table;
       width: 100%;
-      border-spacing: 5px 5px;
-      margin: 3px -5px 3px;
+      border-spacing: 6px 7px;
+      margin: 3px -6px 4px;
     }
 
     .pattern-row {
@@ -723,7 +723,7 @@
       width: 33.333%;
       border: 1px solid var(--dydd-line);
       background: #ffffff;
-      padding: 0 6px 6px;
+      padding: 0 7px 9px;
       vertical-align: top;
       page-break-inside: avoid;
       break-inside: avoid;
@@ -732,8 +732,8 @@
     .pattern-title {
       display: table;
       width: 100%;
-      margin: 0 -6px 4px;
-      padding: 5px 6px;
+      margin: 0 -7px 6px;
+      padding: 6px 7px;
       color: #ffffff;
     }
 
@@ -746,7 +746,7 @@
     .pattern-name {
       width: 48%;
       color: #ffffff;
-      font-size: 11px;
+      font-size: 11.8px;
       font-weight: 700;
     }
 
@@ -797,9 +797,9 @@
       display: table;
       width: 100%;
       border-top: 1px solid #E9EEE3;
-      padding-top: 4px;
-      margin-top: 3px;
-      font-size: 8px;
+      padding-top: 5px;
+      margin-top: 4px;
+      font-size: 8.7px;
       color: var(--dydd-muted);
     }
 
@@ -815,15 +815,15 @@
 
     .pattern-note {
       margin-top: 4px;
-      font-size: 8.2px;
-      line-height: 1.25;
+      font-size: 8.9px;
+      line-height: 1.33;
       color: #344235;
     }
 
     .pattern-section-label {
-      margin: 8px 0 2px;
+      margin: 9px 0 3px;
       color: #263322;
-      font-size: 10px;
+      font-size: 10.5px;
       font-weight: 700;
     }
 
@@ -832,17 +832,17 @@
       width: 100%;
       border: 1px solid var(--dydd-line);
       background: #ffffff;
-      margin: 7px 0 8px;
+      margin: 8px 0 10px;
     }
 
     .pattern-scale-col {
       display: table-cell;
       width: 50%;
-      padding: 6px 8px;
+      padding: 8px 10px;
       vertical-align: top;
       border-left: 1px solid var(--dydd-line);
-      font-size: 8.3px;
-      line-height: 1.32;
+      font-size: 9px;
+      line-height: 1.38;
       color: #344235;
     }
 
@@ -856,6 +856,21 @@
       font-weight: 700;
       letter-spacing: 0.05em;
       text-transform: uppercase;
+    }
+
+    .pattern-closing {
+      margin-top: 10px;
+      border-top: 2px solid var(--dydd-line);
+      padding: 9px 12px 0;
+      color: #344235;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 10.5px;
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    .pattern-closing strong {
+      color: var(--dydd-green);
     }
 
     .fruit-details-legacy {
@@ -1385,6 +1400,10 @@
         {% if gentleness_tier_label contains "Growth Invitation" %}<div class="pattern-card fruit-gentleness"><div class="pattern-title"><div class="pattern-name"><span class="pattern-rank">{% if gentleness_rank != blank %}#{{ gentleness_rank }}{% endif %}</span> Gentleness</div><div class="pattern-tier">{{ gentleness_tier_label }}</div></div><div class="pattern-stat"><span>Consistency <strong>{{ gentleness_self | round: 1 }}</strong> / <strong>{{ gentleness_observer | round: 1 }}</strong></span><span>Pressure <strong>{{ gentleness_self_pressure | round: 1 }}</strong> / <strong>{{ gentleness_observer_pressure | round: 1 }}</strong></span></div><div class="pattern-note"><strong>Consistency:</strong> {% if gentleness_consistency_note != blank %}{{ gentleness_consistency_note }}{% else %}{{ gentleness_summary }}{% endif %}</div><div class="pattern-note"><strong>Pressure:</strong> {% if gentleness_pressure_note != blank %}{{ gentleness_pressure_note }}{% else %}{{ gentleness_pressure_pattern }}{% endif %}</div></div>{% endif %}
         {% if self_control_tier_label contains "Growth Invitation" %}<div class="pattern-card fruit-selfcontrol"><div class="pattern-title"><div class="pattern-name"><span class="pattern-rank">{% if self_control_rank != blank %}#{{ self_control_rank }}{% endif %}</span> Self-control</div><div class="pattern-tier">{{ self_control_tier_label }}</div></div><div class="pattern-stat"><span>Consistency <strong>{{ self_control_self | round: 1 }}</strong> / <strong>{{ self_control_observer | round: 1 }}</strong></span><span>Pressure <strong>{{ self_control_self_pressure | round: 1 }}</strong> / <strong>{{ self_control_observer_pressure | round: 1 }}</strong></span></div><div class="pattern-note"><strong>Consistency:</strong> {% if self_control_consistency_note != blank %}{{ self_control_consistency_note }}{% else %}{{ self_control_summary }}{% endif %}</div><div class="pattern-note"><strong>Pressure:</strong> {% if self_control_pressure_note != blank %}{{ self_control_pressure_note }}{% else %}{{ self_control_pressure_pattern }}{% endif %}</div></div>{% endif %}
       </div>
+    </div>
+
+    <div class="pattern-closing avoid-break">
+      <strong>Reflection thought:</strong> A lower rank does not mean a fruit is absent, and a gap does not mean failure. These patterns are an invitation to notice where the Spirit's fruit is already visible, where others may be seeing you differently than you see yourself, and where grace can guide the next step of formation.
     </div>
   </section>
 
