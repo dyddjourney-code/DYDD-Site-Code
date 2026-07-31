@@ -323,6 +323,11 @@
       text-align: center;
     }
 
+    .formation-stack {
+      display: flex;
+      flex-direction: column;
+    }
+
     .logo {
       width: 118px;
       height: auto;
@@ -604,6 +609,15 @@
     .fruit-name {
       font-weight: 700;
       color: #263322;
+    }
+
+    .score-table td.fruit-cell {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .score-table td.fruit-cell .fruit-name {
+      color: #ffffff;
     }
 
     .category-pill {
@@ -909,17 +923,18 @@
       width: 33.333%;
       border: 1px solid var(--dydd-line);
       background: #ffffff;
-      padding: 0 7px 7px;
+      padding: 0 0 7px;
       vertical-align: top;
       page-break-inside: avoid;
       break-inside: avoid;
+      overflow: hidden;
     }
 
     .pattern-title {
       display: table;
       width: 100%;
-      margin: 0 -7px 6px;
-      padding: 6px 7px;
+      margin: 0 0 6px;
+      padding: 6px 8px;
       color: #ffffff;
     }
 
@@ -930,9 +945,9 @@
     }
 
     .pattern-name {
-      width: 48%;
+      width: 58%;
       color: #ffffff;
-      font-size: 11.8px;
+      font-size: 11.5px;
       font-weight: 700;
     }
 
@@ -949,7 +964,7 @@
     }
 
     .pattern-tier {
-      width: 52%;
+      width: 42%;
       text-align: right;
       color: #ffffff;
       font-size: 7.4px;
@@ -981,10 +996,10 @@
 
     .pattern-stat {
       display: table;
-      width: 100%;
+      width: auto;
       border-top: 1px solid #E9EEE3;
       padding-top: 5px;
-      margin-top: 4px;
+      margin: 4px 7px 0;
       font-size: 8.7px;
       color: var(--dydd-muted);
     }
@@ -1000,7 +1015,7 @@
     }
 
     .pattern-note {
-      margin-top: 4px;
+      margin: 4px 7px 0;
       font-size: 8.2px;
       line-height: 1.25;
       color: #344235;
@@ -1104,7 +1119,7 @@
 
       <div class="cover-panel">
         <div class="snapshot-panel avoid-break">
-          <div class="snapshot-head">Report Snapshot</div>
+          <div class="snapshot-head">Report Overview</div>
           <div class="snapshot-body">
             <div class="metric">
               <div class="metric-label">Reviewer Mix</div>
@@ -1165,8 +1180,8 @@
     <h2>What this report is measuring</h2>
     <div class="lens-explain avoid-break">
       <div><strong>Visibility</strong><br />How consistently each fruit is experienced in ordinary life.</div>
-      <div><strong>Pressure</strong><br />How consistently each fruit remains visible under stress, conflict, delay, uncertainty, temptation, disappointment, or fatigue.</div>
       <div><strong>Awareness Gap</strong><br />The difference between self-reflection and observer reflection. Observers higher than self can reveal encouragement; self higher than observers can reveal a growth awareness gap.</div>
+      <div><strong>Pressure</strong><br />How consistently each fruit remains visible under stress, conflict, delay, uncertainty, temptation, disappointment, or fatigue.</div>
       <div><strong>Fruit Tiers</strong><br />The nine fruit are grouped as Most Visible, Steady Forming, and Growth Invitation so the report can point toward gratitude, formation, and next steps.</div>
     </div>
 
@@ -1217,17 +1232,14 @@
         <div class="metric">
           <div class="metric-label">Most Visible Fruit</div>
           <div class="metric-value">{% if most_visible_fruit_list != blank %}{{ most_visible_fruit_list }}{% else %}{{ most_visible_fruit }}{% endif %}</div>
-          <div class="metric-note">Start with gratitude and stewardship.</div>
         </div>
         <div class="metric">
           <div class="metric-label">Steady Forming Fruit</div>
           <div class="metric-value">{% if steady_forming_fruit_list != blank %}{{ steady_forming_fruit_list }}{% else %}See fruit details{% endif %}</div>
-          <div class="metric-note">Present and developing, but possibly more situational.</div>
         </div>
         <div class="metric">
           <div class="metric-label">Growth Invitation Fruit</div>
           <div class="metric-value">{% if growth_invitation_fruit_list != blank %}{{ growth_invitation_fruit_list }}{% else %}See fruit details{% endif %}</div>
-          <div class="metric-note">Not absent; ready for focused formation.</div>
         </div>
       </div>
     </div>
@@ -1251,96 +1263,96 @@
     <table class="score-table compact-summary">
       <thead>
         <tr>
-          <th style="width: 18%;">Fruit</th>
-          <th class="num" style="width: 10%;">Self</th>
-          <th class="num" style="width: 12%;">Observer</th>
+          <th style="width: 14%;">Fruit</th>
+          <th style="width: 16%;">Tier</th>
+          <th style="width: 26%;">Current Pattern Note</th>
+          <th class="num" style="width: 8%;">Self</th>
+          <th class="num" style="width: 10%;">Observer</th>
           <th class="num" style="width: 12%;">Self Pressure</th>
           <th class="num" style="width: 14%;">Observer Pressure</th>
-          <th style="width: 18%;">Tier</th>
-          <th style="width: 16%;">Current Pattern Note</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><span class="fruit-name">Love</span></td>
+          <td class="fruit-cell fruit-love"><span class="fruit-name">Love</span></td>
+          <td><span class="category-pill">{{ love_tier_label | default: love_category | replace: "Steady Developing", "Steady Forming Fruit" }}</span></td>
+          <td>{{ love_summary }}</td>
           <td class="num">{{ love_self | round: 1 }}</td>
           <td class="num">{{ love_observer | round: 1 }}</td>
           <td class="num">{{ love_self_pressure | round: 1 }}</td>
           <td class="num">{{ love_observer_pressure | round: 1 }}</td>
-          <td><span class="category-pill">{{ love_tier_label | default: love_category | replace: "Steady Developing", "Steady Forming Fruit" }}</span></td>
-          <td>{{ love_summary }}</td>
         </tr>
         <tr>
-          <td><span class="fruit-name">Joy</span></td>
+          <td class="fruit-cell fruit-joy"><span class="fruit-name">Joy</span></td>
+          <td><span class="category-pill">{{ joy_tier_label | default: joy_category | replace: "Steady Developing", "Steady Forming Fruit" }}</span></td>
+          <td>{{ joy_summary }}</td>
           <td class="num">{{ joy_self | round: 1 }}</td>
           <td class="num">{{ joy_observer | round: 1 }}</td>
           <td class="num">{{ joy_self_pressure | round: 1 }}</td>
           <td class="num">{{ joy_observer_pressure | round: 1 }}</td>
-          <td><span class="category-pill">{{ joy_tier_label | default: joy_category | replace: "Steady Developing", "Steady Forming Fruit" }}</span></td>
-          <td>{{ joy_summary }}</td>
         </tr>
         <tr>
-          <td><span class="fruit-name">Peace</span></td>
+          <td class="fruit-cell fruit-peace"><span class="fruit-name">Peace</span></td>
+          <td><span class="category-pill">{{ peace_tier_label | default: peace_category | replace: "Steady Developing", "Steady Forming Fruit" }}</span></td>
+          <td>{{ peace_summary }}</td>
           <td class="num">{{ peace_self | round: 1 }}</td>
           <td class="num">{{ peace_observer | round: 1 }}</td>
           <td class="num">{{ peace_self_pressure | round: 1 }}</td>
           <td class="num">{{ peace_observer_pressure | round: 1 }}</td>
-          <td><span class="category-pill">{{ peace_tier_label | default: peace_category | replace: "Steady Developing", "Steady Forming Fruit" }}</span></td>
-          <td>{{ peace_summary }}</td>
         </tr>
         <tr>
-          <td><span class="fruit-name">Patience</span></td>
+          <td class="fruit-cell fruit-patience"><span class="fruit-name">Patience</span></td>
+          <td><span class="category-pill">{{ patience_tier_label | default: patience_category | replace: "Steady Developing", "Steady Forming Fruit" }}</span></td>
+          <td>{{ patience_summary }}</td>
           <td class="num">{{ patience_self | round: 1 }}</td>
           <td class="num">{{ patience_observer | round: 1 }}</td>
           <td class="num">{{ patience_self_pressure | round: 1 }}</td>
           <td class="num">{{ patience_observer_pressure | round: 1 }}</td>
-          <td><span class="category-pill">{{ patience_tier_label | default: patience_category | replace: "Steady Developing", "Steady Forming Fruit" }}</span></td>
-          <td>{{ patience_summary }}</td>
         </tr>
         <tr>
-          <td><span class="fruit-name">Kindness</span></td>
+          <td class="fruit-cell fruit-kindness"><span class="fruit-name">Kindness</span></td>
+          <td><span class="category-pill">{{ kindness_tier_label | default: kindness_category | replace: "Steady Developing", "Steady Forming Fruit" }}</span></td>
+          <td>{{ kindness_summary }}</td>
           <td class="num">{{ kindness_self | round: 1 }}</td>
           <td class="num">{{ kindness_observer | round: 1 }}</td>
           <td class="num">{{ kindness_self_pressure | round: 1 }}</td>
           <td class="num">{{ kindness_observer_pressure | round: 1 }}</td>
-          <td><span class="category-pill">{{ kindness_tier_label | default: kindness_category | replace: "Steady Developing", "Steady Forming Fruit" }}</span></td>
-          <td>{{ kindness_summary }}</td>
         </tr>
         <tr>
-          <td><span class="fruit-name">Goodness</span></td>
+          <td class="fruit-cell fruit-goodness"><span class="fruit-name">Goodness</span></td>
+          <td><span class="category-pill">{{ goodness_tier_label | default: goodness_category | replace: "Steady Developing", "Steady Forming Fruit" }}</span></td>
+          <td>{{ goodness_summary }}</td>
           <td class="num">{{ goodness_self | round: 1 }}</td>
           <td class="num">{{ goodness_observer | round: 1 }}</td>
           <td class="num">{{ goodness_self_pressure | round: 1 }}</td>
           <td class="num">{{ goodness_observer_pressure | round: 1 }}</td>
-          <td><span class="category-pill">{{ goodness_tier_label | default: goodness_category | replace: "Steady Developing", "Steady Forming Fruit" }}</span></td>
-          <td>{{ goodness_summary }}</td>
         </tr>
         <tr>
-          <td><span class="fruit-name">Faithfulness</span></td>
+          <td class="fruit-cell fruit-faithfulness"><span class="fruit-name">Faithfulness</span></td>
+          <td><span class="category-pill">{{ faithfulness_tier_label | default: faithfulness_category | replace: "Steady Developing", "Steady Forming Fruit" }}</span></td>
+          <td>{{ faithfulness_summary }}</td>
           <td class="num">{{ faithfulness_self | round: 1 }}</td>
           <td class="num">{{ faithfulness_observer | round: 1 }}</td>
           <td class="num">{{ faithfulness_self_pressure | round: 1 }}</td>
           <td class="num">{{ faithfulness_observer_pressure | round: 1 }}</td>
-          <td><span class="category-pill">{{ faithfulness_tier_label | default: faithfulness_category | replace: "Steady Developing", "Steady Forming Fruit" }}</span></td>
-          <td>{{ faithfulness_summary }}</td>
         </tr>
         <tr>
-          <td><span class="fruit-name">Gentleness</span></td>
+          <td class="fruit-cell fruit-gentleness"><span class="fruit-name">Gentleness</span></td>
+          <td><span class="category-pill">{{ gentleness_tier_label | default: gentleness_category | replace: "Steady Developing", "Steady Forming Fruit" }}</span></td>
+          <td>{{ gentleness_summary }}</td>
           <td class="num">{{ gentleness_self | round: 1 }}</td>
           <td class="num">{{ gentleness_observer | round: 1 }}</td>
           <td class="num">{{ gentleness_self_pressure | round: 1 }}</td>
           <td class="num">{{ gentleness_observer_pressure | round: 1 }}</td>
-          <td><span class="category-pill">{{ gentleness_tier_label | default: gentleness_category | replace: "Steady Developing", "Steady Forming Fruit" }}</span></td>
-          <td>{{ gentleness_summary }}</td>
         </tr>
         <tr>
-          <td><span class="fruit-name">Self-control</span></td>
+          <td class="fruit-cell fruit-selfcontrol"><span class="fruit-name">Self-control</span></td>
+          <td><span class="category-pill">{% if self_control_tier_label != blank %}{{ self_control_tier_label }}{% elsif growth_invitation_fruit_list contains "Self-control" %}Growth Invitation Fruit{% elsif steady_forming_fruit_list contains "Self-control" %}Steady Forming Fruit{% elsif most_visible_fruit_list contains "Self-control" %}Most Visible Fruit{% else %}{{ self_control_category | replace: "Steady Developing", "Steady Forming Fruit" }}{% endif %}</span></td>
+          <td>{{ self_control_summary }}</td>
           <td class="num">{{ self_control_self | round: 1 }}</td>
           <td class="num">{{ self_control_observer | round: 1 }}</td>
           <td class="num">{{ self_control_self_pressure | round: 1 }}</td>
           <td class="num">{{ self_control_observer_pressure | round: 1 }}</td>
-          <td><span class="category-pill">{% if self_control_tier_label != blank %}{{ self_control_tier_label }}{% elsif growth_invitation_fruit_list contains "Self-control" %}Growth Invitation Fruit{% elsif steady_forming_fruit_list contains "Self-control" %}Steady Forming Fruit{% elsif most_visible_fruit_list contains "Self-control" %}Most Visible Fruit{% else %}{{ self_control_category | replace: "Steady Developing", "Steady Forming Fruit" }}{% endif %}</span></td>
-          <td>{{ self_control_summary }}</td>
         </tr>
       </tbody>
     </table>
@@ -1374,40 +1386,132 @@
       </div>
     </div>
 
-    <div class="formation-card">
-      <div class="formation-head fruit-love"><div class="formation-name"><span class="formation-rank">{% if love_rank != blank %}#{{ love_rank }}{% endif %}</span>Love</div><div class="formation-tier">{{ love_tier_label }}</div></div>
-      <div class="formation-body">
-        <p><strong>Scripture:</strong> {{ love_scripture }}</p>
-        <p>{{ love_definition }}</p>
-        <div class="formation-cols">
-          <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ love_maturity }}</p><div class="mini-label">Practice</div><p>{{ love_practice }}</p></div>
-          <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ love_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ love_reflection_question }}</p></div>
+    <div class="formation-stack">
+      {% if love_tier_label contains "Most Visible" %}
+      <div class="formation-card" style="order: {{ love_rank | default: 99 }}">
+        <div class="formation-head fruit-love"><div class="formation-name"><span class="formation-rank">{% if love_rank != blank %}#{{ love_rank }}{% endif %}</span>Love</div><div class="formation-tier">{{ love_tier_label }}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ love_scripture }}</p>
+          <p>{{ love_definition }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ love_maturity }}</p><div class="mini-label">Practice</div><p>{{ love_practice }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ love_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ love_reflection_question }}</p></div>
+          </div>
         </div>
       </div>
-    </div>
+      {% endif %}
 
-    <div class="formation-card">
-      <div class="formation-head fruit-joy"><div class="formation-name"><span class="formation-rank">{% if joy_rank != blank %}#{{ joy_rank }}{% endif %}</span>Joy</div><div class="formation-tier">{{ joy_tier_label }}</div></div>
-      <div class="formation-body">
-        <p><strong>Scripture:</strong> {{ joy_scripture }}</p>
-        <p>{{ joy_definition }}</p>
-        <div class="formation-cols">
-          <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ joy_maturity }}</p><div class="mini-label">Practice</div><p>{{ joy_practice }}</p></div>
-          <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ joy_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ joy_reflection_question }}</p></div>
+      {% if joy_tier_label contains "Most Visible" %}
+      <div class="formation-card" style="order: {{ joy_rank | default: 99 }}">
+        <div class="formation-head fruit-joy"><div class="formation-name"><span class="formation-rank">{% if joy_rank != blank %}#{{ joy_rank }}{% endif %}</span>Joy</div><div class="formation-tier">{{ joy_tier_label }}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ joy_scripture }}</p>
+          <p>{{ joy_definition }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ joy_maturity }}</p><div class="mini-label">Practice</div><p>{{ joy_practice }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ joy_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ joy_reflection_question }}</p></div>
+          </div>
         </div>
       </div>
-    </div>
+      {% endif %}
 
-    <div class="formation-card">
-      <div class="formation-head fruit-peace"><div class="formation-name"><span class="formation-rank">{% if peace_rank != blank %}#{{ peace_rank }}{% endif %}</span>Peace</div><div class="formation-tier">{{ peace_tier_label }}</div></div>
-      <div class="formation-body">
-        <p><strong>Scripture:</strong> {{ peace_scripture }}</p>
-        <p>{{ peace_definition }}</p>
-        <div class="formation-cols">
-          <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ peace_maturity }}</p><div class="mini-label">Practice</div><p>{{ peace_practice }}</p></div>
-          <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ peace_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ peace_reflection_question }}</p></div>
+      {% if peace_tier_label contains "Most Visible" %}
+      <div class="formation-card" style="order: {{ peace_rank | default: 99 }}">
+        <div class="formation-head fruit-peace"><div class="formation-name"><span class="formation-rank">{% if peace_rank != blank %}#{{ peace_rank }}{% endif %}</span>Peace</div><div class="formation-tier">{{ peace_tier_label }}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ peace_scripture }}</p>
+          <p>{{ peace_definition }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ peace_maturity }}</p><div class="mini-label">Practice</div><p>{{ peace_practice }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ peace_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ peace_reflection_question }}</p></div>
+          </div>
         </div>
       </div>
+      {% endif %}
+
+      {% if patience_tier_label contains "Most Visible" %}
+      <div class="formation-card" style="order: {{ patience_rank | default: 99 }}">
+        <div class="formation-head fruit-patience"><div class="formation-name"><span class="formation-rank">{% if patience_rank != blank %}#{{ patience_rank }}{% endif %}</span>Patience</div><div class="formation-tier">{{ patience_tier_label }}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ patience_scripture }}</p>
+          <p>{{ patience_definition }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ patience_maturity }}</p><div class="mini-label">Practice</div><p>{{ patience_practice }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ patience_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ patience_reflection_question }}</p></div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if kindness_tier_label contains "Most Visible" %}
+      <div class="formation-card" style="order: {{ kindness_rank | default: 99 }}">
+        <div class="formation-head fruit-kindness"><div class="formation-name"><span class="formation-rank">{% if kindness_rank != blank %}#{{ kindness_rank }}{% endif %}</span>Kindness</div><div class="formation-tier">{{ kindness_tier_label }}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ kindness_scripture }}</p>
+          <p>{{ kindness_definition }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ kindness_maturity }}</p><div class="mini-label">Practice</div><p>{{ kindness_practice }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ kindness_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ kindness_reflection_question }}</p></div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if goodness_tier_label contains "Most Visible" %}
+      <div class="formation-card" style="order: {{ goodness_rank | default: 99 }}">
+        <div class="formation-head fruit-goodness"><div class="formation-name"><span class="formation-rank">{% if goodness_rank != blank %}#{{ goodness_rank }}{% endif %}</span>Goodness</div><div class="formation-tier">{{ goodness_tier_label }}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ goodness_scripture }}</p>
+          <p>{{ goodness_definition }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ goodness_maturity }}</p><div class="mini-label">Practice</div><p>{{ goodness_practice }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ goodness_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ goodness_reflection_question }}</p></div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if faithfulness_tier_label contains "Most Visible" %}
+      <div class="formation-card" style="order: {{ faithfulness_rank | default: 99 }}">
+        <div class="formation-head fruit-faithfulness"><div class="formation-name"><span class="formation-rank">{% if faithfulness_rank != blank %}#{{ faithfulness_rank }}{% endif %}</span>Faithfulness</div><div class="formation-tier">{{ faithfulness_tier_label }}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ faithfulness_scripture }}</p>
+          <p>{{ faithfulness_definition }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ faithfulness_maturity }}</p><div class="mini-label">Practice</div><p>{{ faithfulness_practice }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ faithfulness_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ faithfulness_reflection_question }}</p></div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if gentleness_tier_label contains "Most Visible" %}
+      <div class="formation-card" style="order: {{ gentleness_rank | default: 99 }}">
+        <div class="formation-head fruit-gentleness"><div class="formation-name"><span class="formation-rank">{% if gentleness_rank != blank %}#{{ gentleness_rank }}{% endif %}</span>Gentleness</div><div class="formation-tier">{{ gentleness_tier_label }}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ gentleness_scripture }}</p>
+          <p>{{ gentleness_definition }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ gentleness_maturity }}</p><div class="mini-label">Practice</div><p>{{ gentleness_practice }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ gentleness_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ gentleness_reflection_question }}</p></div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if self_control_tier_label contains "Most Visible" or self_control_tier_label == blank and most_visible_fruit_list contains "Self-control" %}
+      <div class="formation-card" style="order: {{ self_control_rank | default: 99 }}">
+        <div class="formation-head fruit-selfcontrol"><div class="formation-name"><span class="formation-rank">{% if self_control_rank != blank %}#{{ self_control_rank }}{% endif %}</span>Self-control</div><div class="formation-tier">{% if self_control_tier_label != blank %}{{ self_control_tier_label }}{% else %}Most Visible Fruit{% endif %}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ self_control_scripture | default: "Galatians 5:22-23; Titus 2:11-12" }}</p>
+          <p>{{ self_control_definition | default: "Self-control is Spirit-led stewardship of desires, habits, attention, and responses." }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ self_control_maturity | default: "Maturity looks like measured responses, ordered desires, and wise restraint without becoming rigid or shut down." }}</p><div class="mini-label">Practice</div><p>{{ self_control_practice | default: "Where do I need to pause before reacting, choosing, speaking, or consuming?" }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ self_control_growth_invitation | default: "Choose one pressure moment this week where you will pause, pray, and respond with Spirit-led restraint." }}</p><div class="mini-label">Reflection</div><p>{{ self_control_reflection_question | default: "Lord, teach me to be governed by Your Spirit rather than by urgency, appetite, fear, or frustration." }}</p></div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
     </div>
   </section>
 
@@ -1420,40 +1524,132 @@
       <div class="section-note">Small repeated steps create space for growth.</div>
     </div>
 
-    <div class="formation-card">
-      <div class="formation-head fruit-patience"><div class="formation-name"><span class="formation-rank">{% if patience_rank != blank %}#{{ patience_rank }}{% endif %}</span>Patience</div><div class="formation-tier">{{ patience_tier_label }}</div></div>
-      <div class="formation-body">
-        <p><strong>Scripture:</strong> {{ patience_scripture }}</p>
-        <p>{{ patience_definition }}</p>
-        <div class="formation-cols">
-          <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ patience_maturity }}</p><div class="mini-label">Practice</div><p>{{ patience_practice }}</p></div>
-          <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ patience_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ patience_reflection_question }}</p></div>
+    <div class="formation-stack">
+      {% if love_tier_label contains "Steady Forming" %}
+      <div class="formation-card" style="order: {{ love_rank | default: 99 }}">
+        <div class="formation-head fruit-love"><div class="formation-name"><span class="formation-rank">{% if love_rank != blank %}#{{ love_rank }}{% endif %}</span>Love</div><div class="formation-tier">{{ love_tier_label }}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ love_scripture }}</p>
+          <p>{{ love_definition }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ love_maturity }}</p><div class="mini-label">Practice</div><p>{{ love_practice }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ love_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ love_reflection_question }}</p></div>
+          </div>
         </div>
       </div>
-    </div>
+      {% endif %}
 
-    <div class="formation-card">
-      <div class="formation-head fruit-kindness"><div class="formation-name"><span class="formation-rank">{% if kindness_rank != blank %}#{{ kindness_rank }}{% endif %}</span>Kindness</div><div class="formation-tier">{{ kindness_tier_label }}</div></div>
-      <div class="formation-body">
-        <p><strong>Scripture:</strong> {{ kindness_scripture }}</p>
-        <p>{{ kindness_definition }}</p>
-        <div class="formation-cols">
-          <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ kindness_maturity }}</p><div class="mini-label">Practice</div><p>{{ kindness_practice }}</p></div>
-          <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ kindness_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ kindness_reflection_question }}</p></div>
+      {% if joy_tier_label contains "Steady Forming" %}
+      <div class="formation-card" style="order: {{ joy_rank | default: 99 }}">
+        <div class="formation-head fruit-joy"><div class="formation-name"><span class="formation-rank">{% if joy_rank != blank %}#{{ joy_rank }}{% endif %}</span>Joy</div><div class="formation-tier">{{ joy_tier_label }}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ joy_scripture }}</p>
+          <p>{{ joy_definition }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ joy_maturity }}</p><div class="mini-label">Practice</div><p>{{ joy_practice }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ joy_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ joy_reflection_question }}</p></div>
+          </div>
         </div>
       </div>
-    </div>
+      {% endif %}
 
-    <div class="formation-card">
-      <div class="formation-head fruit-goodness"><div class="formation-name"><span class="formation-rank">{% if goodness_rank != blank %}#{{ goodness_rank }}{% endif %}</span>Goodness</div><div class="formation-tier">{{ goodness_tier_label }}</div></div>
-      <div class="formation-body">
-        <p><strong>Scripture:</strong> {{ goodness_scripture }}</p>
-        <p>{{ goodness_definition }}</p>
-        <div class="formation-cols">
-          <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ goodness_maturity }}</p><div class="mini-label">Practice</div><p>{{ goodness_practice }}</p></div>
-          <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ goodness_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ goodness_reflection_question }}</p></div>
+      {% if peace_tier_label contains "Steady Forming" %}
+      <div class="formation-card" style="order: {{ peace_rank | default: 99 }}">
+        <div class="formation-head fruit-peace"><div class="formation-name"><span class="formation-rank">{% if peace_rank != blank %}#{{ peace_rank }}{% endif %}</span>Peace</div><div class="formation-tier">{{ peace_tier_label }}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ peace_scripture }}</p>
+          <p>{{ peace_definition }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ peace_maturity }}</p><div class="mini-label">Practice</div><p>{{ peace_practice }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ peace_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ peace_reflection_question }}</p></div>
+          </div>
         </div>
       </div>
+      {% endif %}
+
+      {% if patience_tier_label contains "Steady Forming" %}
+      <div class="formation-card" style="order: {{ patience_rank | default: 99 }}">
+        <div class="formation-head fruit-patience"><div class="formation-name"><span class="formation-rank">{% if patience_rank != blank %}#{{ patience_rank }}{% endif %}</span>Patience</div><div class="formation-tier">{{ patience_tier_label }}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ patience_scripture }}</p>
+          <p>{{ patience_definition }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ patience_maturity }}</p><div class="mini-label">Practice</div><p>{{ patience_practice }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ patience_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ patience_reflection_question }}</p></div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if kindness_tier_label contains "Steady Forming" %}
+      <div class="formation-card" style="order: {{ kindness_rank | default: 99 }}">
+        <div class="formation-head fruit-kindness"><div class="formation-name"><span class="formation-rank">{% if kindness_rank != blank %}#{{ kindness_rank }}{% endif %}</span>Kindness</div><div class="formation-tier">{{ kindness_tier_label }}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ kindness_scripture }}</p>
+          <p>{{ kindness_definition }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ kindness_maturity }}</p><div class="mini-label">Practice</div><p>{{ kindness_practice }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ kindness_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ kindness_reflection_question }}</p></div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if goodness_tier_label contains "Steady Forming" %}
+      <div class="formation-card" style="order: {{ goodness_rank | default: 99 }}">
+        <div class="formation-head fruit-goodness"><div class="formation-name"><span class="formation-rank">{% if goodness_rank != blank %}#{{ goodness_rank }}{% endif %}</span>Goodness</div><div class="formation-tier">{{ goodness_tier_label }}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ goodness_scripture }}</p>
+          <p>{{ goodness_definition }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ goodness_maturity }}</p><div class="mini-label">Practice</div><p>{{ goodness_practice }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ goodness_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ goodness_reflection_question }}</p></div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if faithfulness_tier_label contains "Steady Forming" %}
+      <div class="formation-card" style="order: {{ faithfulness_rank | default: 99 }}">
+        <div class="formation-head fruit-faithfulness"><div class="formation-name"><span class="formation-rank">{% if faithfulness_rank != blank %}#{{ faithfulness_rank }}{% endif %}</span>Faithfulness</div><div class="formation-tier">{{ faithfulness_tier_label }}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ faithfulness_scripture }}</p>
+          <p>{{ faithfulness_definition }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ faithfulness_maturity }}</p><div class="mini-label">Practice</div><p>{{ faithfulness_practice }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ faithfulness_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ faithfulness_reflection_question }}</p></div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if gentleness_tier_label contains "Steady Forming" %}
+      <div class="formation-card" style="order: {{ gentleness_rank | default: 99 }}">
+        <div class="formation-head fruit-gentleness"><div class="formation-name"><span class="formation-rank">{% if gentleness_rank != blank %}#{{ gentleness_rank }}{% endif %}</span>Gentleness</div><div class="formation-tier">{{ gentleness_tier_label }}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ gentleness_scripture }}</p>
+          <p>{{ gentleness_definition }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ gentleness_maturity }}</p><div class="mini-label">Practice</div><p>{{ gentleness_practice }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ gentleness_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ gentleness_reflection_question }}</p></div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if self_control_tier_label contains "Steady Forming" or self_control_tier_label == blank and steady_forming_fruit_list contains "Self-control" %}
+      <div class="formation-card" style="order: {{ self_control_rank | default: 99 }}">
+        <div class="formation-head fruit-selfcontrol"><div class="formation-name"><span class="formation-rank">{% if self_control_rank != blank %}#{{ self_control_rank }}{% endif %}</span>Self-control</div><div class="formation-tier">{% if self_control_tier_label != blank %}{{ self_control_tier_label }}{% else %}Steady Forming Fruit{% endif %}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ self_control_scripture | default: "Galatians 5:22-23; Titus 2:11-12" }}</p>
+          <p>{{ self_control_definition | default: "Self-control is Spirit-led stewardship of desires, habits, attention, and responses." }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ self_control_maturity | default: "Maturity looks like measured responses, ordered desires, and wise restraint without becoming rigid or shut down." }}</p><div class="mini-label">Practice</div><p>{{ self_control_practice | default: "Where do I need to pause before reacting, choosing, speaking, or consuming?" }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ self_control_growth_invitation | default: "Choose one pressure moment this week where you will pause, pray, and respond with Spirit-led restraint." }}</p><div class="mini-label">Reflection</div><p>{{ self_control_reflection_question | default: "Lord, teach me to be governed by Your Spirit rather than by urgency, appetite, fear, or frustration." }}</p></div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
     </div>
   </section>
 
@@ -1466,40 +1662,132 @@
       <div class="section-note">Growth invitations are meant to be received with grace.</div>
     </div>
 
-    <div class="formation-card">
-      <div class="formation-head fruit-faithfulness"><div class="formation-name"><span class="formation-rank">{% if faithfulness_rank != blank %}#{{ faithfulness_rank }}{% endif %}</span>Faithfulness</div><div class="formation-tier">{{ faithfulness_tier_label }}</div></div>
-      <div class="formation-body">
-        <p><strong>Scripture:</strong> {{ faithfulness_scripture }}</p>
-        <p>{{ faithfulness_definition }}</p>
-        <div class="formation-cols">
-          <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ faithfulness_maturity }}</p><div class="mini-label">Practice</div><p>{{ faithfulness_practice }}</p></div>
-          <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ faithfulness_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ faithfulness_reflection_question }}</p></div>
+    <div class="formation-stack">
+      {% if love_tier_label contains "Growth Invitation" %}
+      <div class="formation-card" style="order: {{ love_rank | default: 99 }}">
+        <div class="formation-head fruit-love"><div class="formation-name"><span class="formation-rank">{% if love_rank != blank %}#{{ love_rank }}{% endif %}</span>Love</div><div class="formation-tier">{{ love_tier_label }}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ love_scripture }}</p>
+          <p>{{ love_definition }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ love_maturity }}</p><div class="mini-label">Practice</div><p>{{ love_practice }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ love_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ love_reflection_question }}</p></div>
+          </div>
         </div>
       </div>
-    </div>
+      {% endif %}
 
-    <div class="formation-card">
-      <div class="formation-head fruit-gentleness"><div class="formation-name"><span class="formation-rank">{% if gentleness_rank != blank %}#{{ gentleness_rank }}{% endif %}</span>Gentleness</div><div class="formation-tier">{{ gentleness_tier_label }}</div></div>
-      <div class="formation-body">
-        <p><strong>Scripture:</strong> {{ gentleness_scripture }}</p>
-        <p>{{ gentleness_definition }}</p>
-        <div class="formation-cols">
-          <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ gentleness_maturity }}</p><div class="mini-label">Practice</div><p>{{ gentleness_practice }}</p></div>
-          <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ gentleness_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ gentleness_reflection_question }}</p></div>
+      {% if joy_tier_label contains "Growth Invitation" %}
+      <div class="formation-card" style="order: {{ joy_rank | default: 99 }}">
+        <div class="formation-head fruit-joy"><div class="formation-name"><span class="formation-rank">{% if joy_rank != blank %}#{{ joy_rank }}{% endif %}</span>Joy</div><div class="formation-tier">{{ joy_tier_label }}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ joy_scripture }}</p>
+          <p>{{ joy_definition }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ joy_maturity }}</p><div class="mini-label">Practice</div><p>{{ joy_practice }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ joy_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ joy_reflection_question }}</p></div>
+          </div>
         </div>
       </div>
-    </div>
+      {% endif %}
 
-    <div class="formation-card">
-      <div class="formation-head fruit-selfcontrol"><div class="formation-name"><span class="formation-rank">{% if self_control_rank != blank %}#{{ self_control_rank }}{% endif %}</span>Self-control</div><div class="formation-tier">{% if self_control_tier_label != blank %}{{ self_control_tier_label }}{% elsif growth_invitation_fruit_list contains "Self-control" %}Growth Invitation Fruit{% elsif steady_forming_fruit_list contains "Self-control" %}Steady Forming Fruit{% elsif most_visible_fruit_list contains "Self-control" %}Most Visible Fruit{% else %}{{ self_control_category | replace: "Steady Developing", "Steady Forming Fruit" }}{% endif %}</div></div>
-      <div class="formation-body">
-        <p><strong>Scripture:</strong> {{ self_control_scripture | default: "Galatians 5:22-23; Titus 2:11-12" }}</p>
-        <p>{{ self_control_definition | default: "Self-control is Spirit-led stewardship of desires, habits, attention, and responses." }}</p>
-        <div class="formation-cols">
-          <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ self_control_maturity | default: "Maturity looks like measured responses, ordered desires, and wise restraint without becoming rigid or shut down." }}</p><div class="mini-label">Practice</div><p>{{ self_control_practice | default: "Where do I need to pause before reacting, choosing, speaking, or consuming?" }}</p></div>
-          <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ self_control_growth_invitation | default: "Choose one pressure moment this week where you will pause, pray, and respond with Spirit-led restraint." }}</p><div class="mini-label">Reflection</div><p>{{ self_control_reflection_question | default: "Lord, teach me to be governed by Your Spirit rather than by urgency, appetite, fear, or frustration." }}</p></div>
+      {% if peace_tier_label contains "Growth Invitation" %}
+      <div class="formation-card" style="order: {{ peace_rank | default: 99 }}">
+        <div class="formation-head fruit-peace"><div class="formation-name"><span class="formation-rank">{% if peace_rank != blank %}#{{ peace_rank }}{% endif %}</span>Peace</div><div class="formation-tier">{{ peace_tier_label }}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ peace_scripture }}</p>
+          <p>{{ peace_definition }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ peace_maturity }}</p><div class="mini-label">Practice</div><p>{{ peace_practice }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ peace_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ peace_reflection_question }}</p></div>
+          </div>
         </div>
       </div>
+      {% endif %}
+
+      {% if patience_tier_label contains "Growth Invitation" %}
+      <div class="formation-card" style="order: {{ patience_rank | default: 99 }}">
+        <div class="formation-head fruit-patience"><div class="formation-name"><span class="formation-rank">{% if patience_rank != blank %}#{{ patience_rank }}{% endif %}</span>Patience</div><div class="formation-tier">{{ patience_tier_label }}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ patience_scripture }}</p>
+          <p>{{ patience_definition }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ patience_maturity }}</p><div class="mini-label">Practice</div><p>{{ patience_practice }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ patience_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ patience_reflection_question }}</p></div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if kindness_tier_label contains "Growth Invitation" %}
+      <div class="formation-card" style="order: {{ kindness_rank | default: 99 }}">
+        <div class="formation-head fruit-kindness"><div class="formation-name"><span class="formation-rank">{% if kindness_rank != blank %}#{{ kindness_rank }}{% endif %}</span>Kindness</div><div class="formation-tier">{{ kindness_tier_label }}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ kindness_scripture }}</p>
+          <p>{{ kindness_definition }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ kindness_maturity }}</p><div class="mini-label">Practice</div><p>{{ kindness_practice }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ kindness_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ kindness_reflection_question }}</p></div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if goodness_tier_label contains "Growth Invitation" %}
+      <div class="formation-card" style="order: {{ goodness_rank | default: 99 }}">
+        <div class="formation-head fruit-goodness"><div class="formation-name"><span class="formation-rank">{% if goodness_rank != blank %}#{{ goodness_rank }}{% endif %}</span>Goodness</div><div class="formation-tier">{{ goodness_tier_label }}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ goodness_scripture }}</p>
+          <p>{{ goodness_definition }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ goodness_maturity }}</p><div class="mini-label">Practice</div><p>{{ goodness_practice }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ goodness_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ goodness_reflection_question }}</p></div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if faithfulness_tier_label contains "Growth Invitation" %}
+      <div class="formation-card" style="order: {{ faithfulness_rank | default: 99 }}">
+        <div class="formation-head fruit-faithfulness"><div class="formation-name"><span class="formation-rank">{% if faithfulness_rank != blank %}#{{ faithfulness_rank }}{% endif %}</span>Faithfulness</div><div class="formation-tier">{{ faithfulness_tier_label }}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ faithfulness_scripture }}</p>
+          <p>{{ faithfulness_definition }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ faithfulness_maturity }}</p><div class="mini-label">Practice</div><p>{{ faithfulness_practice }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ faithfulness_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ faithfulness_reflection_question }}</p></div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if gentleness_tier_label contains "Growth Invitation" %}
+      <div class="formation-card" style="order: {{ gentleness_rank | default: 99 }}">
+        <div class="formation-head fruit-gentleness"><div class="formation-name"><span class="formation-rank">{% if gentleness_rank != blank %}#{{ gentleness_rank }}{% endif %}</span>Gentleness</div><div class="formation-tier">{{ gentleness_tier_label }}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ gentleness_scripture }}</p>
+          <p>{{ gentleness_definition }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ gentleness_maturity }}</p><div class="mini-label">Practice</div><p>{{ gentleness_practice }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ gentleness_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ gentleness_reflection_question }}</p></div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if self_control_tier_label contains "Growth Invitation" or self_control_tier_label == blank and growth_invitation_fruit_list contains "Self-control" %}
+      <div class="formation-card" style="order: {{ self_control_rank | default: 99 }}">
+        <div class="formation-head fruit-selfcontrol"><div class="formation-name"><span class="formation-rank">{% if self_control_rank != blank %}#{{ self_control_rank }}{% endif %}</span>Self-control</div><div class="formation-tier">{% if self_control_tier_label != blank %}{{ self_control_tier_label }}{% else %}Growth Invitation Fruit{% endif %}</div></div>
+        <div class="formation-body">
+          <p><strong>Scripture:</strong> {{ self_control_scripture | default: "Galatians 5:22-23; Titus 2:11-12" }}</p>
+          <p>{{ self_control_definition | default: "Self-control is Spirit-led stewardship of desires, habits, attention, and responses." }}</p>
+          <div class="formation-cols">
+            <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ self_control_maturity | default: "Maturity looks like measured responses, ordered desires, and wise restraint without becoming rigid or shut down." }}</p><div class="mini-label">Practice</div><p>{{ self_control_practice | default: "Where do I need to pause before reacting, choosing, speaking, or consuming?" }}</p></div>
+            <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ self_control_growth_invitation | default: "Choose one pressure moment this week where you will pause, pray, and respond with Spirit-led restraint." }}</p><div class="mini-label">Reflection</div><p>{{ self_control_reflection_question | default: "Lord, teach me to be governed by Your Spirit rather than by urgency, appetite, fear, or frustration." }}</p></div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
     </div>
   </section>
 
