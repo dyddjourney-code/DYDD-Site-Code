@@ -8,9 +8,11 @@ This folder contains the first PDFMonkey HTML template for the FruitLife 360 rep
 
 ## Template Setup
 
-Create a new PDFMonkey template named:
+Live PDFMonkey template:
 
-`FruitLife 360 Report`
+- Name: `FruitLife 360`
+- Template ID: `84de6c4d-e279-42e5-a5cc-28248d1149dd`
+- Verified render: 2026-07-29 with `FL360-SAMPLE`
 
 Use the payload row from the Google Sheet tab:
 
@@ -28,4 +30,3 @@ Replace that logo URL when the FruitLife-specific logo is ready.
 - The report uses the DYDD green/sage visual system with fruit-specific accent colors.
 - The report is mapped to the flat `PDFMonkey_Payload_360` fields currently produced by the live Google Sheet.
 - The DesignID section is a placeholder lens until the FruitLife + DesignID interpretation library is built.
-
