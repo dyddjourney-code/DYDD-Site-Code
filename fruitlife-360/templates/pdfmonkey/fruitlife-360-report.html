@@ -323,24 +323,22 @@
     }
 
     .cover-grid {
-      display: table;
+      display: block;
       width: 100%;
-      margin-top: 42px;
+      margin-top: 34px;
     }
 
     .cover-copy,
     .cover-panel {
-      display: table-cell;
+      display: block;
+      width: 100%;
       vertical-align: top;
     }
 
-    .cover-copy {
-      width: 58%;
-      padding-right: 34px;
-    }
+    .cover-copy { padding-right: 0; }
 
     .cover-panel {
-      width: 42%;
+      margin-top: 22px;
     }
 
     .lead {
@@ -408,14 +406,7 @@
     }
 
     .cover-bottom {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0.2in;
-      border-top: 1px solid var(--dydd-line);
-      padding-top: 12px;
-      display: table;
-      width: 100%;
+      display: none;
     }
 
     .cover-bottom div {
@@ -427,6 +418,29 @@
     }
 
     .cover-bottom div:last-child { text-align: right; }
+
+    .cover-panel .snapshot-body {
+      display: table;
+      width: 100%;
+      border-spacing: 8px 0;
+      padding: 12px 4px 12px;
+    }
+
+    .cover-panel .metric {
+      display: table-cell;
+      width: 20%;
+      border: 0;
+      border-left: 1px solid #E9EEE3;
+      padding: 0 10px;
+      vertical-align: top;
+    }
+
+    .cover-panel .metric:first-child { border-left: 0; }
+
+    .cover-panel .metric-value {
+      font-size: 13px;
+      line-height: 1.18;
+    }
 
     .section {
       padding-top: 2px;
@@ -459,6 +473,15 @@
       padding: 14px;
       background: #ffffff;
       margin: 12px 0;
+    }
+
+    .orientation .callout {
+      padding: 10px 12px;
+      margin: 8px 0;
+    }
+
+    .orientation .callout p {
+      margin-bottom: 5px;
     }
 
     .callout.soft {
@@ -503,6 +526,16 @@
       table-layout: fixed;
       font-size: 9.5px;
       margin-top: 10px;
+    }
+
+    .score-table.compact-summary {
+      font-size: 8.8px;
+      margin-top: 8px;
+    }
+
+    .score-table.compact-summary th,
+    .score-table.compact-summary td {
+      padding: 5px 5px;
     }
 
     .score-table th,
@@ -747,8 +780,8 @@
     .snapshot-wide .snapshot-body {
       display: table;
       width: 100%;
-      border-spacing: 10px 0;
-      padding: 14px 4px 14px;
+      border-spacing: 8px 0;
+      padding: 10px 4px 10px;
     }
 
     .snapshot-wide .metric {
@@ -756,7 +789,7 @@
       width: 20%;
       border: 0;
       border-left: 1px solid #E9EEE3;
-      padding: 0 10px;
+      padding: 0 8px;
       vertical-align: top;
     }
 
@@ -766,15 +799,15 @@
       display: table;
       width: 100%;
       border-collapse: collapse;
-      margin: 10px 0 12px;
-      font-size: 9.3px;
+      margin: 8px 0 9px;
+      font-size: 8.8px;
     }
 
     .lens-explain div {
       display: table-cell;
       width: 25%;
       border: 1px solid var(--dydd-line);
-      padding: 8px;
+      padding: 7px;
       vertical-align: top;
       background: #ffffff;
     }
@@ -783,7 +816,7 @@
       display: table;
       width: 100%;
       border-spacing: 10px 0;
-      margin: 10px -10px 12px;
+      margin: 8px -10px 9px;
     }
 
     .band-card {
@@ -791,7 +824,7 @@
       width: 50%;
       border: 1px solid var(--dydd-line);
       background: #ffffff;
-      padding: 10px;
+      padding: 8px 9px;
       vertical-align: top;
     }
 
@@ -800,6 +833,21 @@
       padding-left: 15px;
       color: #344235;
       font-size: 9.5px;
+    }
+
+    .orientation .snapshot-head {
+      padding: 9px 12px;
+      font-size: 12px;
+    }
+
+    .orientation .metric-value {
+      font-size: 12px;
+      line-height: 1.15;
+    }
+
+    .orientation .metric-note {
+      font-size: 8px;
+      line-height: 1.25;
     }
 
     .pattern-grid {
@@ -819,7 +867,7 @@
       width: 33.333%;
       border: 1px solid var(--dydd-line);
       background: #ffffff;
-      padding: 0 7px 9px;
+      padding: 0 7px 7px;
       vertical-align: top;
       page-break-inside: avoid;
       break-inside: avoid;
@@ -911,8 +959,8 @@
 
     .pattern-note {
       margin-top: 4px;
-      font-size: 8.9px;
-      line-height: 1.33;
+      font-size: 8.2px;
+      line-height: 1.25;
       color: #344235;
     }
 
@@ -1056,7 +1104,7 @@
   </section>
 
   <!-- ORIENTATION -->
-  <section class="section page-break">
+  <section class="section page-break orientation">
     <div class="section-head">
       <div class="section-title">
         <div class="eyebrow">How to read this report</div>
@@ -1142,25 +1190,6 @@
       </div>
     </div>
 
-    <div class="three-col avoid-break">
-      <div class="mini-card">
-        <div class="mini-label">Most Visible</div>
-        <div class="mini-value">{% if most_visible_fruit_list != blank %}{{ most_visible_fruit_list }}{% else %}{{ most_visible_fruit }}{% endif %}</div>
-      </div>
-      <div class="mini-card">
-        <div class="mini-label">Encouragement Others See</div>
-        <div class="mini-value">
-          {% if encouragement_others_see != blank %}{{ encouragement_others_see }}{% else %}No major hidden encouragement gap is flagged. Continue with the tier and pressure patterns below.{% endif %}
-        </div>
-      </div>
-      <div class="mini-card">
-        <div class="mini-label">Growth Invitations</div>
-        <div class="mini-value">
-          {% if growth_invitations != blank %}{{ growth_invitations }}{% else %}No major self-observer gap is flagged. Growth invitations may still appear through lower-tier fruit and pressure patterns.{% endif %}
-        </div>
-      </div>
-    </div>
-
     <div class="callout avoid-break">
       <h3>Pressure vulnerabilities</h3>
       <p>
@@ -1171,7 +1200,7 @@
     <div class="rule"></div>
 
     <h2>Fruit Summary</h2>
-    <table class="score-table">
+    <table class="score-table compact-summary">
       <thead>
         <tr>
           <th style="width: 18%;">Fruit</th>
@@ -1179,8 +1208,8 @@
           <th class="num" style="width: 12%;">Observer</th>
           <th class="num" style="width: 12%;">Self Pressure</th>
           <th class="num" style="width: 14%;">Observer Pressure</th>
-          <th style="width: 18%;">Category</th>
-          <th style="width: 16%;">Formation Note</th>
+          <th style="width: 18%;">Tier</th>
+          <th style="width: 16%;">Current Pattern Note</th>
         </tr>
       </thead>
       <tbody>
@@ -1190,7 +1219,7 @@
           <td class="num">{{ love_observer | round: 1 }}</td>
           <td class="num">{{ love_self_pressure | round: 1 }}</td>
           <td class="num">{{ love_observer_pressure | round: 1 }}</td>
-          <td><span class="category-pill">{{ love_category | replace: "Steady Developing", "Steady Forming" }}</span></td>
+          <td><span class="category-pill">{{ love_tier_label | default: love_category | replace: "Steady Developing", "Steady Forming Fruit" }}</span></td>
           <td>{{ love_summary }}</td>
         </tr>
         <tr>
@@ -1199,7 +1228,7 @@
           <td class="num">{{ joy_observer | round: 1 }}</td>
           <td class="num">{{ joy_self_pressure | round: 1 }}</td>
           <td class="num">{{ joy_observer_pressure | round: 1 }}</td>
-          <td><span class="category-pill">{{ joy_category | replace: "Steady Developing", "Steady Forming" }}</span></td>
+          <td><span class="category-pill">{{ joy_tier_label | default: joy_category | replace: "Steady Developing", "Steady Forming Fruit" }}</span></td>
           <td>{{ joy_summary }}</td>
         </tr>
         <tr>
@@ -1208,7 +1237,7 @@
           <td class="num">{{ peace_observer | round: 1 }}</td>
           <td class="num">{{ peace_self_pressure | round: 1 }}</td>
           <td class="num">{{ peace_observer_pressure | round: 1 }}</td>
-          <td><span class="category-pill">{{ peace_category | replace: "Steady Developing", "Steady Forming" }}</span></td>
+          <td><span class="category-pill">{{ peace_tier_label | default: peace_category | replace: "Steady Developing", "Steady Forming Fruit" }}</span></td>
           <td>{{ peace_summary }}</td>
         </tr>
         <tr>
@@ -1217,7 +1246,7 @@
           <td class="num">{{ patience_observer | round: 1 }}</td>
           <td class="num">{{ patience_self_pressure | round: 1 }}</td>
           <td class="num">{{ patience_observer_pressure | round: 1 }}</td>
-          <td><span class="category-pill">{{ patience_category | replace: "Steady Developing", "Steady Forming" }}</span></td>
+          <td><span class="category-pill">{{ patience_tier_label | default: patience_category | replace: "Steady Developing", "Steady Forming Fruit" }}</span></td>
           <td>{{ patience_summary }}</td>
         </tr>
         <tr>
@@ -1226,7 +1255,7 @@
           <td class="num">{{ kindness_observer | round: 1 }}</td>
           <td class="num">{{ kindness_self_pressure | round: 1 }}</td>
           <td class="num">{{ kindness_observer_pressure | round: 1 }}</td>
-          <td><span class="category-pill">{{ kindness_category | replace: "Steady Developing", "Steady Forming" }}</span></td>
+          <td><span class="category-pill">{{ kindness_tier_label | default: kindness_category | replace: "Steady Developing", "Steady Forming Fruit" }}</span></td>
           <td>{{ kindness_summary }}</td>
         </tr>
         <tr>
@@ -1235,7 +1264,7 @@
           <td class="num">{{ goodness_observer | round: 1 }}</td>
           <td class="num">{{ goodness_self_pressure | round: 1 }}</td>
           <td class="num">{{ goodness_observer_pressure | round: 1 }}</td>
-          <td><span class="category-pill">{{ goodness_category | replace: "Steady Developing", "Steady Forming" }}</span></td>
+          <td><span class="category-pill">{{ goodness_tier_label | default: goodness_category | replace: "Steady Developing", "Steady Forming Fruit" }}</span></td>
           <td>{{ goodness_summary }}</td>
         </tr>
         <tr>
@@ -1244,7 +1273,7 @@
           <td class="num">{{ faithfulness_observer | round: 1 }}</td>
           <td class="num">{{ faithfulness_self_pressure | round: 1 }}</td>
           <td class="num">{{ faithfulness_observer_pressure | round: 1 }}</td>
-          <td><span class="category-pill">{{ faithfulness_category | replace: "Steady Developing", "Steady Forming" }}</span></td>
+          <td><span class="category-pill">{{ faithfulness_tier_label | default: faithfulness_category | replace: "Steady Developing", "Steady Forming Fruit" }}</span></td>
           <td>{{ faithfulness_summary }}</td>
         </tr>
         <tr>
@@ -1253,7 +1282,7 @@
           <td class="num">{{ gentleness_observer | round: 1 }}</td>
           <td class="num">{{ gentleness_self_pressure | round: 1 }}</td>
           <td class="num">{{ gentleness_observer_pressure | round: 1 }}</td>
-          <td><span class="category-pill">{{ gentleness_category | replace: "Steady Developing", "Steady Forming" }}</span></td>
+          <td><span class="category-pill">{{ gentleness_tier_label | default: gentleness_category | replace: "Steady Developing", "Steady Forming Fruit" }}</span></td>
           <td>{{ gentleness_summary }}</td>
         </tr>
         <tr>
@@ -1262,7 +1291,7 @@
           <td class="num">{{ self_control_observer | round: 1 }}</td>
           <td class="num">{{ self_control_self_pressure | round: 1 }}</td>
           <td class="num">{{ self_control_observer_pressure | round: 1 }}</td>
-          <td><span class="category-pill">{{ self_control_category | replace: "Steady Developing", "Steady Forming" }}</span></td>
+          <td><span class="category-pill">{{ self_control_tier_label | default: self_control_category | replace: "Steady Developing", "Steady Forming Fruit" }}</span></td>
           <td>{{ self_control_summary }}</td>
         </tr>
       </tbody>
@@ -1277,24 +1306,6 @@
         <h2>How to read the fruit tiers</h2>
       </div>
       <div class="section-note">Encouragement, formation, and invitation.</div>
-    </div>
-
-    <div class="tier-grid">
-      <div class="tier-card">
-        <div class="mini-label">Most visible</div>
-        <h3>{{ most_visible_fruit_list }}</h3>
-        <p>{{ most_visible_tier_description }}</p>
-      </div>
-      <div class="tier-card">
-        <div class="mini-label">Steady forming</div>
-        <h3>{{ steady_forming_fruit_list }}</h3>
-        <p>{{ steady_forming_tier_description }}</p>
-      </div>
-      <div class="tier-card">
-        <div class="mini-label">Growth invitation</div>
-        <h3>{{ growth_invitation_fruit_list }}</h3>
-        <p>{{ growth_invitation_tier_description }}</p>
-      </div>
     </div>
 
     <div class="formation-card">
@@ -1414,13 +1425,13 @@
     </div>
 
     <div class="formation-card">
-      <div class="formation-head fruit-selfcontrol"><div class="formation-name">Self-control</div><div class="formation-tier">{{ self_control_tier_label }}</div></div>
+      <div class="formation-head fruit-selfcontrol"><div class="formation-name">Self-control</div><div class="formation-tier">{{ self_control_tier_label | default: self_control_category | replace: "Steady Developing", "Steady Forming Fruit" }}</div></div>
       <div class="formation-body">
-        <p><strong>Scripture:</strong> {{ self_control_scripture }}</p>
-        <p>{{ self_control_definition }}</p>
+        <p><strong>Scripture:</strong> {{ self_control_scripture | default: "Galatians 5:22-23; Titus 2:11-12" }}</p>
+        <p>{{ self_control_definition | default: "Self-control is Spirit-led stewardship of desires, habits, attention, and responses." }}</p>
         <div class="formation-cols">
-          <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ self_control_maturity }}</p><div class="mini-label">Practice</div><p>{{ self_control_practice }}</p></div>
-          <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ self_control_growth_invitation }}</p><div class="mini-label">Reflection</div><p>{{ self_control_reflection_question }}</p></div>
+          <div class="formation-col"><div class="mini-label">Maturity looks like</div><p>{{ self_control_maturity | default: "Maturity looks like measured responses, ordered desires, and wise restraint without becoming rigid or shut down." }}</p><div class="mini-label">Practice</div><p>{{ self_control_practice | default: "Where do I need to pause before reacting, choosing, speaking, or consuming?" }}</p></div>
+          <div class="formation-col"><div class="mini-label">Growth invitation</div><p>{{ self_control_growth_invitation | default: "Choose one pressure moment this week where you will pause, pray, and respond with Spirit-led restraint." }}</p><div class="mini-label">Reflection</div><p>{{ self_control_reflection_question | default: "Lord, teach me to be governed by Your Spirit rather than by urgency, appetite, fear, or frustration." }}</p></div>
         </div>
       </div>
     </div>
@@ -1468,7 +1479,7 @@
         {% if goodness_tier_label contains "Most Visible" %}<div class="pattern-card fruit-goodness" style="order: {{ goodness_rank | default: 99 }}"><div class="pattern-title"><div class="pattern-name"><span class="pattern-rank">{% if goodness_rank != blank %}#{{ goodness_rank }}{% endif %}</span> Goodness</div><div class="pattern-tier">{{ goodness_tier_label }}</div></div><div class="pattern-stat"><span>Consistency <strong>{{ goodness_self | round: 1 }}</strong> / <strong>{{ goodness_observer | round: 1 }}</strong></span><span>Pressure <strong>{{ goodness_self_pressure | round: 1 }}</strong> / <strong>{{ goodness_observer_pressure | round: 1 }}</strong></span></div><div class="pattern-note"><strong>Consistency:</strong> {% if goodness_consistency_note != blank %}{{ goodness_consistency_note }}{% else %}{{ goodness_summary }}{% endif %}</div><div class="pattern-note"><strong>Pressure:</strong> {% if goodness_pressure_note != blank %}{{ goodness_pressure_note }}{% else %}{{ goodness_pressure_pattern }}{% endif %}</div></div>{% endif %}
         {% if faithfulness_tier_label contains "Most Visible" %}<div class="pattern-card fruit-faithfulness" style="order: {{ faithfulness_rank | default: 99 }}"><div class="pattern-title"><div class="pattern-name"><span class="pattern-rank">{% if faithfulness_rank != blank %}#{{ faithfulness_rank }}{% endif %}</span> Faithfulness</div><div class="pattern-tier">{{ faithfulness_tier_label }}</div></div><div class="pattern-stat"><span>Consistency <strong>{{ faithfulness_self | round: 1 }}</strong> / <strong>{{ faithfulness_observer | round: 1 }}</strong></span><span>Pressure <strong>{{ faithfulness_self_pressure | round: 1 }}</strong> / <strong>{{ faithfulness_observer_pressure | round: 1 }}</strong></span></div><div class="pattern-note"><strong>Consistency:</strong> {% if faithfulness_consistency_note != blank %}{{ faithfulness_consistency_note }}{% else %}{{ faithfulness_summary }}{% endif %}</div><div class="pattern-note"><strong>Pressure:</strong> {% if faithfulness_pressure_note != blank %}{{ faithfulness_pressure_note }}{% else %}{{ faithfulness_pressure_pattern }}{% endif %}</div></div>{% endif %}
         {% if gentleness_tier_label contains "Most Visible" %}<div class="pattern-card fruit-gentleness" style="order: {{ gentleness_rank | default: 99 }}"><div class="pattern-title"><div class="pattern-name"><span class="pattern-rank">{% if gentleness_rank != blank %}#{{ gentleness_rank }}{% endif %}</span> Gentleness</div><div class="pattern-tier">{{ gentleness_tier_label }}</div></div><div class="pattern-stat"><span>Consistency <strong>{{ gentleness_self | round: 1 }}</strong> / <strong>{{ gentleness_observer | round: 1 }}</strong></span><span>Pressure <strong>{{ gentleness_self_pressure | round: 1 }}</strong> / <strong>{{ gentleness_observer_pressure | round: 1 }}</strong></span></div><div class="pattern-note"><strong>Consistency:</strong> {% if gentleness_consistency_note != blank %}{{ gentleness_consistency_note }}{% else %}{{ gentleness_summary }}{% endif %}</div><div class="pattern-note"><strong>Pressure:</strong> {% if gentleness_pressure_note != blank %}{{ gentleness_pressure_note }}{% else %}{{ gentleness_pressure_pattern }}{% endif %}</div></div>{% endif %}
-        {% if self_control_tier_label contains "Most Visible" %}<div class="pattern-card fruit-selfcontrol" style="order: {{ self_control_rank | default: 99 }}"><div class="pattern-title"><div class="pattern-name"><span class="pattern-rank">{% if self_control_rank != blank %}#{{ self_control_rank }}{% endif %}</span> Self-control</div><div class="pattern-tier">{{ self_control_tier_label }}</div></div><div class="pattern-stat"><span>Consistency <strong>{{ self_control_self | round: 1 }}</strong> / <strong>{{ self_control_observer | round: 1 }}</strong></span><span>Pressure <strong>{{ self_control_self_pressure | round: 1 }}</strong> / <strong>{{ self_control_observer_pressure | round: 1 }}</strong></span></div><div class="pattern-note"><strong>Consistency:</strong> {% if self_control_consistency_note != blank %}{{ self_control_consistency_note }}{% else %}{{ self_control_summary }}{% endif %}</div><div class="pattern-note"><strong>Pressure:</strong> {% if self_control_pressure_note != blank %}{{ self_control_pressure_note }}{% else %}{{ self_control_pressure_pattern }}{% endif %}</div></div>{% endif %}
+        {% if self_control_tier_label contains "Most Visible" %}<div class="pattern-card fruit-selfcontrol" style="order: {{ self_control_rank | default: 99 }}"><div class="pattern-title"><div class="pattern-name"><span class="pattern-rank">{% if self_control_rank != blank %}#{{ self_control_rank }}{% endif %}</span> Self-control</div><div class="pattern-tier">{{ self_control_tier_label }}</div></div><div class="pattern-stat"><span>Consistency <strong>{{ self_control_self | round: 1 }}</strong> / <strong>{{ self_control_observer | round: 1 }}</strong></span><span>Pressure <strong>{{ self_control_self_pressure | round: 1 }}</strong> / <strong>{{ self_control_observer_pressure | round: 1 }}</strong></span></div><div class="pattern-note"><strong>Consistency:</strong> {% if self_control_consistency_note != blank %}{{ self_control_consistency_note }}{% else %}{{ self_control_summary | default: "Self-control appears in this tier based on the current visibility pattern." }}{% endif %}</div><div class="pattern-note"><strong>Pressure:</strong> {% if self_control_pressure_note != blank %}{{ self_control_pressure_note }}{% else %}{{ self_control_pressure_pattern | default: "Under pressure, self-control may become more difficult to sustain when tired, tempted, emotionally stirred, or overloaded." }}{% endif %}</div></div>{% endif %}
       </div>
     </div>
 
@@ -1483,7 +1494,7 @@
         {% if goodness_tier_label contains "Steady Forming" %}<div class="pattern-card fruit-goodness" style="order: {{ goodness_rank | default: 99 }}"><div class="pattern-title"><div class="pattern-name"><span class="pattern-rank">{% if goodness_rank != blank %}#{{ goodness_rank }}{% endif %}</span> Goodness</div><div class="pattern-tier">{{ goodness_tier_label }}</div></div><div class="pattern-stat"><span>Consistency <strong>{{ goodness_self | round: 1 }}</strong> / <strong>{{ goodness_observer | round: 1 }}</strong></span><span>Pressure <strong>{{ goodness_self_pressure | round: 1 }}</strong> / <strong>{{ goodness_observer_pressure | round: 1 }}</strong></span></div><div class="pattern-note"><strong>Consistency:</strong> {% if goodness_consistency_note != blank %}{{ goodness_consistency_note }}{% else %}{{ goodness_summary }}{% endif %}</div><div class="pattern-note"><strong>Pressure:</strong> {% if goodness_pressure_note != blank %}{{ goodness_pressure_note }}{% else %}{{ goodness_pressure_pattern }}{% endif %}</div></div>{% endif %}
         {% if faithfulness_tier_label contains "Steady Forming" %}<div class="pattern-card fruit-faithfulness" style="order: {{ faithfulness_rank | default: 99 }}"><div class="pattern-title"><div class="pattern-name"><span class="pattern-rank">{% if faithfulness_rank != blank %}#{{ faithfulness_rank }}{% endif %}</span> Faithfulness</div><div class="pattern-tier">{{ faithfulness_tier_label }}</div></div><div class="pattern-stat"><span>Consistency <strong>{{ faithfulness_self | round: 1 }}</strong> / <strong>{{ faithfulness_observer | round: 1 }}</strong></span><span>Pressure <strong>{{ faithfulness_self_pressure | round: 1 }}</strong> / <strong>{{ faithfulness_observer_pressure | round: 1 }}</strong></span></div><div class="pattern-note"><strong>Consistency:</strong> {% if faithfulness_consistency_note != blank %}{{ faithfulness_consistency_note }}{% else %}{{ faithfulness_summary }}{% endif %}</div><div class="pattern-note"><strong>Pressure:</strong> {% if faithfulness_pressure_note != blank %}{{ faithfulness_pressure_note }}{% else %}{{ faithfulness_pressure_pattern }}{% endif %}</div></div>{% endif %}
         {% if gentleness_tier_label contains "Steady Forming" %}<div class="pattern-card fruit-gentleness" style="order: {{ gentleness_rank | default: 99 }}"><div class="pattern-title"><div class="pattern-name"><span class="pattern-rank">{% if gentleness_rank != blank %}#{{ gentleness_rank }}{% endif %}</span> Gentleness</div><div class="pattern-tier">{{ gentleness_tier_label }}</div></div><div class="pattern-stat"><span>Consistency <strong>{{ gentleness_self | round: 1 }}</strong> / <strong>{{ gentleness_observer | round: 1 }}</strong></span><span>Pressure <strong>{{ gentleness_self_pressure | round: 1 }}</strong> / <strong>{{ gentleness_observer_pressure | round: 1 }}</strong></span></div><div class="pattern-note"><strong>Consistency:</strong> {% if gentleness_consistency_note != blank %}{{ gentleness_consistency_note }}{% else %}{{ gentleness_summary }}{% endif %}</div><div class="pattern-note"><strong>Pressure:</strong> {% if gentleness_pressure_note != blank %}{{ gentleness_pressure_note }}{% else %}{{ gentleness_pressure_pattern }}{% endif %}</div></div>{% endif %}
-        {% if self_control_tier_label contains "Steady Forming" %}<div class="pattern-card fruit-selfcontrol" style="order: {{ self_control_rank | default: 99 }}"><div class="pattern-title"><div class="pattern-name"><span class="pattern-rank">{% if self_control_rank != blank %}#{{ self_control_rank }}{% endif %}</span> Self-control</div><div class="pattern-tier">{{ self_control_tier_label }}</div></div><div class="pattern-stat"><span>Consistency <strong>{{ self_control_self | round: 1 }}</strong> / <strong>{{ self_control_observer | round: 1 }}</strong></span><span>Pressure <strong>{{ self_control_self_pressure | round: 1 }}</strong> / <strong>{{ self_control_observer_pressure | round: 1 }}</strong></span></div><div class="pattern-note"><strong>Consistency:</strong> {% if self_control_consistency_note != blank %}{{ self_control_consistency_note }}{% else %}{{ self_control_summary }}{% endif %}</div><div class="pattern-note"><strong>Pressure:</strong> {% if self_control_pressure_note != blank %}{{ self_control_pressure_note }}{% else %}{{ self_control_pressure_pattern }}{% endif %}</div></div>{% endif %}
+        {% if self_control_tier_label contains "Steady Forming" or self_control_category contains "Steady" %}<div class="pattern-card fruit-selfcontrol" style="order: {{ self_control_rank | default: 99 }}"><div class="pattern-title"><div class="pattern-name"><span class="pattern-rank">{% if self_control_rank != blank %}#{{ self_control_rank }}{% endif %}</span> Self-control</div><div class="pattern-tier">{{ self_control_tier_label | default: self_control_category | replace: "Steady Developing", "Steady Forming Fruit" }}</div></div><div class="pattern-stat"><span>Consistency <strong>{{ self_control_self | round: 1 }}</strong> / <strong>{{ self_control_observer | round: 1 }}</strong></span><span>Pressure <strong>{{ self_control_self_pressure | round: 1 }}</strong> / <strong>{{ self_control_observer_pressure | round: 1 }}</strong></span></div><div class="pattern-note"><strong>Consistency:</strong> {% if self_control_consistency_note != blank %}{{ self_control_consistency_note }}{% else %}{{ self_control_summary | default: "Self-control appears present and still forming in this feedback set." }}{% endif %}</div><div class="pattern-note"><strong>Pressure:</strong> {% if self_control_pressure_note != blank %}{{ self_control_pressure_note }}{% else %}{{ self_control_pressure_pattern | default: "Under pressure, self-control may become more difficult to sustain when tired, tempted, emotionally stirred, or overloaded." }}{% endif %}</div></div>{% endif %}
       </div>
     </div>
 
@@ -1498,7 +1509,7 @@
         {% if goodness_tier_label contains "Growth Invitation" %}<div class="pattern-card fruit-goodness" style="order: {{ goodness_rank | default: 99 }}"><div class="pattern-title"><div class="pattern-name"><span class="pattern-rank">{% if goodness_rank != blank %}#{{ goodness_rank }}{% endif %}</span> Goodness</div><div class="pattern-tier">{{ goodness_tier_label }}</div></div><div class="pattern-stat"><span>Consistency <strong>{{ goodness_self | round: 1 }}</strong> / <strong>{{ goodness_observer | round: 1 }}</strong></span><span>Pressure <strong>{{ goodness_self_pressure | round: 1 }}</strong> / <strong>{{ goodness_observer_pressure | round: 1 }}</strong></span></div><div class="pattern-note"><strong>Consistency:</strong> {% if goodness_consistency_note != blank %}{{ goodness_consistency_note }}{% else %}{{ goodness_summary }}{% endif %}</div><div class="pattern-note"><strong>Pressure:</strong> {% if goodness_pressure_note != blank %}{{ goodness_pressure_note }}{% else %}{{ goodness_pressure_pattern }}{% endif %}</div></div>{% endif %}
         {% if faithfulness_tier_label contains "Growth Invitation" %}<div class="pattern-card fruit-faithfulness" style="order: {{ faithfulness_rank | default: 99 }}"><div class="pattern-title"><div class="pattern-name"><span class="pattern-rank">{% if faithfulness_rank != blank %}#{{ faithfulness_rank }}{% endif %}</span> Faithfulness</div><div class="pattern-tier">{{ faithfulness_tier_label }}</div></div><div class="pattern-stat"><span>Consistency <strong>{{ faithfulness_self | round: 1 }}</strong> / <strong>{{ faithfulness_observer | round: 1 }}</strong></span><span>Pressure <strong>{{ faithfulness_self_pressure | round: 1 }}</strong> / <strong>{{ faithfulness_observer_pressure | round: 1 }}</strong></span></div><div class="pattern-note"><strong>Consistency:</strong> {% if faithfulness_consistency_note != blank %}{{ faithfulness_consistency_note }}{% else %}{{ faithfulness_summary }}{% endif %}</div><div class="pattern-note"><strong>Pressure:</strong> {% if faithfulness_pressure_note != blank %}{{ faithfulness_pressure_note }}{% else %}{{ faithfulness_pressure_pattern }}{% endif %}</div></div>{% endif %}
         {% if gentleness_tier_label contains "Growth Invitation" %}<div class="pattern-card fruit-gentleness" style="order: {{ gentleness_rank | default: 99 }}"><div class="pattern-title"><div class="pattern-name"><span class="pattern-rank">{% if gentleness_rank != blank %}#{{ gentleness_rank }}{% endif %}</span> Gentleness</div><div class="pattern-tier">{{ gentleness_tier_label }}</div></div><div class="pattern-stat"><span>Consistency <strong>{{ gentleness_self | round: 1 }}</strong> / <strong>{{ gentleness_observer | round: 1 }}</strong></span><span>Pressure <strong>{{ gentleness_self_pressure | round: 1 }}</strong> / <strong>{{ gentleness_observer_pressure | round: 1 }}</strong></span></div><div class="pattern-note"><strong>Consistency:</strong> {% if gentleness_consistency_note != blank %}{{ gentleness_consistency_note }}{% else %}{{ gentleness_summary }}{% endif %}</div><div class="pattern-note"><strong>Pressure:</strong> {% if gentleness_pressure_note != blank %}{{ gentleness_pressure_note }}{% else %}{{ gentleness_pressure_pattern }}{% endif %}</div></div>{% endif %}
-        {% if self_control_tier_label contains "Growth Invitation" %}<div class="pattern-card fruit-selfcontrol" style="order: {{ self_control_rank | default: 99 }}"><div class="pattern-title"><div class="pattern-name"><span class="pattern-rank">{% if self_control_rank != blank %}#{{ self_control_rank }}{% endif %}</span> Self-control</div><div class="pattern-tier">{{ self_control_tier_label }}</div></div><div class="pattern-stat"><span>Consistency <strong>{{ self_control_self | round: 1 }}</strong> / <strong>{{ self_control_observer | round: 1 }}</strong></span><span>Pressure <strong>{{ self_control_self_pressure | round: 1 }}</strong> / <strong>{{ self_control_observer_pressure | round: 1 }}</strong></span></div><div class="pattern-note"><strong>Consistency:</strong> {% if self_control_consistency_note != blank %}{{ self_control_consistency_note }}{% else %}{{ self_control_summary }}{% endif %}</div><div class="pattern-note"><strong>Pressure:</strong> {% if self_control_pressure_note != blank %}{{ self_control_pressure_note }}{% else %}{{ self_control_pressure_pattern }}{% endif %}</div></div>{% endif %}
+        {% if self_control_tier_label contains "Growth Invitation" or self_control_category contains "Growth" %}<div class="pattern-card fruit-selfcontrol" style="order: {{ self_control_rank | default: 99 }}"><div class="pattern-title"><div class="pattern-name"><span class="pattern-rank">{% if self_control_rank != blank %}#{{ self_control_rank }}{% endif %}</span> Self-control</div><div class="pattern-tier">{{ self_control_tier_label | default: self_control_category | replace: "Steady Developing", "Steady Forming Fruit" }}</div></div><div class="pattern-stat"><span>Consistency <strong>{{ self_control_self | round: 1 }}</strong> / <strong>{{ self_control_observer | round: 1 }}</strong></span><span>Pressure <strong>{{ self_control_self_pressure | round: 1 }}</strong> / <strong>{{ self_control_observer_pressure | round: 1 }}</strong></span></div><div class="pattern-note"><strong>Consistency:</strong> {% if self_control_consistency_note != blank %}{{ self_control_consistency_note }}{% else %}{{ self_control_summary | default: "Self-control appears as a current growth invitation in this feedback set." }}{% endif %}</div><div class="pattern-note"><strong>Pressure:</strong> {% if self_control_pressure_note != blank %}{{ self_control_pressure_note }}{% else %}{{ self_control_pressure_pattern | default: "Under pressure, self-control may become more difficult to sustain when tired, tempted, emotionally stirred, or overloaded." }}{% endif %}</div></div>{% endif %}
       </div>
     </div>
 
