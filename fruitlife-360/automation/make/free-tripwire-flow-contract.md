@@ -87,6 +87,7 @@ Status: built as inactive Make draft.
 - Hook name: `FruitLife 360 Signup Watch - DRAFT`
 - Hook URL: `https://hook.us2.make.com/djsek7chvbonveutdwvum5gdxkotrjrb`
 - Jotform webhook is attached to form `262116654473054`.
+- Verified 2026-07-31: both Google Sheets add-row modules use workbook ID `1V39OQTm-yzdYogq-qv8me5f_LCOVKUur26mURfQSMc8`. Make editor metadata labels were refreshed after John saw stale DPG labels.
 
 Trigger:
 
@@ -153,6 +154,7 @@ Status: built as inactive/on-demand Make draft.
 - Scenario ID: `5823420`
 - Name: `FruitLife 360 - Report Queue Runner - DRAFT`
 - Current state: inactive/on-demand
+- Verified 2026-07-31: every Google Sheets module uses workbook ID `1V39OQTm-yzdYogq-qv8me5f_LCOVKUur26mURfQSMc8`. The actual mapper fields were correct, but stale Make editor restore labels still said Hiring Advantage / DPG until they were patched through the Make API at `2026-07-31T22:40:35Z`.
 - Modules:
   1. Google Sheets: find one `Report_Queue` row where `Report_Status=QUEUED`
   2. Google Sheets: mark row `PROCESSING`
