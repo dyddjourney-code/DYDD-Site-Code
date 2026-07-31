@@ -1,6 +1,6 @@
 # FruitLife 360 PDFMonkey Template Field Map
 
-Date: 2026-07-17
+Date: 2026-07-31
 
 Template:
 
@@ -87,6 +87,8 @@ These should be generated from the Sheet using the standard score bands:
 
 If these fields are blank, the template falls back to `{fruit}_summary` and `{fruit}_pressure_pattern`, but the preferred production payload should supply score-specific notes.
 
+The live workbook now supplies these fields from `Fruit_Gap_Language_360` and `Fruit_Aggregates_360` for all nine fruit. The PDFMonkey template physically orders each visible card by `{fruit}_rank`, while keeping the color ribbon tied to the fruit-specific CSS class.
+
 Tier summary fields:
 
 - `most_visible_tier_description`
@@ -120,4 +122,8 @@ Use the sample participant:
 
 `FL360-SAMPLE`
 
-The live workbook verification confirmed that `PDFMonkey_Payload_360` now resolves 197 payload fields after the FruitLife content expansion.
+The live workbook verification confirmed that `PDFMonkey_Payload_360` now resolves the expanded report payload plus the 27 detailed reflection fields:
+
+- 9 rank fields
+- 9 consistency note fields
+- 9 pressure note fields
