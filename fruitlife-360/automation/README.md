@@ -20,7 +20,7 @@ This folder defines the first wiring plan for moving FruitLife 360 from website/
 - Live update on 2026-07-31: added `Fruit_Rank_1` through `Fruit_Rank_9` as far-right columns on `Response_Intake` so the full Sortable List order can be preserved without disturbing existing report formulas. Make should parse Jotform `typeA` into those columns and derive the legacy top/growth fields from the same ordered list.
 - Live wiring audit on 2026-07-31: the current PDFMonkey template uses 168 payload variables, and all 168 now exist in `PDFMonkey_Payload_360`. `Report_Export_360` formation-library and DesignID copy formulas were filled down through row 500, and `Pressure_Vulnerabilities` now returns fallback language when no major pressure gap exists. A fresh live Sheet payload render for `FL360-6612531259974069585` succeeded as PDFMonkey document `e2a07c7d-c2b0-4fca-9a38-5c77022e1eb5`.
 - Live tiered-formation pass on 2026-07-31: added `Fruit_Tier_Formation_360` with 27 tier-specific formation rows. `Report_Export_360` rows 2-500 now pull maturity, growth invitation, practice, and prayer copy by each fruit's assigned tier while keeping scripture/definition fields stable. PDFMonkey document `f3e7f5b9-e6e2-4427-95df-94e545941a5f` rendered successfully from the live payload.
-- Free tripwire automation build started on 2026-07-31. Added right-side support headers to `Participant_Setup` and `Report_Queue`; created inactive/on-demand Make draft scenario `5823420` named `FruitLife 360 - Report Queue Runner - DRAFT`, with all 225 current named payload fields mapped into PDFMonkey template `84de6c4d-e279-42e5-a5cc-28248d1149dd`. Setup/signup form creation was blocked by Jotform HTTP 429 during this pass. See `make/free-tripwire-flow-contract.md`.
+- Free tripwire automation build started on 2026-07-31. Added right-side support headers to `Participant_Setup` and `Report_Queue`; created inactive/on-demand Make draft scenario `5823420` named `FruitLife 360 - Report Queue Runner - DRAFT`, with all 225 current named payload fields mapped into PDFMonkey template `84de6c4d-e279-42e5-a5cc-28248d1149dd`. John created the signup form manually after Jotform API creation was blocked; live signup form `262116654473054` is connected to Make hook `2642649`, and inactive Make draft scenario `5823630` now writes signup rows to `Participant_Setup` and `Report_Queue` and emails the self/observer links. See `make/free-tripwire-flow-contract.md`.
 
 ## Files
 
@@ -48,9 +48,11 @@ This folder defines the first wiring plan for moving FruitLife 360 from website/
 
 - Jotform self form ID: `262096536690162`
 - Jotform observer form ID: `262096700619156`
+- Jotform signup form ID: `262116654473054`
 - Google Sheet ID: `1V39OQTm-yzdYogq-qv8me5f_LCOVKUur26mURfQSMc8`
 - PDFMonkey template ID: `84de6c4d-e279-42e5-a5cc-28248d1149dd`
-- Make scenario ID: not yet live; Make remains the next wiring stage.
+- Make signup intake draft scenario ID: `5823630`
+- Make report queue runner draft scenario ID: `5823420`
 
 ## Safety
 

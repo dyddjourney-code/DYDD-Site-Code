@@ -22,14 +22,18 @@ This avoids the DPG-style due date/roster requirement. For the free tripwire, th
 
 ### Setup / Signup Form
 
-Status: needed. Jotform API creation was blocked by HTTP 429 during the 2026-07-31 build session.
+Status: live. John created the form manually after Jotform API creation was blocked by HTTP 429 during the 2026-07-31 build session.
 
-Recommended fields:
+- Form ID: `262116654473054`
+- URL: `https://form.jotform.com/262116654473054`
+- Title/header: `FruitLife 360 Free Report Signup`
 
-- `participant_name` - full name, required
-- `participant_email` - email, required
-- `expected_observer_count` - number, required, default/recommended `3`
-- `signup_source` - hidden, default `website-free-tripwire`
+Live fields:
+
+- QID `3`, name `name`, label `Name` - full name, required
+- QID `4`, name `email`, label `Email` - email, required
+- QID `5`, name `number`, label `Number of observers you want to invite` - number, required, default `3`
+- QID `6`, name `signup_source`, label `signup_source` - hidden, default `website-free-tripwire`
 
 ### Existing Self Assessment
 
@@ -74,6 +78,15 @@ Added right-side headers without moving existing columns:
 ## Scenario Architecture
 
 ### Scenario A: Setup / Signup Intake
+
+Status: built as inactive Make draft.
+
+- Scenario ID: `5823630`
+- Name: `FruitLife 360 - Signup Intake - DRAFT`
+- Hook ID: `2642649`
+- Hook name: `FruitLife 360 Signup Watch - DRAFT`
+- Hook URL: `https://hook.us2.make.com/djsek7chvbonveutdwvum5gdxkotrjrb`
+- Jotform webhook is attached to form `262116654473054`.
 
 Trigger:
 
@@ -161,4 +174,3 @@ Use this on the webpage:
 Skeptic-friendly explanation:
 
 > This is not a static report with a few swapped paragraphs. The report has a structured content engine behind it. It looks at how all nine fruits rank, which tier each fruit falls into, whether self and observer feedback agree, and whether each fruit stays steady under pressure. That creates a highly individualized report while keeping interpretation grounded and consistent.
-
