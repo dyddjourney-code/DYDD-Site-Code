@@ -19,6 +19,7 @@ Primary pages:
 - Services
 - About
 - Spiritual Gifts Test
+- FruitLife 360
 - DesignID
 - DesignPD
 - Resources

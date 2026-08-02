@@ -9,6 +9,7 @@
   - About
 - Assessment
   - Spiritual Gifts Test
+  - FruitLife 360
   - DesignID
   - DesignPD
 - Resources
@@ -37,6 +38,7 @@
 - `services`: Services — Ways to engage the DYDD journey through live, online, and resource-based pathways.
 - `about`: About — About page content for the DYDD message, mission, and story.
 - `spiritual-gifts-test`: Spiritual Gifts Test — Assessment landing page for spiritual gifts discovery.
+- `fruitlife-360`: FruitLife 360 — Free spiritual formation assessment page for self-reflection or 360 feedback on the fruit of the Spirit.
 - `designid`: DesignID — DesignID overview and pathway page.
 - `designpd`: DesignPD — DesignPD overview and pathway page.
 - `resources`: Resources — Resource hub page.
