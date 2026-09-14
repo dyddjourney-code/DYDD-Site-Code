@@ -1,0 +1,14 @@
+{
+  "purpose": "Sandbox PDFMonkey template for testing the app-native Spiritual Gifts result payload before changing the live report.",
+  "live_template_identifier": "Spiritual Gifts - HTML Report",
+  "live_template_id": "24b0d60a-0b1e-4cf4-9193-261254c426fd",
+  "next_template_identifier": "Spiritual Gifts - HTML Report NEXT",
+  "next_template_id": "1c56c723-1210-4690-968f-a1aa5e5faeb5",
+  "source_file": "pdfmonkey-report-next.html",
+  "created_utc": "2026-09-14T20:49:39Z",
+  "notes": [
+    "Use the app-native scoring engine as the source of truth.",
+    "PDFMonkey should only render the app-derived Top 5, tie note, Top 3 deep dives, and course invitation.",
+    "Do not wire this template into production until the preview layout and app payload mapping are approved."
+  ]
+}
