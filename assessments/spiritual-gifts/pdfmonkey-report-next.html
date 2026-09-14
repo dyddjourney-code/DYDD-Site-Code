@@ -64,9 +64,18 @@
     }
 
     /* Table */
-    .table { width: 100%; border-collapse: collapse; font-size: 10px; table-layout: fixed; }
-    .table th, .table td { border: 1px solid #e5e7eb; padding: 7px; vertical-align: top; word-wrap: break-word; }
+    .table { width: 100%; border-collapse: collapse; font-size: 8.2px; table-layout: fixed; }
+    .table th, .table td { border: 1px solid #e5e7eb; padding: 4px 5px; vertical-align: top; word-wrap: break-word; }
     .table th { background: #f9fafb; text-align: left; }
+    .top5Summary { padding: 10px; }
+    .top5Summary h2 { margin-top: 0; }
+    .giftName {
+      font-size: 6.4px;
+      line-height: 1.12;
+      overflow-wrap: normal;
+      white-space: nowrap;
+      word-break: normal;
+    }
 
     .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .top-note {
@@ -80,8 +89,8 @@
     .top-note p { margin-bottom: 0; }
 
     /* Correlations bullets */
-    .corr { margin: 0; padding-left: 16px; }
-    .corr li { margin: 0 0 4px; }
+    .corr { margin: 0; padding-left: 11px; }
+    .corr li { line-height: 1.22; margin: 0 0 2px; }
 
     /* Reflection highlight colors */
     .arch { color: #D4A451; font-weight: 700; }   /* Architect */
@@ -276,16 +285,16 @@
   <div class="page-break"></div>
 
   <!-- PAGE 2: TOP 5 TABLE -->
-  <div class="card">
+  <div class="card top5Summary">
     <h2>Top 5 Gift Summary</h2>
 
     <table class="table">
       <thead>
         <tr>
-          <th style="width: 12%;">Gift</th>
-          <th style="width: 20%;">Definition</th>
-          <th style="width: 16%;">Scripture</th>
-          <th style="width: 18%;">How it shows up</th>
+          <th style="width: 15%;">Gift</th>
+          <th style="width: 19%;">Definition</th>
+          <th style="width: 15%;">Scripture</th>
+          <th style="width: 17%;">How it shows up</th>
           <th style="width: 34%;">DesignID reflection correlations</th>
         </tr>
       </thead>
@@ -293,7 +302,7 @@
 
         {% assign lines = Top1_Correlation | newline_to_br | split: '<br />' %}
         <tr>
-          <td><b>{{ Top1_Name }}</b></td>
+          <td class="giftName"><b>{{ Top1_Name }}</b></td>
           <td>{{ Top1_Definition }}</td>
           <td>{{ Top1_Scripture }}</td>
           <td>{{ Top1_Blurb }}</td>
@@ -313,7 +322,7 @@
 
         {% assign lines = Top2_Correlation | newline_to_br | split: '<br />' %}
         <tr>
-          <td><b>{{ Top2_Name }}</b></td>
+          <td class="giftName"><b>{{ Top2_Name }}</b></td>
           <td>{{ Top2_Definition }}</td>
           <td>{{ Top2_Scripture }}</td>
           <td>{{ Top2_Blurb }}</td>
@@ -333,7 +342,7 @@
 
         {% assign lines = Top3_Correlation | newline_to_br | split: '<br />' %}
         <tr>
-          <td><b>{{ Top3_Name }}</b></td>
+          <td class="giftName"><b>{{ Top3_Name }}</b></td>
           <td>{{ Top3_Definition }}</td>
           <td>{{ Top3_Scripture }}</td>
           <td>{{ Top3_Blurb }}</td>
@@ -351,30 +360,9 @@
           </td>
         </tr>
 
-      </tbody>
-    </table>
-  </div>
-
-  <div class="page-break"></div>
-
-  <div class="card">
-    <h2>Top 5 Gift Summary (continued)</h2>
-
-    <table class="table">
-      <thead>
-        <tr>
-          <th style="width: 12%;">Gift</th>
-          <th style="width: 20%;">Definition</th>
-          <th style="width: 16%;">Scripture</th>
-          <th style="width: 18%;">How it shows up</th>
-          <th style="width: 34%;">DesignID reflection correlations</th>
-        </tr>
-      </thead>
-      <tbody>
-
         {% assign lines = Top4_Correlation | newline_to_br | split: '<br />' %}
         <tr>
-          <td><b>{{ Top4_Name }}</b></td>
+          <td class="giftName"><b>{{ Top4_Name }}</b></td>
           <td>{{ Top4_Definition }}</td>
           <td>{{ Top4_Scripture }}</td>
           <td>{{ Top4_Blurb }}</td>
@@ -394,7 +382,7 @@
 
         {% assign lines = Top5_Correlation | newline_to_br | split: '<br />' %}
         <tr>
-          <td><b>{{ Top5_Name }}</b></td>
+          <td class="giftName"><b>{{ Top5_Name }}</b></td>
           <td>{{ Top5_Definition }}</td>
           <td>{{ Top5_Scripture }}</td>
           <td>{{ Top5_Blurb }}</td>
@@ -416,7 +404,7 @@
     </table>
   </div>
 
-  <!-- PAGE 4: Deep dives start cleanly -->
+  <!-- PAGE 3: Deep dives start cleanly -->
   <div class="page-break"></div>
 
   <div class="card deepDiveCompact">
