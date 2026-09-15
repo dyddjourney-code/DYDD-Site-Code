@@ -164,6 +164,135 @@
       margin: 0;
     }
 
+    /* Workbook reflection page */
+    .workbookPage {
+      background:
+        linear-gradient(180deg, #ffffff 0%, #fbfcf7 100%);
+      padding: 18px;
+    }
+    .workbookEyebrow {
+      color: #4A6239;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin: 0 0 4px;
+      text-transform: uppercase;
+    }
+    .workbookIntro {
+      color: #374151;
+      font-size: 11px;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .workbookBand {
+      background: #4A6239;
+      border-radius: 10px;
+      color: #ffffff;
+      margin: 12px 0;
+      padding: 12px 14px;
+    }
+    .workbookBand h3 {
+      border-bottom: 0;
+      color: #ffffff;
+      font-size: 15px;
+      margin: 0 0 5px;
+      padding: 0;
+    }
+    .workbookBand p {
+      color: #eef5e9;
+      font-size: 10px;
+      margin: 0;
+    }
+    .workbookGrid {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(3, 1fr);
+      margin: 12px 0;
+    }
+    .workbookGift {
+      background: #ffffff;
+      border: 1px solid #e5e7db;
+      border-top: 4px solid #D4A451;
+      border-radius: 9px;
+      padding: 10px;
+    }
+    .workbookGift span {
+      color: #6b7280;
+      display: block;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+    .workbookGift strong {
+      color: #4A6239;
+      display: block;
+      font-size: 12px;
+      line-height: 1.18;
+      margin-bottom: 6px;
+    }
+    .workbookLine {
+      border-bottom: 1px solid #d8dece;
+      height: 18px;
+      margin-top: 5px;
+    }
+    .promptList {
+      margin: 8px 0 0;
+      padding: 0;
+    }
+    .promptList li {
+      background: #f7f7f3;
+      border-left: 4px solid #D4A451;
+      border-radius: 7px;
+      color: #374151;
+      font-size: 10.5px;
+      line-height: 1.35;
+      list-style: none;
+      margin: 0 0 7px;
+      padding: 8px 10px;
+    }
+    .nextStepBox {
+      background: #ffffff;
+      border: 1px solid #d9e1d4;
+      border-left: 4px solid #4A6239;
+      border-radius: 9px;
+      margin-top: 12px;
+      padding: 11px;
+    }
+    .nextStepQuestion {
+      color: #4A6239;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin: 0 0 5px;
+      text-transform: uppercase;
+    }
+    .answerBox {
+      background: #f7f7f3;
+      border: 1px solid #e5e7db;
+      border-radius: 8px;
+      color: #1f2937;
+      font-size: 10.5px;
+      line-height: 1.42;
+      margin: 6px 0 10px;
+      min-height: 54px;
+      padding: 9px;
+    }
+    .planBox {
+      border: 1px solid #d8dece;
+      border-radius: 8px;
+      height: 82px;
+      margin-top: 6px;
+      padding: 8px;
+    }
+    .planBox strong {
+      color: #4A6239;
+      display: block;
+      font-size: 10px;
+      margin-bottom: 6px;
+    }
+
     /* Final page DYDD section */
     .dydd-green { color: #4A6239; }
 
@@ -482,6 +611,66 @@
           <h4>Steps to Grow</h4>
           <p>{{ Top3_StepsToGrow }}</p>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WORKBOOK REFLECTION PAGE -->
+  <div class="page-break"></div>
+
+  <div class="card workbookPage">
+    <p class="workbookEyebrow">A Discover Your Divine Design workbook sample</p>
+    <h2 class="dydd-green">Unpack Your Spiritual Gifts</h2>
+    <p class="workbookIntro">
+      A spiritual gifts assessment is a starting point, not a final label. In Discover Your Divine Design,
+      reflection helps you move from results to prayerful action. Use the prompts below to begin noticing
+      where God may be inviting you to serve, grow, and bless the Body of Christ.
+    </p>
+
+    <div class="workbookBand">
+      <h3>Your Deep Dive Gifts</h3>
+      <p>Write each definition in your own words, record the Scripture that most resonates with you, and notice repeated themes across these gifts.</p>
+    </div>
+
+    <div class="workbookGrid">
+      <div class="workbookGift">
+        <span>Gift 1</span>
+        <strong>{{ Top1_Name }}</strong>
+        <p class="small">{{ Top1_Scripture }}</p>
+        <div class="workbookLine"></div>
+        <div class="workbookLine"></div>
+      </div>
+      <div class="workbookGift">
+        <span>Gift 2</span>
+        <strong>{{ Top2_Name }}</strong>
+        <p class="small">{{ Top2_Scripture }}</p>
+        <div class="workbookLine"></div>
+        <div class="workbookLine"></div>
+      </div>
+      <div class="workbookGift">
+        <span>Gift 3</span>
+        <strong>{{ Top3_Name }}</strong>
+        <p class="small">{{ Top3_Scripture }}</p>
+        <div class="workbookLine"></div>
+        <div class="workbookLine"></div>
+      </div>
+    </div>
+
+    <h3>Reflection Questions</h3>
+    <ul class="promptList">
+      <li>What surprised you about your results?</li>
+      <li>How are you currently using these gifts in ministry, work, relationships, or service?</li>
+      <li>What is one way you could use these gifts to benefit the Body of Christ?</li>
+    </ul>
+
+    <div class="nextStepBox">
+      <p class="nextStepQuestion">Your next-step reflection</p>
+      <p><b>What is one place you may want to serve, grow, or explore next?</b></p>
+      <div class="answerBox">
+        {{ Next_Step_Reflection | default: "Use this space to name one place where you may want to serve, grow, or explore next." }}
+      </div>
+      <div class="planBox">
+        <strong>My simple plan is...</strong>
       </div>
     </div>
   </div>
