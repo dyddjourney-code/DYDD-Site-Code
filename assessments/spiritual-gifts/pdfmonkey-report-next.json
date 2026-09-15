@@ -8,7 +8,7 @@
   "created_utc": "2026-09-14T20:49:39Z",
   "notes": [
     "Use the app-native scoring engine as the source of truth.",
-    "PDFMonkey should only render the app-derived Top 5, tie note, Top 3 deep dives, and course invitation.",
-    "Do not wire this template into production until the preview layout and app payload mapping are approved."
+    "PDFMonkey should only render the app-derived Top 5, tie note, and Top 3 deep dives.",
+    "Phase 1 public delivery should not invite the participant into the app or Spiritual Gifts course."
   ]
 }
