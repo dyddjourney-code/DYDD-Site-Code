@@ -168,7 +168,7 @@
     .workbookPage {
       background:
         linear-gradient(180deg, #ffffff 0%, #fbfcf7 100%);
-      padding: 18px;
+      padding: 16px;
     }
     .workbookEyebrow {
       color: #4A6239;
@@ -182,14 +182,14 @@
       color: #374151;
       font-size: 11px;
       line-height: 1.5;
-      margin-bottom: 12px;
+      margin-bottom: 9px;
     }
     .workbookBand {
       background: #4A6239;
       border-radius: 10px;
       color: #ffffff;
-      margin: 12px 0;
-      padding: 12px 14px;
+      margin: 9px 0;
+      padding: 10px 12px;
     }
     .workbookBand h3 {
       border-bottom: 0;
@@ -205,16 +205,16 @@
     }
     .workbookGrid {
       display: grid;
-      gap: 10px;
+      gap: 8px;
       grid-template-columns: repeat(3, 1fr);
-      margin: 12px 0;
+      margin: 10px 0;
     }
     .workbookGift {
       background: #ffffff;
       border: 1px solid #e5e7db;
       border-top: 4px solid #D4A451;
       border-radius: 9px;
-      padding: 10px;
+      padding: 9px;
     }
     .workbookGift span {
       color: #6b7280;
@@ -230,12 +230,12 @@
       display: block;
       font-size: 12px;
       line-height: 1.18;
-      margin-bottom: 6px;
+      margin-bottom: 7px;
     }
     .workbookLine {
       border-bottom: 1px solid #d8dece;
-      height: 18px;
-      margin-top: 5px;
+      height: 15px;
+      margin-top: 4px;
     }
     .promptList {
       margin: 8px 0 0;
@@ -251,6 +251,13 @@
       list-style: none;
       margin: 0 0 7px;
       padding: 8px 10px;
+    }
+    .promptWriteLines {
+      margin-top: 4px;
+    }
+    .promptWriteLines div {
+      border-bottom: 1px solid #d8dece;
+      height: 13px;
     }
     .nextStepBox {
       background: #ffffff;
@@ -636,21 +643,24 @@
       <div class="workbookGift">
         <span>Gift 1</span>
         <strong>{{ Top1_Name }}</strong>
-        <p class="small">{{ Top1_Scripture }}</p>
+        <div class="workbookLine"></div>
+        <div class="workbookLine"></div>
         <div class="workbookLine"></div>
         <div class="workbookLine"></div>
       </div>
       <div class="workbookGift">
         <span>Gift 2</span>
         <strong>{{ Top2_Name }}</strong>
-        <p class="small">{{ Top2_Scripture }}</p>
+        <div class="workbookLine"></div>
+        <div class="workbookLine"></div>
         <div class="workbookLine"></div>
         <div class="workbookLine"></div>
       </div>
       <div class="workbookGift">
         <span>Gift 3</span>
         <strong>{{ Top3_Name }}</strong>
-        <p class="small">{{ Top3_Scripture }}</p>
+        <div class="workbookLine"></div>
+        <div class="workbookLine"></div>
         <div class="workbookLine"></div>
         <div class="workbookLine"></div>
       </div>
@@ -658,9 +668,18 @@
 
     <h3>Reflection Questions</h3>
     <ul class="promptList">
-      <li>What surprised you about your results?</li>
-      <li>How are you currently using these gifts in ministry, work, relationships, or service?</li>
-      <li>What is one way you could use these gifts to benefit the Body of Christ?</li>
+      <li>
+        What surprised you about your results?
+        <div class="promptWriteLines"><div></div><div></div></div>
+      </li>
+      <li>
+        How are you currently using these gifts in ministry, work, relationships, or service?
+        <div class="promptWriteLines"><div></div><div></div></div>
+      </li>
+      <li>
+        What is one way you could use these gifts to benefit the Body of Christ?
+        <div class="promptWriteLines"><div></div><div></div></div>
+      </li>
     </ul>
 
     <div class="nextStepBox">
