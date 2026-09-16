@@ -156,8 +156,8 @@
     <section class="dysg-hold" id="dysg-hold-results">
       <div class="dysg-holdText">
         <p class="dysg-kicker">How to use your report</p>
-        <h2 class="dysg-h2">How to Hold Your Results</h2>
-        <p class="dysg-lead">Your spiritual gifts are not a label to wear. They are a grace to steward.</p>
+        <h2 class="dysg-h2">Your Gifts Are a Grace to Steward</h2>
+        <p class="dysg-lead">Use this report as a prayerful beginning, not a final label.</p>
         <p class="dysg-p">
           This assessment is a prayerful starting point. It can help you notice patterns in how you serve, encourage, lead,
           care, build, or strengthen others. It may point to places where the Holy Spirit is already working through your
@@ -199,18 +199,22 @@
   .dysg {
     width: 100%;
     overflow-x: hidden;
-    padding: clamp(28px, 5vw, 72px) 0 clamp(44px, 6vw, 86px);
+    margin: 0;
+    padding: 0 0 clamp(44px, 6vw, 86px);
     color: #1f241d;
     background: #f8faf6;
   }
-  .dysg-wrap { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 16px; }
+  .dysg-wrap { width: 100%; max-width: none; margin: 0; padding: 0; }
 
-  .dysg-hero { margin-bottom: clamp(22px, 4vw, 42px); }
+  .dysg-hero {
+    width: 100vw;
+    margin: 0 0 clamp(22px, 4vw, 42px) calc(50% - 50vw);
+  }
   .dysg-heroImage {
-    min-height: clamp(430px, 58vw, 650px);
-    border-radius: 20px;
+    min-height: clamp(560px, 86vh, 820px);
+    border-radius: 0;
     overflow: hidden;
-    background-image: linear-gradient(90deg, rgba(24,31,20,.84), rgba(24,31,20,.42) 52%, rgba(24,31,20,.10)), url('https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/e4c5b548-2218-4967-9269-cd15a55e63ea/people-friendship-hangout-traveling-destination-ca-2025-02-10-09-58-32-utc2.jpg?format=1500w');
+    background-image: linear-gradient(90deg, rgba(12,18,10,.90), rgba(12,18,10,.48) 52%, rgba(12,18,10,.14)), url('https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/e4c5b548-2218-4967-9269-cd15a55e63ea/people-friendship-hangout-traveling-destination-ca-2025-02-10-09-58-32-utc2.jpg?format=1500w');
     background-size: cover;
     background-position: center;
     border: 1px solid rgba(31,36,29,.12);
@@ -239,12 +243,16 @@
     font-size: clamp(38px, 6vw, 70px);
     line-height: 1.02;
     letter-spacing: -0.02em;
+    color: #ffffff !important;
+    text-shadow: 0 3px 18px rgba(0,0,0,.46);
   }
   .dysg-sub {
     margin: 16px 0 0;
     max-width: 62ch;
     font-size: clamp(16px, 1.45vw, 19px);
     line-height: 1.66;
+    color: rgba(255,255,255,.94);
+    text-shadow: 0 2px 12px rgba(0,0,0,.40);
   }
   .dysg-actions {
     display: flex;
@@ -285,7 +293,11 @@
 
   .dysg-intro,
   .dysg-process,
+  .dysg-proof,
   .dysg-hold {
+    width: min(1160px, calc(100% - 32px));
+    margin-left: auto;
+    margin-right: auto;
     margin-top: clamp(22px, 4vw, 42px);
     border-radius: 18px;
     background: #ffffff;
@@ -428,7 +440,6 @@
   }
 
   .dysg-proof {
-    margin-top: clamp(22px, 4vw, 42px);
     padding: clamp(24px, 4vw, 42px);
     border-radius: 18px;
     background: #24301c;
@@ -481,11 +492,11 @@
   }
 
   @media (max-width: 760px) {
-    .dysg { padding-top: 18px; }
+    .dysg { padding-top: 0; }
     .dysg-heroImage {
       min-height: 520px;
-      border-radius: 16px;
-      background-image: linear-gradient(0deg, rgba(24,31,20,.88), rgba(24,31,20,.46) 58%, rgba(24,31,20,.18)), url('https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/e4c5b548-2218-4967-9269-cd15a55e63ea/people-friendship-hangout-traveling-destination-ca-2025-02-10-09-58-32-utc2.jpg?format=1500w');
+      border-radius: 0;
+      background-image: linear-gradient(0deg, rgba(12,18,10,.90), rgba(12,18,10,.56) 58%, rgba(12,18,10,.20)), url('https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/e4c5b548-2218-4967-9269-cd15a55e63ea/people-friendship-hangout-traveling-destination-ca-2025-02-10-09-58-32-utc2.jpg?format=1500w');
       background-position: center;
     }
     .dysg-heroOverlay { padding: 24px; }
@@ -500,6 +511,7 @@
     .dysg-processBottom .dysg-btn { width: 100%; }
   }
 </style>
+
 
 
 
