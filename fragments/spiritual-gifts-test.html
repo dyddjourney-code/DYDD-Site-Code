@@ -116,7 +116,7 @@
     <section class="dysg-proof" aria-label="Participant reflection">
       <blockquote>
         “This helped me realize why I get frustrated and why I thrive in different areas. Also helped walk me through how
-        to better put myself in a position to use my gifting as for the Kingdom!”
+        to better put myself in a position to use my gifting for the Kingdom!”
       </blockquote>
       <p>Brandi</p>
     </section>
@@ -163,11 +163,24 @@
 </section>
 
 <style>
+  body:has(.dysg) .page-section:has(.dysg),
+  body:has(.dysg) .content-wrapper:has(.dysg),
+  body:has(.dysg) .sqs-layout:has(.dysg),
+  body:has(.dysg) .sqs-row:has(.dysg),
+  body:has(.dysg) .sqs-block:has(.dysg),
+  body:has(.dysg) .sqs-block-code:has(.dysg),
+  body:has(.dysg) .sqs-block-content:has(.dysg) {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    min-height: 0 !important;
+  }
+
   .dysg, .dysg * { box-sizing: border-box; }
   .dysg {
+    --dysg-top-pull: -72px;
     width: 100%;
     overflow-x: hidden;
-    margin: 0;
+    margin: var(--dysg-top-pull) 0 0;
     padding: 0 0 clamp(44px, 6vw, 86px);
     color: #1f241d;
     background: #f8faf6;
@@ -460,7 +473,7 @@
   }
 
   @media (max-width: 760px) {
-    .dysg { padding-top: 0; }
+    .dysg { --dysg-top-pull: -54px; padding-top: 0; }
     .dysg-heroImage {
       min-height: 520px;
       border-radius: 0;
