@@ -159,6 +159,82 @@
       </div>
     </section>
 
+    <section class="dysg-faq" id="dysg-faq" aria-label="Spiritual Gifts FAQ">
+      <div class="dysg-faqHead">
+        <p class="dysg-kicker">Common questions</p>
+        <h2 class="dysg-h2">A Clear Starting Point</h2>
+      </div>
+
+      <div class="dysg-faqList">
+        <details open>
+          <summary>What spiritual gifts list does this assessment use?</summary>
+          <div>
+            <p class="dysg-p">
+              Different Christian traditions organize spiritual gifts in slightly different ways. This assessment uses a
+              broad biblical list drawn from passages such as Romans 12, 1 Corinthians 12, Ephesians 4, and 1 Peter 4,
+              while also recognizing gifts of service, worship, craftsmanship, leadership, mercy, encouragement, and care.
+            </p>
+            <p class="dysg-p">
+              The goal is not to settle every theological debate, but to help believers prayerfully notice how God may be
+              working through them for the good of others and the strengthening of the Church.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What is the Discover Your Divine Design Spiritual Gifts list?</summary>
+          <div>
+            <ul class="dysg-giftList" aria-label="Discover Your Divine Design Spiritual Gifts list">
+              <li>Administration</li>
+              <li>Apostleship</li>
+              <li>Craftsmanship</li>
+              <li>Discernment</li>
+              <li>Evangelism</li>
+              <li>Exhortation</li>
+              <li>Faith</li>
+              <li>Giving</li>
+              <li>Healing</li>
+              <li>Helps</li>
+              <li>Hospitality</li>
+              <li>Intercession</li>
+              <li>Leadership</li>
+              <li>Mercy</li>
+              <li>Miracles</li>
+              <li>Missionary</li>
+              <li>Music/Worship</li>
+              <li>Pastor/Shepherd</li>
+              <li>Prophecy</li>
+              <li>Service</li>
+              <li>Teaching</li>
+              <li>Tongues (and Interpretation)</li>
+              <li>Word of Knowledge</li>
+              <li>Word of Wisdom</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>Is this assessment meant to label me?</summary>
+          <div>
+            <p class="dysg-p">
+              No. Your results are meant to give you a prayerful place to begin. Spiritual gifts become clearer over time
+              through Scripture, prayer, faithful service, trusted community, and the fruit that grows as you walk with God.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What should I do after I receive my results?</summary>
+          <div>
+            <p class="dysg-p">
+              Start with reflection, not pressure. Pray about what God has placed in you, notice where your gifts already
+              seem to bear fruit, ask trusted people what they see, and take one faithful step toward growth and service.
+            </p>
+          </div>
+        </details>
+      </div>
+    </section>
+
   </div>
 </section>
 
@@ -192,12 +268,12 @@
     margin: 0 0 clamp(22px, 4vw, 42px) calc(50% - 50vw);
   }
   .dysg-heroImage {
-    min-height: clamp(560px, 86vh, 820px);
+    min-height: clamp(448px, 68vh, 656px);
     border-radius: 0;
     overflow: hidden;
     background-image: linear-gradient(90deg, rgba(12,18,10,.90), rgba(12,18,10,.48) 52%, rgba(12,18,10,.14)), url('https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/e4c5b548-2218-4967-9269-cd15a55e63ea/people-friendship-hangout-traveling-destination-ca-2025-02-10-09-58-32-utc2.jpg?format=1500w');
     background-size: cover;
-    background-position: center;
+    background-position: center 64%;
     border: 1px solid rgba(31,36,29,.12);
     box-shadow: 0 22px 54px rgba(31,36,29,.16);
     display: flex;
@@ -275,7 +351,8 @@
   .dysg-intro,
   .dysg-process,
   .dysg-proof,
-  .dysg-hold {
+  .dysg-hold,
+  .dysg-faq {
     width: min(1160px, calc(100% - 32px));
     margin-left: auto;
     margin-right: auto;
@@ -463,6 +540,62 @@
   .dysg-list li:last-child { margin-bottom: 0; }
   .dysg-hold .dysg-btn { margin-top: 24px; }
 
+  .dysg-faq {
+    padding: clamp(22px, 4vw, 44px);
+    background: #ffffff;
+  }
+  .dysg-faqHead { max-width: 760px; }
+  .dysg-faqList {
+    display: grid;
+    gap: 12px;
+    margin-top: 22px;
+  }
+  .dysg-faq details {
+    border-radius: 16px;
+    border: 1px solid rgba(74,98,57,.16);
+    background: #f8faf6;
+    overflow: hidden;
+  }
+  .dysg-faq summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 18px 20px;
+    color: #1f241d;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1.25;
+  }
+  .dysg-faq summary::-webkit-details-marker { display: none; }
+  .dysg-faq summary::after {
+    content: "+";
+    float: right;
+    color: #4A6239;
+    font-size: 24px;
+    line-height: 1;
+    margin-left: 14px;
+  }
+  .dysg-faq details[open] summary::after { content: "-"; }
+  .dysg-faq details > div { padding: 0 20px 20px; }
+  .dysg-giftList {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin: 4px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .dysg-giftList li {
+    min-width: 0;
+    padding: 10px 12px;
+    border-radius: 999px;
+    background: #ffffff;
+    border: 1px solid rgba(74,98,57,.18);
+    color: rgba(31,36,29,.86);
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+
   @media (max-width: 980px) {
     .dysg-intro,
     .dysg-processGrid,
@@ -475,10 +608,10 @@
   @media (max-width: 760px) {
     .dysg { --dysg-top-pull: -54px; padding-top: 0; }
     .dysg-heroImage {
-      min-height: 520px;
+      min-height: 430px;
       border-radius: 0;
       background-image: linear-gradient(0deg, rgba(12,18,10,.90), rgba(12,18,10,.56) 58%, rgba(12,18,10,.20)), url('https://images.squarespace-cdn.com/content/v1/685da500fbad741e29c08c78/e4c5b548-2218-4967-9269-cd15a55e63ea/people-friendship-hangout-traveling-destination-ca-2025-02-10-09-58-32-utc2.jpg?format=1500w');
-      background-position: center;
+      background-position: center 66%;
     }
     .dysg-heroOverlay { padding: 24px; }
     .dysg-metaGrid { grid-template-columns: 1fr; }
@@ -490,5 +623,6 @@
       text-align: center;
     }
     .dysg-processBottom .dysg-btn { width: 100%; }
+    .dysg-giftList { grid-template-columns: 1fr; }
   }
 </style>
